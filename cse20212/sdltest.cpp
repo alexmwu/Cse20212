@@ -27,23 +27,22 @@ SDL_Surface *load_image(std::string filename)
 
 		//Free the old image
 		SDL_FreeSurface(loadedImage);
-	}
 
-	//If the image was optimized just fine
-	if (optimizedImage != NULL)
-	{
-		//Map the color key
-		Uint32 colorkey = SDL_MapRGB(optimizedImage->format, 0, 0xFF, 0xFF);
-		
-		//Set all pixels of color R 0, G 0xFF, B 0xFF to be transparent
-		SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, colorkey);
-	}
+		//If the image was optimized just fine
+		if (optimizedImage != NULL)
+		{
+			//Map the color key
+			Uint32 colorkey = SDL_MapRGB(optimizedImage->format, 0, 0xFF, 0xFF);
 
+			//Set all pixels of color R 0, G 0xFF, B 0xFF to be transparent
+			SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, colorkey);
+		}
+	}
 	//Return the optimized image
 	return optimizedImage;
 }
 
-void apply_surface(int x, int y, SDL_Surface* source, SDL_Surface* destination)
+void apply_surface(int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip = NULL)
 {
 	//Temporary rectangle to hold the offsets
 	SDL_Rect offset;
@@ -53,54 +52,70 @@ void apply_surface(int x, int y, SDL_Surface* source, SDL_Surface* destination)
 	offset.y = y;
 
 	//Blit the surface
-	SDL_BlitSurface(source, NULL, destination, &offset);
+	SDL_BlitSurface(source, clip, destination, &offset);
 }
 
-bool init(SDL_Surface * screen)
+SDL_Surface * init(SDL_Surface * screen)
 {
 	//Initialize all SDL subsystems
-	if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
-	{
-		return false;
-	}
+	SDL_Init(SDL_INIT_EVERYTHING);
 
 	//Set up the screen
 	screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE);
 
-	//If there was an error in setting up the screen
-	if (screen == NULL)
-	{
-		return false;
-	}
 
 	//Set the window caption
-	SDL_WM_SetCaption("Event test", NULL);
+	SDL_WM_SetCaption("Moving Sprite", NULL);
 
-	//If everything initialized fine
-	return true;
+	return screen;
 }
 
 
 int main(int argc, char* args[])
 {
+	//Screen attributes
+	const int SCREEN_WIDTH = 640;
+	const int SCREEN_HEIGHT = 480;
+	const int SCREEN_BPP = 32;
+
 	//The surfaces
-	SDL_Surface *dots = NULL;
+	SDL_Surface *pokemon = NULL;
 	SDL_Surface *screen = NULL;
 
 	//The event structure that will be used
 	SDL_Event event;
 
 	//The portions of the sprite map to be blitted
-	SDL_Rect clip[4];
+	SDL_Rect trainersquare;
+
+	//trainer location on screen
+	SDL_Rect trainerloc;
+
+	//Initialize
+	screen = init(screen);
+
+	//Load dots
+	pokemon = load_image("pokemon.png");
+
+	//trainer image from sprite sheet
+	trainersquare.x = 42;
+	trainersquare.y = 37;
+	trainersquare.w = 14;
+	trainersquare.h = 18;
+
+	//trainer location on screen
+	trainerloc.x = 0;
+	trainerloc.y = 0;
 
 	//Make sure the program waits for a quit
 	bool quit = false;
-	//Initialize
-	if (init(screen) == false)
-	{
-		return 1;
-	}
 
+
+	//Fill the screen white
+	SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
+
+	//Apply the images to the screen
+	apply_surface(0, 0, pokemon, screen, &trainersquare);
 
 
 	//Update the screen
@@ -115,14 +130,50 @@ int main(int argc, char* args[])
 		//While there's an event to handle
 		while (SDL_PollEvent(&event))
 		{
+
+			//If a key was pressed
+			if (event.type == SDL_KEYDOWN)
+			{
+				//Set the proper message surface
+				switch (event.key.keysym.sym)
+				{
+				case SDLK_UP: 
+					if (trainerloc.y>0) trainerloc.y--;
+					break;
+				case SDLK_DOWN:
+					if (trainerloc.y < SCREEN_HEIGHT) trainerloc.y++;
+					break;
+				case SDLK_LEFT:
+					if (trainerloc.x>0) trainerloc.x--;
+					break;
+				case SDLK_RIGHT:
+					if (trainerloc.x < SCREEN_WIDTH) trainerloc.x++;
+					break;
+				}
+
+				//Fill the screen white
+				SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
+
+				//apply
+				apply_surface(trainerloc.x, trainerloc.y, pokemon, screen, &trainersquare);
+
+				//Update the screen
+				if (SDL_Flip(screen) == -1)
+				{
+					return 1;
+				}
+			}
+
 			//If the user has Xed out the window
-			if (event.type == SDL_QUIT)
+			else if (event.type == SDL_QUIT)
 			{
 				//Quit the program
 				quit = true;
 			}
 		}
 	}
+
+	SDL_FreeSurface(pokemon);
 
 	//Free the surface and quit SDL
 	SDL_Quit();
