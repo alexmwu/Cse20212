@@ -77,7 +77,7 @@ int main(int argc, char* args[])
 	const int SCREEN_WIDTH = 640;
 	const int SCREEN_HEIGHT = 480;
 	const int SCREEN_BPP = 32;
-
+	int moveSpeed = 10;
 	//The surfaces
 	SDL_Surface *pokemon = NULL;
 	SDL_Surface *screen = NULL;
@@ -93,6 +93,11 @@ int main(int argc, char* args[])
 
 	//Initialize
 	screen = init(screen);
+
+	//enable key repeating
+	if (SDL_EnableKeyRepeat(1, moveSpeed) == -1){
+		return 1;
+	}
 
 	//Load dots
 	pokemon = load_image("pokemon.png");
@@ -141,13 +146,13 @@ int main(int argc, char* args[])
 					if (trainerloc.y>0) trainerloc.y--;
 					break;
 				case SDLK_DOWN:
-					if (trainerloc.y < SCREEN_HEIGHT) trainerloc.y++;
+					if (trainerloc.y < SCREEN_HEIGHT-trainersquare.h) trainerloc.y++;
 					break;
 				case SDLK_LEFT:
 					if (trainerloc.x>0) trainerloc.x--;
 					break;
 				case SDLK_RIGHT:
-					if (trainerloc.x < SCREEN_WIDTH) trainerloc.x++;
+					if (trainerloc.x < SCREEN_WIDTH-trainersquare.w) trainerloc.x++;
 					break;
 				}
 
