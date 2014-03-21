@@ -1,5 +1,6 @@
 #include "SDL.h"
 #include "SDL_image.h"
+#include "SDL_mixer.h"
 #include <string>
 
 //Screen attributes
@@ -90,6 +91,15 @@ int main(int argc, char* args[])
 
 	//trainer location on screen
 	SDL_Rect trainerloc;
+
+	//The music that will be played
+	Mix_Music *music = NULL;
+
+	//The sound effects that will be used
+	Mix_Chunk *scratch = NULL;
+	Mix_Chunk *high = NULL;
+	Mix_Chunk *med = NULL;
+	Mix_Chunk *low = NULL;
 
 	//Initialize
 	screen = init(screen);
