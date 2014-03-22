@@ -40,7 +40,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>C:\Users\Alex\Documents\GitHub\Cse20212\SDL-1.2.15\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Alex\Documents\GitHub\Cse20212\SDL-1.2.15\lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\Alex Hansen\Documents\Visual Studio 2013\Projects\Lab0\SDL-1.2.15\lib\x64;C:\Users\Alex\Documents\GitHub\Cse20212\SDL-1.2.15\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -75,7 +75,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoardPiece.h" />
-    <ClInclude Include="Location.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Type.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Location.h" />

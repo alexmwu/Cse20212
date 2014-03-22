@@ -23,10 +23,19 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Location.h">
+    <ClInclude Include="BoardPiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BoardPiece.h">
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Move.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
