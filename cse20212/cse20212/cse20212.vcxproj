@@ -71,8 +71,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BoardPiece.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Location.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="Pokeball.cpp" />
+    <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="Pokemon.h" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Type.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoardPiece.h" />
