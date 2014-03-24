@@ -39,8 +39,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Alex\Documents\GitHub\Cse20212\SDL-1.2.15\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Alex Hansen\Documents\Visual Studio 2013\Projects\Lab0\SDL-1.2.15\lib\x64;C:\Users\Alex\Documents\GitHub\Cse20212\SDL-1.2.15\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Alex Hansen\Documents\GitHub\Cse20212\SDL-1.2.15\include;C:\Users\Alex\Documents\GitHub\Cse20212\SDL-1.2.15\include;C:\Users\Alex Hansen\Documents\GitHub\Cse20212\cse20212\cse20212;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Alex Hansen\Documents\GitHub\Cse20212\SDL-1.2.15\lib\x86;C:\Users\Alex\Documents\GitHub\Cse20212\SDL-1.2.15\lib\x86;C:\Users\Alex Hansen\Documents\GitHub\Cse20212\cse20212\cse20212;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Users\Alex Hansen\Documents\GitHub\Cse20212\cse20212\cse20212;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -76,12 +77,11 @@
   <ItemGroup>
     <ClInclude Include="BoardPiece.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Location.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="Pokeball.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Type.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Location.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

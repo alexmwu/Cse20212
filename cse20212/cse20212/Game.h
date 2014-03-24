@@ -21,6 +21,8 @@ Basically the running file for the entire game
 #include <iterator>
 #include "Type.h"
 #include "Move.h"
+#include "Pokeball.h"
+#include <time.h>
 
 using namespace std;
 
@@ -44,14 +46,16 @@ public:
 private:
 	vector<Pokemon> my_pokemon;
 	vector<Sprite> my_sprites;
-	vector<vector<Sprite> > my_map;
+	vector<vector<Sprite> > my_map; //change to boardPieces
 	vector<Type> my_types;
 	vector<vector<char> > my_typeChart;
 	vector<Move> my_moves;
+	vector<Pokeball> my_pokeballs;
 };
 
 Game::Game()
 {
+	srand(time(NULL));
 	initilizeSprites();
 	drawMap();
 	initilizeTypes();
@@ -65,6 +69,10 @@ Game::Game()
 	p1.addMove(my_moves[0]);
 	p2.addMove(my_moves[1]);
 	p2.addMove(my_moves[2]);
+
+	Pokeball pb1 = Pokeball(1);
+	my_pokeballs.push_back(pb1);
+
 
 	battle(p2, p1);
 
@@ -382,9 +390,7 @@ void Game::battle(Pokemon user, Pokemon opp)
 {
 	int move = 0;
 	int oppMove = 0;
-	double calc = 0;
-	int HPLoss = 0;
-	double f[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+	double strength = 0;
 	cout << "Pokemon Battle" << endl << endl;
 	cout << user.getName() << " VS " << opp.getName() << endl;
 	while (user.getHP() > 0 && opp.getHP() > 0)
@@ -397,67 +403,48 @@ void Game::battle(Pokemon user, Pokemon opp)
 		cout << "Which move would you like to use?" << endl;
 		cin >> move;
 		cout << endl;
+
 		if (user.getSpeed() >= opp.getSpeed())
 		{
-			f[0] = user.getLevel();
-			f[1] = user.getAtk();
-			f[2] = user.getMove(move).getStrength();
-			f[3] = opp.getLevel();
-			f[4] = user.getDef();
-			f[5] = getTypeStrength(user.getMove(move).getType(), opp.getType()[0]);
-			if (opp.getType()[1].getName() != "")
-				f[5] *= getTypeStrength(user.getMove(move).getType(), opp.getType()[1]);
-			f[6] = rand() % 38 + 217;
-
-			calc = (((((2.0 * f[0]) / 5 + 2)*f[1] * f[2]) / ((f[3] * f[4]) + 2) * f[5] * f[6])) / 255 + 1;
-			HPLoss = calc / 1;
-			opp.setHP(opp.getHP() - HPLoss);
-			cout << user.getName() << " used " << user.getMove(move).getName() << endl;
-
-			if (opp.getHP() <= 0)
+			if (move == user.getMoves().size())
 			{
-				cout << opp.getName() << " has fainted." << endl;
-				break;
+				if (my_pokeballs[0].canCatch(opp))
+				{
+					break;
+				}
+			}
+			else
+			{
+				strength = getTypeStrength(user.getMove(move).getType(), opp.getType()[0]);
+				if (user.getType()[1].getName() != "")
+					strength *= getTypeStrength(user.getMove(move).getType(), opp.getType()[1]);
+				user.useMove(&opp, move, strength);
+
+				if (opp.getHP() <= 0)
+				{
+					cout << opp.getName() << " has fainted." << endl;
+					break;
+				}
 			}
 
-			f[0] = opp.getLevel();
-			f[1] = opp.getAtk();
-			f[2] = opp.getMove(oppMove).getStrength();
-			f[3] = user.getLevel();
-			f[4] = opp.getDef();
-			f[5] = getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[0]);
+			strength = getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[0]);
 			if (user.getType()[1].getName() != "")
-				f[5] *= getTypeStrength(user.getMove(oppMove).getType(), user.getType()[1]);
-			f[6] = rand() % 38 + 217;
-
-			calc = (((((2.0 * f[0]) / 5 + 2)*f[1] * f[2]) / ((f[3] * f[4]) + 2) * f[5] * f[6])) / 255 + 1;
-			HPLoss = calc / 1;
-			user.setHP(user.getHP() - HPLoss);
-			cout << opp.getName() << " used " << opp.getMove(oppMove).getName() << endl;
+				strength *= getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[1]);
+			opp.useMove(&user, oppMove, strength);
 
 			if (user.getHP() <= 0)
 			{
 				cout << user.getName() << " has fainted." << endl;
 				break;
 			}
-
 		}
 		else
 		{
-			f[0] = opp.getLevel();
-			f[1] = opp.getAtk();
-			f[2] = opp.getMove(oppMove).getStrength();
-			f[3] = user.getLevel();
-			f[4] = opp.getDef();
-			f[5] = getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[0]);
+			strength = getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[0]);
 			if (user.getType()[1].getName() != "")
-				f[5] *= getTypeStrength(user.getMove(oppMove).getType(), user.getType()[1]);
-			f[6] = rand() % 38 + 217;
+				strength *= getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[1]);
+			user.useMove(&user, oppMove, strength);
 
-			calc = (((((2.0 * f[0]) / 5 + 2)*f[1] * f[2]) / ((f[3] * f[4]) + 2) * f[5] * f[6])) / 255 + 1;
-			HPLoss = calc / 1;
-			user.setHP(user.getHP() - HPLoss);
-			cout << opp.getName() << " used " << opp.getMove(oppMove).getName() << endl;
 
 			if (user.getHP() <= 0)
 			{
@@ -465,26 +452,26 @@ void Game::battle(Pokemon user, Pokemon opp)
 				break;
 			}
 
-			f[0] = user.getLevel();
-			f[1] = user.getAtk();
-			f[2] = user.getMove(move).getStrength();
-			f[3] = opp.getLevel();
-			f[4] = user.getDef();
-			f[5] = getTypeStrength(user.getMove(move).getType(), opp.getType()[0]);
-			if (opp.getType()[1].getName() != "")
-				f[5] *= getTypeStrength(user.getMove(move).getType(), opp.getType()[1]);
-			f[6] = rand() % 38 + 217;
+			if (move == user.getMoves().size())
+			{
+				if (my_pokeballs[0].canCatch(opp))
+				{
+					break;
+				}
+			}
+			else
+			{
+				strength = getTypeStrength(user.getMove(move).getType(), opp.getType()[0]);
+				if (user.getType()[1].getName() != "")
+					strength *= getTypeStrength(user.getMove(move).getType(), opp.getType()[1]);
+				user.useMove(&opp, move, strength);
 
-			calc = (((((2.0 * f[0]) / 5 + 2)*f[1] * f[2]) / ((f[3] * f[4]) + 2) * f[5] * f[6])) / 255 + 1;
-			HPLoss = calc / 1;
-			opp.setHP(opp.getHP() - HPLoss);
-			cout << user.getName() << " used " << user.getMove(move).getName() << endl;
-		}
-
-		if (opp.getHP() <= 0)
-		{
-			cout << opp.getName() << " has fainted." << endl;
-			break;
+				if (opp.getHP() <= 0)
+				{
+					cout << opp.getName() << " has fainted." << endl;
+					break;
+				}
+			}
 		}
 	}
 }

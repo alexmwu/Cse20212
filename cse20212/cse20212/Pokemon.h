@@ -61,6 +61,9 @@ public:
 	void setType(Type, Type);
 	void battlePrint();
 	void oppPrint();
+	int getMaxHP();
+	void setMaxHP(int);
+	void useMove(Pokemon*, int, double);
 	//void useMove(Move m);
 	//Type getType();
 	//Item getEquipped();
@@ -177,6 +180,11 @@ int Pokemon::getLevel()
 	return my_level;
 }
 
+int Pokemon::getMaxHP()
+{
+	return my_maxHP;
+}
+
 void Pokemon::heal()
 {
 	my_HP = my_maxHP;
@@ -247,6 +255,11 @@ void Pokemon::setEvolveLevel(int evolveLvl)
 	my_evolveLvl = evolveLvl;
 }
 
+void Pokemon::setMaxHP(int hp)
+{
+	my_maxHP = hp;
+}
+
 void Pokemon::levelUp()
 {
 	my_level++;
@@ -283,19 +296,41 @@ void Pokemon::oppPrint()
 
 void Pokemon::battlePrint()
 {
+	int i = 0;
 	cout << my_name << endl;
 	cout << "HP: " << my_HP << " " << endl;
 	cout << "Moves: " << endl;
-	for (int i = 0; i < my_moves.size(); i++)
+	for (i = 0; i < my_moves.size(); i++)
 	{
 		cout << i << ")" << " ";
 		my_moves[i].print();
 	}
+	cout << i << ")" << " Throw Pokeball." << endl;
 }
 
 Move Pokemon::getMove(int num)
 {
 	return my_moves[num];
+}
+
+void Pokemon::useMove(Pokemon *opp, int move, double strength)
+{
+	double calc;
+	int HPLoss;
+	int f[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+	f[0] = getLevel();
+	f[1] = getAtk();
+	f[2] = getMove(move).getStrength();
+	f[3] = getLevel();
+	f[4] = opp->getDef();
+	f[5] = strength;
+	f[6] = rand() % 38 + 217;
+
+	calc = (((((2.0 * f[0]) / 5 + 2)*f[1] * f[2]) / ((f[3] * f[4]) + 2) * f[5] * f[6])) / 255 + 1;
+	HPLoss = calc / 1;
+	opp->setHP(opp->getHP() - HPLoss);
+	cout << getName() << " used " << getMove(move).getName() << endl;
+
 }
 
 void Pokemon::evolve()
