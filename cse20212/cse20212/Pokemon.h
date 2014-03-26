@@ -87,5 +87,6 @@ private:
 	int my_maxHP;
 	vector<Move> my_moves;
 	vector<Type> my_types;
+
 };
 #endif

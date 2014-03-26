@@ -18,13 +18,18 @@ using namespace std;
 
 Game::Game()
 {
+	int screen_width = 640;
+	int screen_height = 480;
+	int screen_bpp = 32;
 	srand(time(NULL));
-	initilizeSprites();
+	initializeSDL();
+	initializeSprites();
 	drawMap();
-	initilizeTypes();
-	initilizeTypeChart();
-	initilizeMoves();
-	initilizePokemon();
+	initializeTypes();
+	initializeTypeChart();
+	initializeMoves();
+	initializePokemon();
+
 
 	Pokemon p1 = my_pokemon[2];
 	Pokemon p2 = my_pokemon[5];
@@ -41,7 +46,20 @@ Game::Game()
 
 }
 
-void Game::initilizePokemon()
+void Game::initializeSDL(){
+	//Initialize all SDL subsystems
+	SDL_Init(SDL_INIT_EVERYTHING);
+
+	//Set up the screen
+	screen = SDL_SetVideoMode(screen_width, screen_height, screen_bpp, SDL_SWSURFACE);
+
+
+	//Set the window caption
+	SDL_WM_SetCaption("Pokemon NotreDame", NULL);
+
+}
+
+void Game::initializePokemon()
 {
 
 	string file = "PokemonFile.txt";
@@ -109,7 +127,7 @@ void Game::initilizePokemon()
 	}
 }
 
-void Game::initilizeSprites()
+void Game::initializeSprites()
 {
 
 	string file = "Sprites.txt";
@@ -206,7 +224,7 @@ void Game::printMap()
 	}
 }
 
-void Game::initilizeTypes()
+void Game::initializeTypes()
 {
 	string file = "Types.txt";
 	ifstream myfile;
@@ -242,7 +260,7 @@ void Game::initilizeTypes()
 	}
 }
 
-void Game::initilizeTypeChart()
+void Game::initializeTypeChart()
 {
 	string file = "TypeChart.txt";
 	ifstream myfile;
@@ -293,7 +311,7 @@ Type Game::getType(string name)
 	return s;
 }
 
-void Game::initilizeMoves()
+void Game::initializeMoves()
 {
 	string file = "Moves.txt";
 	ifstream myfile;
