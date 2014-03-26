@@ -5,6 +5,8 @@ Source.cpp
 Testing class used to test implementations in parts
 */
 
+#include "SDL.h"
+#include "SDL_image.h"
 #include <stdlib.h>
 #include <iostream>
 #include <string>
@@ -17,7 +19,7 @@ Testing class used to test implementations in parts
 
 using namespace std;
 
-int main()
+int main(int argc, char* args[])
 {
 	Game one = Game();
 	one.test();
