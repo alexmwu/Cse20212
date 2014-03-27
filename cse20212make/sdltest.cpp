@@ -1,6 +1,6 @@
-#include "SDL.h"
-#include "SDL_image.h"
-#include "SDL_mixer.h"
+#include "SDL/SDL.h"
+#include "SDL/SDL_image.h"
+#include "SDL/SDL_mixer.h"
 #include <string>
 
 //Screen attributes
@@ -110,7 +110,7 @@ int main(int argc, char* args[])
 	}
 
 	//Load dots
-	pokemon = load_image("pokemon.png");
+	pokemon = load_image("images/pokemon.png");
 
 	//trainer image from sprite sheet
 	trainersquare.x = 42;
