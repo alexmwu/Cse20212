@@ -1,0 +1,33 @@
++++++
+000)
+Name: Move
+Type: Type
+Strength: 0
+Effect: N/A
+
++++++
+001)
+Name: Tackle
+Type: Normal
+Strength: 50
+Accuracy: 100
+PP: 35
+Effect: N/A
+
++++++
+002)
+Name: Scratch
+Type: Normal
+Strength: 40
+Accuracy: 100
+PP: 35
+Effect: N/A
+
++++++
+002)
+Name: Ember
+Type: Fire
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
