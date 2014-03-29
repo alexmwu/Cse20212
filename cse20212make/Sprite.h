@@ -8,6 +8,7 @@ Stores the sprite sheet, location on the sheet, and height and width of the spri
 
 #ifndef SPRITE_H
 #define SPRITE_H
+
 #include <stdlib.h>
 #include <iostream>
 #include <string>
@@ -31,6 +32,7 @@ public:
 	void setHeight(int);
 	void setWidth(int);
 	void setName(string);
+	
 
 private:
 	int my_x;

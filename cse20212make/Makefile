@@ -35,5 +35,5 @@ Trainer.o: Trainer.cpp Trainer.h
 clean:
 	rm $(PROGRAM) *.o -f
 love:
-	echo "not war"
+	@echo "not war"
 

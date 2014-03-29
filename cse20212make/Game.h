@@ -31,7 +31,9 @@ using namespace std;
 class Game
 {
 public:
-	Game();
+	Game(int,int,int,int);	//screen width, screen height, screen bpp
+	void initializeSDL();
+	void quitSDL();
 	void initializePokemon();
 	void initializeSprites();
 	void drawMap(); //initilizes boardpieces
@@ -45,6 +47,7 @@ public:
 	void battle(Pokemon, Pokemon);
 	Move getMove(string);
 	void test();
+	void play();		//play
 private:
 	vector<Pokemon> my_pokemon;
 	vector<Sprite> my_sprites;
@@ -53,8 +56,14 @@ private:
 	vector<vector<char> > my_typeChart;
 	vector<Move> my_moves;
 	vector<Pokeball> my_pokeballs;
-	SDL_Surface *screen;
-	SDL_Surface *map;
-	SDL_Surface *trainers;
+
+	SDL_Event event;	//user event (like arrow key being pressed)
+	SDL_Surface *screen;	//screen being displayed on
+	SDL_Surface *map;	//map being played on
+	SDL_Surface *trainers;	//trainers being displayed
+	int screen_width;	//width of screen
+	int screen_height;	//height of screen
+	int screen_bpp;	//bits per pixel of screen (e.g., 32 for 32 bit color)
+	int move_speed;		//how fast user can move keys
 };
 #endif

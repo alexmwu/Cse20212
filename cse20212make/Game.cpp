@@ -18,8 +18,16 @@
 #include "Game.h"
 using namespace std;
 
-Game::Game()
+Game::Game(int sw, int sh, int sbpp, int movespeed)
 {
+	screen=NULL;
+	map=NULL;
+	trainers=NULL;
+	screen_width=sw;
+	screen_height=sh;
+	screen_bpp=sbpp;
+	move_speed=movespeed;
+
 	srand(time(NULL));
 	initializeSprites();
 	drawMap();
@@ -28,6 +36,7 @@ Game::Game()
 	initializeTypeChart();
 	initializeMoves();
 	initializePokemon();
+	initializeSDL();	
 
 	Pokemon p1 = my_pokemon[2];
 	Pokemon p2 = my_pokemon[5];
@@ -40,9 +49,31 @@ Game::Game()
 	my_pokeballs.push_back(pb1);
 
 
-	battle(p2, p1);
-
 }
+
+
+void Game::initializeSDL(){
+
+	//Initialize all SDL subsystems
+	SDL_Init(SDL_INIT_EVERYTHING);
+
+	//Set up the screen
+	screen = SDL_SetVideoMode(screen_width, screen_height, screen_bpp, SDL_SWSURFACE);
+
+	//enable key repeating
+	SDL_EnableKeyRepeat(1, move_speed);
+
+	//Set the window caption
+	SDL_WM_SetCaption("Pokemon NotreDame", NULL);
+}
+
+void Game::quitSDL(){
+		SDL_FreeSurface(map);		//free map
+		SDL_FreeSurface(trainers);	//free trainers
+
+		SDL_Quit();		//auto frees the screen
+}
+
 
 void Game::initializePokemon()
 {
@@ -332,7 +363,7 @@ void Game::initializeMoves()
 				myfile >> attribute[3];
 				myfile >> attribute[4];
 				myfile >> attribute[5];
-				myfile >> attribute[6];
+				                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     myfile >> attribute[6];
 				myfile >> attribute[7];
 				myfile >> attribute[8];
 				myfile >> attribute[9];
@@ -451,6 +482,29 @@ void Game::battle(Pokemon user, Pokemon opp)
 }
 
 
+void Game::play(){
+	int quit=0;
+
+	//While the user hasn't quit
+	while (!quit)
+	{
+		//While there's an event to handle
+		while (SDL_PollEvent(&event))
+		{
+
+
+			//If the user has Xed out the window
+			if (event.type == SDL_QUIT)
+			{
+				//Quit the program
+				quit = 1;
+			}
+		}
+	}
+
+quitSDL();
+
+}
 
 
 
