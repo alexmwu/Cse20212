@@ -21,13 +21,13 @@ using namespace std;
 Game::Game()
 {
 	srand(time(NULL));
-	initilizeSprites();
+	initializeSprites();
 	drawMap();
 	printMap();
-	initilizeTypes();
-	initilizeTypeChart();
-	initilizeMoves();
-	initilizePokemon();
+	initializeTypes();
+	initializeTypeChart();
+	initializeMoves();
+	initializePokemon();
 
 	Pokemon p1 = my_pokemon[2];
 	Pokemon p2 = my_pokemon[5];
@@ -44,7 +44,7 @@ Game::Game()
 
 }
 
-void Game::initilizePokemon()
+void Game::initializePokemon()
 {
 
 	string file = "text/PokemonFile.txt";
@@ -112,7 +112,7 @@ void Game::initilizePokemon()
 	}
 }
 
-void Game::initilizeSprites()
+void Game::initializeSprites()
 {
 
 	string file = "text/Sprites.txt";
@@ -217,7 +217,7 @@ void Game::printMap()
 	}
 }
 
-void Game::initilizeTypes()
+void Game::initializeTypes()
 {
 	string file = "text/Types.txt";
 	ifstream myfile;
@@ -253,7 +253,7 @@ void Game::initilizeTypes()
 	}
 }
 
-void Game::initilizeTypeChart()
+void Game::initializeTypeChart()
 {
 	string file = "text/TypeChart.txt";
 	ifstream myfile;
@@ -304,7 +304,7 @@ Type Game::getType(string name)
 	return s;
 }
 
-void Game::initilizeMoves()
+void Game::initializeMoves()
 {
 	string file = "text/Moves.txt";
 	ifstream myfile;
