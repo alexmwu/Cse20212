@@ -20,18 +20,14 @@ using namespace std;
 
 Game::Game()
 {
-	int screen_width = 640;
-	int screen_height = 480;
-	int screen_bpp = 32;
 	srand(time(NULL));
-	initializeSDL();
-	initializeSprites();
+	initilizeSprites();
 	drawMap();
-	initializeTypes();
-	initializeTypeChart();
-	initializeMoves();
-	initializePokemon();
-
+	printMap();
+	initilizeTypes();
+	initilizeTypeChart();
+	initilizeMoves();
+	initilizePokemon();
 
 	Pokemon p1 = my_pokemon[2];
 	Pokemon p2 = my_pokemon[5];
@@ -48,20 +44,7 @@ Game::Game()
 
 }
 
-void Game::initializeSDL(){
-	//Initialize all SDL subsystems
-	SDL_Init(SDL_INIT_EVERYTHING);
-
-	//Set up the screen
-	screen = SDL_SetVideoMode(screen_width, screen_height, screen_bpp, SDL_SWSURFACE);
-
-
-	//Set the window caption
-	SDL_WM_SetCaption("Pokemon NotreDame", NULL);
-
-}
-
-void Game::initializePokemon()
+void Game::initilizePokemon()
 {
 
 	string file = "PokemonFile.txt";
@@ -129,7 +112,7 @@ void Game::initializePokemon()
 	}
 }
 
-void Game::initializeSprites()
+void Game::initilizeSprites()
 {
 
 	string file = "Sprites.txt";
@@ -181,7 +164,11 @@ void Game::drawMap()
 	myfile.open(file.c_str());
 	string line;
 	int read = 0;
-	vector<Sprite> temp;
+	vector<BoardPiece> temp;
+	int x = 0;
+	Location loc;
+	Sprite s;
+	BoardPiece b;
 	if (myfile.is_open())
 	{
 		while (!myfile.eof())
@@ -193,12 +180,16 @@ void Game::drawMap()
 			vector<string> tokens(begin, end);
 			for (int i = 0; i < tokens.size(); i++)
 			{
-				temp.push_back(findSprite(tokens[i]));
+				loc = Location(x, i);
+				s = findSprite(tokens[i]);
+				b = BoardPiece(s, loc, 1, 0);
+				temp.push_back(b);
 			}
 			my_map.push_back(temp);
 			temp.clear();
 			tokens.clear();
-		}
+			x++;
+		}		
 	}
 }
 
@@ -220,13 +211,13 @@ void Game::printMap()
 	{
 		for (int j = 0; j < my_map[i].size(); j++)
 		{
-			cout << my_map[i][j].getName() << " ";
+			cout << my_map[i][j].getSprite().getName() << " ";
 		}
 		cout << endl;
 	}
 }
 
-void Game::initializeTypes()
+void Game::initilizeTypes()
 {
 	string file = "Types.txt";
 	ifstream myfile;
@@ -262,7 +253,7 @@ void Game::initializeTypes()
 	}
 }
 
-void Game::initializeTypeChart()
+void Game::initilizeTypeChart()
 {
 	string file = "TypeChart.txt";
 	ifstream myfile;
@@ -313,7 +304,7 @@ Type Game::getType(string name)
 	return s;
 }
 
-void Game::initializeMoves()
+void Game::initilizeMoves()
 {
 	string file = "Moves.txt";
 	ifstream myfile;
@@ -348,7 +339,7 @@ void Game::initializeMoves()
 				myfile >> attribute[10];
 				myfile >> attribute[11];
 				Type t = getType(attribute[3]);
-				Move newMove(attribute[1], t, atoi(attribute[5].c_str()), atoi(attribute[7].c_str())*1.0 / 100, atoi(attribute[9].c_str()), attribute[11]);
+				Move newMove(attribute[1], t, atoi(attribute[5].c_str()), atoi(attribute[7].c_str())*1.0/100, atoi(attribute[9].c_str()), attribute[11]);
 				my_moves.push_back(newMove);
 				read = 0;
 				for (int i = 0; i < 2; i++)
@@ -385,7 +376,7 @@ void Game::battle(Pokemon user, Pokemon opp)
 		user.battlePrint();
 		cout << "Which move would you like to use?" << endl;
 		cin >> move;
-		cout << endl;
+		cout << endl;		
 
 		if (user.getSpeed() >= opp.getSpeed())
 		{

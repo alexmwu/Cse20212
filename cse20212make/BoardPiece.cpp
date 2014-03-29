@@ -5,17 +5,22 @@
 #include "BoardPiece.h"
 using namespace std;
 
-BoardPiece::BoardPiece(string image, Location loc, int walkable, int interact)
+BoardPiece::BoardPiece()
 {
-	my_image = image;
+	return;
+}
+
+BoardPiece::BoardPiece(Sprite sprite, Location loc, int walkable, int interact)
+{
+	my_sprite = sprite;
 	my_loc = loc;
-	my_walk = walkable;
+	my_walk= walkable;
 	my_interact = interact;
 }
 
-string BoardPiece::getImage()
+Sprite BoardPiece::getSprite()
 {
-	return my_image;
+	return my_sprite;
 }
 
 Location BoardPiece::getLocation()

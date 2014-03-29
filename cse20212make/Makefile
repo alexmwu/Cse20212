@@ -13,23 +13,25 @@ $(PROGRAM): $(OBJECTS)
 	$(COMPILER) $(OBJECTS) $(COMPILERFLAGS) $(PROGRAM)
 
 Source.o: Source.cpp
-	$(COMPILER) Source.cpp -c
+	$(COMPILER) Source.cpp Game.h -c
 BoardPiece.o: BoardPiece.cpp
-	$(COMPILER) BoardPiece.cpp -c
+	$(COMPILER) BoardPiece.cpp Location.h Sprite.h -c
 Game.o: Game.cpp
-	$(COMPILER) Game.cpp -c
+	$(COMPILER) Game.cpp BoardPiece.h Location.h Pokemon.h Sprite.h Type.h Move.h Pokeball.h Trainer.h -c
 Location.o: Location.cpp
 	$(COMPILER) Location.cpp -c
 Move.o:	Move.cpp
-	$(COMPILER) Move.cpp -c
+	$(COMPILER) Move.cpp  Type.h -c
 Pokeball.o: Pokeball.cpp
-	$(COMPILER) Pokeball.cpp -c
+	$(COMPILER) Pokeball.cpp Pokemon.h -c
 Pokemon.o: Pokemon.cpp
-	$(COMPILER) Pokemon.cpp -c
+	$(COMPILER) Pokemon.cpp Move.h Type.h -c
 Sprite.o: Sprite.cpp
 	$(COMPILER) Sprite.cpp -c
 Type.o: Type.cpp
 	$(COMPILER) Type.cpp -c
+Trainer.o: Trainer.cpp
+	$(COMPILER) Trainer.cpp Pokemon.h Sprite.h Location.h -c
 clean:
 	rm $(PROGRAM) *.o -f
 love:

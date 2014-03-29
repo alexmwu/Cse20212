@@ -8,8 +8,6 @@ Basically the running file for the entire game
 
 #ifndef GAME_H
 #define GAME_H
-#include "SDL/SDL.h"
-#include "SDL/SDL_image.h"
 #include <stdlib.h>
 #include <iostream>
 #include <string>
@@ -32,38 +30,26 @@ class Game
 {
 public:
 	Game();
-	void initializeSDL();	//initializes SDL systems
-	void initializePokemon();
-	void initializeSprites();
-	void drawMap();
+	void initilizePokemon();
+	void initilizeSprites();
+	void drawMap(); //initilizes boardpieces
 	Sprite findSprite(string);
 	void printMap();
-	void initializeTypes();
-	void initializeTypeChart();
+	void initilizeTypes();
+	void initilizeTypeChart();
 	double getTypeStrength(Type, Type);
 	Type getType(string);
-	void initializeMoves();
+	void initilizeMoves();
 	void battle(Pokemon, Pokemon);
 	Move getMove(string);
 	void test();
 private:
 	vector<Pokemon> my_pokemon;
 	vector<Sprite> my_sprites;
-	vector<vector<Sprite> > my_map; //change to boardPieces
+	vector<vector<BoardPiece> > my_map; //change to boardPieces
 	vector<Type> my_types;
 	vector<vector<char> > my_typeChart;
 	vector<Move> my_moves;
 	vector<Pokeball> my_pokeballs;
-
-
-	SDL_Surface *screen;	//game screen
-	SDL_Surface *pokemon;	//pokemon sprite sheet
-
-	int screen_width;	//width of the screen
-	int screen_height;	//height of the screen
-	int screen_bpp;		//bits per pixel (e.g., for 32 each pixel has 32 bit color)
 };
-
-
-
 #endif
