@@ -47,7 +47,7 @@ Game::Game()
 void Game::initilizePokemon()
 {
 
-	string file = "PokemonFile.txt";
+	string file = "text/PokemonFile.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
 	string line;
@@ -115,7 +115,7 @@ void Game::initilizePokemon()
 void Game::initilizeSprites()
 {
 
-	string file = "Sprites.txt";
+	string file = "text/Sprites.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
 	string line;
@@ -159,7 +159,7 @@ void Game::initilizeSprites()
 
 void Game::drawMap()
 {
-	string file = "Map.txt";
+	string file = "text/Map.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
 	string line;
@@ -219,7 +219,7 @@ void Game::printMap()
 
 void Game::initilizeTypes()
 {
-	string file = "Types.txt";
+	string file = "text/Types.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
 	string line;
@@ -255,7 +255,7 @@ void Game::initilizeTypes()
 
 void Game::initilizeTypeChart()
 {
-	string file = "TypeChart.txt";
+	string file = "text/TypeChart.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
 	string line;
@@ -306,7 +306,7 @@ Type Game::getType(string name)
 
 void Game::initilizeMoves()
 {
-	string file = "Moves.txt";
+	string file = "text/Moves.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
 	string line;

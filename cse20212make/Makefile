@@ -5,7 +5,7 @@ COMPILERFLAGS=-lSDL -lSDL_image -lSDL_mixer -o
 #compiler to be used
 COMPILER=g++
 #program name
-PROGRAM=pokemon
+PROGRAM=pokemongame
 
 all: $(PROGRAM)
 
