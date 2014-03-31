@@ -1,6 +1,6 @@
 +++++
 000)
-Sheet: Sheet.png
+Sheet: 0
 Name: XXX
 X: 0
 Y: 0
@@ -9,7 +9,7 @@ Width: 0
 
 +++++
 001)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: G02
 X: 135
 Y: 240
@@ -18,7 +18,7 @@ Width: 15
 
 +++++
 002)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: G01
 X: 103
 Y: 18
@@ -27,7 +27,7 @@ Width: 15
 
 +++++
 003)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W01
 X: 170
 Y: 70
@@ -36,7 +36,7 @@ Width: 15
 
 +++++
 004)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W02
 X: 188
 Y: 70
@@ -45,7 +45,7 @@ Width: 15
 
 +++++
 005)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W03
 X: 205
 Y: 70
@@ -54,7 +54,7 @@ Width: 15
 
 +++++
 006)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W04
 X: 170
 Y: 86
@@ -63,7 +63,7 @@ Width: 15
 
 +++++
 007)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W05
 X: 188
 Y: 86
@@ -72,7 +72,7 @@ Width: 15
 
 +++++
 008)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W06
 X: 205
 Y: 86
@@ -81,7 +81,7 @@ Width: 15
 
 +++++
 009)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W07
 X: 170
 Y: 103
@@ -90,7 +90,7 @@ Width: 15
 
 +++++
 010)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W08
 X: 188
 Y: 103
@@ -99,7 +99,7 @@ Width: 15
 
 +++++
 011)
-Sheet: OutdoorTileset.png
+Sheet: 3
 Name: W09
 X: 205
 Y: 103

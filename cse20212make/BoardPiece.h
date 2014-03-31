@@ -27,7 +27,7 @@ public:
 	int canWalk();
 	int trainerPresent(Location);
 	virtual void interact();
-	
+
 private:
 	Location my_loc;
 	int my_walk;

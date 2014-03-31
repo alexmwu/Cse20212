@@ -36,7 +36,8 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 	initializeTypeChart();
 	initializeMoves();
 	initializePokemon();
-	initializeSDL();	
+	initializeSDL();
+	initializeSpriteSheets();	
 
 	Pokemon p1 = my_pokemon[2];
 	Pokemon p2 = my_pokemon[5];
@@ -48,6 +49,79 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 	Pokeball pb1 = Pokeball(1);
 	my_pokeballs.push_back(pb1);
 
+
+}
+
+
+SDL_Surface * Game::loadImage(string filename){
+	//The image that's loaded
+	SDL_Surface* loadedImage = NULL;
+
+	//The optimized image that will be used
+	SDL_Surface* optimizedImage = NULL;
+
+	//Load the image
+	loadedImage = IMG_Load(filename.c_str());
+
+	//If the image loaded
+	if (loadedImage != NULL)
+	{
+		//Create an optimized image
+		optimizedImage = SDL_DisplayFormat(loadedImage);
+
+		//Free the old image
+		SDL_FreeSurface(loadedImage);
+	}
+
+
+	//Return the optimized image
+	return optimizedImage;
+
+}
+
+SDL_Surface *Game::switchSheet(int sheetindex){
+	switch(sheetindex){
+		case 1:
+			return battlemenu;
+			break;
+		case 2:
+			return buildings;
+			break;
+		case 3:
+			return environment;
+			break;
+		case 4:
+			return envpokemon;
+			break;
+		case 5:
+			return heroes;
+			break;
+		case 6:
+			return misc;
+			break;
+		case 7:
+			return npcs;
+			break;
+		case 8:
+			return pokemenu;
+			break;
+		default:
+			return NULL;
+			break;	
+	}
+	
+}
+
+
+void Game::initializeSpriteSheets(){
+	SDL_Surface *battlemenu=loadImage("images/battlemenu.png");
+	SDL_Surface *buildings=loadImage("images/buildings.png");
+	SDL_Surface *environment=loadImage("images/environment.png");
+	SDL_Surface *envpokemon=loadImage("images/envpokemon.png");
+	SDL_Surface *heroes=loadImage("images/heroes.png");
+	SDL_Surface *misc=loadImage("images/misc.png");
+	SDL_Surface *npcs=loadImage("images/npcs.png");
+	SDL_Surface *pokemenu=loadImage("images/pokemenu.png");
 
 }
 
@@ -178,7 +252,7 @@ void Game::initializeSprites()
 				myfile >> attribute[9];
 				myfile >> attribute[10];
 				myfile >> attribute[11];
-				Sprite newSprite(attribute[1], attribute[3], atoi(attribute[5].c_str()), atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[11].c_str()));
+				Sprite newSprite(switchSheet(atoi(attribute[1].c_str())), attribute[3], atoi(attribute[5].c_str()), atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[11].c_str()));
 				my_sprites.push_back(newSprite);
 				read = 0;
 				for (int i = 0; i < 2; i++)
@@ -481,6 +555,20 @@ void Game::battle(Pokemon user, Pokemon opp)
 	}
 }
 
+void Game::displayMap(){
+	for(int i=0;i<my_map.size();i++){
+
+		for(int j=0;j<my_map[0].size();j++){
+			my_map[i][j].getSprite().display(i*15,j*15,screen);
+		}
+
+	}
+SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
+sleep(5);
+SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0, 0xFF, 0xFF));
+	SDL_Flip(screen);
+}
+
 
 void Game::play(){
 	int quit=0;
@@ -492,7 +580,7 @@ void Game::play(){
 		while (SDL_PollEvent(&event))
 		{
 
-
+			displayMap();
 			//If the user has Xed out the window
 			if (event.type == SDL_QUIT)
 			{

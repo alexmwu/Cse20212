@@ -8,14 +8,28 @@ Sprite::Sprite()
 	return;
 }
 
-Sprite::Sprite(string sheet, string name, int x, int y, int h, int w)
+Sprite::Sprite(SDL_Surface * sheet, string name, int x, int y, int h, int w)
 {
-	my_sheet = sheet;
+	sprite = sheet;
 	my_x = x;
 	my_y = y;
 	my_height = h;
 	my_width = w;
 	my_name = name;
+
+	//SDL_Rect internal variables
+	sprite_loc.x=my_x;
+	sprite_loc.y=my_y;
+	sprite_loc.w=my_width;
+	sprite_loc.h=my_height;
+}
+
+SDL_Surface *Sprite::getSurface(){
+	return sprite;
+}
+
+void Sprite::freeSurface(){
+	SDL_FreeSurface(sprite);
 }
 
 string Sprite::getSheet()
@@ -75,4 +89,16 @@ void Sprite::setWidth(int w)
 void Sprite::setName(string name)
 {
 	my_name = name;
+}
+
+void Sprite::display(int x,int y,SDL_Surface* destination){
+	//Temporary rectangle to hold the offsets
+	SDL_Rect offset;
+
+	//Get the offsets
+	offset.x=x;
+	offset.y=y;
+
+	//Blit the surface
+	SDL_BlitSurface(sprite,&sprite_loc,destination,&offset);
 }

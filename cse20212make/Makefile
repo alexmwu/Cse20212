@@ -33,7 +33,7 @@ Type.o: Type.cpp Type.h
 Trainer.o: Trainer.cpp Trainer.h
 	$(COMPILER) Trainer.cpp Pokemon.h Sprite.h Location.h -c
 clean:
-	rm $(PROGRAM) *.o -f
+	rm $(PROGRAM) *.o *.gch -f
 love:
 	@echo "not war"
 

@@ -32,11 +32,14 @@ class Game
 {
 public:
 	Game(int,int,int,int);	//screen width, screen height, screen bpp
-	void initializeSDL();
-	void quitSDL();
+	void initializeSDL();		//initializes SDL systems, will also load sprite sheets
+	void initializeSpriteSheets();	//intialize sprite sheets to SDL_Surfaces
+	void quitSDL();		//frees all SDL systems and quits SDL
+	SDL_Surface *loadImage(string);	//loads sprite sheets
+	SDL_Surface *switchSheet(int);		//switches the sprite sheet filename (string) for the pointer to the sheet
 	void initializePokemon();
 	void initializeSprites();
-	void drawMap(); //initilizes boardpieces
+	void drawMap(); //initializes boardpieces
 	Sprite findSprite(string);
 	void printMap();
 	void initializeTypes();
@@ -48,14 +51,25 @@ public:
 	Move getMove(string);
 	void test();
 	void play();		//play
+	void displayMap();		//display map graphically
 private:
 	vector<Pokemon> my_pokemon;
 	vector<Sprite> my_sprites;
-	vector<vector<BoardPiece> > my_map; //change to boardPieces
+	vector<vector<BoardPiece> > my_map; 
 	vector<Type> my_types;
 	vector<vector<char> > my_typeChart;
 	vector<Move> my_moves;
 	vector<Pokeball> my_pokeballs;
+
+	SDL_Surface *battlemenu;	//battle menu sprite sheet
+	SDL_Surface *buildings;		//buildings sprite sheet
+	SDL_Surface *environment;	//environment sprite sheet
+	SDL_Surface *envpokemon;	//sprite sheet for pokemon on map
+	SDL_Surface *heroes;		//heroes of game
+	SDL_Surface *misc;		//miscellaneous sprite sheet
+	SDL_Surface *npcs;		//npc sprite sheet
+	SDL_Surface *pokemenu;		//sprite sheet for pokemon menu
+
 
 	SDL_Event event;	//user event (like arrow key being pressed)
 	SDL_Surface *screen;	//screen being displayed on
