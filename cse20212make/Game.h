@@ -47,12 +47,13 @@ public:
 	double getTypeStrength(Type, Type);
 	Type getType(string);
 	void initializeMoves();
-	void battle(Pokemon, Pokemon);
+	void textBattle(Pokemon, Pokemon);
 	Move getMove(string);
 	void test();
 	void play();		//play
 	void displayMap();		//display map graphically
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
+	
 private:
 	vector<Pokemon> my_pokemon;
 	vector<Sprite> my_sprites;
@@ -80,5 +81,6 @@ private:
 	int screen_height;	//height of screen
 	int screen_bpp;	//bits per pixel of screen (e.g., 32 for 32 bit color)
 	int move_speed;		//how fast user can move keys
+	int is_battle;		//is pokemon in battle
 };
 #endif

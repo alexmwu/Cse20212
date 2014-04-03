@@ -271,6 +271,8 @@ void Game::initializeSprites()
 	}
 }
 
+
+
 void Game::drawMap()
 {
 	string file = "text/Map.txt";
@@ -315,6 +317,7 @@ Sprite Game::findSprite(string name)
 		if (my_sprites[i].getName() == name)
 			return my_sprites[i];
 	}
+	cout<<"Couldn't find sprite."<<endl;
 	return s;
 }
 
@@ -474,7 +477,7 @@ Move Game::getMove(string name)
 	return m;
 }
 
-void Game::battle(Pokemon user, Pokemon opp)
+void Game::textBattle(Pokemon user, Pokemon opp)
 {
 	int move = 0;
 	int oppMove = 0;
