@@ -59,7 +59,6 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 	Pokeball pb1 = Pokeball(1);
 	my_pokeballs.push_back(pb1);
 
-
 }
 
 
@@ -581,10 +580,8 @@ SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 
 
 void Game::play(){
 	int quit=0;
-cout<<findSprite("G01").getName();
-applySurface(0,0,my_sprites[0].getSurface(),screen);
-SDL_Flip(screen);
-//displayMap();
+
+displayMap();
 	//While the user hasn't quit
 	while (!quit)
 	{

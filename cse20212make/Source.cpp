@@ -22,10 +22,6 @@ using namespace std;
 int main(int argc, char* args[])
 {
 	Game one = Game(660,480,32,10);		//640 by 480 with 32 bit color, user can repeat keys with interval of 10 microsecs
-	//one.play();
+	one.play();
 
-	while (1)
-	{
-
-	}
 }
