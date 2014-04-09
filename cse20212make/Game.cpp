@@ -23,6 +23,8 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 	screen=NULL;
 	map=NULL;
 	trainers=NULL;
+	battlescene=NULL;
+
 	battlemenu=NULL;
 	buildings=NULL;	
 	environment=NULL;
@@ -31,6 +33,7 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 	misc=NULL;
 	npcs=NULL;
 	pokemenu=NULL;
+	battlepokemon=NULL;
 
 	screen_width=sw;
 	screen_height=sh;
@@ -58,6 +61,7 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 
 	Pokeball pb1 = Pokeball(1);
 	my_pokeballs.push_back(pb1);
+	battle(p1,p2);
 
 }
 
@@ -115,6 +119,9 @@ SDL_Surface *Game::switchSheet(int sheetindex){
 		case 8:
 			return pokemenu;
 			break;
+		case 9:
+			return battlepokemon;
+			break;
 		default:
 			return NULL;
 			break;	
@@ -132,6 +139,7 @@ void Game::initializeSpriteSheets(){
 	misc=loadImage("images/misc.png");
 	npcs=loadImage("images/npcs.png");
 	pokemenu=loadImage("images/pokemenu.png");
+	battlepokemon=loadImage("images/battlepokemon.png");
 }
 
 
@@ -142,6 +150,10 @@ void Game::initializeSDL(){
 
 	//Set up the screen
 	screen = SDL_SetVideoMode(screen_width, screen_height, screen_bpp, SDL_SWSURFACE);
+	//init map and battlescene
+	map=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+	trainers=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+	battlescene=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
 
 	//enable key repeating
 	SDL_EnableKeyRepeat(1, move_speed);
@@ -153,7 +165,8 @@ void Game::initializeSDL(){
 void Game::quitSDL(){
 		SDL_FreeSurface(map);		//free map
 		SDL_FreeSurface(trainers);	//free trainers
-
+		SDL_FreeSurface(battlescene);
+		SDL_FreeSurface(screen);
 		SDL_Quit();		//auto frees the screen
 }
 
@@ -165,7 +178,7 @@ void Game::initializePokemon()
 	ifstream myfile;
 	myfile.open(file.c_str());
 	string line;
-	string attribute[30];
+	string attribute[32];
 	int read = 0;
 	if (myfile.is_open())
 	{
@@ -211,12 +224,16 @@ void Game::initializePokemon()
 				myfile >> attribute[27];
 				myfile >> attribute[28];
 				myfile >> attribute[29];
-				Type t1 = getType(attribute[5]);
-				Type t2 = getType(attribute[7]);
-				Pokemon newPokemon(atoi(attribute[9].c_str()), atoi(attribute[11].c_str()), atoi(attribute[17].c_str()), atoi(attribute[13].c_str()),
-					atoi(attribute[15].c_str()), atoi(attribute[19].c_str()), attribute[3], attribute[1], atoi(attribute[21].c_str()),
-					atoi(attribute[23].c_str()), atoi(attribute[25].c_str()), atoi(attribute[27].c_str()),
-					atoi(attribute[29].c_str()), t1, t2);
+				myfile >> attribute[30];
+				myfile >> attribute[31];
+				Sprite s1=getSprite(attribute[29]);
+				Sprite s2=getSprite(attribute[31]);
+				Type t1 = getType(attribute[3]);
+				Type t2 = getType(attribute[5]);
+				Pokemon newPokemon(atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[15].c_str()), atoi(attribute[11].c_str()),
+					atoi(attribute[13].c_str()), atoi(attribute[17].c_str()), s1, s2, attribute[1], atoi(attribute[19].c_str()),
+					atoi(attribute[21].c_str()), atoi(attribute[23].c_str()), atoi(attribute[25].c_str()),
+					atoi(attribute[27].c_str()), t1, t2);
 				my_pokemon.push_back(newPokemon);
 				read = 0;
 				for (int i = 0; i < 2; i++)
@@ -297,7 +314,7 @@ void Game::drawMap()
 			for (int i = 0; i < tokens.size(); i++)
 			{
 				loc = Location(x, i);
-				s = findSprite(tokens[i]);
+				s = getSprite(tokens[i]);
 				b = BoardPiece(s, loc, 1, 0);
 				temp.push_back(b);
 			}
@@ -309,7 +326,7 @@ void Game::drawMap()
 	}
 }
 
-Sprite Game::findSprite(string name)
+Sprite Game::getSprite(string name)
 {
 	Sprite s = Sprite();
 	for (int i = 0; i < my_sprites.size(); i++)
@@ -477,15 +494,19 @@ Move Game::getMove(string name)
 	return m;
 }
 
-void Game::textBattle(Pokemon user, Pokemon opp)
+void Game::battle(Pokemon user, Pokemon opp)
 {
 	int move = 0;
 	int oppMove = 0;
 	double strength = 0;
 	cout << "Pokemon Battle" << endl << endl;
 	cout << user.getName() << " VS " << opp.getName() << endl;
-	while (user.getHP() > 0 && opp.getHP() > 0)
+while (user.getHP() > 0 && opp.getHP() > 0)
 	{
+		user.getUserImage().display(20,400,battlescene);
+		opp.getOppImage().display(560,20,battlescene);
+		toScreen(battlescene);
+
 		cout << endl << endl << endl;
 		oppMove = rand() % opp.getMoves().size();
 		opp.oppPrint();
@@ -572,12 +593,11 @@ SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 
 	for(int i=0;i<my_map.size();i++){
 
 		for(int j=0;j<my_map[0].size();j++){
-			my_map[i][j].getSprite().display(i*15,j*15,screen);
+			my_map[i][j].getSprite().display(i*15,j*15,map);
 		}
 
 	}
-
-	SDL_Flip(screen);
+	toScreen(map);
 }
 
 
@@ -603,6 +623,17 @@ displayMap();
 quitSDL();
 
 }
+
+
+void Game::toScreen(SDL_Surface* source){
+SDL_Rect fullscreen;
+fullscreen.x=0;
+fullscreen.y=0;
+
+SDL_BlitSurface(source,NULL,screen,NULL);
+SDL_Flip(screen);
+}
+
 
 void Game::applySurface(int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip)
 {

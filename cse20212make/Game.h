@@ -40,19 +40,20 @@ public:
 	void initializePokemon();
 	void initializeSprites();
 	void drawMap(); //initializes boardpieces
-	Sprite findSprite(string);
+	Sprite getSprite(string);
 	void printMap();
 	void initializeTypes();
 	void initializeTypeChart();
 	double getTypeStrength(Type, Type);
 	Type getType(string);
 	void initializeMoves();
-	void textBattle(Pokemon, Pokemon);
+	void battle(Pokemon, Pokemon);
 	Move getMove(string);
 	void test();
 	void play();		//play
 	void displayMap();		//display map graphically
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
+	void toScreen(SDL_Surface*);	//send a surface to the screen
 	
 private:
 	vector<Pokemon> my_pokemon;
@@ -63,6 +64,7 @@ private:
 	vector<Move> my_moves;
 	vector<Pokeball> my_pokeballs;
 
+	SDL_Surface *battlepokemon;	//in-battle pokemon sprites
 	SDL_Surface *battlemenu;	//battle menu sprite sheet
 	SDL_Surface *buildings;		//buildings sprite sheet
 	SDL_Surface *environment;	//environment sprite sheet
@@ -74,6 +76,8 @@ private:
 
 
 	SDL_Event event;	//user event (like arrow key being pressed)
+	
+	SDL_Surface *battlescene;	//battle scene
 	SDL_Surface *screen;	//screen being displayed on
 	SDL_Surface *map;	//map being played on
 	SDL_Surface *trainers;	//trainers being displayed

@@ -1,7 +1,6 @@
 +++++
 000)
 Name: Name
-Image: Name
 Type1: Type
 Type2: Type
 Attack: 0
@@ -15,11 +14,12 @@ XP: 0
 NextLevelXP: 0
 Wild: 0
 EvolveLvl: 0
+UserSprite: XXX
+OppSprite: XXX
 
 +++++
 001)
 Name: Bulbasaur
-Image: bulbasaur.png
 Type1: Grass
 Type2: Poison
 Attack: 5
@@ -33,11 +33,12 @@ XP: 0
 NextLevelXP: 22
 Wild: 1
 EvolveLvl: 16
+UserSprite: UserBulbasaur
+OppSprite: OppBulbasaur
 
 +++++
 002)
 Name: Ivysaur
-Image: ivysaur.png
 Type1: Grass
 Type2: Poison
 Attack: 6
@@ -51,11 +52,12 @@ XP: 0
 NextLevelXP: 31
 Wild: 1
 EvolveLvl: 32
+UserSprite: UserIvysaur
+OppSprite: OppIvysaur
 
 +++++
 003)
-Name: Venusar
-Image: venusar.png
+Name: Venusaur
 Type1: Grass
 Type2: Poison
 Attack: 8
@@ -69,11 +71,12 @@ XP: 0
 NextLevelXP: 45
 Wild: 1
 EvolveLvl: 0
+UserSprite: UserVenusaur
+OppSprite: OppVenusaur
 
 +++++
 004)
 Name: Charmander
-Image: charmander.png
 Type1: Fire
 Type2: Type
 Attack: 5
@@ -87,11 +90,12 @@ XP: 0
 NextLevelXP: 18
 Wild: 1
 EvolveLvl: 16
+UserSprite: UserCharmander
+OppSprite: OppCharmander
 
 +++++
 005)
 Name: Charmeleon
-Image: charmeleon.png
 Type1: Fire
 Type2: Type
 Attack: 6
@@ -105,11 +109,12 @@ XP: 0
 NextLevelXP: 31
 Wild: 1
 EvolveLvl: 36
+UserSprite: UserCharmeleon
+OppSprite: OppCharmeleon
 
 +++++
 006)
 Name: Charizard
-Image: charizard.png
 Type1: Fire
 Type2: Flying
 Attack: 8
@@ -123,3 +128,5 @@ XP: 0
 NextLevelXP: 45
 Wild: 1
 EvolveLvl: 0
+UserSprite: UserCharizard
+OppSprite: OppCharizard

@@ -14,6 +14,7 @@ Stores all the attributes of a pokemon, getter/setter functions for the proper v
 #include <iostream>
 #include <string>
 #include "Location.h"
+#include "Sprite.h"
 #include <string>
 #include <vector>
 #include "Move.h"
@@ -24,7 +25,7 @@ class Pokemon
 {
 public:
 	Pokemon();
-	Pokemon(int, int, int, int, int, int, string, string, int, int, int, int, int, Type, Type);
+	Pokemon(int, int, int, int, int, int, Sprite ,Sprite , string, int, int, int, int, int, Type, Type);
 	string getName();
 	int getAtk();
 	int getDef();
@@ -32,7 +33,8 @@ public:
 	int getSpAtk();
 	int getSpDef();
 	int getSpeed();
-	string getImage();
+	Sprite getUserImage();	//get user pokemon sprite
+	Sprite getOppImage();	//get opponent pokemon sprite
 	int isWild();
 	int getLevel();
 	int getXP();
@@ -45,7 +47,8 @@ public:
 	void setSpAtk(int);
 	void setSpDef(int);
 	void setSpeed(int);
-	void setImage(string);
+	void setUserImage(Sprite);
+	void setOppImage(Sprite);
 	void setWild(int);
 	void setLevel(int);
 	void setXP(int);
@@ -78,7 +81,8 @@ private:
 	int my_SpDef;
 	int my_speed;
 	string my_name;
-	string my_image;
+	Sprite user_image;
+	Sprite opp_image;
 	int my_level;
 	int my_XP;
 	int my_nexLvlXP;

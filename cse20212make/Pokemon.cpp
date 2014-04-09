@@ -23,7 +23,7 @@ Pokemon::Pokemon()
 	return;
 }
 
-Pokemon::Pokemon(int atk, int def, int HP, int spAtk, int spDef, int speed, string image, string name, int lvl, int XP, int nextlvlXP, int wild, int evolveLvl, Type t1, Type t2)
+Pokemon::Pokemon(int atk, int def, int HP, int spAtk, int spDef, int speed, Sprite user,Sprite opp, string name, int lvl, int XP, int nextlvlXP, int wild, int evolveLvl, Type t1, Type t2)
 {
 	my_index = 0;
 	my_Atk = atk;
@@ -34,7 +34,6 @@ Pokemon::Pokemon(int atk, int def, int HP, int spAtk, int spDef, int speed, stri
 	my_SpDef = spDef;
 	my_speed = speed;
 	my_name = name;
-	my_image = image;
 	my_level = lvl;
 	my_XP = XP;
 	my_nexLvlXP = nextlvlXP;
@@ -42,6 +41,8 @@ Pokemon::Pokemon(int atk, int def, int HP, int spAtk, int spDef, int speed, stri
 	my_evolveLvl = evolveLvl;
 	my_types.push_back(t1);
 	my_types.push_back(t2);
+	user_image=user;
+	opp_image=opp;
 }
 
 int Pokemon::getEvolveLevel()
@@ -59,9 +60,14 @@ string Pokemon::getName()
 	return my_name;
 }
 
-string Pokemon::getImage()
+Sprite Pokemon::getUserImage()
 {
-	return my_image;
+	return user_image;
+}
+
+Sprite Pokemon::getOppImage()
+{
+	return opp_image;
 }
 
 int Pokemon::getAtk()
@@ -154,9 +160,14 @@ void Pokemon::setSpeed(int speed)
 	my_speed = speed;
 }
 
-void Pokemon::setImage(string image)
+void Pokemon::setUserImage(Sprite image)
 {
-	my_image = image;
+	user_image = image;
+}
+
+void Pokemon::setOppImage(Sprite image)
+{
+	opp_image = image;
 }
 
 void Pokemon::setWild(int wild)

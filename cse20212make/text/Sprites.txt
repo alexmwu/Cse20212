@@ -105,3 +105,111 @@ X: 205
 Y: 103
 Height: 15
 Width: 15
+
++++++
+012)
+Sheet: 9
+Name: UserBulbasaur
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppBulbasaur
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserIvysaur
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppIvysaur
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserVenusaur
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppVenusaur
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserCharmander
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppCharmander
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserCharmeleon
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppCharmeleon
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserCharizard
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppCharizard
+X: 0
+Y: 0
+Height: 64
+Width: 64
