@@ -53,7 +53,6 @@ public:
 	void play();		//play
 	void displayMap();		//display map graphically
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
-	void toScreen(SDL_Surface*);	//send a surface to the screen
 	
 private:
 	vector<Pokemon> my_pokemon;

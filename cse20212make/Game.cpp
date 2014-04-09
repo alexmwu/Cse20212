@@ -61,7 +61,7 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 
 	Pokeball pb1 = Pokeball(1);
 	my_pokeballs.push_back(pb1);
-	battle(p1,p2);
+	//battle(p1,p2);
 
 }
 
@@ -167,6 +167,16 @@ void Game::quitSDL(){
 		SDL_FreeSurface(trainers);	//free trainers
 		SDL_FreeSurface(battlescene);
 		SDL_FreeSurface(screen);
+
+		SDL_FreeSurface(battlepokemon);
+		SDL_FreeSurface(battlemenu);
+		SDL_FreeSurface(buildings);
+		SDL_FreeSurface(environment);
+		SDL_FreeSurface(envpokemon);
+		SDL_FreeSurface(heroes);
+		SDL_FreeSurface(misc);
+		SDL_FreeSurface(npcs);
+		SDL_FreeSurface(pokemenu);
 		SDL_Quit();		//auto frees the screen
 }
 
@@ -501,11 +511,12 @@ void Game::battle(Pokemon user, Pokemon opp)
 	double strength = 0;
 	cout << "Pokemon Battle" << endl << endl;
 	cout << user.getName() << " VS " << opp.getName() << endl;
-while (user.getHP() > 0 && opp.getHP() > 0)
-	{
 		user.getUserImage().display(20,400,battlescene);
 		opp.getOppImage().display(560,20,battlescene);
-		toScreen(battlescene);
+		SDL_Flip(battlescene);
+while (user.getHP() > 0 && opp.getHP() > 0)
+	{
+		
 
 		cout << endl << endl << endl;
 		oppMove = rand() % opp.getMoves().size();
@@ -590,21 +601,23 @@ while (user.getHP() > 0 && opp.getHP() > 0)
 
 void Game::displayMap(){
 SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
-	for(int i=0;i<my_map.size();i++){
+	for(int i=0;i<my_map[0].size();i++){
 
-		for(int j=0;j<my_map[0].size();j++){
-			my_map[i][j].getSprite().display(i*15,j*15,map);
+		for(int j=0;j<my_map.size();j++){
+			my_map[j][i].getSprite().display(i*15,j*15,map);
 		}
 
 	}
-	toScreen(map);
+
+	SDL_Flip(map);
+	//SDL_Flip(battlescene);
 }
 
 
 void Game::play(){
 	int quit=0;
 
-displayMap();
+	displayMap();
 	//While the user hasn't quit
 	while (!quit)
 	{
@@ -624,15 +637,6 @@ quitSDL();
 
 }
 
-
-void Game::toScreen(SDL_Surface* source){
-SDL_Rect fullscreen;
-fullscreen.x=0;
-fullscreen.y=0;
-
-SDL_BlitSurface(source,NULL,screen,NULL);
-SDL_Flip(screen);
-}
 
 
 void Game::applySurface(int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip)
