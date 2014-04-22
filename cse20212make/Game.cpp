@@ -560,7 +560,7 @@ Move Game::getMove(string name)
 }
 
 
-pair<int, int> battle(Pokemon*, Pokemon*)
+pair<int, int> battle(Pokemon* user, Pokemon* opp)
 {
 	pair<int, int> returnVal = pair<int,int>(0, 0);
 	int move = 0;
@@ -568,7 +568,7 @@ pair<int, int> battle(Pokemon*, Pokemon*)
 	double strength = 0;
 	int canMove = 1;
 	cout << user.getName() << " VS " << opp.getName() << endl;
-	displayBattle(user,opp);
+	//displayBattle(user,opp);
 while (user->getHP() > 0 && opp->getHP() > 0)
 	{
 		canMove = 1;
