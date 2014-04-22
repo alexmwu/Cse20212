@@ -13,6 +13,7 @@ stores a list of pokemon objects that can be used in the Pokemon interfaces
 #include <vector>
 #include "Item.h"
 #include "Location.h"
+#include "Trainer.h"
 using namespace std;
 
 Trainer::Trainer()
