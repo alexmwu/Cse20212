@@ -3,7 +3,7 @@ Alex Hansen
 Potion.h
 
 Potion Class.
-Class extedning item, used for an item to heal HP ~ Potion
+Class extending item, used for an item to heal HP ~ Potion
 */
 
 #ifndef POTION_H
@@ -12,6 +12,7 @@ Class extedning item, used for an item to heal HP ~ Potion
 #include <iostream>
 #include <string>
 #include "Item.h"
+#include "Pokemon.h"
 
 using namespace std;
 

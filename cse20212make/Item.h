@@ -11,7 +11,6 @@ abstract class that will be used for portions, and elixers and such, as well as 
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-#include "Pokeball.h"
 
 using namespace std;
 
