@@ -17,6 +17,7 @@ stores a list of pokemon objects that can be used in the Pokemon interfaces
 #include <vector>
 #include "Item.h"
 #include "Location.h"
+#include "Potion.h"
 using namespace std;
 
 class Trainer
