@@ -585,7 +585,7 @@ while (user->getHP() > 0 && opp->getHP() > 0)
 		if (move == user->getMoves().size())
 		{
 			canMove = 0;
-			if (my_pokeballs[0].canCatch(opp))
+			if (my_pokeballs[0].canCatch(*opp))
 			{
 				returnVal.first = 3;
 				return returnVal;
