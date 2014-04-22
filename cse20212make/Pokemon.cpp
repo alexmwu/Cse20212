@@ -43,6 +43,7 @@ Pokemon::Pokemon(int atk, int def, int HP, int spAtk, int spDef, int speed, Spri
 	my_types.push_back(t2);
 	user_image=user;
 	opp_image=opp;
+	my_multFact = my_level / 33.0;
 }
 
 int Pokemon::getEvolveLevel()
@@ -72,27 +73,27 @@ Sprite Pokemon::getOppImage()
 
 int Pokemon::getAtk()
 {
-	return my_Atk;
+	return my_Atk * my_multFact;
 }
 
 int Pokemon::getSpAtk()
 {
-	return my_SpAtk;
+	return my_SpAtk * my_multFact;
 }
 
 int Pokemon::getDef()
 {
-	return my_Def;
+	return my_Def * my_multFact;
 }
 
 int Pokemon::getSpDef()
 {
-	return my_SpDef;
+	return my_SpDef * my_multFact;
 }
 
 int Pokemon::getSpeed()
 {
-	return my_speed;
+	return my_speed * my_multFact;
 }
 
 int Pokemon::getHP()
@@ -142,6 +143,10 @@ void Pokemon::setDef(int Def)
 
 void Pokemon::setHP(int HP)
 {
+	if (HP < 0)
+		HP = 0;
+	if (HP > my_maxHP)
+		HP = my_maxHP;
 	my_HP = HP;
 }
 
@@ -178,6 +183,10 @@ void Pokemon::setWild(int wild)
 void Pokemon::setLevel(int level)
 {
 	my_level = level;
+	my_multFact = 1 / 33.0 * my_level;
+	my_HP *= my_multFact;
+	my_maxHP *= my_multFact;
+	my_battleXP = my_XP * my_multFact;
 }
 
 void Pokemon::setXP(int XP)
@@ -238,14 +247,16 @@ void Pokemon::battlePrint()
 {
 	int i = 0;
 	cout << my_name << endl;
-	cout << "HP: " << my_HP << " " << endl;
+	cout << "HP: " << getHP() << " " << endl;
 	cout << "Moves: " << endl;
 	for (i = 0; i < my_moves.size(); i++)
 	{
 		cout << i << ")" << " ";
 		my_moves[i].print();
-	}
-	cout << i << ")" << " Throw Pokeball." << endl;
+	}		
+	cout << i << ")  Throw Pokeball." << endl;
+	cout << ++i << ") Switch Pokemon" << endl;
+	cout << ++i << ") Use an Item." << endl;
 }
 
 Move Pokemon::getMove(int num)
@@ -264,13 +275,19 @@ void Pokemon::useMove(Pokemon *opp, int move, double strength)
 	f[3] = getLevel();
 	f[4] = opp->getDef();
 	f[5] = strength;
-	f[6] = rand() % 38 + 217;
+	f[6] = rand() % 39 + 152;
 
-	calc = (((((2.0 * f[0]) / 5 + 2)*f[1] * f[2]) / ((f[3] * f[4]) + 2) * f[5] * f[6])) / 255 + 1;
+	//calc = (((((2.0 * f[0]) / 5 + 2)*f[1] * f[2]) / ((f[3] * f[4]) + 2) * f[5] * f[6])) / 255 + 1;
+	calc = (1.0 * f[1] * f[2] * f[5]) / (f[4]) * (f[6] / 464.0);
 	HPLoss = calc / 1;
 	opp->setHP(opp->getHP() - HPLoss);
 	cout << getName() << " used " << getMove(move).getName() << endl;
 
+}
+
+int Pokemon::battleEXP()
+{
+	return my_battleXP;
 }
 
 void Pokemon::evolve()

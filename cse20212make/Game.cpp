@@ -52,9 +52,8 @@ Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
 	initializeTypes();
 	initializeTypeChart();
 	initializeMoves();
-	initializePokemon();	
-
-
+	initializePokemon();
+	initializeTrainers();
 }
 
 
@@ -468,7 +467,7 @@ void Game::initializeMoves()
 				myfile >> attribute[3];
 				myfile >> attribute[4];
 				myfile >> attribute[5];
-				                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     myfile >> attribute[6];
+				myfile >> attribute[6];
 				myfile >> attribute[7];
 				myfile >> attribute[8];
 				myfile >> attribute[9];
@@ -485,6 +484,70 @@ void Game::initializeMoves()
 	}
 }
 
+void Game::initializeTrainers()
+{
+	string file = "text/Trainers.txt";
+	ifstream myfile;
+	myfile.open(file.c_str());
+	string line;
+	Trainer temp = Trainer();
+	int newTrainer = 0;
+	Location loc = Location();
+	if (myfile.is_open())
+	{
+		while (!myfile.eof())
+		{
+			getline(myfile, line);
+			stringstream ss(line);
+			istream_iterator<string> begin(ss);
+			istream_iterator<string> end;
+			vector<string> tokens(begin, end);
+			if (tokens.size() <= 0)
+			{
+				continue;
+			}
+			else if (tokens[0] == "+++++")
+			{
+				newTrainer = 1;
+				getline(myfile, line);
+			}
+			else if (tokens[0] == "###")
+			{
+				newTrainer = 3;
+			}
+			else if (newTrainer == 1)
+			{
+				newTrainer = 2;
+				loc = Location(atoi(tokens[2].c_str()), atoi(tokens[3].c_str()));
+				temp = Trainer(tokens[1], loc);				
+			}
+			else if (newTrainer == 2)
+			{
+				Pokemon pTemp = Pokemon();
+				for (int i = 0; i < tokens.size(); i++)
+				{		
+					if (i == 0)
+						pTemp = getPokemon(tokens[i]);
+					else if (i == 1)
+						pTemp.setLevel(atoi(tokens[i].c_str()));
+					else
+						pTemp.addMove(getMove(tokens[i]));
+				}
+				pTemp.setName(pTemp.getName());
+				Pokemon * ptt = &pTemp;
+				temp.addToParty(pTemp);
+			}
+			if (newTrainer == 3)
+			{
+				my_trainers.push_back(temp);
+				newTrainer = 0;
+			}			
+			tokens.clear();
+		}
+	}
+
+}
+
 Move Game::getMove(string name)
 {
 	Move m = Move();
@@ -499,102 +562,260 @@ Move Game::getMove(string name)
 
 void Game::battle(Pokemon user, Pokemon opp)
 {
+	pair<int, int> returnVal = pair<int,int>(0, 0);
 	int move = 0;
 	int oppMove = 0;
 	double strength = 0;
-	cout << "Pokemon Battle" << endl << endl;
+	int canMove = 1;
 	cout << user.getName() << " VS " << opp.getName() << endl;
 	displayBattle(user,opp);
-while (user.getHP() > 0 && opp.getHP() > 0)
+while (user->getHP() > 0 && opp->getHP() > 0)
 	{
-		
-
-		cout << endl << endl << endl;
-		oppMove = rand() % opp.getMoves().size();
-		opp.oppPrint();
+		canMove = 1;
+		oppMove = rand() % opp->getMoves().size();
+		opp->oppPrint();
 		cout << endl;
-		user.battlePrint();
+		user->battlePrint();
 		cout << "Which move would you like to use?" << endl;
 		cin >> move;
 		cout << endl;		
 
-		if (user.getSpeed() >= opp.getSpeed())
+		if (move == user->getMoves().size())
 		{
-			if (move == user.getMoves().size())
+			canMove = 0;
+			if (my_pokeballs[0].canCatch(opp))
 			{
-				if (my_pokeballs[0].canCatch(opp))
-				{
-					break;
-				}
+				returnVal.first = 3;
+				return returnVal;
 			}
-			else
+		}
+		else if (move == user->getMoves().size() + 1)
+		{
+			returnVal.first = 1;
+			returnVal.second = user->getHP();
+			return returnVal;
+		}
+		else if (move == user->getMoves().size() + 2)
+		{
+			canMove = 0;
+			returnVal.first = 4;
+			return returnVal;
+		}
+
+		if (user->getSpeed() >= opp->getSpeed() && canMove)
+		{
+			
+			strength = getTypeStrength(user->getMove(move).getType(), opp->getType()[0]);
+			if (opp->getType()[1].getName() != "")
+				strength *= getTypeStrength(user->getMove(move).getType(), opp->getType()[1]);
+			user->useMove(opp, move, strength);
+
+			if (opp->getHP() <= 0)
 			{
-				strength = getTypeStrength(user.getMove(move).getType(), opp.getType()[0]);
-				if (user.getType()[1].getName() != "")
-					strength *= getTypeStrength(user.getMove(move).getType(), opp.getType()[1]);
-				user.useMove(&opp, move, strength);
-
-				if (opp.getHP() <= 0)
-				{
-					cout << opp.getName() << " has fainted." << endl;
-					break;
-				}
+				cout << opp->getName() << " has fainted." << endl << endl;
+				returnVal.first = 2;
+				return returnVal;
 			}
 
-			strength = getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[0]);
-			if (user.getType()[1].getName() != "")
-				strength *= getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[1]);
-			opp.useMove(&user, oppMove, strength);
+			strength = getTypeStrength(opp->getMove(oppMove).getType(), user->getType()[0]);
+			if (user->getType()[1].getName() != "")
+				strength *= getTypeStrength(opp->getMove(oppMove).getType(), user->getType()[1]);
+			opp->useMove(user, oppMove, strength);
 
-			if (user.getHP() <= 0)
+			if (user->getHP() <= 0)
 			{
-				cout << user.getName() << " has fainted." << endl;
-				break;
+				cout << user->getName() << " has fainted." << endl << endl;
+				returnVal.first = 0;
+				return returnVal;
 			}
+		}
+		else if (canMove)
+		{
+			strength = getTypeStrength(opp->getMove(oppMove).getType(), user->getType()[0]);
+			if (user->getType()[1].getName() != "")
+				strength *= getTypeStrength(opp->getMove(oppMove).getType(), user->getType()[1]);
+			opp->useMove(user, oppMove, strength);
+
+
+			if (user->getHP() <= 0)
+			{
+				cout << user->getName() << " has fainted." << endl << endl;
+				returnVal.first = 0;
+				return returnVal;
+			}
+
+			strength = getTypeStrength(user->getMove(move).getType(), opp->getType()[0]);
+			if (user->getType()[1].getName() != "")
+				strength *= getTypeStrength(user->getMove(move).getType(), opp->getType()[1]);
+			user->useMove(opp, move, strength);
+
+			if (opp->getHP() <= 0)
+			{
+				cout << opp->getName() << " has fainted." << endl << endl;
+				returnVal.first = 2;
+				return returnVal;
+			}
+
 		}
 		else
 		{
-			strength = getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[0]);
-			if (user.getType()[1].getName() != "")
-				strength *= getTypeStrength(opp.getMove(oppMove).getType(), user.getType()[1]);
-			user.useMove(&user, oppMove, strength);
+			strength = getTypeStrength(opp->getMove(oppMove).getType(), user->getType()[0]);
+			if (user->getType()[1].getName() != "")
+				strength *= getTypeStrength(opp->getMove(oppMove).getType(), user->getType()[1]);
+			opp->useMove(user, oppMove, strength);
 
 
-			if (user.getHP() <= 0)
+			if (user->getHP() <= 0)
 			{
-				cout << user.getName() << " has fainted." << endl;
-				break;
-			}
-
-			if (move == user.getMoves().size())
-			{
-				if (my_pokeballs[0].canCatch(opp))
-				{
-					break;
-				}
-			}
-			else
-			{
-				strength = getTypeStrength(user.getMove(move).getType(), opp.getType()[0]);
-				if (user.getType()[1].getName() != "")
-					strength *= getTypeStrength(user.getMove(move).getType(), opp.getType()[1]);
-				user.useMove(&opp, move, strength);
-
-				if (opp.getHP() <= 0)
-				{
-					cout << opp.getName() << " has fainted." << endl;
-					break;
-				}
+				cout << user->getName() << " has fainted." << endl << endl;
+				returnVal.first = 0;
+				return returnVal;
 			}
 		}
 	}
+	returnVal.first = 5;
+	return returnVal;
 }
 
+void Game::battle(Trainer *user, Trainer *opp)
+{
+	cout << user->getName() << " VS " << opp->getName() << endl;
+	int swap = -1;
+	int item = -1;
+	int uA = 0;
+	int oA = 0;
+	Item potion = Item();
+	Pokemon userA = user->getPokemon(uA);
+	Pokemon oppA = opp->getPokemon(oA);
+	Pokemon swapper = Pokemon();
+	while (user->getNumPokemonAvalible() > 0 && opp->getNumPokemonAvalible() > 0)
+	{
+		pair<int, int> num = battle(&userA, &oppA);
+		if (num.first == 1)
+		{
+			user->swapPokemon(uA, num.second);
+			user->printPokemon();
+			while (1)
+			{
+				while (swap < 0 || swap > user->getParty().size())
+				{
+					cout << "Which Pokemon do you want to swap?" << endl;
+					cin >> swap;
+				}
+				swapper = user->getPokemon(swap);
+				if (swapper.getHP() == 0)
+				{
+					cout << "That Pokemon has fainted, try again" << endl;
+					swap = -1;
+					continue;
+				}
+				userA = user->getPokemon(swap);
+				num.first = -1;
+				swap = -1;
+				break;
+			}			
+		}
+		else if (num.first == 0)
+		{
+			user->swapPokemon(uA, 0);
+			if (user->getNumPokemonAvalible() == 0)
+				break;
+			user->printPokemon();
+			while (1)
+			{
+				while (swap < 0 || swap > user->getParty().size())
+				{
+					cout << "Which Pokemon do you want to swap?" << endl;
+					cin >> swap;
+				}
+				swapper = user->getPokemon(swap);
+				if (swapper.getHP() == 0)
+				{
+					cout << "That Pokemon has fainted, try again" << endl;
+					swap = -1;
+					continue;
+				}
+				userA = user->getPokemon(swap);
+				uA = swap;
+				num.first = -1;
+				swap = -1;
+				break;
+			}
+		}
+		else if (num.first == 2)
+		{
+			opp->swapPokemon(oA, 0);
+			if (opp->getNumPokemonAvalible() == 0)
+				break;
+			while (1)
+			{
+				swap = rand() % (opp->getParty().size());
+				swapper = opp->getPokemon(swap);
+				if (swapper.getHP() == 0)
+				{
+					swap = -1;
+					continue;
+				}
+				oppA = opp->getPokemon(swap);
+				num.first = -1;
+				swap = -1;
+				break;
+			}
+		}
+		else if (num.first == 3)
+		{
+			user->addToParty(oppA);
+			return;
+		}
+		else if (num.first == 4)
+		{
+			user->printPotions();
+			while (item < 0 || item > user->getPotions().size())
+			{
+				cout << "What item do you want to use?" << endl;
+				cin >> item;
+			}
+			user->printPokemon();
+			while (swap < 0 || swap > user->getParty().size())
+			{
+				cout << "Which Pokemon do you want to use this on?" << endl;
+				cin >> swap;
+			}
+			user->usePotion(item, user->getPokemon(swap));
+			num.first = -1;
+			swap = -1;
+		}
+		cout << endl;
+	}	
+	if (user->getNumPokemonAvalible() == 0)
+		cout << "You lost all your Pokemon, you blacked out." << endl;
+	else
+		cout << "Congratulations, you beat " << opp->getName() << endl;
+	return;
+}
+
+Pokemon Game::getPokemon(string name)
+{
+	for (int i = 0; i < my_pokemon.size(); i++)
+	{
+		if (my_pokemon[i].getName() == name)
+			return my_pokemon[i];
+	}
+	Pokemon p = Pokemon();
+	return p;
+}
 
 void Game::whiteScreen(){
 SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
 }
 
+void Game::printPokemon()
+{
+	for (int i = 0; i < my_pokemon.size(); i++)
+	{
+		cout << i << ") " << my_pokemon[i].getName() << " " << my_pokemon[i].getType()[0].getName() << " " << my_pokemon[i].getType()[1].getName() << endl;
+	}
+}
 
 void Game::displayBattle(Pokemon user, Pokemon opp){
 		whiteScreen();
@@ -623,18 +844,11 @@ void Game::displayMap(){
 void Game::play(){
 	int quit=0;
 
-	Pokemon p1 = my_pokemon[2];
-	Pokemon p2 = my_pokemon[5];
-
-	p1.addMove(my_moves[0]);
-	p2.addMove(my_moves[1]);
-	p2.addMove(my_moves[2]);
-
-	Pokeball pb1 = Pokeball(1);
-	my_pokeballs.push_back(pb1);
-
 	displayMap();
-	battle(p1,p2);
+	
+	Trainer user = my_trainers[0];
+	Trainer opp = my_trainers[2];
+	battle(&user, &opp);
 	
 	//While the user hasn't quit
 	while (!quit)

@@ -3,6 +3,7 @@
 #include <string>
 #include "Pokemon.h"
 #include "Pokeball.h"
+#include "Item.h"
 using namespace std;
 
 Pokeball::Pokeball()

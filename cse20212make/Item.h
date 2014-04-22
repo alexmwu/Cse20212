@@ -31,5 +31,4 @@ public:
 	int my_battleItem;
 	int my_outsideItem;
 };
-
 #endif

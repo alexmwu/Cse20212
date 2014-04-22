@@ -12,22 +12,20 @@ Stores the sprite sheet, location on the sheet, and height and width of the spri
 #include <iostream>
 #include <string>
 #include "Pokemon.h"
+#include "Item.h"
 
 using namespace std;
 
-class Pokeball
+class Pokeball : Item
 {
 public:
 	Pokeball();
-	Pokeball(int);
+	Pokeball(string, int, int,  int);
 	void setStrength(int);
 	int getStrength();
-	int canCatch(Pokemon);
+	int canCatch(Pokemon *);
 private:
 	int my_strength;
+	string my_name;
 };
-
-
-
-
 #endif

@@ -1,0 +1,22 @@
++++++
+000)
+Name: Alex 4 18
+Charmander 100 Ember Scratch
+Bulbasaur 100 Tackle
+Wartortle 100 Bubble
+###
+
++++++
+001)
+Name: Alex2 3 13
+Eevee 100 Scratch
+Abra 100 Tackle
+###
+
++++++
+002)
+Name: Trainer2 2 2
+Blastoise 100 Bubble Tackle
+Pidgeotto 100 Tackle 
+Sandshrew 100 Scratch
+###

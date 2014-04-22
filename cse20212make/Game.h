@@ -26,6 +26,9 @@ Basically the running file for the entire game
 #include "Pokeball.h"
 #include "Timer.h"
 #include <time.h>
+#include "Item.h"
+#include "Potion.h"
+#include "Trainer.h"
 
 using namespace std;
 
@@ -49,8 +52,11 @@ public:
 	Type getType(string);
 	void initializeMoves();
 	
-	void battle(Pokemon, Pokemon);		//need to change to trainer v trainer
-	
+	pair<int, int> battle(Pokemon*, Pokemon*);
+	void battle(Trainer*, Trainer*);	//need to change to trainer v trainer
+	Pokemon getPokemon(string);
+	void initializeTrainers();
+	void printPokemon()
 	Move getMove(string);
 	void test();
 	void play();		//play
@@ -69,6 +75,7 @@ private:
 	vector<vector<char> > my_typeChart;
 	vector<Move> my_moves;
 	vector<Pokeball> my_pokeballs;
+	vector<Trainer> my_trainers;
 
 	SDL_Surface *battlepokemon;	//in-battle pokemon sprites
 	SDL_Surface *battlemenu;	//battle menu sprite sheet

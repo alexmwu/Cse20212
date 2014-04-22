@@ -67,6 +67,7 @@ public:
 	int getMaxHP();
 	void setMaxHP(int);
 	void useMove(Pokemon*, int, double);
+	int battleEXP();
 	//void useMove(Move m);
 	//Type getType();
 	//Item getEquipped();
@@ -91,6 +92,7 @@ private:
 	int my_maxHP;
 	vector<Move> my_moves;
 	vector<Type> my_types;
-
+	double my_multFact;
+	int my_battleXP;
 };
 #endif

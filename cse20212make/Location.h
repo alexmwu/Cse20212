@@ -28,7 +28,4 @@ private:
 	int my_x;
 	int my_y;
 };
-
-
-
 #endif

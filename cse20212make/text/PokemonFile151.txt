@@ -1,0 +1,2737 @@
++++++
+000)
+Name: Name
+Image: Name
+Type1: Type
+Type2: Type
+Attack: 0
+Defense: 0
+SpAtk: 0
+SpDef: 0
+HP: 0
+Speed: 0
+Level: 0
+XP: 0
+NextLevelXP: 0
+Wild: 0
+EvolveLvl: 0
+
++++++
+001)
+Name: Bulbasaur
+Image: bulbasaur.png
+Type1: Grass
+Type2: Poison
+Attack: 49
+Defense: 49
+SpAtk: 65
+SpDef: 65
+HP: 45
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 64
+Wild: 1
+EvolveLvl: 16
+
++++++
+002)
+Name: Ivysaur
+Image: ivysaur.png
+Type1: Grass
+Type2: Poison
+Attack: 62
+Defense: 63
+SpAtk: 80
+SpDef: 80
+HP: 60
+Speed: 60
+Level: 5
+XP: 0
+NextLevelXP: 141
+Wild: 1
+EvolveLvl: 32
+
++++++
+003)
+Name: Venusaur
+Image: venusaur.png
+Type1: Grass
+Type2: Poison
+Attack: 82
+Defense: 83
+SpAtk: 100
+SpDef: 100
+HP: 80
+Speed: 80
+Level: 5
+XP: 0
+NextLevelXP: 208
+Wild: 1
+EvolveLvl: 0
+
++++++
+004)
+Name: Charmander
+Image: charmander.png
+Type1: Fire
+Type2: Type
+Attack: 53
+Defense: 43
+SpAtk: 60
+SpDef: 50
+HP: 39
+Speed: 65
+Level: 5
+XP: 0
+NextLevelXP: 65
+Wild: 1
+EvolveLvl: 16
+
++++++
+005)
+Name: Charmeleon
+Image: charmeleon.png
+Type1: Fire
+Type2: Type
+Attack: 64
+Defense: 58
+SpAtk: 80
+SpDef: 65
+HP: 58
+Speed: 80
+Level: 5
+XP: 0
+NextLevelXP: 142
+Wild: 1
+EvolveLvl: 36
+
++++++
+006)
+Name: Charizard
+Image: charizard.png
+Type1: Fire
+Type2: Flying
+Attack: 84
+Defense: 78
+SpAtk: 109
+SpDef: 85
+HP: 78
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 209
+Wild: 1
+EvolveLvl: 0
+
++++++
+007)
+Name: Squirtle
+Image: squirtle.png
+Type1: Water
+Type2: Type
+Attack: 48
+Defense: 65
+SpAtk: 50
+SpDef: 64
+HP: 44
+Speed: 43
+Level: 5
+XP: 0
+NextLevelXP: 66
+Wild: 1
+EvolveLvl: 16
+
++++++
+008)
+Name: Wartortle
+Image: wartortle.png
+Type1: Water
+Type2: Type
+Attack: 63
+Defense: 80
+SpAtk: 65
+SpDef: 80
+HP: 59
+Speed: 58
+Level: 5
+XP: 0
+NextLevelXP: 143
+Wild: 1
+EvolveLvl: 36
+
++++++
+009)
+Name: Blastoise
+Image: blastoise.png
+Type1: Water
+Type2: Type
+Attack: 83
+Defense: 100
+SpAtk: 85
+SpDef: 105
+HP: 79
+Speed: 78
+Level: 5
+XP: 0
+NextLevelXP: 210
+Wild: 1
+EvolveLvl: 0
+
++++++
+010)
+Name: Caterpie
+Image: caterpie.png
+Type1: Water
+Type2: Type
+Attack: 30
+Defense: 35
+SpAtk: 20
+SpDef: 20
+HP: 45
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 53
+Wild: 1
+EvolveLvl: 7
+
++++++
+011)
+Name: Metapod 
+Image: metapod.png
+Type1: Water
+Type2: Type
+Attack: 20
+Defense: 55
+SpAtk: 25
+SpDef: 25
+HP: 50
+Speed: 30
+Level: 5
+XP: 0
+NextLevelXP: 72
+Wild: 1
+EvolveLvl: 10
+
++++++
+012)
+Name: Butterfree
+Image: butterfree.png
+Type1: Bug
+Type2: Flying
+Attack: 45
+Defense: 50
+SpAtk: 80
+SpDef: 80
+HP: 60
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 160
+Wild: 1
+EvolveLvl: 0
+
++++++
+013)
+Name: Weedle
+Image: weedle.png
+Type1: Bug
+Type2: Poison
+Attack: 35
+Defense: 30
+SpAtk: 20
+SpDef: 20
+HP: 40
+Speed: 50
+Level: 5
+XP: 0
+NextLevelXP: 52
+Wild: 1
+EvolveLvl: 7
+
++++++
+014)
+Name: Kakuna
+Image: kahkuna.png
+Type1: Bug
+Type2: Poison
+Attack: 25
+Defense: 50
+SpAtk: 25
+SpDef: 25
+HP: 45
+Speed: 35
+Level: 5
+XP: 0
+NextLevelXP: 71
+Wild: 1
+EvolveLvl: 10
+
++++++
+015)
+Name: Beedrill
+Image: bedril.png
+Type1: Bug
+Type2: Poison
+Attack: 80
+Defense: 40
+SpAtk: 45
+SpDef: 80
+HP: 65
+Speed: 75
+Level: 5
+XP: 0
+NextLevelXP: 159
+Wild: 1
+EvolveLvl: 0
+
++++++
+016)
+Name: Pidgey
+Image: pidgey.png
+Type1: Normal
+Type2: Flying
+Attack: 45
+Defense: 40
+SpAtk: 35
+SpDef: 35
+HP: 40
+Speed: 56
+Level: 5
+XP: 0
+NextLevelXP: 55
+Wild: 1
+EvolveLvl: 18
+
++++++
+017)
+Name: Pidgeotto
+Image: pidgeotto.png
+Type1: Normal
+Type2: Flying
+Attack: 60
+Defense: 55
+SpAtk: 50
+SpDef: 50
+HP: 63
+Speed: 71
+Level: 5
+XP: 0
+NextLevelXP: 113
+Wild: 1
+EvolveLvl: 36
+
++++++
+018)
+Name: Pidgeot
+Image: pidgeot.png
+Type1: Normal
+Type2: Flying
+Attack: 80
+Defense: 75
+SpAtk: 70
+SpDef: 70
+HP: 83
+Speed: 91
+Level: 5
+XP: 0
+NextLevelXP: 172
+Wild: 1
+EvolveLvl: 0
+
++++++
+019)
+Name: Rattata
+Image: rattata.png
+Type1: Normal
+Type2: Type
+Attack: 56
+Defense: 35
+SpAtk: 25
+SpDef: 35
+HP: 30
+Speed: 72
+Level: 5
+XP: 0
+NextLevelXP: 57
+Wild: 1
+EvolveLvl: 20
+
++++++
+020)
+Name: Raticate
+Image: raticate.png
+Type1: Normal
+Type2: Type
+Attack: 81
+Defense: 60
+SpAtk: 50
+SpDef: 70
+HP: 55
+Speed: 97
+Level: 5
+XP: 0
+NextLevelXP: 116
+Wild: 1
+EvolveLvl: 0
+
++++++
+021)
+Name: Spearow
+Image: spearow.png
+Type1: Normal
+Type2: Flying
+Attack: 60
+Defense: 30
+SpAtk: 31
+SpDef: 31
+HP: 40
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 58
+Wild: 1
+EvolveLvl: 20
+
++++++
+022)
+Name: Fearow
+Image: fearow.png
+Type1: Normal
+Type2: Flying
+Attack: 90
+Defense: 65
+SpAtk: 61
+SpDef: 61
+HP: 65
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 162
+Wild: 1
+EvolveLvl: 0
+
++++++
+023)
+Name: Ekans
+Image: ekans.png
+Type1: Poison
+Type2: Type
+Attack: 60
+Defense: 44
+SpAtk: 40
+SpDef: 54
+HP: 35
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 62
+Wild: 1
+EvolveLvl: 22
+
++++++
+024)
+Name: Arbok
+Image: arbok.png
+Type1: Poison
+Type2: Type
+Attack: 85
+Defense: 69
+SpAtk: 65
+SpDef: 79
+HP: 60
+Speed: 80
+Level: 5
+XP: 0
+NextLevelXP: 147
+Wild: 1
+EvolveLvl: 0
+
++++++
+025)
+Name: Pikachu
+Image: pikachu.png
+Type1: Electric
+Type2: Type
+Attack: 55
+Defense: 30
+SpAtk: 50
+SpDef: 40
+HP: 35
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 82
+Wild: 1
+EvolveLvl: 30
+
++++++
+026)
+Name: Raichu
+Image: raichu.png
+Type1: Electric
+Type2: Type
+Attack: 90
+Defense: 55
+SpAtk: 90
+SpDef: 80
+HP: 60
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 122
+Wild: 1
+EvolveLvl: 0
+
++++++
+027)
+Name: Sandshrew
+Image: sandshrew.png
+Type1: Ground
+Type2: Type
+Attack: 75
+Defense: 85
+SpAtk: 20
+SpDef: 30
+HP: 50
+Speed: 40
+Level: 5
+XP: 0
+NextLevelXP: 93
+Wild: 1
+EvolveLvl: 22
+
++++++
+028)
+Name: Sandslash
+Image: sandslash.png
+Type1: Ground
+Type2: Type
+Attack: 100
+Defense: 110
+SpAtk: 45
+SpDef: 55
+HP: 75
+Speed: 65
+Level: 5
+XP: 0
+NextLevelXP: 163
+Wild: 1
+EvolveLvl: 0
+
++++++
+029)
+Name: Nidoran(F)
+Image: nidoranF.png
+Type1: Poison
+Type2: Type
+Attack: 47
+Defense: 53
+SpAtk: 40
+SpDef: 40
+HP: 55
+Speed: 41
+Level: 5
+XP: 0
+NextLevelXP: 59
+Wild: 1
+EvolveLvl: 16
+
++++++
+030)
+Name: Nidorina
+Image: nidorina.png
+Type1: Poison
+Type2: Type
+Attack: 62
+Defense: 67
+SpAtk: 55
+SpDef: 55
+HP: 70
+Speed: 56
+Level: 5
+XP: 0
+NextLevelXP: 117
+Wild: 1
+EvolveLvl: 34
+
++++++
+031)
+Name: Nidoqueen
+Image: nidoqueen.png
+Type1: Poison
+Type2: Ground
+Attack: 82
+Defense: 87
+SpAtk: 75
+SpDef: 85
+HP: 90
+Speed: 76
+Level: 5
+XP: 0
+NextLevelXP: 194
+Wild: 1
+EvolveLvl: 0
+
++++++
+032)
+Name: Nidoran(M) 
+Image: nidoranM.png
+Type1: Poison
+Type2: Type
+Attack: 57
+Defense: 40
+SpAtk: 40
+SpDef: 40
+HP: 46
+Speed: 50
+Level: 5
+XP: 0
+NextLevelXP: 60
+Wild: 1
+EvolveLvl: 16
+
++++++
+033)
+Name: Nidorino
+Image: nidorino.png
+Type1: Poison
+Type2: Type
+Attack: 72
+Defense: 57
+SpAtk: 55
+SpDef: 55
+HP: 61
+Speed: 65
+Level: 5
+XP: 0
+NextLevelXP: 118
+Wild: 1
+EvolveLvl: 36
+
++++++
+034)
+Name: Nidoking
+Image: nidoking.png
+Type1: Poison
+Type2: Ground
+Attack: 92
+Defense: 77
+SpAtk: 85
+SpDef: 75
+HP: 81
+Speed: 85
+Level: 5
+XP: 0
+NextLevelXP: 195
+Wild: 1
+EvolveLvl: 0
+
++++++
+035)
+Name: Clefairy
+Image: clefairy.png
+Type1: Normal
+Type2: Type
+Attack: 45
+Defense: 48
+SpAtk: 60
+SpDef: 65
+HP: 70
+Speed: 35
+Level: 5
+XP: 0
+NextLevelXP: 68
+Wild: 1
+EvolveLvl: 30
+
++++++
+036)
+Name: Clefable
+Image: clefable.png
+Type1: Normal
+Type2: Type
+Attack: 70
+Defense: 73
+SpAtk: 85
+SpDef: 90
+HP: 95
+Speed: 60
+Level: 5
+XP: 0
+NextLevelXP: 129
+Wild: 1
+EvolveLvl: 0
+
++++++
+037)
+Name: Vulpix
+Image: vulpix
+Type1: Fire
+Type2: Type
+Attack: 41
+Defense: 40
+SpAtk: 50
+SpDef: 65
+HP: 38
+Speed: 65
+Level: 5
+XP: 0
+NextLevelXP: 63
+Wild: 1
+EvolveLvl: 33
+
++++++
+038)
+Name: Ninetales
+Image: ninetales.png
+Type1: Fire
+Type2: Type
+Attack: 76
+Defense: 75
+SpAtk: 81
+SpDef: 100
+HP: 73
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 178
+Wild: 1
+EvolveLvl: 0
+
++++++
+039)
+Name: Jigglypuff
+Image: jigglypuff.png
+Type1: Normal
+Type2: Type
+Attack: 45
+Defense: 20
+SpAtk: 45
+SpDef: 25
+HP: 115
+Speed: 20
+Level: 5
+XP: 0
+NextLevelXP: 76
+Wild: 1
+EvolveLvl: 28
+
++++++
+040)
+Name: Wigglytuff
+Image: wigglytuff.png
+Type1: Normal
+Type2: Type
+Attack: 70
+Defense: 45
+SpAtk: 75
+SpDef: 50
+HP: 140
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 109
+Wild: 1
+EvolveLvl: 0
+
++++++
+041)
+Name: Zubat
+Image: zubat.png
+Type1: Poison
+Type2: Flying
+Attack: 45
+Defense: 35
+SpAtk: 30
+SpDef: 40
+HP: 40
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 54
+Wild: 1
+EvolveLvl: 22
+
++++++
+042)
+Name: Golbat
+Image: golbat.png
+Type1: Poison
+Type2: Flying
+Attack: 80
+Defense: 70
+SpAtk: 65
+SpDef: 75
+HP: 75
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 171
+Wild: 1
+EvolveLvl: 0
+
++++++
+043)
+Name: Oddish
+Image: oddish.png
+Type1: Grass
+Type2: Poison
+Attack: 50
+Defense: 55
+SpAtk: 75
+SpDef: 65
+HP: 45
+Speed: 30
+Level: 5
+XP: 0
+NextLevelXP: 78
+Wild: 1
+EvolveLvl: 21
+
++++++
+044)
+Name: Gloom
+Image: gloom.png
+Type1: Grass
+Type2: Poison
+Attack: 65
+Defense: 70
+SpAtk: 85
+SpDef: 75
+HP: 60
+Speed: 40
+Level: 5
+XP: 0
+NextLevelXP: 132
+Wild: 1
+EvolveLvl: 39
+
++++++
+045)
+Name: Vileplume
+Image: vileplume.png
+Type1: Grass
+Type2: Poison
+Attack: 80
+Defense: 85
+SpAtk: 100
+SpDef: 90
+HP: 75
+Speed: 50
+Level: 5
+XP: 0
+NextLevelXP: 184
+Wild: 1
+EvolveLvl: 0
+
++++++
+046)
+Name: Paras
+Image: paras.png
+Type1: Bug
+Type2: Grass
+Attack: 70
+Defense: 55
+SpAtk: 45
+SpDef: 55
+HP: 35
+Speed: 25
+Level: 5
+XP: 0
+NextLevelXP: 70
+Wild: 1
+EvolveLvl: 24
+
++++++
+047)
+Name: Parasect
+Image: parasect.png
+Type1: Water
+Type2: Type
+Attack: 95
+Defense: 80
+SpAtk: 60
+SpDef: 80
+HP: 60
+Speed: 30
+Level: 5
+XP: 0
+NextLevelXP: 128
+Wild: 1
+EvolveLvl: 0
+
++++++
+048)
+Name: Venonat
+Image: venonat.png
+Type1: Bug
+Type2: Poison
+Attack: 55
+Defense: 50
+SpAtk: 40
+SpDef: 55
+HP: 60
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 75
+Wild: 1
+EvolveLvl: 31
+
++++++
+049)
+Name: Venomoth
+Image: venomoth.png
+Type1: Bug
+Type2: Poison
+Attack: 65
+Defense: 60
+SpAtk: 90
+SpDef: 75
+HP: 70
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 138
+Wild: 1
+EvolveLvl: 0
+
++++++
+050)
+Name: Diglett
+Image: diglett.png
+Type1: Ground
+Type2: Type
+Attack: 55
+Defense: 25
+SpAtk: 35
+SpDef: 45
+HP: 10
+Speed: 95
+Level: 5
+XP: 0
+NextLevelXP: 81
+Wild: 1
+EvolveLvl: 26
+
++++++
+051)
+Name: Dugtrio
+Image: dugtrio.png
+Type1: Ground
+Type2: Type
+Attack: 80
+Defense: 50
+SpAtk: 50
+SpDef: 70
+HP: 35
+Speed: 120
+Level: 5
+XP: 0
+NextLevelXP: 153
+Wild: 1
+EvolveLvl: 0
+
++++++
+052)
+Name: Meowth
+Image: meowth.png
+Type1: Normal
+Type2: Type
+Attack: 45
+Defense: 35
+SpAtk: 40
+SpDef: 40
+HP: 40
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 69
+Wild: 1
+EvolveLvl: 28
+
++++++
+053)
+Name: Persian
+Image: persian.png
+Type1: Normal
+Type2: Type
+Attack: 70
+Defense: 60
+SpAtk: 65
+SpDef: 65
+HP: 65
+Speed: 115
+Level: 5
+XP: 0
+NextLevelXP: 148
+Wild: 1
+EvolveLvl: 0
+
++++++
+054)
+Name: Psyduck
+Image: psyduck.png
+Type1: Water
+Type2: Type
+Attack: 52
+Defense: 48
+SpAtk: 65
+SpDef: 50
+HP: 50
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 80
+Wild: 1
+EvolveLvl: 33
+
++++++
+055)
+Name: Golduck
+Image: golduck.png
+Type1: Water
+Type2: Type
+Attack: 82
+Defense: 78
+SpAtk: 95
+SpDef: 80
+HP: 80
+Speed: 85
+Level: 5
+XP: 0
+NextLevelXP: 174
+Wild: 1
+EvolveLvl: 0
+
++++++
+056)
+Name: Mankey
+Image: mankey.png
+Type1: Fighting
+Type2: Type
+Attack: 80
+Defense: 35
+SpAtk: 35
+SpDef: 45
+HP: 40
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 74
+Wild: 1
+EvolveLvl: 28
+
+
++++++
+057)
+Name: Primeape
+Image: primeape.png
+Type1: Fighting
+Type2: Type
+Attack: 105
+Defense: 60
+SpAtk: 60
+SpDef: 70
+HP: 65
+Speed: 95
+Level: 5
+XP: 0
+NextLevelXP: 149
+Wild: 1
+EvolveLvl: 0
+
++++++
+058)
+Name: Growlithe
+Image: growlithe.png
+Type1: Fire
+Type2: Type
+Attack: 70
+Defense: 45
+SpAtk: 70
+SpDef: 50
+HP: 55
+Speed: 60
+Level: 5
+XP: 0
+NextLevelXP: 91
+Wild: 1
+EvolveLvl: 34
+
++++++
+059)
+Name: Arcanine
+Image: arcanine.png
+Type1: Fire
+Type2: Type
+Attack: 110
+Defense: 80
+SpAtk: 100
+SpDef: 80
+HP: 90
+Speed: 95
+Level: 5
+XP: 0
+NextLevelXP: 213
+Wild: 1
+EvolveLvl: 0
+
++++++
+060)
+Name: Poliwag
+Image: poliwag.png
+Type1: Water
+Type2: Type
+Attack: 50
+Defense: 40
+SpAtk: 40
+SpDef: 40
+HP: 40
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 77
+Wild: 1
+EvolveLvl: 25
+
++++++
+061)
+Name: Poliwhirl
+Image: poliwhirl.png
+Type1: Water
+Type2: Type
+Attack: 65
+Defense: 65
+SpAtk: 50
+SpDef: 50
+HP: 65
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 131
+Wild: 1
+EvolveLvl: 39
+
++++++
+062)
+Name: Poliwrath
+Image: poliwrath.png
+Type1: Water
+Type2: Fighting
+Attack: 85
+Defense: 95
+SpAtk: 70
+SpDef: 90
+HP: 90
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 185
+Wild: 1
+EvolveLvl: 0
+
++++++
+063)
+Name: Abra
+Image: abra.png
+Type1: Psychic
+Type2: Type
+Attack: 20
+Defense: 15
+SpAtk: 105
+SpDef: 55
+HP: 65
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 75
+Wild: 1
+EvolveLvl: 16
+
++++++
+064)
+Name: Kadabra
+Image: kadabra.png
+Type1: Psychic
+Type2: Type
+Attack: 35
+Defense: 30
+SpAtk: 120
+SpDef: 70
+HP: 40
+Speed: 105
+Level: 5
+XP: 0
+NextLevelXP: 145
+Wild: 1
+EvolveLvl: 38
+
++++++
+065)
+Name: Alakazam
+Image: Alakazam.png
+Type1: Psychic
+Type2: Type
+Attack: 50
+Defense: 45
+SpAtk: 135
+SpDef: 85
+HP: 55
+Speed: 120
+Level: 5
+XP: 0
+NextLevelXP: 186
+Wild: 1
+EvolveLvl: 0
+
++++++
+066)
+Name: Machop
+Image: machop.png
+Type1: Fighting
+Type2: Type
+Attack: 80
+Defense: 50
+SpAtk: 35
+SpDef: 35
+HP: 70
+Speed: 35
+Level: 5
+XP: 0
+NextLevelXP: 75
+Wild: 1
+EvolveLvl: 0
+
++++++
+067)
+Name: Machoke
+Image: machoke.png
+Type1: Fighting
+Type2: Type
+Attack: 100
+Defense: 70
+SpAtk: 50
+SpDef: 60
+HP: 80
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 146
+Wild: 1
+EvolveLvl: 0
+
++++++
+068)
+Name: Machamp
+Image: machamp.png
+Type1: Fighting
+Type2: Type
+Attack: 130
+Defense: 80
+SpAtk: 65
+SpDef: 85
+HP: 90
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 193
+Wild: 1
+EvolveLvl: 0
+
++++++
+069)
+Name: Bellsprout
+Image: bellsprout.png
+Type1: Grass
+Type2: Poison
+Attack: 75
+Defense: 35
+SpAtk: 70
+SpDef: 30
+HP: 50
+Speed: 40
+Level: 5
+XP: 0
+NextLevelXP: 84
+Wild: 1
+EvolveLvl: 21
+
++++++
+070)
+Name: Weepinbell
+Image: weepinbell.png
+Type1: Grass
+Type2: Poison
+Attack: 90
+Defense: 50
+SpAtk: 85
+SpDef: 45
+HP: 65
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 151
+Wild: 1
+EvolveLvl: 34
+
++++++
+071)
+Name: Victreebel
+Image: victreebel.png
+Type1: Grass
+Type2: Poison
+Attack: 105
+Defense: 65
+SpAtk: 100
+SpDef: 60
+HP: 80
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 191
+Wild: 1
+EvolveLvl: 0
+
++++++
+072)
+Name: Tentacool
+Image: tentacool.png
+Type1: Water
+Type2: Poison
+Attack: 40
+Defense: 35
+SpAtk: 50
+SpDef: 100
+HP: 40
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 105
+Wild: 1
+EvolveLvl: 30
+
++++++
+073)
+Name: Tentacruel
+Image: tentacruel.png
+Type1: Grass
+Type2: Poison
+Attack: 70
+Defense: 65
+SpAtk: 80
+SpDef: 120
+HP: 80
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 205
+Wild: 1
+EvolveLvl: 0
+
++++++
+074)
+Name: Geodude
+Image: geodude.png
+Type1: Rock
+Type2: Ground
+Attack: 80
+Defense: 100
+SpAtk: 30
+SpDef: 30
+HP: 40
+Speed: 20
+Level: 5
+XP: 0
+NextLevelXP: 73
+Wild: 1
+EvolveLvl: 25
+
++++++
+075)
+Name: Graveler
+Image: graveler.png
+Type1: Rock
+Type2: Ground
+Attack: 95
+Defense: 115
+SpAtk: 45
+SpDef: 45
+HP: 55
+Speed: 35
+Level: 5
+XP: 0
+NextLevelXP: 134
+Wild: 1
+EvolveLvl: 38
+
++++++
+076)
+Name: Golem
+Image: golem.png
+Type1: Rock
+Type2: Ground
+Attack: 110
+Defense: 130
+SpAtk: 55
+SpDef: 65
+HP: 80
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 177
+Wild: 1
+EvolveLvl: 0
+
++++++
+077)
+Name: Ponyta
+Image: ponyta.png
+Type1: Fire
+Type2: Type
+Attack: 85
+Defense: 55
+SpAtk: 65
+SpDef: 65
+HP: 50
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 152
+Wild: 1
+EvolveLvl: 40
+
++++++
+078)
+Name: Rapidash
+Image: rapidash.png
+Type1: Fire
+Type2: Type
+Attack: 100
+Defense: 70
+SpAtk: 80
+SpDef: 80
+HP: 65
+Speed: 105
+Level: 5
+XP: 0
+NextLevelXP: 192
+Wild: 1
+EvolveLvl: 0
+
++++++
+079)
+Name: Slowpoke
+Image: slowpoke.png
+Type1: Water
+Type2: Psychic
+Attack: 65
+Defense: 65
+SpAtk: 40
+SpDef: 40
+HP: 90
+Speed: 15
+Level: 5
+XP: 0
+NextLevelXP: 99
+Wild: 1
+EvolveLvl: 37
+
++++++
+080)
+Name: Slowbro
+Image: slowbro.png
+Type1: Water
+Type2: Psychic
+Attack: 75
+Defense: 110
+SpAtk: 100
+SpDef: 80
+HP: 95
+Speed: 30
+Level: 5
+XP: 0
+NextLevelXP: 164
+Wild: 1
+EvolveLvl: 0
+
++++++
+081)
+Name: Manemite
+Image: magnamite.png
+Type1: Electric
+Type2: Steel
+Attack: 35
+Defense: 70
+SpAtk: 95
+SpDef: 55
+HP: 25
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 89
+Wild: 1
+EvolveLvl: 30
+
++++++
+082)
+Name: Magneton
+Image: magneton.png
+Type1: Electric
+Type2: Steel
+Attack: 60
+Defense: 95
+SpAtk: 120
+SpDef: 70
+HP: 50
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 161
+Wild: 1
+EvolveLvl: 0
+
++++++
+083)
+Name: Farfetch'd
+Image: farfetch'd.png
+Type1: Normal
+Type2: Flying
+Attack: 65
+Defense: 55
+SpAtk: 58
+SpDef: 62
+HP: 52
+Speed: 60
+Level: 5
+XP: 0
+NextLevelXP: 94
+Wild: 1
+EvolveLvl: 0
+
++++++
+084)
+Name: Doduo
+Image: doduo.png
+Type1: Normal
+Type2: Flying
+Attack: 85
+Defense: 45
+SpAtk: 35
+SpDef: 35
+HP: 35
+Speed: 75
+Level: 5
+XP: 0
+NextLevelXP: 96
+Wild: 1
+EvolveLvl: 31
+
++++++
+085)
+Name: Dotrio
+Image: dotrio.png
+Type1: Normal
+Type2: Flying
+Attack: 110
+Defense: 70
+SpAtk: 60
+SpDef: 60
+HP: 60
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 158
+Wild: 1
+EvolveLvl: 0
+
++++++
+086)
+Name: Seel 
+Image: seel.png
+Type1: Water
+Type2: Type
+Attack: 45
+Defense: 55
+SpAtk: 45
+SpDef: 70
+HP: 65
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 100
+Wild: 1
+EvolveLvl: 34
+
++++++
+087)
+Name: Dewgong
+Image: degong.png
+Type1: Water
+Type2: Ice
+Attack: 70
+Defense: 80
+SpAtk: 70
+SpDef: 95
+HP: 90
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 176
+Wild: 1
+EvolveLvl: 0
+
++++++
+088)
+Name: Grimer
+Image: grimer.png
+Type1: Poison
+Type2: Type
+Attack: 80
+Defense: 50
+SpAtk: 40
+SpDef: 50
+HP: 80
+Speed: 25
+Level: 5
+XP: 0
+NextLevelXP: 90
+Wild: 1
+EvolveLvl: 38
+
++++++
+089)
+Name: Muk
+Image: muk.png
+Type1: Poison
+Type2: Type
+Attack: 105
+Defense: 75
+SpAtk: 65
+SpDef: 100
+HP: 105
+Speed: 50
+Level: 5
+XP: 0
+NextLevelXP: 157
+Wild: 1
+EvolveLvl: 0
+
++++++
+090)
+Name: Shellder
+Image: shellder.png
+Type1: Water
+Type2: Type
+Attack: 65
+Defense: 100
+SpAtk: 45
+SpDef: 25
+HP: 30
+Speed: 40
+Level: 5
+XP: 0
+NextLevelXP: 97
+Wild: 1
+EvolveLvl: 32
+
++++++
+091)
+Name: Cloyster
+Image: cloyster.png
+Type1: Water
+Type2: Ice
+Attack: 95
+Defense: 180
+SpAtk: 85
+SpDef: 45
+HP: 50
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 203
+Wild: 1
+EvolveLvl: 0
+
++++++
+092)
+Name: Gastly
+Image: gastly.png
+Type1: Ghost
+Type2: Poison
+Attack: 35
+Defense: 30
+SpAtk: 100
+SpDef: 35
+HP: 30
+Speed: 80
+Level: 5
+XP: 0
+NextLevelXP: 95
+Wild: 1
+EvolveLvl: 25
+
++++++
+093)
+Name: Haunter
+Image: haunter.png
+Type1: Ghost
+Type2: Poison
+Attack: 50
+Defense: 45
+SpAtk: 115
+SpDef: 55
+HP: 45
+Speed: 95
+Level: 5
+XP: 0
+NextLevelXP: 126
+Wild: 1
+EvolveLvl: 40
+
++++++
+094)
+Name: Gengar
+Image: gengar.png
+Type1: Ghost
+Type2: Poison
+Attack: 65
+Defense: 60
+SpAtk: 130
+SpDef: 75
+HP: 60
+Speed: 110
+Level: 5
+XP: 0
+NextLevelXP: 70
+Wild: 1
+EvolveLvl: 0
+
++++++
+095)
+Name: Onix
+Image: onix.png
+Type1: Rock
+Type2: Ground
+Attack: 45
+Defense: 160
+SpAtk: 30
+SpDef: 45
+HP: 35
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 108
+Wild: 1
+EvolveLvl: 0
+
++++++
+096)
+Name: Drowzee
+Image: drowzee.png
+Type1: Psychic
+Type2: Type
+Attack: 48
+Defense: 45
+SpAtk: 43
+SpDef: 90
+HP: 60
+Speed: 42
+Level: 5
+XP: 0
+NextLevelXP: 102
+Wild: 1
+EvolveLvl: 26
+
++++++
+097)
+Name: Hypno
+Image: hypno.png
+Type1: Psychic
+Type2: Type
+Attack: 73
+Defense: 70
+SpAtk: 73
+SpDef: 115
+HP: 85
+Speed: 67
+Level: 5
+XP: 0
+NextLevelXP: 165
+Wild: 1
+EvolveLvl: 0
+
++++++
+098)
+Name: Krabby
+Image: krabby.png
+Type1: Water
+Type2: Type
+Attack: 105
+Defense: 90
+SpAtk: 25
+SpDef: 25
+HP: 30
+Speed: 50
+Level: 5
+XP: 0
+NextLevelXP: 115
+Wild: 1
+EvolveLvl: 28
+
++++++
+099)
+Name: Kingler
+Image: kingler.png
+Type1: Water
+Type2: Type
+Attack: 130
+Defense: 115
+SpAtk: 50
+SpDef: 50
+HP: 55
+Speed: 75
+Level: 5
+XP: 0
+NextLevelXP: 206
+Wild: 1
+EvolveLvl: 0
+
++++++
+100)
+Name: Voltorb
+Image: voltorb.png
+Type1: Electric
+Type2: Type
+Attack: 30
+Defense: 50
+SpAtk: 55
+SpDef: 55
+HP: 40
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 103
+Wild: 1
+EvolveLvl: 30
+
++++++
+101)
+Name: Electrode
+Image: electrode.png
+Type1: Electric
+Type2: Type
+Attack: 50
+Defense: 70
+SpAtk: 80
+SpDef: 80
+HP: 60
+Speed: 140
+Level: 5
+XP: 0
+NextLevelXP: 150
+Wild: 1
+EvolveLvl: 0
+
++++++
+102)
+Name: Exeggcute
+Image: exeggcute.png
+Type1: Grass
+Type2: Psychic
+Attack: 40
+Defense: 80
+SpAtk: 60
+SpDef: 45
+HP: 60
+Speed: 40
+Level: 5
+XP: 0
+NextLevelXP: 98
+Wild: 1
+EvolveLvl: 22
+
++++++
+103)
+Name: Exeggutor
+Image: exeggutor.png
+Type1: Grass
+Type2: Psychic
+Attack: 95
+Defense: 85
+SpAtk: 125
+SpDef: 65
+HP: 95
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 212
+Wild: 1
+EvolveLvl: 0
+
++++++
+104)
+Name: Cubone
+Image: cubone.png
+Type1: Ground
+Type2: Type
+Attack: 50
+Defense: 95
+SpAtk: 40
+SpDef: 50
+HP: 50
+Speed: 35
+Level: 5
+XP: 0
+NextLevelXP: 87
+Wild: 1
+EvolveLvl: 28
+
++++++
+105)
+Name: Marowak
+Image: Marowak.png
+Type1: Ground
+Type2: Type
+Attack: 80
+Defense: 110
+SpAtk: 50
+SpDef: 80
+HP: 60
+Speed: 45
+Level: 5
+XP: 0
+NextLevelXP: 117
+Wild: 124
+EvolveLvl: 0
+
++++++
+106)
+Name: Hitmonlee
+Image: hitmonlee.png
+Type1: Fighting
+Type2: Type
+Attack: 120
+Defense: 53
+SpAtk: 35
+SpDef: 110
+HP: 50
+Speed: 87
+Level: 5
+XP: 0
+NextLevelXP: 139
+Wild: 1
+EvolveLvl: 0
+
++++++
+107)
+Name: Hitmonchan
+Image: hitmonchan.png
+Type1: Fighting
+Type2: Type
+Attack: 105
+Defense: 79
+SpAtk: 35
+SpDef: 110
+HP: 50
+Speed: 76
+Level: 5
+XP: 0
+NextLevelXP: 140
+Wild: 1
+EvolveLvl: 0
+
++++++
+108)
+Name: Lickitung
+Image: lickitung.png
+Type1: Normal
+Type2: Type
+Attack: 55
+Defense: 75
+SpAtk: 60
+SpDef: 75
+HP: 90
+Speed: 30
+Level: 5
+XP: 0
+NextLevelXP: 127
+Wild: 1
+EvolveLvl: 0
+
++++++
+109)
+Name: Koffing
+Image: koffing.png
+Type1: Poison
+Type2: Type
+Attack: 65
+Defense: 95
+SpAtk: 60
+SpDef: 45
+HP: 40
+Speed: 35
+Level: 5
+XP: 0
+NextLevelXP: 114
+Wild: 1
+EvolveLvl: 35
+
++++++
+110)
+Name: Weezing
+Image: weezing.png
+Type1: Poison
+Type2: Type
+Attack: 90
+Defense: 120
+SpAtk: 85
+SpDef: 70
+HP: 65
+Speed: 60
+Level: 5
+XP: 0
+NextLevelXP: 173
+Wild: 1
+EvolveLvl: 30
+
++++++
+111)
+Name: Rhyhorn
+Image: rhyhorn.png
+Type1: Rock
+Type2: Ground
+Attack: 85
+Defense: 95
+SpAtk: 30
+SpDef: 30
+HP: 80
+Speed: 25
+Level: 5
+XP: 0
+NextLevelXP: 135
+Wild: 1
+EvolveLvl: 42
+
++++++
+112)
+Name: Rhydon
+Image: Rhydon
+Type1: Ground
+Type2: Rock
+Attack: 130
+Defense: 120
+SpAtk: 45
+SpDef: 45
+HP: 105
+Speed: 40
+Level: 5
+XP: 0
+NextLevelXP: 204
+Wild: 1
+EvolveLvl: 0
+
++++++
+113)
+Name: Chansey
+Image: chansey.png
+Type1: Normal
+Type2: Type
+Attack: 5
+Defense: 5
+SpAtk: 35
+SpDef: 105
+HP: 250
+Speed: 50
+Level: 5
+XP: 0
+NextLevelXP: 255
+Wild: 1
+EvolveLvl: 0
+
++++++
+114)
+Name: Tangela
+Image: tengela.png
+Type1: Grass
+Type2: Type
+Attack: 55
+Defense: 115
+SpAtk: 100
+SpDef: 40
+HP: 65
+Speed: 60
+Level: 5
+XP: 0
+NextLevelXP: 166
+Wild: 1
+EvolveLvl: 0
+
++++++
+115)
+Name: Kangaskhan
+Image: kangaskhan.png
+Type1: Normal
+Type2: Type
+Attack: 95
+Defense: 80
+SpAtk: 40
+SpDef: 80
+HP: 105
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 175
+Wild: 1
+EvolveLvl: 0
+
++++++
+116)
+Name: Horsea
+Image: horsea.png
+Type1: Water
+Type2: Type
+Attack: 40
+Defense: 70
+SpAtk: 70
+SpDef: 25
+HP: 30
+Speed: 60
+Level: 5
+XP: 0
+NextLevelXP: 83
+Wild: 1
+EvolveLvl: 32
+
++++++
+117)
+Name: Seadra
+Image: seadra.png
+Type1: Water
+Type2: Type
+Attack: 65
+Defense: 65
+SpAtk: 95
+SpDef: 95
+HP: 55
+Speed: 85
+Level: 5
+XP: 0
+NextLevelXP: 155
+Wild: 1
+EvolveLvl: 0
+
++++++
+118)
+Name: Goldeen
+Image: goldeen.png
+Type1: Water
+Type2: Type
+Attack: 67
+Defense: 60
+SpAtk: 35
+SpDef: 50
+HP: 45
+Speed: 63
+Level: 5
+XP: 0
+NextLevelXP: 111
+Wild: 1
+EvolveLvl: 33
+
++++++
+119)
+Name: Seaking
+Image: seaking.png
+Type1: Water
+Type2: Type
+Attack: 92
+Defense: 65
+SpAtk: 65
+SpDef: 80
+HP: 80
+Speed: 68
+Level: 5
+XP: 0
+NextLevelXP: 170
+Wild: 1
+EvolveLvl: 0
+
++++++
+120)
+Name: Staryu
+Image: staryu.png
+Type1: Water
+Type2: Type
+Attack: 45
+Defense: 55
+SpAtk: 70
+SpDef: 55
+HP: 30
+Speed: 85
+Level: 5
+XP: 0
+NextLevelXP: 106
+Wild: 1
+EvolveLvl: 33
+
++++++
+121)
+Name: Starmie
+Image: starmie.png
+Type1: Water
+Type2: Psychic
+Attack: 75
+Defense: 85
+SpAtk: 100
+SpDef: 85
+HP: 60
+Speed: 115
+Level: 5
+XP: 0
+NextLevelXP: 207
+Wild: 1
+EvolveLvl: 0
+
++++++
+122)
+Name: Mr.Mime
+Image: mrMime.png
+Type1: Psychic
+Type2: Type
+Attack: 45
+Defense: 65
+SpAtk: 100
+SpDef: 120
+HP: 40
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 136
+Wild: 1
+EvolveLvl: 0
+
++++++
+123)
+Name: Scyther
+Image: scyther.png
+Type1: Bug
+Type2: Flying
+Attack: 110
+Defense: 80
+SpAtk: 55
+SpDef: 80
+HP: 70
+Speed: 105
+Level: 5
+XP: 0
+NextLevelXP: 187
+Wild: 1
+EvolveLvl: 0
+
++++++
+124)
+Name: Jynx
+Image: jynx.png
+Type1: Ice
+Type2: Psychic
+Attack: 50
+Defense: 35
+SpAtk: 115
+SpDef: 95
+HP: 65
+Speed: 95
+Level: 5
+XP: 0
+NextLevelXP: 137
+Wild: 1
+EvolveLvl: 0
+
++++++
+125)
+Name: Electabuzz
+Image: electabuzz.png
+Type1: Electric
+Type2: Type
+Attack: 83
+Defense: 57
+SpAtk: 95
+SpDef: 85
+HP: 65
+Speed: 105
+Level: 5
+XP: 0
+NextLevelXP: 156
+Wild: 1
+EvolveLvl: 0
+
++++++
+126)
+Name: Magmar
+Image: magmar.png
+Type1: Fire
+Type2: Type
+Attack: 95
+Defense: 57
+SpAtk: 100
+SpDef: 85
+HP: 65
+Speed: 93
+Level: 5
+XP: 0
+NextLevelXP: 167
+Wild: 1
+EvolveLvl: 0
+
++++++
+127)
+Name: Pinsir
+Image: pinsir.png
+Type1: Bug
+Type2: Type
+Attack: 125
+Defense: 100
+SpAtk: 55
+SpDef: 70
+HP: 65
+Speed: 85
+Level: 5
+XP: 0
+NextLevelXP: 200
+Wild: 1
+EvolveLvl: 0
+
++++++
+128)
+Name: Tauros
+Image: tauros.png
+Type1: Normal
+Type2: Type
+Attack: 100
+Defense: 95
+SpAtk: 40
+SpDef: 70
+HP: 75
+Speed: 110
+Level: 5
+XP: 0
+NextLevelXP: 211
+Wild: 1
+EvolveLvl: 0
+
++++++
+129)
+Name: Magikarp
+Image: magikarp.png
+Type1: Water
+Type2: Type
+Attack: 10
+Defense: 55
+SpAtk: 15
+SpDef: 20
+HP: 20
+Speed: 80
+Level: 5
+XP: 0
+NextLevelXP: 20
+Wild: 1
+EvolveLvl: 20
+
++++++
+130)
+Name: Gyarados
+Image: gyarados.png
+Type1: Water
+Type2: Dragon
+Attack: 125
+Defense: 79
+SpAtk: 60
+SpDef: 100
+HP: 95
+Speed: 81
+Level: 5
+XP: 0
+NextLevelXP: 214
+Wild: 1
+EvolveLvl: 0
+
++++++
+131)
+Name: Lapras
+Image: lapras.png
+Type1: Water
+Type2: Ice
+Attack: 85
+Defense: 80
+SpAtk: 85
+SpDef: 95
+HP: 130
+Speed: 60
+Level: 5
+XP: 0
+NextLevelXP: 219
+Wild: 1
+EvolveLvl: 0
+
+
++++++
+132)
+Name: Ditto
+Image: primeape.png
+Type1: Normal
+Type2: Type
+Attack: 48
+Defense: 48
+SpAtk: 48
+SpDef: 48
+HP: 48
+Speed: 48
+Level: 5
+XP: 0
+NextLevelXP: 61
+Wild: 1
+EvolveLvl: 0
+
++++++
+133)
+Name: Eevee
+Image: eevee.png
+Type1: Normal
+Type2: Type
+Attack: 55
+Defense: 50
+SpAtk: 45
+SpDef: 65
+HP: 55
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 92
+Wild: 1
+EvolveLvl: 30
+
++++++
+134)
+Name: Vapereon
+Image: vaporeon.png
+Type1: Water
+Type2: Type
+Attack: 65
+Defense: 60
+SpAtk: 110
+SpDef: 95
+HP: 130
+Speed: 65
+Level: 5
+XP: 0
+NextLevelXP: 196
+Wild: 1
+EvolveLvl: 0
+
++++++
+135)
+Name: Jolteon
+Image: jolteon.png
+Type1: Electric 
+Type2: Type
+Attack: 65
+Defense: 60
+SpAtk: 110
+SpDef: 95
+HP: 65
+Speed: 130
+Level: 5
+XP: 0
+NextLevelXP: 197
+Wild: 1
+EvolveLvl: 0
+
++++++
+136)
+Name: Flareon
+Image: flareon.png
+Type1: Fire
+Type2: Type
+Attack: 130
+Defense: 60
+SpAtk: 95
+SpDef: 110
+HP: 65
+Speed: 65
+Level: 5
+XP: 0
+NextLevelXP: 198
+Wild: 1
+EvolveLvl: 0
+
++++++
+137)
+Name: Porygon
+Image: porygon.png
+Type1: Normal
+Type2: Type
+Attack: 60
+Defense: 70
+SpAtk: 85
+SpDef: 75
+HP: 65
+Speed: 40
+Level: 5
+XP: 0
+NextLevelXP: 130
+Wild: 1
+EvolveLvl: 0
+
++++++
+138)
+Name: Omanyte
+Image: omanyte.png
+Type1: Rock
+Type2: Water
+Attack: 40
+Defense: 100
+SpAtk: 90
+SpDef: 55
+HP: 35
+Speed: 35
+Level: 5
+XP: 0
+NextLevelXP: 99
+Wild: 1
+EvolveLvl: 40
+
++++++
+139)
+Name: Omastar
+Image: omastar.png
+Type1: Rock
+Type2: Water
+Attack: 60
+Defense: 125
+SpAtk: 125
+SpDef: 115
+HP: 70
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 199
+Wild: 1
+EvolveLvl: 0
+
++++++
+140)
+Name: Kabuto
+Image: kabuto.png
+Type1: Rock
+Type2: Water
+Attack: 80
+Defense: 90
+SpAtk: 55
+SpDef: 45
+HP: 30
+Speed: 55
+Level: 5
+XP: 0
+NextLevelXP: 99
+Wild: 1
+EvolveLvl: 40
+
++++++
+141)
+Name: Kabutops
+Image: kabutops.png
+Type1: Rock
+Type2: Water
+Attack: 115
+Defense: 105
+SpAtk: 65
+SpDef: 70
+HP: 60
+Speed: 80
+Level: 5
+XP: 0
+NextLevelXP: 199
+Wild: 1
+EvolveLvl: 0
+
++++++
+142)
+Name: Aerodactyl
+Image: areodactyl.png
+Type1: Rock
+Type2: Flying
+Attack: 105
+Defense: 65
+SpAtk: 65
+SpDef: 60
+HP: 80
+Speed: 130
+Level: 5
+XP: 0
+NextLevelXP: 202
+Wild: 1
+EvolveLvl: 0
+
++++++
+143)
+Name: Snorlax
+Image: snorlax.png
+Type1: Normal
+Type2: Type
+Attack: 110
+Defense: 65
+SpAtk: 65
+SpDef: 110
+HP: 160
+Speed: 30
+Level: 5
+XP: 0
+NextLevelXP: 154
+Wild: 1
+EvolveLvl: 0
+
++++++
+144)
+Name: Atricuno
+Image: atricuo.png
+Type1: Ice
+Type2: Flying
+Attack: 85
+Defense: 100
+SpAtk: 95
+SpDef: 125
+HP: 90
+Speed: 85
+Level: 5
+XP: 0
+NextLevelXP: 215
+Wild: 1
+EvolveLvl: 0
+
++++++
+145)
+Name: Zapdos
+Image: zapdos.png
+Type1: Electric
+Type2: Flying
+Attack: 90
+Defense: 85
+SpAtk: 125
+SpDef: 90
+HP: 90
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 216
+Wild: 1
+EvolveLvl: 0
+
++++++
+146)
+Name: Moltres
+Image: moltres.png
+Type1: Fire
+Type2: Flying
+Attack: 100
+Defense: 90
+SpAtk: 125
+SpDef: 85
+HP: 90
+Speed: 90
+Level: 5
+XP: 0
+NextLevelXP: 217
+Wild: 1
+EvolveLvl: 0
+
++++++
+147)
+Name: Dratini
+Image: dratini.png
+Type1: Dragon
+Type2: Type
+Attack: 64
+Defense: 45
+SpAtk: 50
+SpDef: 50
+HP: 41
+Speed: 50
+Level: 5
+XP: 0
+NextLevelXP: 67
+Wild: 1
+EvolveLvl: 30
+
++++++
+148)
+Name: Dragonair
+Image: dragonair.png
+Type1: Dragon
+Type2: Type
+Attack: 84
+Defense: 65
+SpAtk: 70
+SpDef: 70
+HP: 61
+Speed: 70
+Level: 5
+XP: 0
+NextLevelXP: 144
+Wild: 1
+EvolveLvl: 55
+
++++++
+149)
+Name: Dragonite
+Image: dragonite.png
+Type1: Dragon
+Type2: Flying
+Attack: 134
+Defense: 95
+SpAtk: 100
+SpDef: 100
+HP: 91
+Speed: 80
+Level: 5
+XP: 0
+NextLevelXP: 218
+Wild: 1
+EvolveLvl: 0
+
++++++
+150)
+Name: Mewtwo
+Image: mewtwo.png
+Type1: Psychic
+Type2: Type
+Attack: 110
+Defense: 90
+SpAtk: 154
+SpDef: 90
+HP: 106
+Speed: 130
+Level: 5
+XP: 0
+NextLevelXP: 220
+Wild: 1
+EvolveLvl: 0
+
++++++
+151)
+Name: Mew
+Image: mew.png
+Type1: Psychic
+Type2: Type
+Attack: 100
+Defense: 100
+SpAtk: 100
+SpDef: 100
+HP: 100
+Speed: 100
+Level: 5
+XP: 0
+NextLevelXP: 64
+Wild: 1
+EvolveLvl: 0
