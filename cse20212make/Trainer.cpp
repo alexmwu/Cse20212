@@ -14,6 +14,7 @@ stores a list of pokemon objects that can be used in the Pokemon interfaces
 #include "Item.h"
 #include "Location.h"
 #include "Trainer.h"
+#indlude "Potion.h"
 using namespace std;
 
 Trainer::Trainer()
