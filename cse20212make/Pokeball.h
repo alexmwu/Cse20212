@@ -20,7 +20,7 @@ class Pokeball : Item
 {
 public:
 	Pokeball();
-	Pokeball(string, int, int,  int);
+	//Pokeball(string, int, int,  int);
 	Pokeball(string, int);
 	void setStrength(int);
 	int getStrength();

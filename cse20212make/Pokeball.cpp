@@ -11,14 +11,16 @@ Pokeball::Pokeball()
 	return;
 }
 
-Pokeball::Pokeball(int s)
+Pokeball:Pokeball(string name, int s)
 {
+	my_name = name;
 	my_strength = s;
 }
 
 void Pokeball::setStrength(int s)
 {
 	my_strength = s;
+	my_name = name;
 }
 
 int Pokeball::getStrength()
