@@ -10,6 +10,7 @@ Class extedning item, used for an item to heal HP ~ Potion
 #include <iostream>
 #include <string>
 #include "Item.h"
+#include "Potion.h"
 
 Potion::Potion()
 {
