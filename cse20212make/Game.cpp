@@ -567,7 +567,7 @@ pair<int, int> battle(Pokemon* user, Pokemon* opp)
 	int oppMove = 0;
 	double strength = 0;
 	int canMove = 1;
-	cout << user.getName() << " VS " << opp.getName() << endl;
+	cout << user->getName() << " VS " << opp->getName() << endl;
 	//displayBattle(user,opp);
 while (user->getHP() > 0 && opp->getHP() > 0)
 	{
