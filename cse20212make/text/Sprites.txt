@@ -413,11 +413,236 @@ Height: 9
 Width: 6
 
 +++++
-044)
+045)
 Sheet: 5
 Name: BattleLowerA
-X: 142
-Y: 178
+X: 18
+Y: 160
+Height: 9
+Width: 6
+
++++++
+046)
+Sheet: 5
+Name: BattleLowerB
+X: 30
+Y: 160
+Height: 9
+Width: 6
+
++++++
+047)
+Sheet: 5
+Name: BattleLowerC
+X: 42
+Y: 160
+Height: 9
+Width: 6
+
++++++
+048)
+Sheet: 5
+Name: BattleLowerD
+X: 74
+Y: 160
+Height: 9
+Width: 6
+
++++++
+049)
+Sheet: 5
+Name: BattleLowerE
+X: 86
+Y: 160
+Height: 9
+Width: 6
+
++++++
+050)
+Sheet: 5
+Name: BattleLowerF
+X: 98
+Y: 160
+Height: 9
+Width: 6
+
++++++
+051)
+Sheet: 5
+Name: BattleLowerG
+X: 18
+Y: 176
+Height: 11
+Width: 6
+
++++++
+052)
+Sheet: 5
+Name: BattleLowerH
+X: 30
+Y: 176
+Height: 9
+Width: 6
+
++++++
+053)
+Sheet: 5
+Name: BattleLowerI
+X: 42
+Y: 176
+Height: 9
+Width: 6
+
++++++
+054)
+Sheet: 5
+Name: BattleLowerJ
+X: 74
+Y: 176
+Height: 11
+Width: 6
+
++++++
+055)
+Sheet: 5
+Name: BattleLowerK
+X: 86
+Y: 176
+Height: 9
+Width: 6
+
++++++
+056)
+Sheet: 5
+Name: BattleLowerL
+X: 98
+Y: 176
+Height: 9
+Width: 6
+
++++++
+057)
+Sheet: 5
+Name: BattleLowerM
+X: 18
+Y: 192
+Height: 9
+Width: 6
+
++++++
+058)
+Sheet: 5
+Name: BattleLowerN
+X: 30
+Y: 192
+Height: 9
+Width: 6
+
++++++
+059)
+Sheet: 5
+Name: BattleLowerO
+X: 42
+Y: 192
+Height: 9
+Width: 6
+
++++++
+060)
+Sheet: 5
+Name: BattleLowerP
+X: 74
+Y: 192
+Height: 11
+Width: 6
+
++++++
+061)
+Sheet: 5
+Name: BattleLowerQ
+X: 86
+Y: 192
+Height: 11
+Width: 6
+
++++++
+062)
+Sheet: 5
+Name: BattleLowerR
+X: 98
+Y: 192
+Height: 9
+Width: 6
+
++++++
+063)
+Sheet: 5
+Name: BattleLowerS
+X: 110
+Y: 192
+Height: 9
+Width: 6
+
++++++
+064)
+Sheet: 5
+Name: BattleLowerT
+X: 18
+Y: 208
+Height: 9
+Width: 6
+
++++++
+065)
+Sheet: 5
+Name: BattleLowerU
+X: 30
+Y: 208
+Height: 9
+Width: 6
+
++++++
+066)
+Sheet: 5
+Name: BattleLowerV
+X: 42
+Y: 208
+Height: 9
+Width: 6
+
++++++
+067)
+Sheet: 5
+Name: BattleLowerW
+X: 74
+Y: 208
+Height: 9
+Width: 6
+
++++++
+068)
+Sheet: 5
+Name: BattleLowerX
+X: 86
+Y: 208
+Height: 9
+Width: 6
+
++++++
+069)
+Sheet: 5
+Name: BattleLowerY
+X: 98
+Y: 208
+Height: 9
+Width: 6
+
++++++
+064)
+Sheet: 5
+Name: BattleLowerZ
+X: 110
+Y: 208
 Height: 9
 Width: 6
 
