@@ -56,7 +56,7 @@ public:
 	void battle(Trainer*, Trainer*);	//need to change to trainer v trainer
 	Pokemon getPokemon(string);
 	void initializeTrainers();
-	void printPokemon()
+	void printPokemon();
 	Move getMove(string);
 	void test();
 	void play();		//play

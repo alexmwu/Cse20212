@@ -560,7 +560,7 @@ Move Game::getMove(string name)
 }
 
 
-pair<int, int> battle(Pokemon*, Pokemon*);
+pair<int, int> battle(Pokemon*, Pokemon*)
 {
 	pair<int, int> returnVal = pair<int,int>(0, 0);
 	int move = 0;
