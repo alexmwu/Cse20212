@@ -17,6 +17,8 @@
 #include "Timer.h"
 #include <time.h>
 #include "Game.h"
+#include "Trainer.h"
+#include "Item.h"
 using namespace std;
 
 Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
