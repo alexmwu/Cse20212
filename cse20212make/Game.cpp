@@ -14,11 +14,12 @@
 #include "Type.h"
 #include "Move.h"
 #include "Pokeball.h"
+#include "Timer.h"
 #include <time.h>
 #include "Game.h"
 using namespace std;
 
-Game::Game(int sw, int sh, int sbpp, int movespeed)
+Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
 {
 	screen=NULL;
 	map=NULL;
@@ -39,7 +40,8 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 	screen_height=sh;
 	screen_bpp=sbpp;
 	move_speed=movespeed;
-
+	frames_per_second=fps;
+	
 	srand(time(NULL));
 	
 	initializeSDL();
@@ -52,16 +54,6 @@ Game::Game(int sw, int sh, int sbpp, int movespeed)
 	initializeMoves();
 	initializePokemon();	
 
-	Pokemon p1 = my_pokemon[2];
-	Pokemon p2 = my_pokemon[5];
-
-	p1.addMove(my_moves[0]);
-	p2.addMove(my_moves[1]);
-	p2.addMove(my_moves[2]);
-
-	Pokeball pb1 = Pokeball(1);
-	my_pokeballs.push_back(pb1);
-	//battle(p1,p2);
 
 }
 
@@ -151,8 +143,8 @@ void Game::initializeSDL(){
 	//Set up the screen
 	screen = SDL_SetVideoMode(screen_width, screen_height, screen_bpp, SDL_SWSURFACE);
 	//init map and battlescene
-	map=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
-	trainers=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+// 	map=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+// 	trainers=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
 	battlescene=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
 
 	//enable key repeating
@@ -504,6 +496,7 @@ Move Game::getMove(string name)
 	return m;
 }
 
+
 void Game::battle(Pokemon user, Pokemon opp)
 {
 	int move = 0;
@@ -511,9 +504,7 @@ void Game::battle(Pokemon user, Pokemon opp)
 	double strength = 0;
 	cout << "Pokemon Battle" << endl << endl;
 	cout << user.getName() << " VS " << opp.getName() << endl;
-		user.getUserImage().display(20,400,battlescene);
-		opp.getOppImage().display(560,20,battlescene);
-		SDL_Flip(battlescene);
+	displayBattle(user,opp);
 while (user.getHP() > 0 && opp.getHP() > 0)
 	{
 		
@@ -599,8 +590,24 @@ while (user.getHP() > 0 && opp.getHP() > 0)
 	}
 }
 
-void Game::displayMap(){
+
+void Game::whiteScreen(){
 SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
+}
+
+
+void Game::displayBattle(Pokemon user, Pokemon opp){
+		whiteScreen();
+		user.getUserImage().display(20,400,battlescene);
+		opp.getOppImage().display(560,20,battlescene);
+// 		whiteScreen();
+		applySurface(0,0,battlescene,screen);
+		SDL_Flip(screen);
+}
+
+
+void Game::displayMap(){
+	whiteScreen();
 	for(int i=0;i<my_map[0].size();i++){
 
 		for(int j=0;j<my_map.size();j++){
@@ -608,19 +615,31 @@ SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 
 		}
 
 	}
-
-	SDL_Flip(map);
-	//SDL_Flip(battlescene);
+	applySurface(0,0,map,screen);
+	SDL_Flip(screen);
 }
 
 
 void Game::play(){
 	int quit=0;
 
+	Pokemon p1 = my_pokemon[2];
+	Pokemon p2 = my_pokemon[5];
+
+	p1.addMove(my_moves[0]);
+	p2.addMove(my_moves[1]);
+	p2.addMove(my_moves[2]);
+
+	Pokeball pb1 = Pokeball(1);
+	my_pokeballs.push_back(pb1);
+
 	displayMap();
+	battle(p1,p2);
+	
 	//While the user hasn't quit
 	while (!quit)
 	{
+		fps.start();
 		//While there's an event to handle
 		while (SDL_PollEvent(&event))
 		{
@@ -631,7 +650,18 @@ void Game::play(){
 				quit = 1;
 			}
 		}
-	}
+		//Update the screen
+		SDL_Flip( screen);
+		
+		//Cap the frame rate if cap is true
+		
+		if(( frame_cap == 1 ) && ( fps.get_ticks() < 1000 / frames_per_second ) )
+		{
+		    SDL_Delay( ( 1000 / frames_per_second ) - fps.get_ticks() );
+		}
+		
+		
+	 }
 
 quitSDL();
 

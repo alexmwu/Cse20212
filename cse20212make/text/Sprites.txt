@@ -108,6 +108,321 @@ Width: 15
 
 +++++
 012)
+Sheet: 5
+Name: UserPokemonBar
+X: 3
+Y: 44
+Height: 37
+Width: 104
+
++++++
+013)
+Sheet: 5
+Name: OppPokemonBar
+X: 3
+Y: 3
+Height: 29
+Width: 100
+
++++++
+014)
+Sheet: 5
+Name: BattleOptions
+X: 146
+Y: 4
+Height: 48
+Width: 120
+
++++++
+014)
+Sheet: 5
+Name: BattleOptionsSelector
+X: 269
+Y: 4
+Height: 10
+Width: 6
+
++++++
+016)
+Sheet: 5
+Name: BattleText
+X: 297
+Y: 56
+Height: 48
+Width: 240
+
++++++
+017)
+Sheet: 5
+Name: BattleMoves
+X: 297
+Y: 4
+Height: 48
+Width: 240
+
++++++
+018)
+Sheet: 5
+Name: BattleUpperA
+X: 18
+Y: 90
+Height: 9
+Width: 6
+
++++++
+019)
+Sheet: 5
+Name: BattleUpperB
+X: 30
+Y: 90
+Height: 9
+Width: 6
+
++++++
+020)
+Sheet: 5
+Name: BattleUpperC
+X: 42
+Y: 90
+Height: 9
+Width: 6
+
++++++
+021)
+Sheet: 5
+Name: BattleUpperD
+X: 74
+Y: 90
+Height: 9
+Width: 6
+
++++++
+022)
+Sheet: 5
+Name: BattleUpperE
+X: 86
+Y: 90
+Height: 9
+Width: 6
+
++++++
+023)
+Sheet: 5
+Name: BattleUpperF
+X: 98
+Y: 90
+Height: 9
+Width: 6
+
++++++
+024)
+Sheet: 5
+Name: BattleUpperG
+X: 18
+Y: 106
+Height: 9
+Width: 6
+
++++++
+025)
+Sheet: 5
+Name: BattleUpperH
+X: 30
+Y: 106
+Height: 9
+Width: 6
+
++++++
+026)
+Sheet: 5
+Name: BattleUpperI
+X: 42
+Y: 106
+Height: 9
+Width: 6
+
++++++
+027)
+Sheet: 5
+Name: BattleUpperJ
+X: 74
+Y: 106
+Height: 9
+Width: 6
+
++++++
+028)
+Sheet: 5
+Name: BattleUpperK
+X: 86
+Y: 106
+Height: 9
+Width: 6
+
++++++
+029)
+Sheet: 5
+Name: BattleUpperL
+X: 98
+Y: 106
+Height: 9
+Width: 6
+
++++++
+030)
+Sheet: 5
+Name: BattleUpperM
+X: 18
+Y: 122
+Height: 9
+Width: 6
+
++++++
+031)
+Sheet: 5
+Name: BattleUpperN
+X: 30
+Y: 122
+Height: 9
+Width: 6
+
++++++
+032)
+Sheet: 5
+Name: BattleUpperO
+X: 42
+Y: 122
+Height: 9
+Width: 6
+
++++++
+033)
+Sheet: 5
+Name: BattleUpperP
+X: 74
+Y: 122
+Height: 9
+Width: 6
+
++++++
+034)
+Sheet: 5
+Name: BattleUpperQ
+X: 86
+Y: 122
+Height: 9
+Width: 6
+
++++++
+035)
+Sheet: 5
+Name: BattleUpperR
+X: 98
+Y: 122
+Height: 9
+Width: 6
+
++++++
+036)
+Sheet: 5
+Name: BattleUpperS
+X: 110
+Y: 122
+Height: 9
+Width: 6
+
++++++
+037)
+Sheet: 5
+Name: BattleUpperT
+X: 18
+Y: 138
+Height: 9
+Width: 6
+
++++++
+038)
+Sheet: 5
+Name: BattleUpperU
+X: 30
+Y: 138
+Height: 9
+Width: 6
+
++++++
+038)
+Sheet: 5
+Name: BattleUpperV
+X: 42
+Y: 138
+Height: 9
+Width: 6
+
++++++
+039)
+Sheet: 5
+Name: BattleUpperW
+X: 74
+Y: 138
+Height: 9
+Width: 6
+
++++++
+040)
+Sheet: 5
+Name: BattleUpperX
+X: 86
+Y: 138
+Height: 9
+Width: 6
+
++++++
+041)
+Sheet: 5
+Name: BattleUpperY
+X: 98
+Y: 138
+Height: 9
+Width: 6
+
++++++
+042)
+Sheet: 5
+Name: BattleUpperZ
+X: 110
+Y: 138
+Height: 9
+Width: 6
+
++++++
+043)
+Sheet: 5
+Name: BattlePeriod
+X: 142
+Y: 160
+Height: 9
+Width: 6
+
++++++
+044)
+Sheet: 5
+Name: BattleComma
+X: 142
+Y: 178
+Height: 9
+Width: 6
+
++++++
+044)
+Sheet: 5
+Name: BattleLowerA
+X: 142
+Y: 178
+Height: 9
+Width: 6
+
++++++
+016)
 Sheet: 9
 Name: UserBulbasaur
 X: 0
@@ -116,7 +431,7 @@ Height: 64
 Width: 64
 
 +++++
-012)
+017)
 Sheet: 9
 Name: OppBulbasaur
 X: 0
@@ -125,7 +440,7 @@ Height: 64
 Width: 64
 
 +++++
-012)
+018)
 Sheet: 9
 Name: UserIvysaur
 X: 0
@@ -134,7 +449,7 @@ Height: 64
 Width: 64
 
 +++++
-012)
+019)
 Sheet: 9
 Name: OppIvysaur
 X: 0
@@ -143,7 +458,7 @@ Height: 64
 Width: 64
 
 +++++
-012)
+020)
 Sheet: 9
 Name: UserVenusaur
 X: 0
@@ -152,7 +467,7 @@ Height: 64
 Width: 64
 
 +++++
-012)
+021)
 Sheet: 9
 Name: OppVenusaur
 X: 0
@@ -161,7 +476,7 @@ Height: 64
 Width: 64
 
 +++++
-012)
+022)
 Sheet: 9
 Name: UserCharmander
 X: 0
@@ -170,7 +485,7 @@ Height: 64
 Width: 64
 
 +++++
-012)
+023)
 Sheet: 9
 Name: OppCharmander
 X: 0

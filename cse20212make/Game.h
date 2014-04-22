@@ -24,6 +24,7 @@ Basically the running file for the entire game
 #include "Type.h"
 #include "Move.h"
 #include "Pokeball.h"
+#include "Timer.h"
 #include <time.h>
 
 using namespace std;
@@ -31,7 +32,7 @@ using namespace std;
 class Game
 {
 public:
-	Game(int,int,int,int);	//screen width, screen height, screen bpp
+	Game(int,int,int,int,int);	//screen width, screen height, screen bpp, move speed, game fps
 	void initializeSDL();		//initializes SDL systems, will also load sprite sheets
 	void initializeSpriteSheets();	//intialize sprite sheets to SDL_Surfaces
 	void quitSDL();		//frees all SDL systems and quits SDL
@@ -47,12 +48,18 @@ public:
 	double getTypeStrength(Type, Type);
 	Type getType(string);
 	void initializeMoves();
-	void battle(Pokemon, Pokemon);
+	
+	void battle(Pokemon, Pokemon);		//need to change to trainer v trainer
+	
 	Move getMove(string);
 	void test();
 	void play();		//play
 	void displayMap();		//display map graphically
+	
+	//need to change to trainer v trainer
+	void displayBattle(Pokemon,Pokemon);	//display the battle screen
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
+	void whiteScreen();	//make screen white
 	
 private:
 	vector<Pokemon> my_pokemon;
@@ -83,6 +90,11 @@ private:
 	int screen_width;	//width of screen
 	int screen_height;	//height of screen
 	int screen_bpp;	//bits per pixel of screen (e.g., 32 for 32 bit color)
+	
+	int frames_per_second;	//fps of game
+	int frame_cap;		//framerate cap
+	Timer fps;	//timer object to check frame rate
+	
 	int move_speed;		//how fast user can move keys
 	int is_battle;		//is pokemon in battle
 };
