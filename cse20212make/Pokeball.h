@@ -21,9 +21,10 @@ class Pokeball : Item
 public:
 	Pokeball();
 	Pokeball(string, int, int,  int);
+	Pokeball(string, int);
 	void setStrength(int);
 	int getStrength();
-	int canCatch(Pokemon *);
+	int canCatch(Pokemon);
 private:
 	int my_strength;
 	string my_name;
