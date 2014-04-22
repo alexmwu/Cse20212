@@ -16,7 +16,7 @@ Stores the sprite sheet, location on the sheet, and height and width of the spri
 
 using namespace std;
 
-class Pokeball : Item
+class Pokeball : public Item
 {
 public:
 	Pokeball();

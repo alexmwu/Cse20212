@@ -15,7 +15,7 @@ Class extedning item, used for an item to heal HP ~ Potion
 
 using namespace std;
 
-class Potion : Item
+class Potion : public Item
 {
 public:
 	Potion();
