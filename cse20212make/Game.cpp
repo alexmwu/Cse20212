@@ -832,12 +832,26 @@ void Game::displayBattle(Pokemon user, Pokemon opp){
 
 void Game::displayMap(){
 	whiteScreen();
-	for(int i=0;i<my_map[0].size();i++){
-
-		for(int j=0;j<my_map.size();j++){
-			my_map[j][i].getSprite().display(i*15,j*15,map);
+//my_map[0][0].getSprite().display(15,15,map);
+	/*for(int i=0;i<my_map.size();i++)
+	{
+		for(int j=0;j<my_map[i].size();j++)
+		{
+			if(my_map[j][i].getSprite().getName()=="") 
+				continue;
+			//my_map[j][i].getSprite().display(i*15,j*15,map);
 		}
 
+	}*/
+
+	for (int i = 0; i < my_map.size(); i++)
+	{
+		for (int j = 0; j < my_map[i].size(); j++)
+		{
+			//f(my_map[j][i].getSprite().getName()=="") 
+				//continue;
+			my_map[i][j].getSprite().display(j*15,i*15,map);
+		}
 	}
 	applySurface(0,0,map,screen);
 	SDL_Flip(screen);
@@ -851,7 +865,7 @@ void Game::play(){
 	
 	Trainer user = my_trainers[0];
 	Trainer opp = my_trainers[2];
-	battle(&user, &opp);
+	//battle(&user, &opp);
 	
 	//While the user hasn't quit
 	while (!quit)
