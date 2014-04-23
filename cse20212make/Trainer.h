@@ -25,7 +25,7 @@ class Trainer
 {
 public:
 	Trainer();
-	Trainer(string, BoardPice);
+	Trainer(string, BoardPiece);
 	//void addToParty(Pokemon*);
 	void addToParty(Pokemon);
 	void removeFromParty(int);
