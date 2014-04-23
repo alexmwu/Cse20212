@@ -145,8 +145,8 @@ void Game::initializeSDL(){
 	//Set up the screen
 	screen = SDL_SetVideoMode(screen_width, screen_height, screen_bpp, SDL_SWSURFACE);
 	//init map and battlescene
-// 	map=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
-// 	trainers=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+ 	map=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+ 	trainers=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
 	battlescene=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
 
 	//enable key repeating
@@ -571,7 +571,7 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 	double strength = 0;
 	int canMove = 1;
 	cout << user->getName() << " VS " << opp->getName() << endl;
-	//displayBattle(user,opp);
+	displayBattle(*user,*opp);
 while (user->getHP() > 0 && opp->getHP() > 0)
 	{
 		canMove = 1;
