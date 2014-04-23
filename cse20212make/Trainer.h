@@ -18,6 +18,7 @@ stores a list of pokemon objects that can be used in the Pokemon interfaces
 #include "Item.h"
 #include "Location.h"
 #include "Potion.h"
+#include "BoardPiece.h"
 using namespace std;
 
 class Trainer
@@ -42,13 +43,13 @@ public:
 	void addPotion(Potion *);
 	void usePotion(int, Pokemon);
 	string getName();
-	void setLcoation(Location);
-	Location getLocation();
+	void setBoardPiece(BoardPiece);
+	BoardPiece getBoardPiece();
 private:
 	vector<Pokemon> my_party;
 	vector<Pokemon*> my_pokemon;
 	vector<Potion*> my_potions;
 	string my_name;
-	Location my_loc;
+	BoardPiece my_piece;
 };
 #endif

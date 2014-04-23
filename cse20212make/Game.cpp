@@ -496,6 +496,7 @@ void Game::initializeTrainers()
 	Trainer temp = Trainer();
 	int newTrainer = 0;
 	Location loc = Location();
+	BoardPiece piece = BoardPiece();
 	if (myfile.is_open())
 	{
 		while (!myfile.eof())
@@ -522,7 +523,8 @@ void Game::initializeTrainers()
 			{
 				newTrainer = 2;
 				loc = Location(atoi(tokens[2].c_str()), atoi(tokens[3].c_str()));
-				temp = Trainer(tokens[1], loc);				
+				piece = BoardPiece(getSprite(tokens[4]), loc, 0, 1);
+				temp = Trainer(tokens[1], piece);						
 			}
 			else if (newTrainer == 2)
 			{

@@ -1,6 +1,6 @@
 +++++
 000)
-Name: Alex 4 18
+Name: Alex 4 18 Sprite
 Charmander 100 Ember Scratch
 Bulbasaur 100 Tackle
 Wartortle 100 Bubble

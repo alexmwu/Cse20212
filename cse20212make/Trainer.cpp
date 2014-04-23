@@ -15,6 +15,7 @@ stores a list of pokemon objects that can be used in the Pokemon interfaces
 #include "Location.h"
 #include "Trainer.h"
 #include "Potion.h"
+#include "BoardPiece.h"
 using namespace std;
 
 Trainer::Trainer()
@@ -22,10 +23,10 @@ Trainer::Trainer()
 		return;
 }
 
-Trainer::Trainer(string name, Location loc)
+Trainer::Trainer(string name, BoardPiece p)
 {
 	my_name = name;
-	my_loc = loc;
+	my_piece = p;
 }
 
 
@@ -152,12 +153,12 @@ string Trainer::getName()
 	return my_name;
 }
 
-void Trainer::setLcoation(Location loc)
+void Trainer::setBoardPiece(BoardPiece p)
 {
-	my_loc = loc;
+	my_piece = p;
 }
 
-Location Trainer::getLocation()
+BoardPiece Trainer::getBoardPiece()
 {
-	return my_loc;
+	return my_piece;
 }
