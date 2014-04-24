@@ -1416,7 +1416,7 @@ Width: 15
 076)
 Sheet: 3
 Name: GR1
-X: 51
+X: 52
 Y: 171
 Height: 15
 Width: 15
@@ -1425,7 +1425,7 @@ Width: 15
 077)
 Sheet: 3
 Name: GR2
-X: 51
+X: 52
 Y: 154
 Height: 15
 Width: 15
@@ -1434,7 +1434,7 @@ Width: 15
 078)
 Sheet: 3
 Name: GR3
-X: 68
+X: 69
 Y: 171
 Height: 15
 Width: 15
@@ -1443,7 +1443,7 @@ Width: 15
 079)
 Sheet: 3
 Name: GR4
-X: 17
+X: 18
 Y: 154
 Height: 15
 Width: 15
@@ -1470,7 +1470,7 @@ Width: 15
 082)
 Sheet: 3
 Name: GR7
-X: 17
+X: 18
 Y: 171
 Height: 15
 Width: 15
@@ -1479,7 +1479,7 @@ Width: 15
 083)
 Sheet: 3
 Name: GR8
-X: 68
+X: 69
 Y: 154
 Height: 15
 Width: 15
@@ -1498,7 +1498,7 @@ Width: 15
 Sheet: 3
 Name: WB1
 X: 171
-Y: 459
+Y: 460
 Height: 15
 Width: 15
 
