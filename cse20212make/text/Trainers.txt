@@ -1,6 +1,6 @@
 +++++
 000)
-Name: Alex 4 18 Sprite
+Name: Alex 4 18 Trainer1
 Charmander 100 Ember Scratch
 Bulbasaur 100 Tackle
 Wartortle 100 Bubble
@@ -8,14 +8,14 @@ Wartortle 100 Bubble
 
 +++++
 001)
-Name: Alex2 3 13
+Name: Alex2 3 13 Trainer1
 Eevee 100 Scratch
 Abra 100 Tackle
 ###
 
 +++++
 002)
-Name: Trainer2 2 2
+Name: Trainer2 2 2 Trainer1
 Blastoise 100 Bubble Tackle
 Pidgeotto 100 Tackle 
 Sandshrew 100 Scratch

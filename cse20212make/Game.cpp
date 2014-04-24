@@ -338,7 +338,7 @@ Sprite Game::getSprite(string name)
 		if (my_sprites[i].getName() == name)
 			return my_sprites[i];
 	}
-	cout<<"Couldn't find sprite."<<endl;
+	cout<<"Couldn't find sprite." << name <<endl;
 	return s;
 }
 
