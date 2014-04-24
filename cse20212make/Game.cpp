@@ -833,7 +833,6 @@ void Game::displayBattle(Pokemon user, Pokemon opp){
 
 
 void Game::displayMap(){
-	whiteScreen();
 //my_map[0][0].getSprite().display(15,15,map);
 	/*for(int i=0;i<my_map.size();i++)
 	{
@@ -860,9 +859,23 @@ void Game::displayMap(){
 }
 
 
+void Game::displayTrainers(){
+	for (int i = 0; i < my_trainers.size(); i++)
+	{
+		int x=my_trainers[i].getBoardPiece().getLocation().getX();
+		int y=my_trainers[i].getBoardPiece().getLocation().getY();
+		my_trainers[i].getBoardPiece().getSprite().display(y*15,x*15,trainers);
+	}
+	applySurface(0,0,trainers,screen);
+	SDL_Flip(screen);
+}
+
+
 void Game::play(){
 	int quit=0;
 
+	whiteScreen();
+	displayTrainers();
 	displayMap();
 	
 	Trainer user = my_trainers[0];
