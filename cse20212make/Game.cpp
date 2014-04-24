@@ -882,6 +882,9 @@ void Game::play(){
 	Trainer opp = my_trainers[2];
 	//battle(&user, &opp);
 	
+	int trainerX;	//trainer's x position
+	int trainerY;	//trainer's y position	
+
 	//While the user hasn't quit
 	while (!quit)
 	{
@@ -889,8 +892,34 @@ void Game::play(){
 		//While there's an event to handle
 		while (SDL_PollEvent(&event))
 		{
+			//If a key was pressed
+			if (event.type == SDL_KEYDOWN)
+			{
+				trainerX=my_trainers[0].getBoardPiece().getLocation().getX();
+				trainerY=my_trainers[0].getBoardPiece().getLocation().getY();
+cout<<trainerX<<","<<trainerY<<endl;
+				//Set the proper message surface
+				switch (event.key.keysym.sym)
+				{
+				case SDLK_UP: 
+					/*if (trainerY>0)*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY--);
+					break;
+				case SDLK_DOWN:
+					/*if (trainerY < my_map[trainerX])*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY++);
+					break;
+				case SDLK_LEFT:
+					/*if (trainerX>0)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX--);
+					break;
+				case SDLK_RIGHT:
+					/*if (trainerX < SCREEN_WIDTH-trainersquare.w)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX++);
+					break;
+				}
+				whiteScreen();
+				displayMap();
+				displayTrainers();
+			}
 			//If the user has Xed out the window
-			if (event.type == SDL_QUIT)
+			else if (event.type == SDL_QUIT)
 			{
 				//Quit the program
 				quit = 1;
