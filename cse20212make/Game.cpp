@@ -875,8 +875,8 @@ void Game::play(){
 	int quit=0;
 
 	whiteScreen();
-	displayTrainers();
 	displayMap();
+	displayTrainers();	
 	
 	Trainer user = my_trainers[0];
 	Trainer opp = my_trainers[2];
