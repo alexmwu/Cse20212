@@ -23,7 +23,7 @@ Sprite BoardPiece::getSprite()
 	return my_sprite;
 }
 
-Location BoardPiece::getLocation()
+Location& BoardPiece::getLocation()
 {
 	return my_loc;
 }

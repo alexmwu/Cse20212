@@ -145,9 +145,9 @@ void Game::initializeSDL(){
 	//Set up the screen
 	screen = SDL_SetVideoMode(screen_width, screen_height, screen_bpp, SDL_SWSURFACE);
 	//init map and battlescene
- 	map=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
- 	trainers=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
-	battlescene=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+// 	map=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+// 	trainers=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
+//	battlescene=SDL_SetVideoMode(screen_width,screen_height,screen_bpp,SDL_SWSURFACE);
 
 	//enable key repeating
 	SDL_EnableKeyRepeat(1, move_speed);
@@ -844,6 +844,8 @@ void Game::displayMap(){
 		}
 
 	}*/
+	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
+	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 
 	for (int i = 0; i < my_map.size(); i++)
 	{
@@ -851,24 +853,34 @@ void Game::displayMap(){
 		{
 			//f(my_map[j][i].getSprite().getName()=="") 
 				//continue;
+<<<<<<< HEAD
 			if ( i > 50)
 				my_map[i][j].getSprite().display(j*15,(i-50)*15,map);
+=======
+			my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
+>>>>>>> 7afa8f0bdec870d75c6da9cbacda4789a19363f4
 		}
 	}
-	applySurface(0,0,map,screen);
-	SDL_Flip(screen);
+	//int userX=my_trainers[0].getBoardPiece().getLocation().getX();
+	//int userY=my_trainers[0].getBoardPiece().getLocation().getY();
+	//applySurface(userX,userY,map,screen);
+	//SDL_Flip(map);
 }
 
 
 void Game::displayTrainers(){
+	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
+	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
+
 	for (int i = 0; i < my_trainers.size(); i++)
 	{
 		int x=my_trainers[i].getBoardPiece().getLocation().getX();
 		int y=my_trainers[i].getBoardPiece().getLocation().getY();
-		my_trainers[i].getBoardPiece().getSprite().display(y*15,x*15,trainers);
+		my_trainers[i].getBoardPiece().getSprite().display(-(15)*(userX/2.0)+x*15,-(15)*(userY/2.0)+y*15,screen);
 	}
-	applySurface(0,0,trainers,screen);
-	SDL_Flip(screen);
+
+	//applySurface(userX,userY,trainers,screen);
+	//SDL_Flip(trainers);
 }
 
 
@@ -883,6 +895,9 @@ void Game::play(){
 	Trainer opp = my_trainers[2];
 	//battle(&user, &opp);
 	
+	int trainerX;	//trainer's x position
+	int trainerY;	//trainer's y position	
+
 	//While the user hasn't quit
 	while (!quit)
 	{
@@ -890,8 +905,38 @@ void Game::play(){
 		//While there's an event to handle
 		while (SDL_PollEvent(&event))
 		{
+			//If a key was pressed
+			if (event.type == SDL_KEYDOWN)
+			{
+				trainerX=my_trainers[0].getBoardPiece().getLocation().getX();
+				trainerY=my_trainers[0].getBoardPiece().getLocation().getY();
+cout<<trainerX<<","<<trainerY<<endl;
+				//Set the proper message surface
+				switch (event.key.keysym.sym)
+				{
+				case SDLK_UP: 
+					/*if (trainerY>0)*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY-1);
+cout<<"y up change"<<my_trainers[0].getBoardPiece().getLocation().getY();
+					break;
+				case SDLK_DOWN:
+					/*if (trainerY < my_map[trainerX])*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY+1);
+cout<<"y down change"<<my_trainers[0].getBoardPiece().getLocation().getY();
+					break;
+				case SDLK_LEFT:
+					/*if (trainerX>0)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX-1);
+cout<<"x left change"<<my_trainers[0].getBoardPiece().getLocation().getX();
+					break;
+				case SDLK_RIGHT:
+					/*if (trainerX < SCREEN_WIDTH-trainersquare.w)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX+1);
+cout<<"x right change"<<my_trainers[0].getBoardPiece().getLocation().getX();
+					break;
+				}
+				whiteScreen();
+				displayMap();
+				displayTrainers();
+			}
 			//If the user has Xed out the window
-			if (event.type == SDL_QUIT)
+			else if (event.type == SDL_QUIT)
 			{
 				//Quit the program
 				quit = 1;

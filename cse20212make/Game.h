@@ -60,10 +60,9 @@ public:
 	Move getMove(string);
 	void test();
 	void play();		//play
+	void displayBattle(Pokemon,Pokemon);	//display battling Pokemon
 	void displayMap();		//display map graphically
 	void displayTrainers();		//display trainers on map
-	//need to change to trainer v trainer
-	void displayBattle(Pokemon,Pokemon);	//display the battle screen
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
 	void whiteScreen();	//make screen white
 	
