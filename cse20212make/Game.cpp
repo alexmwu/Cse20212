@@ -851,7 +851,8 @@ void Game::displayMap(){
 		{
 			//f(my_map[j][i].getSprite().getName()=="") 
 				//continue;
-			my_map[i][j].getSprite().display(j*15,i*15,map);
+			if ( i > 50)
+				my_map[i][j].getSprite().display(j*15,(i-50)*15,map);
 		}
 	}
 	applySurface(0,0,map,screen);
