@@ -1533,7 +1533,7 @@ Width: 15
 089)
 Sheet: 3
 Name: WB5
-X: 205
+X: 188
 Y: 442
 Height: 15
 Width: 15
@@ -1542,8 +1542,8 @@ Width: 15
 090)
 Sheet: 3
 Name: WB6
-X: 188
-Y: 494
+X: 205
+Y: 442
 Height: 15
 Width: 15
 
