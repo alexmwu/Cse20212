@@ -1555,3 +1555,21 @@ X: 800
 Y: 680
 Height: 15
 Width: 15
+
++++++
+092)
+Sheet: 2
+Name: FLR
+X: 493
+Y: 620
+Height: 15
+Width: 15
+
++++++
+093)
+Sheet: 2
+Name: EXT
+X: 476
+Y: 550
+Height: 15
+Width: 15
