@@ -44,7 +44,7 @@ public:
 	void usePotion(int, Pokemon);
 	string getName();
 	void setBoardPiece(BoardPiece);
-	BoardPiece getBoardPiece();
+	BoardPiece& getBoardPiece();
 private:
 	vector<Pokemon> my_party;
 	vector<Pokemon*> my_pokemon;

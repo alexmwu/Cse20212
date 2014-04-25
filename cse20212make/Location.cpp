@@ -32,5 +32,5 @@ void Location::setX(int x)
 
 void Location::setY(int y)
 {
-	my_x = y;
+	my_y = y;
 }

@@ -158,7 +158,7 @@ void Trainer::setBoardPiece(BoardPiece p)
 	my_piece = p;
 }
 
-BoardPiece Trainer::getBoardPiece()
+BoardPiece& Trainer::getBoardPiece()
 {
 	return my_piece;
 }

@@ -23,7 +23,7 @@ public:
 	BoardPiece();
 	BoardPiece(Sprite, Location, int, int);
 	Sprite getSprite();
-	Location getLocation();
+	Location& getLocation();
 	int canWalk();
 	int trainerPresent(Location);
 	virtual void interact();
