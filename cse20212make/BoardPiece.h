@@ -25,6 +25,7 @@ public:
 	Sprite getSprite();
 	Location& getLocation();
 	int canWalk();
+	int canInteract();
 	int trainerPresent(Location);
 	virtual void interact();
 
