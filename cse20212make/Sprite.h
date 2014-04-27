@@ -21,7 +21,7 @@ class Sprite
 {
 public:
 	Sprite();
-	Sprite(SDL_Surface *, string, int, int, int, int);
+	Sprite(SDL_Surface *, string, int, int, int, int, int, int);
 	void freeSurface();	//frees surface at the end of the program (probably not needed, as the surfaces are initialized in the Game class
 	SDL_Surface *getSurface();	//returns the actual image (sdl surface)
 	string getSheet();
@@ -36,6 +36,10 @@ public:
 	void setHeight(int);
 	void setWidth(int);
 	void setName(string);
+	void setWalk(int);
+	void setInteract(int);
+	int getWalk();
+	int getInteract();
 	void display(int,int,SDL_Surface*);	//ints are for x and y location to be displayed. the pointer to SDL_Surface is the screen
 
 private:
@@ -45,6 +49,8 @@ private:
 	int my_height;
 	int my_width;
 	string my_name;
+	int my_walk;
+	int my_interact;
 	
 	SDL_Rect sprite_loc;	//location of sprite on sprite map
 	SDL_Surface *sprite;

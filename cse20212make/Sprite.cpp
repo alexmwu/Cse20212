@@ -8,7 +8,7 @@ Sprite::Sprite()
 	return;
 }
 
-Sprite::Sprite(SDL_Surface * sheet, string name, int x, int y, int h, int w)
+Sprite::Sprite(SDL_Surface * sheet, string name, int x, int y, int h, int w, int walk, int interact)
 {
 	sprite = sheet;
 	my_x = x;
@@ -16,6 +16,8 @@ Sprite::Sprite(SDL_Surface * sheet, string name, int x, int y, int h, int w)
 	my_height = h;
 	my_width = w;
 	my_name = name;
+	my_walk = walk;
+	my_interact = interact;
 
 	//SDL_Rect internal variables
 	sprite_loc.x=my_x;
@@ -102,3 +104,27 @@ void Sprite::display(int x,int y,SDL_Surface* destination){
 	//Blit the surface
 	SDL_BlitSurface(sprite,&sprite_loc,destination,&offset);
 }
+
+void Sprite::setWalk(int walk)
+{
+	my_walk = walk;
+}
+
+void Sprite::setInteract(int interact)
+{
+	my_interact = interact;
+}
+
+
+int Sprite::getWalk()
+{
+	return my_walk;
+}
+
+
+int Sprite::getInteract()
+{
+	return my_interact;
+}
+
+

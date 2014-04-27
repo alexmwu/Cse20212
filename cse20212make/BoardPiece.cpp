@@ -33,6 +33,11 @@ int BoardPiece::canWalk()
 	return my_walk;
 }
 
+int BoardPiece::canInteract()
+{
+	return my_interact;
+}
+
 int BoardPiece::trainerPresent(Location loc)
 {
 	if (my_loc.getX() != loc.getX())

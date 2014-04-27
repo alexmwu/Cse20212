@@ -67,6 +67,7 @@ public:
 	void displayTrainers();		//display trainers on map
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
 	void whiteScreen();	//make screen white
+	BoardPiece getMapPiece(int, int); //returns the BoardPice at the corresponding location. 
 	
 private:
 	vector<Pokemon> my_pokemon;
