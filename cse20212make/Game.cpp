@@ -647,7 +647,8 @@ void Game::textToSDL(string text, int textWidth, int x, int y){
 	int spriteLength=15;	//a bit more than their average lengths
 	int oldX=x;
 	for(int i=0;i<text.size();i++){
-		if(x+spriteWidth)>(x+textWidth)){
+		if((x+spriteWidth)>(x+textWidth))
+		{
 			if(text.at(i)!=' '){
 				getSprite("BoldHyphen").display(x,y,screen);
 			}
@@ -659,7 +660,7 @@ void Game::textToSDL(string text, int textWidth, int x, int y){
 			x+=spriteWidth+gap;
 			continue;
 			}
-		getSprite(charToSprite(text.at(i))).display(x,y,screen);
+		//getSprite(charToSprite(text.at(i))).display(x,y,screen);
 		x+=spriteWidth+gap;
 	}
 }
