@@ -52,7 +52,7 @@ Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
 	initializeSpriteSheets();
 	initializeSprites();
 	drawMap();
-	printMap();
+	//printMap();
 	initializeTypes();
 	initializeTypeChart();
 	initializeMoves();
@@ -61,7 +61,8 @@ Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
 }
 
 
-SDL_Surface * Game::loadImage(string filename){
+SDL_Surface * Game::loadImage(string filename)
+{
 	//The image that's loaded
 	SDL_Surface* loadedImage = NULL;
 
@@ -70,7 +71,8 @@ SDL_Surface * Game::loadImage(string filename){
 
 	//Load the image
 	loadedImage = IMG_Load(filename.c_str());
-/*
+
+	/*
 	//If the image loaded
 	if (loadedImage != NULL)
 	{
@@ -84,8 +86,8 @@ SDL_Surface * Game::loadImage(string filename){
 
 	//Return the optimized image
 	return optimizedImage;
-*/
-return loadedImage;
+	*/
+	return loadedImage;
 }
 
 SDL_Surface *Game::switchSheet(int sheetindex){
@@ -178,7 +180,6 @@ void Game::quitSDL(){
 
 void Game::initializePokemon()
 {
-
 	string file = "text/PokemonFile.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
@@ -193,7 +194,9 @@ void Game::initializePokemon()
 			{
 				getline(myfile, line);
 				if (line != "000)")
+				{
 					read = 1;
+				}
 			}
 			if (!read)
 				getline(myfile, line);
@@ -235,14 +238,14 @@ void Game::initializePokemon()
 				Sprite s2=getSprite(attribute[31]);
 				Type t1 = getType(attribute[3]);
 				Type t2 = getType(attribute[5]);
-				Pokemon newPokemon(atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[15].c_str()), atoi(attribute[11].c_str()),
-					atoi(attribute[13].c_str()), atoi(attribute[17].c_str()), s1, s2, attribute[1], atoi(attribute[19].c_str()),
-					atoi(attribute[21].c_str()), atoi(attribute[23].c_str()), atoi(attribute[25].c_str()),
-					atoi(attribute[27].c_str()), t1, t2);
+
+				Pokemon newPokemon(atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[15].c_str()), atoi(attribute[11].c_str()),atoi(attribute[13].c_str()), atoi(attribute[17].c_str()), s1, s2, attribute[1], atoi(attribute[19].c_str()), atoi(attribute[21].c_str()), atoi(attribute[23].c_str()), atoi(attribute[25].c_str()),atoi(attribute[27].c_str()), t1, t2);
 				my_pokemon.push_back(newPokemon);
 				read = 0;
 				for (int i = 0; i < 2; i++)
+				{	
 					getline(myfile, line);
+				}
 			}
 		}
 	}
@@ -250,7 +253,6 @@ void Game::initializePokemon()
 
 void Game::initializeSprites()
 {
-
 	string file = "text/Sprites.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
@@ -283,9 +285,9 @@ void Game::initializeSprites()
 				myfile >> attribute[9];
 				myfile >> attribute[10];
 				myfile >> attribute[11];
-				myfile >> attribute[12;
+				myfile >> attribute[12];
 				myfile >> attribute[13];
-				Sprite newSprite(switchSheet(atoi(attribute[1].c_str())), attribute[3], atoi(attribute[6].c_str()), atoi(attribute[9].c_str()), atoi(attribute[11].c_str()), atoi(attribute[13].c_str()), attribute[4], attribute[5]);
+				Sprite newSprite(switchSheet(atoi(attribute[1].c_str())), attribute[3], atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[11].c_str()), atoi(attribute[13].c_str()), atoi(attribute[4].c_str()), atoi(attribute[5].c_str()));
 				my_sprites.push_back(newSprite);
 				read = 0;
 				for (int i = 0; i < 2; i++)
@@ -553,7 +555,6 @@ void Game::initializeTrainers()
 			tokens.clear();
 		}
 	}
-
 }
 
 Move Game::getMove(string name)
@@ -932,19 +933,10 @@ void Game::displayBattle(Pokemon user, Pokemon opp){
 
 
 void Game::displayMap(){
-//my_map[0][0].getSprite().display(15,15,map);
-	/*for(int i=0;i<my_map.size();i++)
-	{
-		for(int j=0;j<my_map[i].size();j++)
-		{
-			if(my_map[j][i].getSprite().getName()=="") 
-				continue;
-			//my_map[j][i].getSprite().display(i*15,j*15,map);
-		}
-
-	}*/
+	my_map[0][0].getSprite().display(15,15,map);
 	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
+	cout << userX << " " << userY << endl;
 
 	for (int i = 0; i < my_map.size(); i++)
 	{
@@ -952,12 +944,14 @@ void Game::displayMap(){
 		{
 			//f(my_map[j][i].getSprite().getName()=="") 
 				//continue;
-<<<<<<< HEAD
 			//if ( i > 50)
 			//	my_map[i][j].getSprite().display(j*15,(i-50)*15,map);
-=======
-			//my_map[i][j].getSprite().display(j*15,i*15,map);
->>>>>>> 2d9ac15c46b0f382a1013bee500e4d853eb87df8
+			//if(i < 25 && j < 15)
+			{
+				//my_map[i][j].getSprite().display(j*15,i*15,screen);
+				//cout << "(" << i << ", " << j << ") name: " << my_map[i][j].getSprite().getName() << endl;
+			}
+			//cout << "Trying to display : " << my_map[i][j].getSprite().getName() << endl;
 			my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
 		}
 	}
@@ -971,13 +965,15 @@ void Game::displayMap(){
 void Game::displayTrainers(){
 	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
+	
 
-	for (int i = 0; i < my_trainers.size(); i++)
+	my_trainers[0].getBoardPiece().getSprite().display(userX*15, userY*15, screen);
+	/*for (int i = 0; i < my_trainers.size(); i++)
 	{
 		int x=my_trainers[i].getBoardPiece().getLocation().getX();
 		int y=my_trainers[i].getBoardPiece().getLocation().getY();
 		my_trainers[i].getBoardPiece().getSprite().display(-(15)*(userX/2.0)+x*15,-(15)*(userY/2.0)+y*15,screen);
-	}
+	}*/
 
 	//applySurface(userX,userY,trainers,screen);
 	//SDL_Flip(trainers);
@@ -989,7 +985,8 @@ void Game::play(){
 
 	whiteScreen();
 	displayMap();
-	displayTrainers();	
+	displayTrainers();
+	
 	
 	Trainer user = my_trainers[0];
 	Trainer opp = my_trainers[2];
@@ -1017,9 +1014,10 @@ void Game::play(){
 				{
 				case SDLK_UP: 
 					nextStep = getMapPiece(trainerX, trainerY-1);
-					if (!nextStep.canWak())
+					if (!nextStep.canWalk())
 					{
-						cout << "You cannot walk there. UP" << my_trainers[0].getBoardPiece().getLocation().getY();
+						cout << "You cannot walk there. UP " << my_trainers[0].getBoardPiece().getLocation().getY();
+						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					/*if (trainerY>0)*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY-1);
@@ -1027,9 +1025,10 @@ void Game::play(){
 					break;
 				case SDLK_DOWN:
 					nextStep = getMapPiece(trainerX, trainerY+1);
-					if (!nextStep.canWak())
+					if (!nextStep.canWalk())
 					{
 						cout << "You cannot walk there. DOWN" << my_trainers[0].getBoardPiece().getLocation().getY();
+						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					/*if (trainerY < my_map[trainerX])*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY+1);
@@ -1037,9 +1036,10 @@ void Game::play(){
 					break;
 				case SDLK_LEFT:
 					nextStep = getMapPiece(trainerX-1, trainerY);
-					if (!nextStep.canWak())
+					if (!nextStep.canWalk())
 					{
 						cout << "You cannot walk there. LEFT" << my_trainers[0].getBoardPiece().getLocation().getX();
+						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					/*if (trainerX>0)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX-1);
@@ -1047,9 +1047,10 @@ void Game::play(){
 					break;
 				case SDLK_RIGHT:
 					nextStep = getMapPiece(trainerX+1, trainerY);
-					if (!nextStep.canWak())
+					if (!nextStep.canWalk())
 					{
 						cout << "You cannot walk there. RIGHT" << my_trainers[0].getBoardPiece().getLocation().getX();
+						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					/*if (trainerX < SCREEN_WIDTH-trainersquare.w)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX+1);
@@ -1092,9 +1093,8 @@ BoardPiece Game::getMapPiece(int i, int j)
 		cout << "Invalid location. (" << i << ", " << j << ")" << endl;
 		return piece;
 	}
-	return my_map[i][j];
+	return my_map[j][i];
 }
-
 
 void Game::applySurface(int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip)
 {
