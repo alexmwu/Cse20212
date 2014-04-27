@@ -58,6 +58,8 @@ public:
 	void initializeTrainers();
 	void printPokemon();
 	Move getMove(string);
+	Sprite charToSprite(char);	
+	void textToSDL(string,int, int, int);	//string of text to display, width of text box.
 	void test();
 	void play();		//play
 	void displayBattle(Pokemon,Pokemon);	//display battling Pokemon

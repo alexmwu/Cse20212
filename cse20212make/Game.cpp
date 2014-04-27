@@ -20,6 +20,7 @@
 #include "Trainer.h"
 #include "Item.h"
 #include "Potion.h"
+#include <cctype>
 using namespace std;
 
 Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
@@ -60,7 +61,8 @@ Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
 }
 
 
-SDL_Surface * Game::loadImage(string filename){
+SDL_Surface * Game::loadImage(string filename)
+{
 	//The image that's loaded
 	SDL_Surface* loadedImage = NULL;
 
@@ -69,7 +71,8 @@ SDL_Surface * Game::loadImage(string filename){
 
 	//Load the image
 	loadedImage = IMG_Load(filename.c_str());
-/*
+
+	/*
 	//If the image loaded
 	if (loadedImage != NULL)
 	{
@@ -83,8 +86,8 @@ SDL_Surface * Game::loadImage(string filename){
 
 	//Return the optimized image
 	return optimizedImage;
-*/
-return loadedImage;
+	*/
+	return loadedImage;
 }
 
 SDL_Surface *Game::switchSheet(int sheetindex){
@@ -177,7 +180,6 @@ void Game::quitSDL(){
 
 void Game::initializePokemon()
 {
-	cout << "Starting Pokemon" << endl;;
 	string file = "text/PokemonFile.txt";
 	ifstream myfile;
 	myfile.open(file.c_str());
@@ -194,7 +196,6 @@ void Game::initializePokemon()
 				if (line != "000)")
 				{
 					read = 1;
-					cout << "Reading " << line << endl;
 				}
 			}
 			if (!read)
@@ -239,21 +240,15 @@ void Game::initializePokemon()
 				Type t2 = getType(attribute[5]);
 
 				Pokemon newPokemon(atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[15].c_str()), atoi(attribute[11].c_str()),atoi(attribute[13].c_str()), atoi(attribute[17].c_str()), s1, s2, attribute[1], atoi(attribute[19].c_str()), atoi(attribute[21].c_str()), atoi(attribute[23].c_str()), atoi(attribute[25].c_str()),atoi(attribute[27].c_str()), t1, t2);
-				cout << newPokemon.getName() << " good" << endl;
-				cout << my_pokemon.size() << endl;
 				my_pokemon.push_back(newPokemon);
-				cout << "Push good " << endl;
-				cout << newPokemon.getName() << " good" << endl;
 				read = 0;
 				for (int i = 0; i < 2; i++)
 				{	
 					getline(myfile, line);
-					cout << "line: " << line<<endl;
 				}
 			}
 		}
 	}
-	cout << "Pokemon good." << endl;
 }
 
 void Game::initializeSprites()
@@ -300,7 +295,6 @@ void Game::initializeSprites()
 			}
 		}
 	}
-	cout << "Sprites complete" << endl;
 }
 
 
@@ -339,7 +333,6 @@ void Game::drawMap()
 			x++;
 		}		
 	}
-	cout << "Map, completed successfully" << endl;
 }
 
 Sprite Game::getSprite(string name)
@@ -401,7 +394,6 @@ void Game::initializeTypes()
 			}
 		}
 	}
-	cout << "Types good" << endl;
 }
 
 void Game::initializeTypeChart()
@@ -422,7 +414,6 @@ void Game::initializeTypeChart()
 			temp.clear();
 		}
 	}
-	cout << "Type Chart good" << endl;
 }
 
 double Game::getTypeStrength(Type user, Type opp)
@@ -499,7 +490,6 @@ void Game::initializeMoves()
 			}
 		}
 	}
-	cout << "Moves good" << endl;
 }
 
 void Game::initializeTrainers()
@@ -565,7 +555,6 @@ void Game::initializeTrainers()
 			tokens.clear();
 		}
 	}
-	cout << "Trainers complete" << endl;
 }
 
 Move Game::getMove(string name)
@@ -577,6 +566,101 @@ Move Game::getMove(string name)
 			return my_moves[i];
 	}
 	return m;
+}
+
+Sprite Game::charToSprite(char c){
+	string query;
+	if(isalpha(c)){	//alphabetical char
+		if(islower(c)){	//lowercase
+			query="BoldLower";
+			c=tolower(c);
+			query.append(&c);
+		}
+		else if(isupper(c)){	//uppercase
+			query="BoldUpper";
+			c=toupper(c);
+			query.append(&c);
+		}
+	}
+	else if(isdigit(c)){	//is number
+		query="Bold";
+		query.append(&c);
+	}
+	else{	//punctuation and other random symbols (like male/female)
+		if(ispunct(c) && c!=34 && c!=39){
+			switch(c){
+				case '.':
+					query="BoldPeriod";
+					break;
+				case ',':
+					query="BoldComma";
+					break;
+				case '!':
+					query="BoldExclamation";
+					break;
+				case '?':
+					query="BoldQuestion";
+					break;
+				case '/':
+					query="BoldSlash";
+					break;
+				case '-':
+					query="BoldHyphen";
+					break;
+			}
+		}
+		else{
+			switch(c){
+				case '[':
+					query="BoldMale";
+					break;
+				case ']':
+					query="BoldFemale";
+					break;
+				case 92:
+					query="BoldEllipsis";
+					break;
+				case '(':
+					query="BoldOpenDoubleQuotes";
+					break;
+				case ')':
+					query="BoldClosedDoubleQuotes";
+					break;
+				case '`':
+					query="BoldOpenSingleQuote";
+					break;
+				case 34:
+					query="BoldClosedSingleQuote";
+					break;
+			}
+		}
+	}
+return getSprite(query);
+}
+
+
+void Game::textToSDL(string text, int textWidth, int x, int y){
+	int spriteWidth=6;	//a sprite's width
+	int spriteLength=15;	//a bit more than their average lengths
+	int oldX=x;
+	for(int i=0;i<text.size();i++)
+	{
+		if((x+spriteWidth)>(x+textWidth))
+		{
+			if(text.at(i)==' ')
+			{
+				//display space
+			}
+			else
+			{
+				//display hyphen
+			}
+			y+=spriteLength;
+			x=oldX;
+			continue;
+		}
+		//display text sprite
+	}
 }
 
 
@@ -827,7 +911,6 @@ Pokemon Game::getPokemon(string name)
 
 void Game::whiteScreen(){
 SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
-cout << "White screen good" << endl;
 }
 
 void Game::printPokemon()
@@ -849,18 +932,7 @@ void Game::displayBattle(Pokemon user, Pokemon opp){
 
 
 void Game::displayMap(){
-cout << "Display starting" << endl;
-//my_map[0][0].getSprite().display(15,15,map);
-	/*for(int i=0;i<my_map.size();i++)
-	{
-		for(int j=0;j<my_map[i].size();j++)
-		{
-			if(my_map[j][i].getSprite().getName()=="") 
-				continue;
-			//my_map[j][i].getSprite().display(i*15,j*15,map);
-		}
-
-	}*/
+	my_map[0][0].getSprite().display(15,15,map);
 	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 
@@ -873,6 +945,7 @@ cout << "Display starting" << endl;
 			//if ( i > 50)
 			//	my_map[i][j].getSprite().display(j*15,(i-50)*15,map);
 			my_map[i][j].getSprite().display(j*15,i*15,map);
+			cout << "Trying to display : " << my_map[i][j].getSprite().getName() << endl;
 			//my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
 		}
 	}
@@ -880,7 +953,6 @@ cout << "Display starting" << endl;
 	//int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 	//applySurface(userX,userY,map,screen);
 	//SDL_Flip(map);
-	cout << "Displying map complete" << endl;
 }
 
 
@@ -905,7 +977,8 @@ void Game::play(){
 
 	whiteScreen();
 	displayMap();
-	displayTrainers();	
+	displayTrainers();
+	
 	
 	Trainer user = my_trainers[0];
 	Trainer opp = my_trainers[2];
