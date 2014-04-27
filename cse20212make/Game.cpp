@@ -853,12 +853,9 @@ void Game::displayMap(){
 		{
 			//f(my_map[j][i].getSprite().getName()=="") 
 				//continue;
-<<<<<<< HEAD
-			if ( i > 50)
-				my_map[i][j].getSprite().display(j*15,(i-50)*15,map);
-=======
+			//if ( i > 50)
+			//	my_map[i][j].getSprite().display(j*15,(i-50)*15,map);
 			my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
->>>>>>> 7afa8f0bdec870d75c6da9cbacda4789a19363f4
 		}
 	}
 	//int userX=my_trainers[0].getBoardPiece().getLocation().getX();
