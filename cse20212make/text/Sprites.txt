@@ -942,7 +942,6 @@ X: 0
 Y: 0
 Height: 64
 Width: 64
-<<<<<<< HEAD
 
 +++++
 025)
@@ -1387,12 +1386,12 @@ Width: 15
 
 +++++
 073)
-Sheet: 7
+Sheet: 5
 Name: Trainer1 0 0
 X: 25
 Y: 35
-Height: 15
-Width: 20
+Height: 20
+Width: 15
 
 +++++
 074)

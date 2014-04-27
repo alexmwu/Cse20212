@@ -287,7 +287,7 @@ void Game::initializeSprites()
 				myfile >> attribute[11];
 				myfile >> attribute[12];
 				myfile >> attribute[13];
-				Sprite newSprite(switchSheet(atoi(attribute[1].c_str())), attribute[3], atoi(attribute[6].c_str()), atoi(attribute[9].c_str()), atoi(attribute[11].c_str()), atoi(attribute[13].c_str()), atoi(attribute[4].c_str()), atoi(attribute[5].c_str()));
+				Sprite newSprite(switchSheet(atoi(attribute[1].c_str())), attribute[3], atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[11].c_str()), atoi(attribute[13].c_str()), atoi(attribute[4].c_str()), atoi(attribute[5].c_str()));
 				my_sprites.push_back(newSprite);
 				read = 0;
 				for (int i = 0; i < 2; i++)
@@ -935,6 +935,7 @@ void Game::displayMap(){
 	my_map[0][0].getSprite().display(15,15,map);
 	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
+	cout << userX << " " << userY << endl;
 
 	for (int i = 0; i < my_map.size(); i++)
 	{
@@ -944,9 +945,13 @@ void Game::displayMap(){
 				//continue;
 			//if ( i > 50)
 			//	my_map[i][j].getSprite().display(j*15,(i-50)*15,map);
-			my_map[i][j].getSprite().display(j*15,i*15,map);
-			cout << "Trying to display : " << my_map[i][j].getSprite().getName() << endl;
-			//my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
+			//if(i < 25 && j < 15)
+			{
+				//my_map[i][j].getSprite().display(j*15,i*15,screen);
+				//cout << "(" << i << ", " << j << ") name: " << my_map[i][j].getSprite().getName() << endl;
+			}
+			//cout << "Trying to display : " << my_map[i][j].getSprite().getName() << endl;
+			my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
 		}
 	}
 	//int userX=my_trainers[0].getBoardPiece().getLocation().getX();
@@ -959,13 +964,15 @@ void Game::displayMap(){
 void Game::displayTrainers(){
 	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
+	
 
-	for (int i = 0; i < my_trainers.size(); i++)
+	my_trainers[0].getBoardPiece().getSprite().display(userX*15, userY*15, screen);
+	/*for (int i = 0; i < my_trainers.size(); i++)
 	{
 		int x=my_trainers[i].getBoardPiece().getLocation().getX();
 		int y=my_trainers[i].getBoardPiece().getLocation().getY();
 		my_trainers[i].getBoardPiece().getSprite().display(-(15)*(userX/2.0)+x*15,-(15)*(userY/2.0)+y*15,screen);
-	}
+	}*/
 
 	//applySurface(userX,userY,trainers,screen);
 	//SDL_Flip(trainers);
@@ -1008,7 +1015,8 @@ void Game::play(){
 					nextStep = getMapPiece(trainerX, trainerY-1);
 					if (!nextStep.canWalk())
 					{
-						cout << "You cannot walk there. UP" << my_trainers[0].getBoardPiece().getLocation().getY();
+						cout << "You cannot walk there. UP " << my_trainers[0].getBoardPiece().getLocation().getY();
+						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					/*if (trainerY>0)*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY-1);
@@ -1019,6 +1027,7 @@ void Game::play(){
 					if (!nextStep.canWalk())
 					{
 						cout << "You cannot walk there. DOWN" << my_trainers[0].getBoardPiece().getLocation().getY();
+						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					/*if (trainerY < my_map[trainerX])*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY+1);
@@ -1029,6 +1038,7 @@ void Game::play(){
 					if (!nextStep.canWalk())
 					{
 						cout << "You cannot walk there. LEFT" << my_trainers[0].getBoardPiece().getLocation().getX();
+						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					/*if (trainerX>0)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX-1);
@@ -1039,6 +1049,7 @@ void Game::play(){
 					if (!nextStep.canWalk())
 					{
 						cout << "You cannot walk there. RIGHT" << my_trainers[0].getBoardPiece().getLocation().getX();
+						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					/*if (trainerX < SCREEN_WIDTH-trainersquare.w)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX+1);
@@ -1081,9 +1092,8 @@ BoardPiece Game::getMapPiece(int i, int j)
 		cout << "Invalid location. (" << i << ", " << j << ")" << endl;
 		return piece;
 	}
-	return my_map[i][j];
+	return my_map[j][i];
 }
-
 
 void Game::applySurface(int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip)
 {
