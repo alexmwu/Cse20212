@@ -951,22 +951,38 @@ void Game::displayMap(){
 				//cout << "(" << i << ", " << j << ") name: " << my_map[i][j].getSprite().getName() << endl;
 			}
 			//cout << "Trying to display : " << my_map[i][j].getSprite().getName() << endl;
-			my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
+			//my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
 		}
 	}
+
+	int sx = userY - 7;
+	int sy = userX - 10;
+	if(sx < 0)
+		sx = 0;
+	if(sy < 0)
+		sy = 0;
+
+	for (int x = 0; x <= 15; x++)
+	{
+		for (int y = 0; y <= 21; y++)
+		{
+			my_map[sx+x][sy+y].getSprite().display((y)*15, (x)*15, screen);
+		}
+	}	
+
 	//int userX=my_trainers[0].getBoardPiece().getLocation().getX();
 	//int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 	//applySurface(userX,userY,map,screen);
 	//SDL_Flip(map);
 }
 
-
-void Game::displayTrainers(){
+void Game::displayTrainers()
+{
 	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 	
 
-	my_trainers[0].getBoardPiece().getSprite().display(userX*15, userY*15, screen);
+	my_trainers[0].getBoardPiece().getSprite().display(200, 135, screen);
 	/*for (int i = 0; i < my_trainers.size(); i++)
 	{
 		int x=my_trainers[i].getBoardPiece().getLocation().getX();
@@ -977,7 +993,6 @@ void Game::displayTrainers(){
 	//applySurface(userX,userY,trainers,screen);
 	//SDL_Flip(trainers);
 }
-
 
 void Game::play(){
 	int quit=0;
