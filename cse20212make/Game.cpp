@@ -254,7 +254,7 @@ void Game::initializeSprites()
 	ifstream myfile;
 	myfile.open(file.c_str());
 	string line;
-	string attribute[12];
+	string attribute[14];
 	int read = 0;
 	if (myfile.is_open())
 	{
@@ -282,7 +282,9 @@ void Game::initializeSprites()
 				myfile >> attribute[9];
 				myfile >> attribute[10];
 				myfile >> attribute[11];
-				Sprite newSprite(switchSheet(atoi(attribute[1].c_str())), attribute[3], atoi(attribute[5].c_str()), atoi(attribute[7].c_str()), atoi(attribute[9].c_str()), atoi(attribute[11].c_str()));
+				myfile >> attribute[12;
+				myfile >> attribute[13];
+				Sprite newSprite(switchSheet(atoi(attribute[1].c_str())), attribute[3], atoi(attribute[6].c_str()), atoi(attribute[9].c_str()), atoi(attribute[11].c_str()), atoi(attribute[13].c_str()), attribute[4], attribute[5]);
 				my_sprites.push_back(newSprite);
 				read = 0;
 				for (int i = 0; i < 2; i++)
@@ -319,7 +321,7 @@ void Game::drawMap()
 			{
 				loc = Location(x, i);
 				s = getSprite(tokens[i]);
-				b = BoardPiece(s, loc, 1, 0);
+				b = BoardPiece(s, loc, s.getWalk(), s.getInteract());
 				temp.push_back(b);
 			}
 			my_map.push_back(temp);
@@ -853,8 +855,12 @@ void Game::displayMap(){
 		{
 			//f(my_map[j][i].getSprite().getName()=="") 
 				//continue;
+<<<<<<< HEAD
 			//if ( i > 50)
 			//	my_map[i][j].getSprite().display(j*15,(i-50)*15,map);
+=======
+			//my_map[i][j].getSprite().display(j*15,i*15,map);
+>>>>>>> 2d9ac15c46b0f382a1013bee500e4d853eb87df8
 			my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
 		}
 	}
@@ -894,6 +900,7 @@ void Game::play(){
 	
 	int trainerX;	//trainer's x position
 	int trainerY;	//trainer's y position	
+	BoardPiece nextStep = BoardPiece();
 
 	//While the user hasn't quit
 	while (!quit)
@@ -907,25 +914,49 @@ void Game::play(){
 			{
 				trainerX=my_trainers[0].getBoardPiece().getLocation().getX();
 				trainerY=my_trainers[0].getBoardPiece().getLocation().getY();
-cout<<trainerX<<","<<trainerY<<endl;
+				cout<<trainerX<<","<<trainerY<<endl;
 				//Set the proper message surface
 				switch (event.key.keysym.sym)
 				{
 				case SDLK_UP: 
+					nextStep = getMapPiece(trainerX, trainerY-1);
+					if (!nextStep.canWak())
+					{
+						cout << "You cannot walk there. UP" << my_trainers[0].getBoardPiece().getLocation().getY();
+						break;
+					}
 					/*if (trainerY>0)*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY-1);
-cout<<"y up change"<<my_trainers[0].getBoardPiece().getLocation().getY();
+					cout<<"y up change"<<my_trainers[0].getBoardPiece().getLocation().getY();
 					break;
 				case SDLK_DOWN:
+					nextStep = getMapPiece(trainerX, trainerY+1);
+					if (!nextStep.canWak())
+					{
+						cout << "You cannot walk there. DOWN" << my_trainers[0].getBoardPiece().getLocation().getY();
+						break;
+					}
 					/*if (trainerY < my_map[trainerX])*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY+1);
-cout<<"y down change"<<my_trainers[0].getBoardPiece().getLocation().getY();
+					cout<<"y down change"<<my_trainers[0].getBoardPiece().getLocation().getY();
 					break;
 				case SDLK_LEFT:
+					nextStep = getMapPiece(trainerX-1, trainerY);
+					if (!nextStep.canWak())
+					{
+						cout << "You cannot walk there. LEFT" << my_trainers[0].getBoardPiece().getLocation().getX();
+						break;
+					}
 					/*if (trainerX>0)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX-1);
-cout<<"x left change"<<my_trainers[0].getBoardPiece().getLocation().getX();
+					cout<<"x left change"<<my_trainers[0].getBoardPiece().getLocation().getX();
 					break;
 				case SDLK_RIGHT:
+					nextStep = getMapPiece(trainerX+1, trainerY);
+					if (!nextStep.canWak())
+					{
+						cout << "You cannot walk there. RIGHT" << my_trainers[0].getBoardPiece().getLocation().getX();
+						break;
+					}
 					/*if (trainerX < SCREEN_WIDTH-trainersquare.w)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX+1);
-cout<<"x right change"<<my_trainers[0].getBoardPiece().getLocation().getX();
+					cout<<"x right change"<<my_trainers[0].getBoardPiece().getLocation().getX();
 					break;
 				}
 				whiteScreen();
@@ -956,6 +987,16 @@ quitSDL();
 
 }
 
+BoardPiece Game::getMapPiece(int i, int j)
+{
+	BoardPiece piece = BoardPiece();
+	if (i >= my_map.size() || j >= my_map[i].size())
+	{
+		cout << "Invalid location. (" << i << ", " << j << ")" << endl;
+		return piece;
+	}
+	return my_map[i][j];
+}
 
 
 void Game::applySurface(int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip)
