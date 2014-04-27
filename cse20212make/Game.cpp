@@ -20,6 +20,7 @@
 #include "Trainer.h"
 #include "Item.h"
 #include "Potion.h"
+#include <cctype>
 using namespace std;
 
 Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
@@ -562,6 +563,97 @@ Move Game::getMove(string name)
 			return my_moves[i];
 	}
 	return m;
+}
+
+Sprite Game::charToSprite(char c){
+	string query;
+	if(isalpha(c)){	//alphabetical char
+		if(islower(c)){	//lowercase
+			query="BoldLower";
+			c=tolower(c);
+			query.append(&c);
+		}
+		else if(isupper(c)){	//uppercase
+			query="BoldUpper";
+			c=toupper(c);
+			query.append(&c);
+		}
+	}
+	else if(isdigit(c)){	//is number
+		query="Bold";
+		query.append(&c);
+	}
+	else{	//punctuation and other random symbols (like male/female)
+		if(ispunct(c) && c!=34 && c!=39){
+			switch(c){
+				case '.':
+					query="BoldPeriod";
+					break;
+				case ',':
+					query="BoldComma";
+					break;
+				case '!':
+					query="BoldExclamation";
+					break;
+				case '?':
+					query="BoldQuestion";
+					break;
+				case '/':
+					query="BoldSlash";
+					break;
+				case '-':
+					query="BoldHyphen";
+					break;
+			}
+		}
+		else{
+			switch(c){
+				case '[':
+					query="BoldMale";
+					break;
+				case ']':
+					query="BoldFemale";
+					break;
+				case 92:
+					query="BoldEllipsis";
+					break;
+				case '(':
+					query="BoldOpenDoubleQuotes";
+					break;
+				case ')':
+					query="BoldClosedDoubleQuotes";
+					break;
+				case '`':
+					query="BoldOpenSingleQuote";
+					break;
+				case 34:
+					query="BoldClosedSingleQuote";
+					break;
+			}
+		}
+	}
+return getSprite(query);
+}
+
+
+void Game::textToSDL(string text, int textWidth, int x, int y){
+	int spriteWidth=6;	//a sprite's width
+	int spriteLength=15;	//a bit more than their average lengths
+	int oldX=x;
+	for(int i=0;i<text.size();i++){
+		if(x+spriteWidth)>(x+textWidth)){
+			if(text.at(i)==' '){
+				//display space
+			}
+			else{
+				//display hyphen
+			}
+			y+=spriteLength;
+			x=oldX;
+			continue;
+		}
+		//display text sprite
+	}
 }
 
 
