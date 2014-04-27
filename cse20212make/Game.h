@@ -51,6 +51,7 @@ public:
 	double getTypeStrength(Type, Type);
 	Type getType(string);
 	void initializeMoves();
+	void initializeLocationPairs(); //Initializes the location pairs for movement between enveironment and buidlings
 	
 	pair<int, int> battle(Pokemon*, Pokemon*);
 	void battle(Trainer*, Trainer*);	//need to change to trainer v trainer
@@ -68,6 +69,9 @@ public:
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
 	void whiteScreen();	//make screen white
 	BoardPiece getMapPiece(int, int); //returns the BoardPice at the corresponding location. 
+	void interact(Location, Sprite); //will allow the user to interact with sprites.
+	Location getLocationComplement(Location);
+
 	
 private:
 	vector<Pokemon> my_pokemon;
@@ -79,6 +83,7 @@ private:
 	vector<Move> my_moves;
 	vector<Pokeball> my_pokeballs;
 	vector<Trainer> my_trainers;
+	vector<pair<Location, Location> > my_locationPairs;
 
 	SDL_Surface *battlepokemon;	//in-battle pokemon sprites
 	SDL_Surface *battlemenu;	//battle menu sprite sheet

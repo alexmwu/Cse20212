@@ -58,6 +58,7 @@ Game::Game(int sw, int sh, int sbpp, int movespeed, int  fps)
 	initializeMoves();
 	initializePokemon();
 	initializeTrainers();
+	initializeLocationPairs();
 }
 
 
@@ -388,6 +389,44 @@ void Game::initializeTypes()
 				myfile >> attribute[3];
 				Type newType(attribute[1], atoi(attribute[3].c_str()));
 				my_types.push_back(newType);
+				read = 0;
+				for (int i = 0; i < 2; i++)
+					getline(myfile, line);
+			}
+		}
+	}
+}
+
+void Game::initializeLocationPairs()
+{
+	string file = "text/LocationPairs.txt";
+	ifstream myfile;
+	myfile.open(file.c_str());
+	string line;
+	string attribute[4];
+	int read = 0;
+	if (myfile.is_open())
+	{
+		while (!myfile.eof())
+		{
+			if (line == "+++++")
+			{
+				getline(myfile, line);
+				if (line != "000)")
+					read = 1;
+			}
+			if (!read)
+				getline(myfile, line);
+			else
+			{
+				myfile >> attribute[0];
+				myfile >> attribute[1];
+				myfile >> attribute[2];
+				myfile >> attribute[3];
+				Location one = Location(atoi(attribute[0].c_str()), atoi(attribute[1].c_str()));
+				Location two = Location(atoi(attribute[2].c_str()), atoi(attribute[3].c_str()));
+				pair<Location, Location> p = pair<Location, Location>(one, two);
+				my_locationPairs.push_back(p);
 				read = 0;
 				for (int i = 0; i < 2; i++)
 					getline(myfile, line);
@@ -957,16 +996,16 @@ void Game::displayMap(){
 		}
 	}
 
-	int sx = userY - 7;
-	int sy = userX - 10;
+	int sx = userY - 10;
+	int sy = userX - 13;
 	if(sx < 0)
 		sx = 0;
 	if(sy < 0)
 		sy = 0;
 
-	for (int x = 0; x <= 15; x++)
+	for (int x = 0; x <= 20; x++)
 	{
-		for (int y = 0; y <= 21; y++)
+		for (int y = 0; y <= 26; y++)
 		{
 			my_map[sx+x][sy+y].getSprite().display((y)*15, (x)*15, screen);
 		}
@@ -984,7 +1023,7 @@ void Game::displayTrainers()
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 	
 
-	my_trainers[0].getBoardPiece().getSprite().display(152, 105, screen);
+	my_trainers[0].getBoardPiece().getSprite().display(200, 150, screen);
 	//my_sprites[135].display(userX*15, userY*15, screen);
 	/*for (int i = 0; i < my_trainers.size(); i++)
 	{
@@ -1035,6 +1074,11 @@ void Game::play(){
 					{
 						cout << "You cannot walk there. UP " << my_trainers[0].getBoardPiece().getLocation().getY();
 						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
+						break;
+					}
+					if(nextStep.canInteract())
+					{
+						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
 						break;
 					}
 					/*if (trainerY>0)*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY-1);
@@ -1111,6 +1155,32 @@ BoardPiece Game::getMapPiece(int i, int j)
 		return piece;
 	}
 	return my_map[j][i];
+}
+
+void Game::interact(Location l, Sprite s)
+{
+	if(s.getName() == "A17" || s.getName() == "L22")
+	{
+		Location newL = getLocationComplement(l);
+		my_trainers[0].getBoardPiece().getLocation().setX(newL.getX());
+		my_trainers[0].getBoardPiece().getLocation().setY(newL.getY());
+		cout << "y sucess" <<endl;
+	}
+}
+
+Location Game::getLocationComplement(Location l)
+{
+	for(int i = 0; i < my_locationPairs.size(); i++)
+	{
+		//cout << l.getX() << ", " << l.getY() << endl;
+		pair<Location, Location> p = my_locationPairs[i];
+		//cout << p.first.getX() << ", " << p.first.getY() << " <--> " << p.second.getX() <<", " << p.second.getY()<<endl;
+		if(p.first.getX() == l.getX() && p.first.getY() == l.getY())
+			return p.second;
+		if(p.second.getX() == l.getX() && p.second.getY() == l.getY())
+			return p.first;
+	}
+	return Location();
 }
 
 void Game::applySurface(int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip)
