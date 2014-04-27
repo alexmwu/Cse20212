@@ -606,6 +606,8 @@ Sprite Game::charToSprite(char c){
 				case '-':
 					query="BoldHyphen";
 					break;
+				default:
+					break;
 			}
 		}
 		else{
@@ -640,21 +642,24 @@ return getSprite(query);
 
 void Game::textToSDL(string text, int textWidth, int x, int y){
 	int spriteWidth=6;	//a sprite's width
+	int gap=3;
 	int spriteLength=15;	//a bit more than their average lengths
 	int oldX=x;
 	for(int i=0;i<text.size();i++){
 		if(x+spriteWidth)>(x+textWidth)){
-			if(text.at(i)==' '){
-				//display space
-			}
-			else{
-				//display hyphen
+			if(text.at(i)!=' '){
+				getSprite("BoldHyphen").display(x,y,screen);
 			}
 			y+=spriteLength;
 			x=oldX;
 			continue;
 		}
-		//display text sprite
+		if(text.at(i)==' '){
+			x+=spriteWidth+gap;
+			continue;
+			}
+		getSprite(charToSprite(text.at(i))).display(x,y,screen);
+		x+=spriteWidth+gap;
 	}
 }
 
