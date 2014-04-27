@@ -984,8 +984,8 @@ void Game::displayTrainers()
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 	
 
-	my_trainers[0].getBoardPiece().getSprite().display(240, 135, screen);
-	my_sprites[135].display(userX*15, userY*15, screen);
+	my_trainers[0].getBoardPiece().getSprite().display(152, 105, screen);
+	//my_sprites[135].display(userX*15, userY*15, screen);
 	/*for (int i = 0; i < my_trainers.size(); i++)
 	{
 		int x=my_trainers[i].getBoardPiece().getLocation().getX();
@@ -1105,7 +1105,7 @@ quitSDL();
 BoardPiece Game::getMapPiece(int i, int j)
 {
 	BoardPiece piece = BoardPiece();
-	if (i >= my_map.size() || j >= my_map[i].size())
+	if (j >= my_map.size() || i >= my_map[j].size())
 	{
 		cout << "Invalid location. (" << i << ", " << j << ")" << endl;
 		return piece;

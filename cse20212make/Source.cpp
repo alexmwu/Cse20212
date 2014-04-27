@@ -21,7 +21,7 @@ using namespace std;
 
 int main(int argc, char* args[])
 {
-	Game one = Game(415, 300, 32, 10, 20);
+	Game one = Game(350, 250, 32, 10, 20);
 	//Game one = Game(660,480,32,10,20);		//640 by 480 with 32 bit color, user can repeat keys with interval of 10 microsecs
 	one.play();
 
