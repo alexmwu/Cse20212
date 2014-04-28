@@ -1178,7 +1178,7 @@ BoardPiece Game::getMapPiece(int i, int j)
 
 void Game::interact(Location l, Sprite s)
 {
-	if(s.getName() == "A17" || s.getName() == "L22" || s.getName() == "EXT")
+	if(s.getName() == "A17" || s.getName() == "L22" || s.getName() == "P23" || s.getName() == "G39" || s.getName() == "EXT")
 	{
 		Location newL = getLocationComplement(l);
 		my_trainers[0].getBoardPiece().getLocation().setX(newL.getX());
