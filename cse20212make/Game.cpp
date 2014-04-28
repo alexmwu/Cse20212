@@ -1076,12 +1076,13 @@ void Game::play(){
 						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
+					
+					/*if (trainerY>0)*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY-1);
 					if(nextStep.canInteract())
 					{
 						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
 						break;
 					}
-					/*if (trainerY>0)*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY-1);
 					cout<<"y up change"<<my_trainers[0].getBoardPiece().getLocation().getY();
 					break;
 				case SDLK_DOWN:
@@ -1092,7 +1093,13 @@ void Game::play(){
 						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
+					
 					/*if (trainerY < my_map[trainerX])*/ my_trainers[0].getBoardPiece().getLocation().setY(trainerY+1);
+					if(nextStep.canInteract())
+					{
+						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
+						break;
+					}
 					cout<<"y down change"<<my_trainers[0].getBoardPiece().getLocation().getY();
 					break;
 				case SDLK_LEFT:
@@ -1103,7 +1110,13 @@ void Game::play(){
 						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
+					
 					/*if (trainerX>0)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX-1);
+					if(nextStep.canInteract())
+					{
+						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
+						break;
+					}
 					cout<<"x left change"<<my_trainers[0].getBoardPiece().getLocation().getX();
 					break;
 				case SDLK_RIGHT:
@@ -1114,7 +1127,13 @@ void Game::play(){
 						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
+					
 					/*if (trainerX < SCREEN_WIDTH-trainersquare.w)*/ my_trainers[0].getBoardPiece().getLocation().setX(trainerX+1);
+					if(nextStep.canInteract())
+					{
+						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
+						break;
+					}
 					cout<<"x right change"<<my_trainers[0].getBoardPiece().getLocation().getX();
 					break;
 				}
@@ -1159,7 +1178,7 @@ BoardPiece Game::getMapPiece(int i, int j)
 
 void Game::interact(Location l, Sprite s)
 {
-	if(s.getName() == "A17" || s.getName() == "L22")
+	if(s.getName() == "A17" || s.getName() == "L22" || s.getName() == "EXT")
 	{
 		Location newL = getLocationComplement(l);
 		my_trainers[0].getBoardPiece().getLocation().setX(newL.getX());
@@ -1170,11 +1189,11 @@ void Game::interact(Location l, Sprite s)
 
 Location Game::getLocationComplement(Location l)
 {
+			cout << "Looking for: " << l.getX() << ", " << l.getY() << endl;
 	for(int i = 0; i < my_locationPairs.size(); i++)
 	{
-		//cout << l.getX() << ", " << l.getY() << endl;
 		pair<Location, Location> p = my_locationPairs[i];
-		//cout << p.first.getX() << ", " << p.first.getY() << " <--> " << p.second.getX() <<", " << p.second.getY()<<endl;
+		cout << p.first.getX() << ", " << p.first.getY() << " <--> " << p.second.getX() <<", " << p.second.getY()<<endl;
 		if(p.first.getX() == l.getX() && p.first.getY() == l.getY())
 			return p.second;
 		if(p.second.getX() == l.getX() && p.second.getY() == l.getY())
