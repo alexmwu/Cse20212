@@ -1668,7 +1668,7 @@ Width: 15
 Sheet: 2
 Name: GY1 0 0
 X: 664
-Y: 16
+Y: 17
 Height: 15
 Width: 15
 
@@ -1677,7 +1677,7 @@ Width: 15
 Sheet: 2
 Name: GY2 0 0
 X: 680
-Y: 16
+Y: 17
 Height: 15
 Width: 15
 
@@ -1686,7 +1686,7 @@ Width: 15
 Sheet: 2
 Name: G03 0 0
 X: 697
-Y: 16
+Y: 17
 Height: 15
 Width: 15
 
@@ -1695,7 +1695,7 @@ Width: 15
 Sheet: 2
 Name: G04 0 0
 X: 714
-Y: 16
+Y: 17
 Height: 15
 Width: 15
 
@@ -1704,7 +1704,7 @@ Width: 15
 Sheet: 2
 Name: G05 0 0
 X: 732
-Y: 16
+Y: 17
 Height: 15
 Width: 15
 
@@ -1713,7 +1713,7 @@ Width: 15
 Sheet: 2
 Name: G06 0 0
 X: 749
-Y: 16
+Y: 17
 Height: 15
 Width: 15
 
@@ -1722,7 +1722,7 @@ Width: 15
 Sheet: 2
 Name: G07 0 0
 X: 765
-Y: 16
+Y: 17
 Height: 15
 Width: 15
 
@@ -2008,7 +2008,7 @@ Width: 15
 +++++
 141)
 Sheet: 2
-Name: G39 0 0
+Name: G39 1 1
 X: 714
 Y: 92
 Height: 15
@@ -2242,7 +2242,7 @@ Width: 15
 +++++
 167)
 Sheet: 2
-Name: P23 0 0
+Name: P23 1 1
 X: 136
 Y: 75
 Height: 15
