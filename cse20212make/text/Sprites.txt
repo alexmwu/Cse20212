@@ -2515,7 +2515,7 @@ Width: 15
 +++++
 196)
 Sheet: 3
-Name: R27 0 0
+Name: R27 1 1
 X: 426
 Y: 579
 Height: 15
@@ -2525,7 +2525,7 @@ Width: 15
 197)
 Sheet: 3
 Name: R28 0 0
-X: 433
+X: 443
 Y: 579
 Height: 15
 Width: 15
