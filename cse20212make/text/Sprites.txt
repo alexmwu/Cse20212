@@ -2442,4 +2442,61 @@ X: 426
 Y: 664
 Height: 15
 Width: 15
+<<<<<<< HEAD
 >>>>>>> 216c55342a3e97e0807e79267223df4ab4847497
+=======
+
++++++
+189)
+Sheet: 3
+Name: R20 0 0
+X: 375
+Y: 580
+Height: 15
+Width: 15
+
++++++
+190)
+Sheet: 3
+Name: R21 0 0
+X: 392
+Y: 580
+Height: 15
+Width: 15
+
++++++
+191)
+Sheet: 3
+Name: R22 1 0
+X: 375
+Y: 597
+Height: 15
+Width: 15
+
++++++
+192)
+Sheet: 3
+Name: R23 1 0
+X: 392
+Y: 597
+Height: 15
+Width: 15
+
++++++
+193)
+Sheet: 3
+Name: R24 0 0
+X: 341
+Y: 580
+Height: 15
+Width: 15
+
++++++
+194)
+Sheet: 3
+Name: R25 0 0
+X: 358
+Y: 580
+Height: 15
+Width: 15
+>>>>>>> 20eee1e7fb26c44347863ebd18678371fe524afb
