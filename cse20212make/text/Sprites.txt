@@ -1387,7 +1387,7 @@ Width: 15
 +++++
 073)
 Sheet: 5
-Name: Trainer1 0 0
+Name: TrainerDOWN 0 0
 X: 25
 Y: 35
 Height: 20
@@ -2499,9 +2499,6 @@ X: 358
 Y: 580
 Height: 15
 Width: 15
-<<<<<<< HEAD
->>>>>>> 20eee1e7fb26c44347863ebd18678371fe524afb
-=======
 
 +++++
 195)
@@ -2538,4 +2535,30 @@ X: 341
 Y: 528
 Height: 15
 Width: 15
->>>>>>> 902fefe86c8c587ce81b3ac180d878550b63c9ee
+
++++++
+073)
+Sheet: 5
+Name: TrainerUP 0 0
+X: 25
+Y: 67
+Height: 20
+Width: 15
+
++++++
+073)
+Sheet: 5
+Name: TrainerLEFT 0 0
+X: 25
+Y: 100
+Height: 20
+Width: 15
+
++++++
+073)
+Sheet: 5
+Name: TrainerRIGHT 0 0
+X: 251
+Y: 139
+Height: 20
+Width: 15

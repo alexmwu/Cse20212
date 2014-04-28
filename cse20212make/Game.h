@@ -71,6 +71,9 @@ public:
 	BoardPiece getMapPiece(int, int); //returns the BoardPice at the corresponding location. 
 	void interact(Location, Sprite); //will allow the user to interact with sprites.
 	Location getLocationComplement(Location);
+	void wildPokemon(); //function for when a wild Pokemon attacks
+	void checkTrainerSight(Location);	//checks to see if trainers can see the user after each step
+	void moveTrainer(Trainer, Location);	//function that will move the trainers to attack the user
 
 	
 private:

@@ -978,24 +978,6 @@ void Game::displayMap(){
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 	cout << userX << " " << userY << endl;
 
-	for (int i = 0; i < my_map.size(); i++)
-	{
-		for (int j = 0; j < my_map[i].size(); j++)
-		{
-			//f(my_map[j][i].getSprite().getName()=="") 
-				//continue;
-			//if ( i > 35)
-				//my_map[i][j].getSprite().display(j*15,(i-35)*15,screen);
-			//if(i < 25 && j < 15)
-			{
-				//my_map[i][j].getSprite().display(j*15,i*15,screen);
-				//cout << "(" << i << ", " << j << ") name: " << my_map[i][j].getSprite().getName() << endl;
-			}
-			//cout << "Trying to display : " << my_map[i][j].getSprite().getName() << endl;
-			//my_map[i][j].getSprite().display(-(15)*(userY/2.0)+j*15,-(15)*(userX/2.0)+i*15,screen);
-		}
-	}
-
 	int sx = userY - 10;
 	int sy = userX - 13;
 	if(sx < 0)
@@ -1024,16 +1006,76 @@ void Game::displayTrainers()
 	
 
 	my_trainers[0].getBoardPiece().getSprite().display(200, 150, screen);
-	//my_sprites[135].display(userX*15, userY*15, screen);
-	/*for (int i = 0; i < my_trainers.size(); i++)
+
+	int sx = userY - 10;
+	int sy = userX - 13;
+	if(sx < 0)
+		sx = 0;
+	if(sy < 0)
+		sy = 0;
+	int disX = 0;
+	int disY = 0;
+	int tX =0;
+	int tY = 0;
+	
+	for(int i = 1; i < my_trainers.size(); i++)
 	{
-		int x=my_trainers[i].getBoardPiece().getLocation().getX();
-		int y=my_trainers[i].getBoardPiece().getLocation().getY();
-		my_trainers[i].getBoardPiece().getSprite().display(-(15)*(userX/2.0)+x*15,-(15)*(userY/2.0)+y*15,screen);
-	}*/
+		tX = my_trainers[i].getBoardPiece().getLocation().getX();
+		tY = my_trainers[i].getBoardPiece().getLocation().getY();
+		if(tX >= sy && tX <= sy+20 && tY >= sx && tY <= sx+26)
+		{
+			disX = (tX-userX)*15;
+			disY = (tY-userY)*15;
+			my_trainers[i].getBoardPiece().getSprite().display(200+disX, 150+disY, screen);
+		}
+	}
+
 
 	//applySurface(userX,userY,trainers,screen);
 	//SDL_Flip(trainers);
+}
+
+void Game::checkTrainerSight(Location user)
+{
+	string SpriteName="";
+	int userX = user.getX();
+	int userY = user.getY();
+	int tX = 0;
+	int tY = 0;
+	for(int i=1; i< my_trainers.size(); i++)
+	{
+		SpriteName = my_trainers[i].getBoardPiece().getSprite().getName();
+		tX = my_trainers[i].getBoardPiece().getLocation().getX();
+		tY = my_trainers[i].getBoardPiece().getLocation().getY();
+		if(SpriteName == "TrainerUP" && (tY-userY) > 0 && (tY-userY) <= 6 && tX == userX)
+		{
+			moveTrainer(my_trainers[i], user);
+		}
+		else if(SpriteName == "TrainerDOWN" && (tY-userY) < 0 && (tY-userY) >= -6 && tX == userX)
+		{
+			moveTrainer(my_trainers[i], user);
+		}
+		else if(SpriteName == "TrainerLEFT" && (tX-userX) > 0 && (tX-userX) <= 6 && tY == userY)
+		{
+			moveTrainer(my_trainers[i], user);
+		}
+		else if(SpriteName == "TrainerRIGHT" && (tX-userX) < 0 && (tX-userX) >= -6 && tY == userY)
+		{
+			moveTrainer(my_trainers[i], user);
+		}
+	}
+
+}
+void Game::moveTrainer(Trainer, Location)
+{
+	cout << "Trainer attack!" <<endl;
+	//IPLEMENT
+	//MOVEMENT
+	//AND
+	//ATTACK
+	//OF
+	//TRAINER
+	//HERE
 }
 
 void Game::play(){
@@ -1137,6 +1179,10 @@ void Game::play(){
 					cout<<"x right change"<<my_trainers[0].getBoardPiece().getLocation().getX();
 					break;
 				}
+				if(trainerX != my_trainers[0].getBoardPiece().getLocation().getX() || trainerY != my_trainers[0].getBoardPiece().getLocation().getY())
+				{
+					checkTrainerSight(my_trainers[0].getBoardPiece().getLocation());
+				}
 				whiteScreen();
 				displayMap();
 				displayTrainers();
@@ -1178,13 +1224,85 @@ BoardPiece Game::getMapPiece(int i, int j)
 
 void Game::interact(Location l, Sprite s)
 {
-	if(s.getName() == "A17" || s.getName() == "L22" || s.getName() == "P23" || s.getName() == "G39" || s.getName() == "EXT")
+	if(s.getName() == "A17" || s.getName() == "L22" || s.getName() == "P23" || s.getName() == "G39" || s.getName() == "EXT" || s.getName() == "R27")
 	{
 		Location newL = getLocationComplement(l);
 		my_trainers[0].getBoardPiece().getLocation().setX(newL.getX());
 		my_trainers[0].getBoardPiece().getLocation().setY(newL.getY());
 		cout << "y sucess" <<endl;
 	}
+	else if(s.getName() == "TGR")
+	{
+		wildPokemon();
+	}
+}
+
+void Game::wildPokemon()
+{
+	int b = rand()%8;
+	if (b >= 1)
+		return;
+	Trainer t = Trainer();
+	Pokemon p = Pokemon();
+	int r = rand() % 100;
+	if (r >= 95)
+	{
+		int a = rand() %3;
+		if(a >2)
+			p = getPokemon("Bulbasaur");
+		else if(a >2)
+			p = getPokemon("Charmander");
+		else
+			p = getPokemon("Squirtle");
+	}
+	else if(r >=70)
+	{
+		int a = rand() %6;
+		if(a >5)
+			p = getPokemon("Pikachu");
+		else if(a >4)
+			p = getPokemon("Vulpix");
+		else if(a >3)
+			p = getPokemon("Diglett");
+		else if(a >2)
+			p = getPokemon("Kangaskhan");
+		else if(a >1)
+			p = getPokemon("Scyther");
+		else if(a >2)
+			p = getPokemon("Tauros");
+	}
+	else
+	{
+		int a = rand() %12;
+		if(a >11)
+			p = getPokemon("Caterpie");
+		else if(a >10)
+			p = getPokemon("Weedle");
+		else if(a >9)
+			p = getPokemon("Pidgey");
+		else if(a >8)
+			p = getPokemon("Rattata");
+		else if(a >7)
+			p = getPokemon("Spearow");
+		else if(a >2)
+			p = getPokemon("Zubat");
+		else if(a >6)
+			p = getPokemon("Oddish");
+		else if(a >5)
+			p = getPokemon("Abra");
+		else if(a >4)
+			p = getPokemon("Bellsprout");
+		else if(a >3)
+			p = getPokemon("Geodude");
+		else if(a >2)
+			p = getPokemon("Krabby");
+		else 
+			p = getPokemon("Magikarp");
+	}
+	p.setLevel(my_trainers[0].getBoardPiece().getLocation().getY()/5);
+	//add p moves
+	t.addToParty(p);
+	battle(&my_trainers[0], &t);
 }
 
 Location Game::getLocationComplement(Location l)
