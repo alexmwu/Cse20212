@@ -612,18 +612,18 @@ Sprite Game::charToSprite(char c){
 	if(isalpha(c)){	//alphabetical char
 		if(islower(c)){	//lowercase
 			query="BoldLower";
-			c=tolower(c);
-			query.append(&c);
+			c=toupper(c);
+			query+=c;
 		}
 		else if(isupper(c)){	//uppercase
 			query="BoldUpper";
 			c=toupper(c);
-			query.append(&c);
+			query+=c;
 		}
 	}
 	else if(isdigit(c)){	//is number
 		query="Bold";
-		query.append(&c);
+		query+=c;
 	}
 	else{	//punctuation and other random symbols (like male/female)
 		if(ispunct(c) && c!=34 && c!=39){
@@ -686,20 +686,21 @@ void Game::textToSDL(string text, int textWidth, int x, int y){
 	int spriteLength=15;	//a bit more than their average lengths
 	int oldX=x;
 	for(int i=0;i<text.size();i++){
-		if((x+spriteWidth)>(x+textWidth))
+		if((x+spriteWidth)>(oldX+textWidth))
 		{
 			if(text.at(i)!=' '){
 				getSprite("BoldHyphen").display(x,y,screen);
 			}
 			y+=spriteLength;
 			x=oldX;
+			i-=1;
 			continue;
 		}
 		if(text.at(i)==' '){
 			x+=spriteWidth+gap;
 			continue;
 			}
-		//getSprite(charToSprite(text.at(i))).display(x,y,screen);
+		charToSprite(text.at(i)).display(x,y,screen);
 		x+=spriteWidth+gap;
 	}
 }
@@ -1042,7 +1043,7 @@ void Game::play(){
 	whiteScreen();
 	displayMap();
 	displayTrainers();
-	
+	//textToSDL("whattup fsadf",10,0,0);	
 	
 	Trainer user = my_trainers[0];
 	Trainer opp = my_trainers[2];

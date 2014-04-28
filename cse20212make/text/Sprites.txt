@@ -108,7 +108,7 @@ Width: 15
 
 +++++
 012)
-Sheet: 5
+Sheet: 1
 Name: UserPokemonBar 0 0
 X: 3
 Y: 44
@@ -117,7 +117,7 @@ Width: 104
 
 +++++
 013)
-Sheet: 5
+Sheet: 1
 Name: OppPokemonBar 0 0
 X: 3
 Y: 3
@@ -126,7 +126,7 @@ Width: 100
 
 +++++
 014)
-Sheet: 5
+Sheet: 1
 Name: BattleOptions 0 0
 X: 146
 Y: 4
@@ -135,7 +135,7 @@ Width: 120
 
 +++++
 014)
-Sheet: 5
+Sheet: 1
 Name: BattleOptionsSelector 0 0
 X: 269
 Y: 4
@@ -144,7 +144,7 @@ Width: 6
 
 +++++
 016)
-Sheet: 5
+Sheet: 1
 Name: BattleText 0 0
 X: 297
 Y: 56
@@ -153,7 +153,7 @@ Width: 240
 
 +++++
 017)
-Sheet: 5
+Sheet: 1
 Name: BattleMoves 0 0
 X: 297
 Y: 4
@@ -162,7 +162,7 @@ Width: 240
 
 +++++
 018)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperA 0 0
 X: 18
 Y: 90
@@ -171,7 +171,7 @@ Width: 6
 
 +++++
 019)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperB 0 0
 X: 30
 Y: 90
@@ -180,7 +180,7 @@ Width: 6
 
 +++++
 020)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperC 0 0
 X: 42
 Y: 90
@@ -189,7 +189,7 @@ Width: 6
 
 +++++
 021)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperD 0 0
 X: 74
 Y: 90
@@ -198,7 +198,7 @@ Width: 6
 
 +++++
 022)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperE 0 0
 X: 86
 Y: 90
@@ -207,7 +207,7 @@ Width: 6
 
 +++++
 023)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperF 0 0
 X: 98
 Y: 90
@@ -216,7 +216,7 @@ Width: 6
 
 +++++
 024)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperG 0 0
 X: 18
 Y: 106
@@ -225,7 +225,7 @@ Width: 6
 
 +++++
 025)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperH 0 0
 X: 30
 Y: 106
@@ -234,7 +234,7 @@ Width: 6
 
 +++++
 026)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperI 0 0
 X: 42
 Y: 106
@@ -243,7 +243,7 @@ Width: 6
 
 +++++
 027)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperJ 0 0
 X: 74
 Y: 106
@@ -252,7 +252,7 @@ Width: 6
 
 +++++
 028)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperK 0 0
 X: 86
 Y: 106
@@ -261,7 +261,7 @@ Width: 6
 
 +++++
 029)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperL 0 0
 X: 98
 Y: 106
@@ -270,7 +270,7 @@ Width: 6
 
 +++++
 030)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperM 0 0
 X: 18
 Y: 122
@@ -279,7 +279,7 @@ Width: 6
 
 +++++
 031)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperN 0 0
 X: 30
 Y: 122
@@ -288,7 +288,7 @@ Width: 6
 
 +++++
 032)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperO 0 0
 X: 42
 Y: 122
@@ -297,7 +297,7 @@ Width: 6
 
 +++++
 033)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperP 0 0
 X: 74
 Y: 122
@@ -306,7 +306,7 @@ Width: 6
 
 +++++
 034)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperQ 0 0
 X: 86
 Y: 122
@@ -315,7 +315,7 @@ Width: 6
 
 +++++
 035)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperR 0 0
 X: 98
 Y: 122
@@ -324,7 +324,7 @@ Width: 6
 
 +++++
 036)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperS 0 0
 X: 110
 Y: 122
@@ -333,7 +333,7 @@ Width: 6
 
 +++++
 037)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperT 0 0
 X: 18
 Y: 138
@@ -342,7 +342,7 @@ Width: 6
 
 +++++
 038)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperU 0 0
 X: 30
 Y: 138
@@ -351,7 +351,7 @@ Width: 6
 
 +++++
 038)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperV 0 0
 X: 42
 Y: 138
@@ -360,7 +360,7 @@ Width: 6
 
 +++++
 039)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperW 0 0
 X: 74
 Y: 138
@@ -369,7 +369,7 @@ Width: 6
 
 +++++
 040)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperX 0 0
 X: 86
 Y: 138
@@ -378,7 +378,7 @@ Width: 6
 
 +++++
 041)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperY 0 0
 X: 98
 Y: 138
@@ -387,7 +387,7 @@ Width: 6
 
 +++++
 042)
-Sheet: 5
+Sheet: 1
 Name: BoldUpperZ 0 0
 X: 110
 Y: 138
@@ -396,7 +396,7 @@ Width: 6
 
 +++++
 043)
-Sheet: 5
+Sheet: 1
 Name: BoldPeriod 0 0
 X: 142
 Y: 160
@@ -405,7 +405,7 @@ Width: 6
 
 +++++
 044)
-Sheet: 5
+Sheet: 1
 Name: BoldComma 0 0
 X: 142
 Y: 178
@@ -414,7 +414,7 @@ Width: 6
 
 +++++
 045)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerA 0 0
 X: 18
 Y: 160
@@ -423,7 +423,7 @@ Width: 6
 
 +++++
 046)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerB 0 0
 X: 30
 Y: 160
@@ -432,7 +432,7 @@ Width: 6
 
 +++++
 047)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerC 0 0
 X: 42
 Y: 160
@@ -441,7 +441,7 @@ Width: 6
 
 +++++
 048)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerD 0 0
 X: 74
 Y: 160
@@ -450,7 +450,7 @@ Width: 6
 
 +++++
 049)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerE 0 0
 X: 86
 Y: 160
@@ -459,7 +459,7 @@ Width: 6
 
 +++++
 050)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerF 0 0
 X: 98
 Y: 160
@@ -468,7 +468,7 @@ Width: 6
 
 +++++
 051)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerG 0 0
 X: 18
 Y: 176
@@ -477,7 +477,7 @@ Width: 6
 
 +++++
 052)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerH 0 0
 X: 30
 Y: 176
@@ -486,7 +486,7 @@ Width: 6
 
 +++++
 053)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerI 0 0
 X: 42
 Y: 176
@@ -495,7 +495,7 @@ Width: 6
 
 +++++
 054)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerJ 0 0
 X: 74
 Y: 176
@@ -504,7 +504,7 @@ Width: 6
 
 +++++
 055)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerK 0 0
 X: 86
 Y: 176
@@ -513,7 +513,7 @@ Width: 6
 
 +++++
 056)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerL 0 0
 X: 98
 Y: 176
@@ -522,7 +522,7 @@ Width: 6
 
 +++++
 057)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerM 0 0
 X: 18
 Y: 192
@@ -531,7 +531,7 @@ Width: 6
 
 +++++
 058)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerN 0 0
 X: 30
 Y: 192
@@ -540,7 +540,7 @@ Width: 6
 
 +++++
 059)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerO 0 0
 X: 42
 Y: 192
@@ -549,7 +549,7 @@ Width: 6
 
 +++++
 060)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerP 0 0
 X: 74
 Y: 192
@@ -558,7 +558,7 @@ Width: 6
 
 +++++
 061)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerQ 0 0
 X: 86
 Y: 192
@@ -567,7 +567,7 @@ Width: 6
 
 +++++
 062)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerR 0 0
 X: 98
 Y: 192
@@ -576,7 +576,7 @@ Width: 6
 
 +++++
 063)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerS 0 0
 X: 110
 Y: 192
@@ -585,7 +585,7 @@ Width: 6
 
 +++++
 064)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerT 0 0
 X: 18
 Y: 208
@@ -594,7 +594,7 @@ Width: 6
 
 +++++
 065)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerU 0 0
 X: 30
 Y: 208
@@ -603,7 +603,7 @@ Width: 6
 
 +++++
 066)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerV 0 0
 X: 42
 Y: 208
@@ -612,7 +612,7 @@ Width: 6
 
 +++++
 067)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerW 0 0
 X: 74
 Y: 208
@@ -621,7 +621,7 @@ Width: 6
 
 +++++
 068)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerX 0 0
 X: 86
 Y: 208
@@ -630,7 +630,7 @@ Width: 6
 
 +++++
 069)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerY 0 0
 X: 98
 Y: 208
@@ -639,7 +639,7 @@ Width: 6
 
 +++++
 064)
-Sheet: 5
+Sheet: 1
 Name: BoldLowerZ 0 0
 X: 110
 Y: 208
@@ -648,7 +648,7 @@ Width: 6
 
 +++++
 065)
-Sheet: 5
+Sheet: 1
 Name: Bold0 0 0
 X: 18
 Y: 229
@@ -657,7 +657,7 @@ Width: 6
 
 +++++
 066)
-Sheet: 5
+Sheet: 1
 Name: Bold1 0 0
 X: 40
 Y: 229
@@ -666,7 +666,7 @@ Width: 6
 
 +++++
 067)
-Sheet: 5
+Sheet: 1
 Name: Bold2 0 0
 X: 62
 Y: 229
@@ -675,7 +675,7 @@ Width: 6
 
 +++++
 068)
-Sheet: 5
+Sheet: 1
 Name: Bold3 0 0
 X: 84
 Y: 229
@@ -684,7 +684,7 @@ Width: 6
 
 +++++
 069)
-Sheet: 5
+Sheet: 1
 Name: Bold4 0 0
 X: 106
 Y: 229
@@ -693,7 +693,7 @@ Width: 6
 
 +++++
 070)
-Sheet: 5
+Sheet: 1
 Name: Bold5 0 0
 X: 18
 Y: 245
@@ -702,7 +702,7 @@ Width: 6
 
 +++++
 071)
-Sheet: 5
+Sheet: 1
 Name: Bold6 0 0
 X: 40
 Y: 245
@@ -711,7 +711,7 @@ Width: 6
 
 +++++
 072)
-Sheet: 5
+Sheet: 1
 Name: Bold7 0 0
 X: 62
 Y: 245
@@ -720,7 +720,7 @@ Width: 6
 
 +++++
 073)
-Sheet: 5
+Sheet: 1
 Name: Bold8 0 0
 X: 84
 Y: 245
@@ -729,7 +729,7 @@ Width: 6
 
 +++++
 074)
-Sheet: 5
+Sheet: 1
 Name: Bold9 0 0
 X: 106
 Y: 245
@@ -738,7 +738,7 @@ Width: 6
 
 +++++
 075)
-Sheet: 5
+Sheet: 1
 Name: BoldExclamation 0 0
 X: 18
 Y: 260
@@ -747,7 +747,7 @@ Width: 6
 
 +++++
 076)
-Sheet: 5
+Sheet: 1
 Name: BoldQuestion 0 0
 X: 40
 Y: 260
@@ -756,7 +756,7 @@ Width: 6
 
 +++++
 077)
-Sheet: 5
+Sheet: 1
 Name: BoldMale 0 0
 X: 62
 Y: 260
@@ -765,7 +765,7 @@ Width: 6
 
 +++++
 078)
-Sheet: 5
+Sheet: 1
 Name: BoldFemale 0 0
 X: 84
 Y: 260
@@ -774,7 +774,7 @@ Width: 6
 
 +++++
 079)
-Sheet: 5
+Sheet: 1
 Name: BoldSlash 0 0
 X: 106
 Y: 260
@@ -783,7 +783,7 @@ Width: 6
 
 +++++
 080)
-Sheet: 5
+Sheet: 1
 Name: BoldHyphen 0 0
 X: 128
 Y: 260
@@ -792,7 +792,7 @@ Width: 6
 
 +++++
 081)
-Sheet: 5
+Sheet: 1
 Name: BoldEllipsis 0 0
 X: 18
 Y: 275
@@ -801,7 +801,7 @@ Width: 6
 
 +++++
 082)
-Sheet: 5
+Sheet: 1
 Name: BoldOpenDoubleQuotes 0 0
 X: 40
 Y: 275
@@ -810,7 +810,7 @@ Width: 6
 
 +++++
 083)
-Sheet: 5
+Sheet: 1
 Name: BoldClosedDoubleQuotes 0 0
 X: 62
 Y: 275
@@ -819,7 +819,7 @@ Width: 6
 
 +++++
 084)
-Sheet: 5
+Sheet: 1
 Name: BoldOpenSingleQuote 0 0
 X: 84
 Y: 275
@@ -828,7 +828,7 @@ Width: 6
 
 +++++
 085)
-Sheet: 5
+Sheet: 1
 Name: BoldClosedSingleQuote 0 0
 X: 106
 Y: 275
@@ -1662,8 +1662,6 @@ X: 86
 Y: 631
 Height: 15
 Width: 15
-<<<<<<< HEAD
-=======
 
 +++++
 103)
@@ -2267,9 +2265,6 @@ X: 170
 Y: 75
 Height: 15
 Width: 15
-<<<<<<< HEAD
->>>>>>> a8ba910131e11c3de2202e468056b0d4cc57725d
-=======
 
 +++++
 170)
@@ -2442,9 +2437,6 @@ X: 426
 Y: 664
 Height: 15
 Width: 15
-<<<<<<< HEAD
->>>>>>> 216c55342a3e97e0807e79267223df4ab4847497
-=======
 
 +++++
 189)
@@ -2499,9 +2491,6 @@ X: 358
 Y: 580
 Height: 15
 Width: 15
-<<<<<<< HEAD
->>>>>>> 20eee1e7fb26c44347863ebd18678371fe524afb
-=======
 
 +++++
 195)
@@ -2538,4 +2527,3 @@ X: 341
 Y: 528
 Height: 15
 Width: 15
->>>>>>> 902fefe86c8c587ce81b3ac180d878550b63c9ee
