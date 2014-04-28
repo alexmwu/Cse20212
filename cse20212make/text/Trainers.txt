@@ -1,6 +1,6 @@
 +++++
 000)
-Name: Alex 55 25 Trainer1
+Name: Alex 34 26 Trainer1
 Charmander 100 Ember Scratch
 Bulbasaur 100 Tackle
 Wartortle 100 Bubble
