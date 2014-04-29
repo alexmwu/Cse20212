@@ -24,10 +24,802 @@ PP: 35
 Effect: N/A
 
 +++++
-002)
+003)
 Name: Ember
 Type: Fire
 Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+004)
+Name: VineWhip
+Type: Grass
+Strength: 45
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+005)
+Name: TakeDown
+Type: Normal
+Strength: 90
+Accuracy: 85
+PP: 25
+Effect: N/A
+
++++++
+006)
+Name: RazorLeaf
+Type: Grass
+Strength: 55
+Accuracy: 95
+PP: 25
+Effect: N/A
+
++++++
+007)
+Name: DoubleEdge
+Type: Normal
+Strength: 120
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+008)
+Name: PetalDance
+Type: Grass
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+009)
+Name: PetalBlizzard
+Type: Grass
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+010)
+Name: SolarBeam
+Type: Grass
+Strength: 120
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+011)
+Name: HeatWave
+Type: Fire
+Strength: 95
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+012)
+Name: DragonClaw
+Type: Dragon
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+013)
+Name: FlareBlitz
+Type: Fire
+Strength: 120
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+014)
+Name: AirSlash
+Type: Flying
+Strength: 75
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+015)
+Name: ShadowClaw
+Type: Ghost
+Strength: 70
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+016)
+Name: FireFang
+Type: Fire
+Strength: 65
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+017)
+Name: FlameBurst
+Type: Fire
+Strength: 70
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+018)
+Name: WingAttack
+Type: Flying
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+019)
+Name: Slash
+Type: Normal
+Strength: 70
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+020)
+Name: Flamethrower
+Type: Fire
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+021)
+Name: FireSpin
+Type: Fire
+Strength: 35
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+022)
+Name: Inferno
+Type: Fire
+Strength: 100
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+023)
+Name: HeatWave
+Type: Fire
+Strength: 95
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+024)
+Name: FlareBlitz
+Type: Fire
+Strength: 120
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+025)
+Name: FlashCannon
+Type: Steel
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+026)
+Name: WaterGun
+Type: Water
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+027)
+Name: Bite
+Type: Dark
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+028)
+Name: RapidSpin
+Type: Normal
+Strength: 20
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+029)
+Name: WaterPulse
+Type: Water
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+030)
+Name: AquaTail
+Type: Water
+Strength: 90
+Accuracy: 90
+PP: 25
+Effect: N/A
+
++++++
+031)
+Name: SkullBash
+Type: Normal
+Strength: 130
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+032)
+Name: HydroPump
+Type: Fire
+Strength: 110
+Accuracy: 80
+PP: 25
+Effect: N/A
+
++++++
+033)
+Name: Confusion
+Type: Psychic
+Strength: 50
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+034)
+Name: Gust
+Type: Flying
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+035)
+Name: Psybeam
+Type: Psychic
+Strength: 65
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+036)
+Name: SilverWind
+Type: Fire
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+037)
+Name: BugBuzz
+Type: Bug
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+038)
+Name: FurryAttack
+Type: Normal
+Strength: 15
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+039)
+Name: Assurance
+Type: Dark
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+040)
+Name: PoisonJab
+Type: Poison
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+041)
+Name: FellStinger
+Type: Fire
+Strength: 30
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+042)
+Name: QuickAttack
+Type: Normal
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+043)
+Name: Hurricane
+Type: Flying
+Strength: 110
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+044)
+Name: Twister
+Type: Dragon
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+045)
+Name: WingAttack
+Type: Flying
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+046)
+Name: AirSlash
+Type: Flying
+Strength: 75
+Accuracy: 95
+PP: 25
+Effect: N/A
+
++++++
+047)
+Name: HyperFang
+Type: Normal
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+048)
+Name: SuckerPunch
+Type: Dark
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+049)
+Name: Crunch
+Type: Dark
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+050)
+Name: Pluck
+Type: Flying
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+051)
+Name: AerialAce
+Type: Flying
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+052)
+Name: DrillPeck
+Type: Flying
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+053)
+Name: DrillRun
+Type: Ground
+Strength: 80
+Accuracy: 95
+PP: 25
+Effect: N/A
+
++++++
+054)
+Name: ThunderFang
+Type: Electric
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+054)
+Name: IceFang
+Type: Ice
+Strength: 65
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+055)
+Name: Acid
+Type: Poison
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+056)
+Name: AcidSpray
+Type: Poison
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+057)
+Name: MudBomb
+Type: Ground
+Strength: 65
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+058)
+Name: Belch
+Type: Poison
+Strength: 120
+Accuracy: 90
+PP: 25
+Effect: N/A
+
++++++
+059)
+Name: GunkShot
+Type: Poison
+Strength: 120
+Accuracy: 80
+PP: 25
+Effect: N/A
+
++++++
+060)
+Name: ThunderShock
+Type: Electric
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+061)
+Name: ThunderBolt
+Type: Electric
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+062)
+Name: Thunder
+Type: Electric
+Strength: 110
+Accuracy: 70
+PP: 25
+Effect: N/A
+
++++++
+063)
+Name: Rollout
+Type: Rock
+Strength: 30
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+064)
+Name: Swift
+Type: Normal
+Strength: 60
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+065)
+Name: CrushClaw
+Type: Normal
+Strength: 75
+Accuracy: 95
+PP: 25
+Effect: N/A
+
++++++
+066)
+Name: SandTomb
+Type: Ground
+Strength: 35
+Accuracy: 85
+PP: 25
+Effect: N/A
+
++++++
+067)
+Name: Slash
+Type: Normal
+Strength: 70
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+068)
+Name: Dig
+Type: Ground
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+069)
+Name: Earthquake
+Type: Ground
+Strength: 100
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+070)
+Name: ChipAway
+Type: Normal
+Strength: 70
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+071)
+Name: SuperPower
+Type: Fighting
+Strength: 120
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+072)
+Name: EarthPower
+Type: Ground
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+073)
+Name: MegaHorn
+Type: Bug
+Strength: 120
+Accuracy: 85
+PP: 25
+Effect: N/A
+
++++++
+074)
+Name: Thrash
+Type: Normal
+Strength: 120
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+075)
+Name: EarthPower
+Type: Ground
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+076)
+Name: IronTail
+Type: Steel
+Strength: 100
+Accuracy: 75
+PP: 25
+Effect: N/A
+
++++++
+077)
+Name: IceBeam
+Type: Ice
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+078)
+Name: Blizzard
+Type: Ice
+Strength: 110
+Accuracy: 70
+PP: 25
+Effect: N/A
+
++++++
+079)
+Name: ShadowBall
+Type: Ghost
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+080)
+Name: BrickBreak
+Type: Fire
+Strength: 75
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+081)
+Name: PoisonJab
+Type: Poison
+Strength: 80
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+082)
+Name: PowerUpPunch
+Type: Fighting
+Strength: 40
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+083)
+Name: ZenHeadbut
+Type: Psychic
+Strength: 80
+Accuracy: 90
+PP: 25
+Effect: N/A
+
++++++
+084)
+Name: HyperBeam
+Type: Normal
+Strength: 150
+Accuracy: 90
+PP: 25
+Effect: N/A
+
++++++
+085)
+Name: Psychic
+Type: Psychic
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+086)
+Name: Surf
+Type: Water
+Strength: 90
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+087)
+Name: CloseCombat
+Type: Fighting
+Strength: 120
+Accuracy: 100
+PP: 25
+Effect: N/A
+
++++++
+088)
+Name: CrossChop
+Type: Fighting
+Strength: 100
+Accuracy: 80
+PP: 25
+Effect: N/A
+
++++++
+089)
+Name: StoneEdge
+Type: Rock
+Strength: 100
+Accuracy: 80
+PP: 25
+Effect: N/A
+
++++++
+090)
+Name: U-Turn
+Type: Bug
+Strength: 70
 Accuracy: 100
 PP: 25
 Effect: N/A
