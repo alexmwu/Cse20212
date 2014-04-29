@@ -1,22 +1,32 @@
 +++++
 000)
 Name: Alex 45 125 TrainerDOWN
-Charmander 100 Ember Scratch
-Bulbasaur 100 Tackle
-Wartortle 100 Bubble
+Blastoise 36 WaterPulse Scratch Crunch Surf
+Pikachu 31 Thunder ThunderBolt QuickAttack Bite
+Nidorino 30 Tackle CrushClaw Swift Earthquake
+Poliwhirl 31 IceFang SuckerPunch WaterPulse IceBeam
 ###
 
 +++++
 001)
-Name: Alex2 43 120 TrainerLEFT
-Eevee 100 Scratch
-Abra 100 Tackle
+Name: Nick 90 68 TrainerRight
+Snorlax 28 Scratch DoubleEdge Slash 
+Mankey 25 QuickAttack CrossChop Tackle Swift
+Onix 29 Earthquake SkullBash Tackle ChipAway
+
 ###
 
 +++++
 002)
-Name: Trainer2 42 121 TrainerUP
-Blastoise 100 Bubble Tackle
-Pidgeotto 100 Tackle 
-Sandshrew 100 Scratch
+Name: Andrew 87 92 TrainerUP
+Geodude 25 Tackle TakeDown Dig
+Diglett 25 Dig Earthquake EarthPower 
+###
+
++++++
+002)
+Name: Brock 92 62 TrainerDOWN
+Rhyhorn 25 Tackle TakeDown Dig Earthquake
+Onix 31 Earthquake SkullBash Tackle ChipAway
+Machoke 29 CrossChop CrushClaw DrillRun Tackle
 ###
