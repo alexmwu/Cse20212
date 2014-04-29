@@ -29,11 +29,12 @@ public:
 	void setStrength(int);				//sets the strength of the move
 	void setEffect(string);				//sets the effect of the move
 	void print();					//prints the move for battle
+	double getAccuracy();				//returns the accuracy
 private:
 	string my_name;					//sotres the name
 	Type my_type;					//stores teh type
 	int my_strength;				//stores the moves strength
-	double my_accuarcy;				//stores the accuracy
+	double my_accuracy;				//stores the accuracy
 	int my_pp;					// stores the power points
 	string my_effect;				//stores the effect of the move
 };

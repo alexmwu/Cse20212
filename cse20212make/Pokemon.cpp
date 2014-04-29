@@ -314,6 +314,12 @@ Move Pokemon::getMove(int num)
 //uses the move indexed by the int onto the pokemon passed, the double is the move strength agaisnt the pokemon	
 void Pokemon::useMove(Pokemon *opp, int move, double strength)
 {
+	int random = rand()%100;
+	if(random < getMove(move).getAccuracy())
+	{
+		cout << "The attack missed" <<endl;
+		return;
+	}
 	double calc;
 	int HPLoss;
 	int f[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };

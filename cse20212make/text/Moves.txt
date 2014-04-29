@@ -24,10 +24,12 @@ PP: 35
 Effect: N/A
 
 +++++
-002)
+003)
 Name: Ember
 Type: Fire
 Strength: 40
 Accuracy: 100
 PP: 25
 Effect: N/A
+
+

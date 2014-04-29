@@ -18,7 +18,7 @@ Move::Move(string name, Type type, int strength, double accuracy, int pp, string
 	my_type = type;
 	my_strength = strength;
 	my_effect = effect;
-	my_accuarcy = accuracy;
+	my_accuracy = accuracy;
 	my_pp = pp;
 }
 
@@ -74,4 +74,10 @@ void Move::setEffect(string effect)
 void Move::print()
 {
 	cout << my_name << " " << my_pp << " (PP) " << my_strength << " (Power)" << endl;
+}
+
+//returns the accuracy
+double Move::getAccuracy()
+{
+	return my_accuracy;
 }
