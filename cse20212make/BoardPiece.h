@@ -28,6 +28,7 @@ public:
 	int canInteract();			//returns if the trainer can interact with the boardpiece
 	int trainerPresent(Location);		//returns if there is a trainer present on the boardpiece
 	virtual void interact();		//interacts
+	void setSprite(Sprite); 		//sets the sprite to the passed value
 
 private:
 	Location my_loc;			//location of the piece

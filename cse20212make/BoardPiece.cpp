@@ -60,3 +60,9 @@ void BoardPiece::interact()
 	if (my_interact != 1)
 		return;
 }
+
+//sets the sprite to the passed value
+void BoardPiece::setSprite(Sprite s)
+{
+	my_sprite = s;
+}

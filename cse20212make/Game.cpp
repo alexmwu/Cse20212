@@ -1158,6 +1158,7 @@ void Game::play(){
 				switch (event.key.keysym.sym)
 				{
 				case SDLK_UP: 
+					my_trainers[0].getBoardPiece().setSprite(getSprite("PlayerUP"));
 					nextStep = getMapPiece(trainerX, trainerY-1);
 					if (!nextStep.canWalk())
 					{
@@ -1175,6 +1176,7 @@ void Game::play(){
 					cout<<"y up change"<<my_trainers[0].getBoardPiece().getLocation().getY();
 					break;
 				case SDLK_DOWN:
+					my_trainers[0].getBoardPiece().setSprite(getSprite("PlayerDOWN"));
 					nextStep = getMapPiece(trainerX, trainerY+1);
 					if (!nextStep.canWalk())
 					{
@@ -1192,6 +1194,7 @@ void Game::play(){
 					cout<<"y down change"<<my_trainers[0].getBoardPiece().getLocation().getY();
 					break;
 				case SDLK_LEFT:
+					my_trainers[0].getBoardPiece().setSprite(getSprite("PlayerLEFT"));
 					nextStep = getMapPiece(trainerX-1, trainerY);
 					if (!nextStep.canWalk())
 					{
@@ -1209,6 +1212,7 @@ void Game::play(){
 					cout<<"x left change"<<my_trainers[0].getBoardPiece().getLocation().getX();
 					break;
 				case SDLK_RIGHT:
+					my_trainers[0].getBoardPiece().setSprite(getSprite("PlayerRIGHT"));
 					nextStep = getMapPiece(trainerX+1, trainerY);
 					if (!nextStep.canWalk())
 					{
@@ -1278,7 +1282,6 @@ void Game::interact(Location l, Sprite s)
 		Location newL = getLocationComplement(l);
 		my_trainers[0].getBoardPiece().getLocation().setX(newL.getX());
 		my_trainers[0].getBoardPiece().getLocation().setY(newL.getY());
-		cout << "y sucess" <<endl;
 	}
 	else if(s.getName() == "TGR")
 	{
@@ -1363,11 +1366,9 @@ void Game::wildPokemon()
 //returns the complement location to the passed location
 Location Game::getLocationComplement(Location l)
 {
-			cout << "Looking for: " << l.getX() << ", " << l.getY() << endl;
 	for(int i = 0; i < my_locationPairs.size(); i++)
 	{
 		pair<Location, Location> p = my_locationPairs[i];
-		cout << p.first.getX() << ", " << p.first.getY() << " <--> " << p.second.getX() <<", " << p.second.getY()<<endl;
 		if(p.first.getX() == l.getX() && p.first.getY() == l.getY())
 			return p.second;
 		if(p.second.getX() == l.getX() && p.second.getY() == l.getY())
