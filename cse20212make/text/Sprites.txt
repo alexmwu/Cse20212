@@ -2529,7 +2529,7 @@ Height: 15
 Width: 15
 
 +++++
-073)
+199)
 Sheet: 5
 Name: TrainerUP 0 0
 X: 25
@@ -2538,7 +2538,7 @@ Height: 20
 Width: 15
 
 +++++
-073)
+200)
 Sheet: 5
 Name: TrainerLEFT 0 0
 X: 25
@@ -2547,7 +2547,7 @@ Height: 20
 Width: 15
 
 +++++
-073)
+201)
 Sheet: 5
 Name: TrainerRIGHT 0 0
 X: 251
@@ -2555,3 +2555,38 @@ Y: 139
 Height: 20
 Width: 15
 
++++++
+202)
+Sheet: 5
+Name: PlayerUP 0 0
+X: 338
+Y: 141
+Height: 20
+Width: 15
+
++++++
+203)
+Sheet: 5
+Name: PlayerLEFT 0 0
+X: 356
+Y: 141
+Height: 20
+Width: 15
+
++++++
+204)
+Sheet: 5
+Name: PlayerRIGHT 0 0
+X: 300
+Y: 141
+Height: 20
+Width: 15
+
++++++
+204)
+Sheet: 5
+Name: PlayerDOWN 0 0
+X: 318
+Y: 141
+Height: 20
+Width: 15
