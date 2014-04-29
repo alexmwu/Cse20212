@@ -15,7 +15,7 @@ Abra 100 Tackle
 
 +++++
 002)
-Name: Trainer2 2 2 Trainer1
+Name: Trainer2 42 121 TrainerUP
 Blastoise 100 Bubble Tackle
 Pidgeotto 100 Tackle 
 Sandshrew 100 Scratch

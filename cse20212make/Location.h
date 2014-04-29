@@ -17,15 +17,15 @@ using namespace std;
 class Location
 {
 public:
-	Location();
-	Location(int, int);
-	int getX();
-	int getY();
-	void setX(int);
-	void setY(int);
+	Location(); 		//creates a black Location object
+	Location(int, int);	//creates a Location with x and y passed in as the parameters
+	int getX();		//returns x
+	int getY();		//returns y
+	void setX(int);		//sets x to the paremeter
+	void setY(int);		//sets y to the parameter
 
 private:
-	int my_x;
-	int my_y;
+	int my_x;		//holds the x value
+	int my_y;		//holds the y value
 };
 #endif

@@ -5,11 +5,13 @@
 #include "BoardPiece.h"
 using namespace std;
 
+//black constructor, creates black object
 BoardPiece::BoardPiece()
 {
 	return;
 }
 
+//creates boardpice with the given sprite, location. its are if it is walkable and interactable
 BoardPiece::BoardPiece(Sprite sprite, Location loc, int walkable, int interact)
 {
 	my_sprite = sprite;
@@ -18,26 +20,31 @@ BoardPiece::BoardPiece(Sprite sprite, Location loc, int walkable, int interact)
 	my_interact = interact;
 }
 
+//returns the sprite value
 Sprite BoardPiece::getSprite()
 {
 	return my_sprite;
 }
 
+//returns the location
 Location& BoardPiece::getLocation()
 {
 	return my_loc;
 }
 
+//returns if a trainer can walk on it
 int BoardPiece::canWalk()
 {
 	return my_walk;
 }
 
+//returns if the trainer can interact with the boardpiece
 int BoardPiece::canInteract()
 {
 	return my_interact;
 }
 
+//returns if there is a trainer present on the boardpiece
 int BoardPiece::trainerPresent(Location loc)
 {
 	if (my_loc.getX() != loc.getX())
@@ -47,6 +54,7 @@ int BoardPiece::trainerPresent(Location loc)
 	return 1;
 }
 
+//interacts
 void BoardPiece::interact()
 {
 	if (my_interact != 1)

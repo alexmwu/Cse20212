@@ -20,19 +20,19 @@ using namespace std;
 class BoardPiece
 {
 public:
-	BoardPiece();
-	BoardPiece(Sprite, Location, int, int);
-	Sprite getSprite();
-	Location& getLocation();
-	int canWalk();
-	int canInteract();
-	int trainerPresent(Location);
-	virtual void interact();
+	BoardPiece();				//black constructor, creates black object
+	BoardPiece(Sprite, Location, int, int);	//creates boardpice with the given sprite, location. its are if it is walkable and interactable
+	Sprite getSprite();			//returns the sprite value
+	Location& getLocation();		//returns the location
+	int canWalk();				//returns if a trainer can walk on it
+	int canInteract();			//returns if the trainer can interact with the boardpiece
+	int trainerPresent(Location);		//returns if there is a trainer present on the boardpiece
+	virtual void interact();		//interacts
 
 private:
-	Location my_loc;
-	int my_walk;
-	int my_interact;
-	Sprite my_sprite;
+	Location my_loc;			//location of the piece
+	int my_walk;				//stores walkability
+	int my_interact;			//stores interactability
+	Sprite my_sprite;			//stores the sprite
 };
 #endif

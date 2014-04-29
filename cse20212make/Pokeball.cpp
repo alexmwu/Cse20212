@@ -6,27 +6,32 @@
 #include "Item.h"
 using namespace std;
 
+//creates a blank pokeball
 Pokeball::Pokeball()
 {
 	return;
 }
 
+//creates a pokeball with the string name, and int strength
 Pokeball::Pokeball(string name, int s)
 {
 	my_name = name;
 	my_strength = s;
 }
 
+//sets teh strength to the passed value
 void Pokeball::setStrength(int s)
 {
 	my_strength = s;
 }
 
+//returns the strength of the pokeball
 int Pokeball::getStrength()
 {
 	return my_strength;
 }
 
+//determines if the pokemon will be caught will the given pokeball, and pokemon passed in
 int Pokeball::canCatch(Pokemon p)
 {
 	if (!p.isWild())

@@ -12,16 +12,19 @@ Class extedning item, used for an item to heal HP ~ Potion
 #include "Item.h"
 #include "Potion.h"
 
+//creates a blank Potion object
 Potion::Potion()
 {
 	return;
 }
 
+//creates a potion with the given name, if it is a battle item, outside item, and the strength
 Potion::Potion(string name, int battle, int outside, int strength) : Item(name, battle, outside)
 {
 	my_strength = strength;
 }
 
+//uses the item on the given pokemon
 int Potion::use(Pokemon p)
 {
 	if (p.getHP() > 0)
@@ -31,7 +34,9 @@ int Potion::use(Pokemon p)
 	return 1;
 }
 
+//returns the name of the potion
 string Potion::getName()
 {
 	return my_name;
 }
+

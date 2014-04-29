@@ -19,14 +19,14 @@ using namespace std;
 class Pokeball : public Item
 {
 public:
-	Pokeball();
+	Pokeball();				//creates a blank pokeball
 	//Pokeball(string, int, int,  int);
-	Pokeball(string, int);
-	void setStrength(int);
-	int getStrength();
-	int canCatch(Pokemon);
+	Pokeball(string, int);			//creates a pokeball with the string name, and int strength
+	void setStrength(int);			//sets teh strength to the passed value
+	int getStrength();			//returns the strength of the pokeball
+	int canCatch(Pokemon);			//determines if the pokemon will be caught will the given pokeball, and pokemon passed in
 private:
-	int my_strength;
-	string my_name;
+	int my_strength;			//stores the strength of the pokeball
+	string my_name;				//stores the name of the pokeball
 };
 #endif

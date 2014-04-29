@@ -17,16 +17,16 @@ using namespace std;
 class Type
 {
 public:
-	Type();
-	Type(string, int);
-	string getName();
-	int getIndex();
-	void setName(string);
-	void setIndex(int);
+	Type();			//creates a blank type object
+	Type(string, int);	//creates a type with the string name and int index
+	string getName();	//returns the string's name
+	int getIndex();		//returns the index of the type
+	void setName(string);	//sets the name to the string 
+	void setIndex(int);	//sets the index to the int passed in
 
 private:
-	string my_name;
-	int my_index;
+	string my_name;		//stores the name of the type
+	int my_index;		//stores the index of the type
 
 };
 #endif

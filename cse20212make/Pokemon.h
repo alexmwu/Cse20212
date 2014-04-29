@@ -24,75 +24,75 @@ using namespace std;
 class Pokemon
 {
 public:
-	Pokemon();
-	Pokemon(int, int, int, int, int, int, Sprite ,Sprite , string, int, int, int, int, int, Type, Type);
-	string getName();
-	int getAtk();
-	int getDef();
-	int getHP();
-	int getSpAtk();
-	int getSpDef();
-	int getSpeed();
-	Sprite getUserImage();	//get user pokemon sprite
-	Sprite getOppImage();	//get opponent pokemon sprite
-	int isWild();
-	int getLevel();
-	int getXP();
-	int getNextLevelXP();
-	int getEvolveLevel();
-	void setName(string);
-	void setAtk(int);
-	void setDef(int);
-	void setHP(int);
-	void setSpAtk(int);
-	void setSpDef(int);
-	void setSpeed(int);
-	void setUserImage(Sprite);
-	void setOppImage(Sprite);
-	void setWild(int);
-	void setLevel(int);
-	void setXP(int);
-	void setNextLevelXP(int);
-	void setEvolveLevel(int);
-	void levelUp();
-	void evolve();
-	void heal();
-	vector<Move> getMoves();
-	Move getMove(int);
-	void addMove(Move);
-	vector<Type> getType();
-	void setType(Type, Type);
-	void battlePrint();
-	void oppPrint();
-	int getMaxHP();
-	void setMaxHP(int);
-	void useMove(Pokemon*, int, double);
-	int battleEXP();
+	Pokemon();			//blank pokemon object
+	Pokemon(int, int, int, int, int, int, Sprite ,Sprite , string, int, int, int, int, int, Type, Type); //atk, def, HP, spAtk, spDef, speed, user Sprite, opp Sprite, string name, lvl, nextlevlXP, isWild, evolvelvl, Type1, Type2. Creates an object with the given attributes	
+	string getName();		//returns the name
+	int getAtk();			//returns the atk
+	int getDef();			//returns the def
+	int getHP();			//returns the hp
+	int getSpAtk();			//returns the spatk
+	int getSpDef();			//returns the spdef
+	int getSpeed();			//returns the speed
+	Sprite getUserImage();		//get user pokemon sprite
+	Sprite getOppImage();		//get opponent pokemon sprite
+	int isWild();			//returns if it is a wild pokemon
+	int getLevel();			//returns the lvl
+	int getXP();			//returns the xp
+	int getNextLevelXP();		//returns the nextlvlxp
+	int getEvolveLevel();		//returns the evolvelvl
+	void setName(string);		//sets the name to the passed in value
+	void setAtk(int);		//sets the atk to the passed in value
+	void setDef(int);		//sets the def to the passed in value
+	void setHP(int);		//sets the hp to the passed in value
+	void setSpAtk(int);		//sets the spatk to the passed in value
+	void setSpDef(int);		//sets the spdef to the passed in value
+	void setSpeed(int);		//sets the speed to the passed in value
+	void setUserImage(Sprite);	//sets the userimage to the passed in value
+	void setOppImage(Sprite);	//sets the oppimage to the passed in value
+	void setWild(int);		//sets if the pokemon is wild
+	void setLevel(int);		//sets the lvl to the passed in value
+	void setXP(int);		//sets the xp to the passed in value, changes level accordingly
+	void setNextLevelXP(int);	//sets the nextlvlxp to the passed in value
+	void setEvolveLevel(int);	//sets the evolvelvl to the passed in value
+	void levelUp();			//increments the level, adn checks eveolve accordingly
+	void evolve();			//evolves the pokemon
+	void heal();			//heals the pokemons hp to its max
+	vector<Move> getMoves();	//returns the vecotr of moves
+	Move getMove(int);		//gets the moved stored at that index
+	void addMove(Move);		//adds a move the pokemon
+	vector<Type> getType();		//returns a vector of the types that the pokemon is
+	void setType(Type, Type);	//sets the pokemons types the the two parameters
+	void battlePrint();		//prints the pokemon in such a way the user can unserstand it and help the user see their options in battle
+	void oppPrint();		//pritns the pokemon in such a way that the user can see only minimum info
+	int getMaxHP();			//returns the maxHP of the pokemon
+	void setMaxHP(int);		//sets teh maxHP to the passed in value
+	void useMove(Pokemon*, int, double);	//uses the move indexed by the int onto the pokemon passed, the double is the move strength agaisnt the pokemon	
+	int battleEXP();		//returns the battlexp
 	//void useMove(Move m);
 	//Type getType();
 	//Item getEquipped();
 
 private:
 	//Item equipped;
-	int my_index;
-	int my_Atk;
-	int my_Def;
-	int my_HP;
-	int my_SpAtk;
-	int my_SpDef;
-	int my_speed;
-	string my_name;
-	Sprite user_image;
-	Sprite opp_image;
-	int my_level;
-	int my_XP;
-	int my_nexLvlXP;
-	int my_wild;
-	int my_evolveLvl;
-	int my_maxHP;
-	vector<Move> my_moves;
-	vector<Type> my_types;
-	double my_multFact;
-	int my_battleXP;
+	int my_index;		//stores the index of the pokemon
+	int my_Atk;		//stores the value of the atk
+	int my_Def;		//stores the value of the def
+	int my_HP;		//stores the value of the hp
+	int my_SpAtk;		//stores the value of the spatk
+	int my_SpDef;		//stores the value of the spdef
+	int my_speed;		//stores the value of the speed
+	string my_name;		//stores the value of the name
+	Sprite user_image;	//stores the value of the user image
+	Sprite opp_image;	//stores the value of the opp image
+	int my_level;		//stores the value of the lvl
+	int my_XP;		//stores the value of the xp
+	int my_nexLvlXP;	//stores the value how much xp it takes to reach the next lvl
+	int my_wild;		//stores if the pokemon is wild
+	int my_evolveLvl;	//stores the value of the evolve lvl
+	int my_maxHP;		//stores the value of the maxHP
+	vector<Move> my_moves;	//stores a vector of all the moves the pokemon knows
+	vector<Type> my_types;	//stores a vector of types that the pokemon is
+	double my_multFact;	//stores the value of the multFact, used to determine stats at each lvl
+	int my_battleXP;	//stores the value of how much xp one would gain for defeating this pokemon
 };
 #endif
