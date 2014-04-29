@@ -9,7 +9,7 @@ Poliwhirl 31 IceFang SuckerPunch WaterPulse IceBeam
 
 +++++
 001)
-Name: Nick 90 68 TrainerRight
+Name: Nick 90 68 TrainerRIGHT
 Snorlax 28 Scratch DoubleEdge Slash 
 Mankey 25 QuickAttack CrossChop Tackle Swift
 Onix 29 Earthquake SkullBash Tackle ChipAway
@@ -18,14 +18,14 @@ Onix 29 Earthquake SkullBash Tackle ChipAway
 
 +++++
 002)
-Name: Andrew 87 92 TrainerUP
+Name: Andrew 86 91 TrainerRIGHT
 Geodude 25 Tackle TakeDown Dig
 Diglett 25 Dig Earthquake EarthPower 
 ###
 
 +++++
 002)
-Name: Brock 92 62 TrainerDOWN
+Name: Brock 91 61 TrainerDOWN
 Rhyhorn 25 Tackle TakeDown Dig Earthquake
 Onix 31 Earthquake SkullBash Tackle ChipAway
 Machoke 29 CrossChop CrushClaw DrillRun Tackle
