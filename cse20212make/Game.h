@@ -60,10 +60,10 @@ public:
 	void printPokemon();
 	Move getMove(string);
 	Sprite charToSprite(char);	
-	void textToSDL(string,int, int, int);	//string of text to display, width of text box.
+	void textToSDL(string,int, int, int);	//string of text to display, width of text box,x,y
 	void test();
 	void play();		//play
-	void displayBattle(Pokemon,Pokemon);	//display battling Pokemon
+	void displayBattle();	//currently displays the battle screen without anything else
 	void displayMap();		//display map graphically
 	void displayTrainers();		//display trainers on map
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen

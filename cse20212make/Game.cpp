@@ -686,11 +686,11 @@ void Game::textToSDL(string text, int textWidth, int x, int y){
 	int spriteLength=15;	//a bit more than their average lengths
 	int oldX=x;
 	for(int i=0;i<text.size();i++){
-		if((x+spriteWidth)>(oldX+textWidth))
+		if((x+spriteWidth*3)>(oldX+textWidth))
 		{
-			if(text.at(i)!=' '){
-				getSprite("BoldHyphen").display(x,y,screen);
-			}
+			//if(text.at(i)!=' '){
+			//	getSprite("BoldHyphen").display(x,y,screen);
+			//}
 			y+=spriteLength;
 			x=oldX;
 			i-=1;
@@ -714,7 +714,7 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 	double strength = 0;
 	int canMove = 1;
 	cout << user->getName() << " VS " << opp->getName() << endl;
-	displayBattle(*user,*opp);
+	//displayBattle(*user,*opp);
 while (user->getHP() > 0 && opp->getHP() > 0)
 	{
 		canMove = 1;
@@ -963,13 +963,22 @@ void Game::printPokemon()
 	}
 }
 
-void Game::displayBattle(Pokemon user, Pokemon opp){
-		whiteScreen();
-		user.getUserImage().display(20,400,battlescene);
-		opp.getOppImage().display(560,20,battlescene);
+void Game::displayBattle(){
+//		whiteScreen();
+//		user.getUserImage().display(20,400,battlescene);
+//		opp.getOppImage().display(560,20,battlescene);
 // 		whiteScreen();
-		applySurface(0,0,battlescene,screen);
-		SDL_Flip(screen);
+//		applySurface(0,0,battlescene,screen);
+//		SDL_Flip(screen);
+	int battleTextWidth=screen_width-getSprite("BattleOptions").getWidth();	//available space to work with battle text
+	whiteScreen();
+
+//goes last
+	getSprite("UserPokemonBar").display(screen_width-10-getSprite("UserPokemonBar").getWidth(),screen_height-50-getSprite("UserPokemonBar").getHeight(),screen);
+	getSprite("OppPokemonBar").display(10,15,screen);
+	getSprite("BattleText").display(0,screen_height-getSprite("BattleText").getHeight(),screen);
+	getSprite("BattleOptions").display(battleTextWidth,screen_height-getSprite("BattleOptions").getHeight(),screen);
+	textToSDL("Never pick BULBASAUR.",battleTextWidth,10,screen_height-getSprite("BattleText").getHeight()+10);
 }
 
 
@@ -1080,12 +1089,15 @@ void Game::moveTrainer(Trainer, Location)
 }
 
 void Game::play(){
+	//textToSDL("whattup fsadf",10,0,0);	
+	//displayBattle();
+
 	int quit=0;
 
 	whiteScreen();
 	displayMap();
 	displayTrainers();
-	//textToSDL("whattup fsadf",10,0,0);	
+
 	
 	Trainer user = my_trainers[0];
 	Trainer opp = my_trainers[2];
