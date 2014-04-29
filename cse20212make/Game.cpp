@@ -731,14 +731,8 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 	int oppMove = 0;
 	double strength = 0;
 	int canMove = 1;
-	cout << user->getName() << " VS " << opp->getName() << endl;
-<<<<<<< HEAD
-	displayBattle(*user,*opp);
+	//cout << user->getName() << " VS " << opp->getName() << endl;
 	while (user->getHP() > 0 && opp->getHP() > 0) // check to see if both pokemon are still useable
-=======
-	//displayBattle(*user,*opp);
-while (user->getHP() > 0 && opp->getHP() > 0)
->>>>>>> 5a567261eb1de6a729dff226ace5a768fd363b43
 	{
 		canMove = 1;
 		oppMove = rand() % opp->getMoves().size();
@@ -855,10 +849,10 @@ while (user->getHP() > 0 && opp->getHP() > 0)
 	return returnVal;
 }
 
-//need to change to trainer v trainer, in turn it runs the pokemon v pokemon function for each match up
+//trainer v trainer, in turn it runs the pokemon v pokemon function for each match up
 void Game::battle(Trainer *user, Trainer *opp)
 {
-	cout << user->getName() << " VS " << opp->getName() << endl;
+	//cout << user->getName() << " VS " << opp->getName() << endl;
 	int swap = -1;
 	int item = -1;
 	int uA = 0;
@@ -1130,7 +1124,7 @@ void Game::moveTrainer(Trainer, Location)
 
 void Game::play(){
 	//textToSDL("whattup fsadf",10,0,0);	
-	//displayBattle();
+//	displayBattle();
 
 	int quit=0;
 
