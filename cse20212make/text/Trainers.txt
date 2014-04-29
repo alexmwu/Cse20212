@@ -1,6 +1,6 @@
 +++++
 000)
-Name: Alex 45 125 TrainerDOWN
+Name: Alex 90 98 PlayerDOWN
 Blastoise 36 WaterPulse Scratch Crunch Surf
 Pikachu 31 Thunder ThunderBolt QuickAttack Bite
 Nidorino 30 Tackle CrushClaw Swift Earthquake
@@ -18,7 +18,7 @@ Onix 29 Earthquake SkullBash Tackle ChipAway
 
 +++++
 002)
-Name: Andrew 86 91 TrainerRIGHT
+Name: Andrew 87 90 TrainerRIGHT
 Geodude 25 Tackle TakeDown Dig
 Diglett 25 Dig Earthquake EarthPower 
 ###
