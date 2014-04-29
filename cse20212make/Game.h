@@ -53,6 +53,7 @@ public:
 	void initializeMoves(); 	//reads in data from text file and creates pokemon objects from it
 	void initializeLocationPairs(); //Initializes the location pairs for movement between enveironment and buidlings
 	
+<<<<<<< HEAD
 	pair<int, int> battle(Pokemon*, Pokemon*); 	//runs a battle sequece between two pokemon
 	void battle(Trainer*, Trainer*);		//need to change to trainer v trainer, in turn it runs the pokemon v pokemon function for each match up
 	Pokemon getPokemon(string); 			//returns the pokemon whose name is the same as the string
@@ -66,6 +67,21 @@ public:
 	void displayBattle(Pokemon,Pokemon);		//display battling Pokemon
 	void displayMap();				//display map graphically
 	void displayTrainers();				//display trainers on map
+=======
+	pair<int, int> battle(Pokemon*, Pokemon*);
+	void battle(Trainer*, Trainer*);	//need to change to trainer v trainer
+	Pokemon getPokemon(string);
+	void initializeTrainers();
+	void printPokemon();
+	Move getMove(string);
+	Sprite charToSprite(char);	
+	void textToSDL(string,int, int, int);	//string of text to display, width of text box,x,y
+	void test();
+	void play();		//play
+	void displayBattle();	//currently displays the battle screen without anything else
+	void displayMap();		//display map graphically
+	void displayTrainers();		//display trainers on map
+>>>>>>> 5a567261eb1de6a729dff226ace5a768fd363b43
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
 	void whiteScreen();				//make screen white
 	BoardPiece getMapPiece(int, int); 		//returns the BoardPice at the corresponding location. 
