@@ -63,10 +63,9 @@ public:
 	void textToSDL(string,int, int, int);		//string of text to display, width of text box.
 	void test(); 					//blank function used for testing
 	void play();					//play
-	void displayBattle(Pokemon,Pokemon);		//display battling Pokemon
+	void displayBar(Pokemon,Pokemon);		//display the battle bars
 	void displayMap();				//display map graphically
 	void displayTrainers();				//display trainers on map	
-	void displayBattle();				//currently displays the battle screen without anything else
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
 	void whiteScreen();				//make screen white
 	BoardPiece getMapPiece(int, int); 		//returns the BoardPice at the corresponding location. 

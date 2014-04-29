@@ -994,7 +994,7 @@ void Game::printPokemon()
 	}
 }
 
-void Game::displayBattle(){
+void Game::displayBar(Pokemon user,Pokemon opp){
 //		whiteScreen();
 //		user.getUserImage().display(20,400,battlescene);
 //		opp.getOppImage().display(560,20,battlescene);
