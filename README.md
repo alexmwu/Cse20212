@@ -44,4 +44,3 @@ The following are known bugs as well as improvements to the program that we woul
 
 -can walk through trainers
 
--in battle. hitting the arrow keys too much will cause a the 0 move to be used
