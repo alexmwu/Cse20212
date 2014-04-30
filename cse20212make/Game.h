@@ -80,7 +80,6 @@ public:
 private:
 	vector<Pokemon> my_pokemon; 			//list of all pokemon in the game
 	vector<Sprite> my_sprites; 			//list of all the sprites avalible to be used
-	vector<vector<BoardPiece> > trainer_map; 
 	vector<vector<BoardPiece> > my_map; 		//map of boardpieces that will be displayed and played on
 	vector<Type> my_types; 				//list of all the types avalibe in the game
 	vector<vector<char> > my_typeChart; 		//chart to be used to determine stengths and effectivenss between types

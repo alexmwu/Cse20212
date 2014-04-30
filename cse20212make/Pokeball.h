@@ -20,7 +20,6 @@ class Pokeball : public Item
 {
 public:
 	Pokeball();				//creates a blank pokeball
-	//Pokeball(string, int, int,  int);
 	Pokeball(string, int);			//creates a pokeball with the string name, and int strength
 	void setStrength(int);			//sets teh strength to the passed value
 	int getStrength();			//returns the strength of the pokeball
