@@ -1,6 +1,6 @@
 +++++
 000)
-Name: Red 90 98 PlayerDOWN UserRedFemaleTrainer
+Name: Red 90 98 PlayerDOWN UserBlueMaleTrainer
 Blastoise 36 WaterPulse Scratch Crunch Surf
 Pikachu 31 Thunder ThunderBolt QuickAttack Bite
 Nidorino 30 Tackle CrushClaw Swift Earthquake

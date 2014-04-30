@@ -322,7 +322,7 @@ void Pokemon::useMove(Pokemon *opp, int move, double strength)
 	}
 	double calc;
 	int HPLoss;
-	int f[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+	double f[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 	f[0] = getLevel();
 	f[1] = getAtk();
 	f[2] = getMove(move).getStrength();
@@ -332,7 +332,7 @@ void Pokemon::useMove(Pokemon *opp, int move, double strength)
 	f[6] = rand() % 39 + 152;
 
 	//calc = (((((2.0 * f[0]) / 5 + 2)*f[1] * f[2]) / ((f[3] * f[4]) + 2) * f[5] * f[6])) / 255 + 1;
-	calc = (1.0 * f[1] * f[2] * f[5]) / (f[4]) * (f[6] / 464.0);
+	calc = (1.0 * f[1] * f[2] * f[5] * f[0]) / ((f[4])*f[3]) * (f[6] / 464.0);
 	HPLoss = calc / 1;
 	opp->setHP(opp->getHP() - HPLoss);
 	cout << getName() << " used " << getMove(move).getName() << endl;
