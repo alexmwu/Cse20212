@@ -744,7 +744,6 @@ OppSprite: OppClefable
 +++++
 037)
 Name: Vulpix
-Image: vulpix
 Type1: Fire
 Type2: Type
 Attack: 41
@@ -2245,7 +2244,6 @@ OppSprite: OppRhyhorn
 +++++
 112)
 Name: Rhydon
-Image: Rhydon
 Type1: Ground
 Type2: Rock
 Attack: 130

@@ -938,6 +938,7 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 				return returnVal;
 			}
 		}
+		move=-1;	//reset move
 	}
 	returnVal.first = 5;
 	return returnVal;
@@ -1259,23 +1260,26 @@ void Game::displayBar(Pokemon userPoke,Pokemon oppPoke, string text,int gap){
 	textToSDL(text,battleTextWidth,10,screen_height-bt.getHeight()+10,0);
 
 	//hp bars and xp bars find sprite to use based on health
-		if((double)(oppPoke.getHP()/oppPoke.getMaxHP())<(1/3.0)) oppHPSprite=getSprite("BattleYellowHP");
-		else if((double)(oppPoke.getHP()/oppPoke.getMaxHP())<(1/10.0)) userHPSprite=getSprite("BattleRedHP");
+	double oppPercentHP=((double)oppPoke.getHP()/(double)oppPoke.getMaxHP());
+	double userPercentHP=((double)userPoke.getHP()/(double)userPoke.getMaxHP());
+	double userPercentXP=((double)userPoke.getXP()/(double)userPoke.getNextLevelXP());
+		if(oppPercentHP<(1/3.0)) oppHPSprite=getSprite("BattleYellowHP");
+		else if(oppPercentHP<(1/10.0)) userHPSprite=getSprite("BattleRedHP");
 		else oppHPSprite=getSprite("BattleGreenHP");
 
-if((double)(userPoke.getHP()/userPoke.getMaxHP())<(1/3.0)) userHPSprite=getSprite("BattleYellowHP");
-		else if((double)(userPoke.getHP()/userPoke.getMaxHP())<(1/10.0)) userHPSprite=getSprite("BattleRedHP");
+		if(userPercentHP<(1/3.0)) userHPSprite=getSprite("BattleYellowHP");
+		else if(userPercentHP<(1/10.0)) userHPSprite=getSprite("BattleRedHP");
 		else userHPSprite=getSprite("BattleGreenHP");
-		
+cout<<oppPercentHP<<"op"<<endl<<userPercentHP<<"user"<<endl;		
 //fill bars for hp and xp
-	for(int ohp=0;ohp<(oppPoke.getHP()/oppPoke.getMaxHP())*48;ohp++){
+	for(int ohp=0;ohp<oppPercentHP*48;ohp++){
 		oppHPSprite.display(10+40+ohp,15+18,screen);
 	}
 //cout<<userPoke.getHP()<<userPoke.getMaxHP();
-	for(int uhp=0;uhp<(userPoke.getHP()/userPoke.getMaxHP())*48;uhp++){
+	for(int uhp=0;uhp<userPercentHP*48;uhp++){
 		userHPSprite.display(screen_width-10-upb.getWidth()+49+uhp,screen_height-50-upb.getHeight()+18,screen);
 	}
-	for(int xp=0;xp<(userPoke.getXP()/userPoke.getNextLevelXP())*64;xp++){
+	for(int xp=0;xp<userPercentXP*64;xp++){
 		getSprite("BattleXP").display(screen_width-10-upb.getWidth()+33+xp,screen_height-50-upb.getHeight()+33,screen);
 	}
 
