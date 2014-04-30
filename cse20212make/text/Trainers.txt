@@ -1,6 +1,6 @@
 +++++
 000)
-Name: Alex 90 98 PlayerDOWN
+Name: Red 90 98 PlayerDOWN UserRedFemaleTrainer
 Blastoise 36 WaterPulse Scratch Crunch Surf
 Pikachu 31 Thunder ThunderBolt QuickAttack Bite
 Nidorino 30 Tackle CrushClaw Swift Earthquake
@@ -9,23 +9,22 @@ Poliwhirl 31 IceFang SuckerPunch WaterPulse IceBeam
 
 +++++
 001)
-Name: Nick 90 68 TrainerRIGHT
+Name: Nick 90 68 TrainerRIGHT OppRedMaleTrainer
 Snorlax 28 Scratch DoubleEdge Slash 
 Mankey 25 QuickAttack CrossChop Tackle Swift
 Onix 29 Earthquake SkullBash Tackle ChipAway
-
 ###
 
 +++++
 002)
-Name: Andrew 87 90 TrainerRIGHT
+Name: Andrew 87 90 TrainerRIGHT OppRedMaleTrainer
 Geodude 25 Tackle TakeDown Dig
-Diglett 25 Dig Earthquake EarthPower 
+Diglett 25 Dig Earthquake EarthPower
 ###
 
 +++++
 002)
-Name: Brock 91 61 TrainerDOWN
+Name: Brock 91 61 TrainerDOWN OppRedMaleTrainer
 Rhyhorn 25 Tackle TakeDown Dig Earthquake
 Onix 31 Earthquake SkullBash Tackle ChipAway
 Machoke 29 CrossChop CrushClaw DrillRun Tackle

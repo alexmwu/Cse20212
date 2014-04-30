@@ -2590,3 +2590,21 @@ X: 318
 Y: 141
 Height: 20
 Width: 15
+
++++++
+205)
+Sheet: 5
+Name: OppRedMaleTrainer 0 0
+X: 512
+Y: 133
+Height: 81
+Width: 35
+
++++++
+206)
+Sheet: 5
+Name: UserRedFemaleTrainer 0 0
+X: 19
+Y: 399
+Height: 50
+Width: 36

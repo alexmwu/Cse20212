@@ -68,13 +68,13 @@ string Pokemon::getName()
 }
 
 //get user pokemon sprite
-Sprite Pokemon::getUserImage()
+Sprite Pokemon::getUserSprite()
 {
 	return user_image;
 }
 
 //get opponent pokemon sprite
-Sprite Pokemon::getOppImage()
+Sprite Pokemon::getOppSprite()
 {
 	return opp_image;
 }
@@ -192,13 +192,13 @@ void Pokemon::setSpeed(int speed)
 }
 
 //sets the userimage to the passed in value
-void Pokemon::setUserImage(Sprite image)
+void Pokemon::setUserSprite(Sprite image)
 {
 	user_image = image;
 }
 
 //sets the oppimage to the passed in value
-void Pokemon::setOppImage(Sprite image)
+void Pokemon::setOppSprite(Sprite image)
 {
 	opp_image = image;
 }

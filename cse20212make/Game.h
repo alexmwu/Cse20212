@@ -63,7 +63,9 @@ public:
 	void textToSDL(string,int, int, int,int);		//string of text to display, width of text box, x,y locations, and gap between letters(pixels)
 	void test(); 					//blank function used for testing
 	void play();					//play
-	void displayBar(Sprite,Sprite,string);		//display the battle bars
+	void displayBar(Pokemon,Pokemon,string,int);		//display the battle bars as well as opposing pokemon/trainers, int is gap b/w letters
+	void displayBar(Trainer,Trainer,string,int);		//display the battle bars as well as opposing pokemon/trainers, int is gap b/w letters
+	void displayBattle(Trainer,Trainer,Pokemon,Pokemon,int);		//user,opp,user pokemon,opp pokemon,what battle stage it is in
 	void displayMap();				//display map graphically
 	void displayTrainers();				//display trainers on map	
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
@@ -79,6 +81,7 @@ public:
 private:
 	vector<Pokemon> my_pokemon; 			//list of all pokemon in the game
 	vector<Sprite> my_sprites; 			//list of all the sprites avalible to be used
+	vector<vector<BoardPiece> > trainer_map; 
 	vector<vector<BoardPiece> > my_map; 		//map of boardpieces that will be displayed and played on
 	vector<Type> my_types; 				//list of all the types available in the game
 	vector<vector<char> > my_typeChart; 		//chart to be used to determine stengths and effectivenss between types

@@ -33,8 +33,8 @@ public:
 	int getSpAtk();			//returns the spatk
 	int getSpDef();			//returns the spdef
 	int getSpeed();			//returns the speed
-	Sprite getUserImage();		//get user pokemon sprite
-	Sprite getOppImage();		//get opponent pokemon sprite
+	Sprite getUserSprite();		//get user pokemon sprite
+	Sprite getOppSprite();		//get opponent pokemon sprite
 	int isWild();			//returns if it is a wild pokemon
 	int getLevel();			//returns the lvl
 	int getXP();			//returns the xp
@@ -47,8 +47,8 @@ public:
 	void setSpAtk(int);		//sets the spatk to the passed in value
 	void setSpDef(int);		//sets the spdef to the passed in value
 	void setSpeed(int);		//sets the speed to the passed in value
-	void setUserImage(Sprite);	//sets the userimage to the passed in value
-	void setOppImage(Sprite);	//sets the oppimage to the passed in value
+	void setUserSprite(Sprite);	//sets the userimage to the passed in value
+	void setOppSprite(Sprite);	//sets the oppimage to the passed in value
 	void setWild(int);		//sets if the pokemon is wild
 	void setLevel(int);		//sets the lvl to the passed in value
 	void setXP(int);		//sets the xp to the passed in value, changes level accordingly

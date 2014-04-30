@@ -25,11 +25,11 @@ class Trainer
 {
 public:
 	Trainer();					//constructor, creates blank trainer
-	Trainer(string, BoardPiece);			//constructor, creates trainer, with name of the string and boardpiece passed in
+	Trainer(string, BoardPiece, Sprite);			//constructor, creates trainer, with name of the string and boardpiece passed in
 	//void addToParty(Pokemon*);
 	void addToParty(Pokemon);			//adds a pokemon to a party, adds to pc if party is full
-	void removeFromParty(int);			//removes pokemon form party
-	void removeFromPC(int);				//removes pokemon form the pc
+	void removeFromParty(int);			//removes pokemon from party
+	void removeFromPC(int);				//removes pokemon from the pc
 	void addToPC(Pokemon*);				//adds pokemon to the pc
 	void catchPokemon(Pokemon);			//catches a pokemon
 	Pokemon getPokemon(int, vector<Pokemon>);	//returns the pokemon with the index of the int passed, and the in the vector passed
@@ -46,11 +46,13 @@ public:
 	void setBoardPiece(BoardPiece);			//sets the boardPiece of the trainer to the passed in value
 	BoardPiece& getBoardPiece();			// returns the boardpiece of the traienr
 	void updateXP(int, int);			//updates the xp of the pokeon at the first int index to the second in
+	Sprite getSprite();
 private:
 	vector<Pokemon> my_party;			//vector of pokemon in party
 	vector<Pokemon*> my_pokemon;			//vector of pokemon in pc
 	vector<Potion*> my_potions;			//vector of potions in trainers bag
 	string my_name;					//trainers name
 	BoardPiece my_piece;				//trainers board piece
+	Sprite my_sprite;
 };
 #endif

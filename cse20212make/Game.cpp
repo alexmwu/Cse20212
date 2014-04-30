@@ -579,7 +579,7 @@ void Game::initializeTrainers()
 				newTrainer = 2;
 				loc = Location(atoi(tokens[2].c_str()), atoi(tokens[3].c_str()));
 				piece = BoardPiece(getSprite(tokens[4]), loc, 0, 1);
-				temp = Trainer(tokens[1], piece);						
+				temp = Trainer(tokens[1], piece,getSprite(tokens[5]));						
 			}
 			else if (newTrainer == 2)
 			{
@@ -860,6 +860,8 @@ void Game::battle(Trainer *user, Trainer *opp)
 	Pokemon userA = user->getPokemon(uA); //gets the user and opponents first pokemon in their parties
 	Pokemon oppA = opp->getPokemon(oA);
 	Pokemon swapper = Pokemon();
+whiteScreen();
+	//displayBattle(*user,*opp,userA,oppA,0);
 	while (user->getNumPokemonAvalible() > 0 && opp->getNumPokemonAvalible() > 0)
 	{
 		pair<int, int> num = battle(&userA, &oppA); //gets the result of the battle from the two pokemon
@@ -993,24 +995,54 @@ void Game::printPokemon()
 	}
 }
 
-void Game::displayBar(Sprite userSprite,Sprite oppSprite, string text){
+
+void Game::displayBar(Trainer user,Trainer opp, string text, int gap){
+
+	int battleTextWidth=screen_width-getSprite("BattleOptions").getWidth();	//available space to work with battle text
+
+	whiteScreen();
+
+//goes last
+	user.getSprite().display(40,screen_height-40-user.getSprite().getHeight(),screen);
+	opp.getSprite().display(screen_width-40-opp.getSprite().getWidth(),30,screen);
+	getSprite("BattleText").display(0,screen_height-getSprite("BattleText").getHeight(),screen);
+	getSprite("BattleOptions").display(battleTextWidth,screen_height-getSprite("BattleOptions").getHeight(),screen);
+	textToSDL(text,battleTextWidth,10,screen_height-getSprite("BattleText").getHeight()+10,gap);
+}
+
+void Game::displayBar(Pokemon userPoke,Pokemon oppPoke, string text,int gap){
 //		whiteScreen();
 //		user.getUserImage().display(20,400,battlescene);
 //		opp.getOppImage().display(560,20,battlescene);
 // 		whiteScreen();
 //		applySurface(0,0,battlescene,screen);
 //		SDL_Flip(screen);
+
 	int battleTextWidth=screen_width-getSprite("BattleOptions").getWidth();	//available space to work with battle text
+
 	whiteScreen();
 
 //goes last
-	userSprite.display(40,screen_height-30-userSprite.getHeight(),screen);
-	oppSprite.display(screen_width-40-oppSprite.getWidth(),30,screen);
+	userPoke.getUserSprite().display(40,screen_height-30-userPoke.getUserSprite().getHeight(),screen);
+	oppPoke.getOppSprite().display(screen_width-40-oppPoke.getOppSprite().getWidth(),30,screen);
 	getSprite("UserPokemonBar").display(screen_width-10-getSprite("UserPokemonBar").getWidth(),screen_height-50-getSprite("UserPokemonBar").getHeight(),screen);
 	getSprite("OppPokemonBar").display(10,15,screen);
 	getSprite("BattleText").display(0,screen_height-getSprite("BattleText").getHeight(),screen);
 	getSprite("BattleOptions").display(battleTextWidth,screen_height-getSprite("BattleOptions").getHeight(),screen);
 	textToSDL(text,battleTextWidth,10,screen_height-getSprite("BattleText").getHeight()+10,0);
+}
+
+void Game::displayBattle(Trainer user,Trainer opp,Pokemon userPoke,Pokemon oppPoke,int scenario){
+	switch(scenario){
+		case 0:	//trainers face beginning of battle
+			displayBar(user,opp,opp.getName()+" would like to battle!",0);
+			break;
+		case 1:
+			break;
+		
+			
+
+	}
 }
 
 
@@ -1123,9 +1155,8 @@ void Game::moveTrainer(Trainer, Location)
 	//HERE
 }
 
-void Game::play(){
-	//textToSDL("whattup fsadf",10,0,0);	
-	displayBar(getSprite("UserCharizard"),getSprite("OppVenusaur"),"What will BULBASAUR do?");
+void Game::play(){	
+	//displayBar(getSprite("UserCharizard"),getSprite("OppVenusaur"),"What will BULBASAUR do?",0);
 
 	int quit=0;
 
@@ -1133,11 +1164,11 @@ void Game::play(){
 //	displayMap();
 //	displayTrainers();
 
-	
+
 	Trainer user = my_trainers[0];
 	Trainer opp = my_trainers[2];
-	//battle(&user, &opp);
-	
+	battle(&user, &opp);
+
 	int trainerX;	//trainer's x position
 	int trainerY;	//trainer's y position	
 	BoardPiece nextStep = BoardPiece();

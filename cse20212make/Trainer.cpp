@@ -25,10 +25,11 @@ Trainer::Trainer()
 }
 
 //constructor, creates trainer, with name of the string and boardpiece passed in
-Trainer::Trainer(string name, BoardPiece p)
+Trainer::Trainer(string name, BoardPiece p,Sprite s)
 {
 	my_name = name;
 	my_piece = p;
+	my_sprite=s;
 }
 
 //adds a pokemon to a party, adds to pc if party is full
@@ -167,4 +168,8 @@ BoardPiece& Trainer::getBoardPiece()
 void Trainer::updateXP(int num, int XP)
 {
 	my_party[num].setXP(XP);
+}
+
+Sprite Trainer::getSprite(){
+	return my_sprite;
 }
