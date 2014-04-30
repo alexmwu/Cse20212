@@ -33,5 +33,14 @@ Time Log: https://docs.google.com/a/nd.edu/spreadsheet/ccc?key=0AtXGpydKztOtdEx4
 
 BUGS:
 The following are known bugs as well as improvements to the program that we would've liked to implement given more time.
+
 -Sprite animation for movement
+
 -Battle animations
+
+-Exiting doors, cannot go toward the door or on either side, but only away
+
+-can still walk in the blackspace around buildings
+
+-can walk through trainers
+
