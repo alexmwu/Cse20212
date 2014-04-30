@@ -60,10 +60,10 @@ public:
 	void printPokemon(); 				//pritns all the pokemon that have been instasiated
 	Move getMove(string); 				//returns the move that has the name of the string input
 	Sprite charToSprite(char); 
-	void textToSDL(string,int, int, int);		//string of text to display, width of text box.
+	void textToSDL(string,int, int, int,int);		//string of text to display, width of text box, x,y locations, and gap between letters(pixels)
 	void test(); 					//blank function used for testing
 	void play();					//play
-	void displayBar(Pokemon,Pokemon);		//display the battle bars
+	void displayBar(Sprite,Sprite,string);		//display the battle bars
 	void displayMap();				//display map graphically
 	void displayTrainers();				//display trainers on map	
 	void applySurface(int,int, SDL_Surface*, SDL_Surface*, SDL_Rect* = NULL);	//apply surface to screen
@@ -81,7 +81,7 @@ private:
 	vector<Sprite> my_sprites; 			//list of all the sprites avalible to be used
 	vector<vector<BoardPiece> > trainer_map; 
 	vector<vector<BoardPiece> > my_map; 		//map of boardpieces that will be displayed and played on
-	vector<Type> my_types; 				//list of all the types avalibe in the game
+	vector<Type> my_types; 				//list of all the types available in the game
 	vector<vector<char> > my_typeChart; 		//chart to be used to determine stengths and effectivenss between types
 	vector<Move> my_moves; 				//stores all the moves avalible in the game
 	vector<Pokeball> my_pokeballs; 			//list of all pokeballs avalible
