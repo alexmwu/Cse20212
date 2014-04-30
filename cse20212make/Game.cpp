@@ -692,9 +692,8 @@ return getSprite(query);
 }
 
 
-void Game::textToSDL(string text, int textWidth, int x, int y){
-	int spriteWidth=6;	//a sprite's width
-	int gap=3;
+void Game::textToSDL(string text, int textWidth, int x, int y, int gap){
+	int spriteWidth=6;	//a text sprite's width
 	int spriteLength=15;	//a bit more than their average lengths
 	int oldX=x;
 	for(int i=0;i<text.size();i++){
@@ -985,7 +984,7 @@ void Game::whiteScreen(){
 SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
 }
 
-//pritns all the pokemon that have been instasiated
+//prints all the pokemon that have been instantiated
 void Game::printPokemon()
 {
 	for (int i = 0; i < my_pokemon.size(); i++)
@@ -994,7 +993,7 @@ void Game::printPokemon()
 	}
 }
 
-void Game::displayBattle(){
+void Game::displayBar(Sprite userSprite,Sprite oppSprite, string text){
 //		whiteScreen();
 //		user.getUserImage().display(20,400,battlescene);
 //		opp.getOppImage().display(560,20,battlescene);
@@ -1005,11 +1004,13 @@ void Game::displayBattle(){
 	whiteScreen();
 
 //goes last
+	userSprite.display(40,screen_height-30-userSprite.getHeight(),screen);
+	oppSprite.display(screen_width-40-oppSprite.getWidth(),30,screen);
 	getSprite("UserPokemonBar").display(screen_width-10-getSprite("UserPokemonBar").getWidth(),screen_height-50-getSprite("UserPokemonBar").getHeight(),screen);
 	getSprite("OppPokemonBar").display(10,15,screen);
 	getSprite("BattleText").display(0,screen_height-getSprite("BattleText").getHeight(),screen);
 	getSprite("BattleOptions").display(battleTextWidth,screen_height-getSprite("BattleOptions").getHeight(),screen);
-	textToSDL("Never pick BULBASAUR.",battleTextWidth,10,screen_height-getSprite("BattleText").getHeight()+10);
+	textToSDL(text,battleTextWidth,10,screen_height-getSprite("BattleText").getHeight()+10,0);
 }
 
 
@@ -1124,13 +1125,13 @@ void Game::moveTrainer(Trainer, Location)
 
 void Game::play(){
 	//textToSDL("whattup fsadf",10,0,0);	
-//	displayBattle();
+	displayBar(getSprite("UserCharizard"),getSprite("OppVenusaur"),"What will BULBASAUR do?");
 
 	int quit=0;
 
-	whiteScreen();
-	displayMap();
-	displayTrainers();
+//	whiteScreen();
+//	displayMap();
+//	displayTrainers();
 
 	
 	Trainer user = my_trainers[0];
@@ -1234,9 +1235,9 @@ void Game::play(){
 				{
 					checkTrainerSight(my_trainers[0].getBoardPiece().getLocation());
 				}
-				whiteScreen();
-				displayMap();
-				displayTrainers();
+//				whiteScreen();
+//				displayMap();
+//				displayTrainers();
 			}
 			//If the user has Xed out the window
 			else if (event.type == SDL_QUIT)
