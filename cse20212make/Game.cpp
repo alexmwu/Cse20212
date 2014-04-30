@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 #include "BoardPiece.h"
 #include "Location.h"
 #include "Pokemon.h"
@@ -726,30 +727,114 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 	//returns 4 if user uses a potion
 	//returns 5 if somehow none of these cases are met(5 would be a bug)
 	pair<int, int> returnVal = pair<int,int>(0, 0);
-	int move = 0;
+	int move = -1;
 	int oppMove = 0;
 	double strength = 0;
 	int canMove = 1;
-	//cout << user->getName() << " VS " << opp->getName() << endl;
+
+	displayBar(*user,*opp,"Go "+user->getName()+"!",0);
+	SDL_Flip(screen);
+	SDL_Delay(1000);
+
+	displayBar(*user,*opp,"What would you like to do?",0);
+	SDL_Flip(screen);
+	SDL_Delay(1000);
 	while (user->getHP() > 0 && opp->getHP() > 0) // check to see if both pokemon are still useable
 	{
 		canMove = 1;
+		int i;
 		oppMove = rand() % opp->getMoves().size();
-		opp->oppPrint();
-		cout << endl;
-		user->battlePrint();
-		cout << "Which move would you like to use?" << endl;
-		cin >> move;
-		cout << endl;		
+		//opp->oppPrint();
+		stringstream display;
+		//cout << endl;
+		//user->battlePrint();
+		for (i = 0; i < 4; i++)
+		{
+			display<<i<<" "<<user->getMove(i).getName()<<"        ";
+		}
+		string displayMoves=display.str();
+
+		//moves that pokemon has
+		displayBar(*user,*opp,displayMoves,0);
+		SDL_Flip(screen);
+		SDL_Delay(1000);
+		//other options
+		stringstream others;
+		others<<i<<" "<<"Throw Pokeball."<<"  ";
+		others<<++i<<" "<<"Switch Pokemon.";
+		others<<++i<<" "<<"Use a Potion.";
+		string othersDisplay=others.str();
+		while (SDL_PollEvent(&event) || move==-1){
+			//If a key was pressed
+				if (event.type == SDL_KEYDOWN){	
+					switch (event.key.keysym.sym){
+						case SDLK_DOWN:{
+							displayBar(*user,*opp,othersDisplay,0);
+							SDL_Flip(screen);
+							break;
+						}
+						case SDLK_UP:{
+							stringstream display2;
+							for (i = 0; i < 4; i++)
+							{
+								display2<<i<<" "<<user->getMove(i).getName()<<"        ";
+							}
+							string displayMoves2=display2.str();
+
+
+							displayBar(*user,*opp,displayMoves2,0);
+							SDL_Flip(screen);
+							break;
+						}
+						case SDLK_0:
+							if(i>=0) move=0;
+							break;
+						case SDLK_1:
+							if(i>=1) move=1;
+							break;
+						case SDLK_2:
+							if(i>=2) move=2;
+							break;
+						case SDLK_3:
+							if(i>=3) move=3;
+							break;
+						case SDLK_4:
+							if(i>=4) move=4;
+							break;
+						case SDLK_5:
+							if(i>=5) move=5;
+							break;
+						case SDLK_6:
+							if(i>=6) move=6;
+							break;
+						default:
+							break;
+					}
+				}	
+		}
 
 		if (move == user->getMoves().size())
 		{
 			canMove = 0;
-			if (my_pokeballs[0].canCatch(*opp))
-			{
+			int result=my_pokeballs[0].canCatch(*opp);
+			if(result==1){
+				displayBar(*user,*opp,opp->getName() + " was successfully caught!",0);
+				SDL_Flip(screen);
+				SDL_Delay(1000);
 				returnVal.first = 3; //returns 3 if user tries to throw a pokeball
 				return returnVal;
 			}
+			else if(result==-1){	//another trainer's pokemon
+				displayBar(*user,*opp,"You cannot catch another trainer's Pokemon!",0);
+				SDL_Flip(screen);
+				SDL_Delay(1000);
+			}
+			else if(result==0){	//it broke free
+				displayBar(*user,*opp, "Oh no, it broke free!",0);
+				SDL_Flip(screen);
+				SDL_Delay(1000);
+			}
+			move=-1;
 		}
 		else if (move == user->getMoves().size() + 1)
 		{
@@ -777,7 +862,9 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 			//checks to see if the opponent has fainted from the attack
 			if (opp->getHP() <= 0)
 			{
-				cout << opp->getName() << " has fainted." << endl << endl;
+				displayBar(*user,*opp,opp->getName() + " has fainted.",0);
+				SDL_Flip(screen);
+				SDL_Delay(1000);
 				returnVal.first = 2; //returns 2 if the opponent fainted
 				return returnVal;
 			}
@@ -791,7 +878,9 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 			//checks if the user has fainted from the attack
 			if (user->getHP() <= 0)
 			{
-				cout << user->getName() << " has fainted." << endl << endl;
+				displayBar(*user,*opp,user->getName() + " has fainted.",0);
+				SDL_Flip(screen);
+				SDL_Delay(1000);
 				returnVal.first = 0; //returns 0 if the user faints
 				return returnVal;
 			}
@@ -807,7 +896,9 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 			//checks if the user has fainted from the attack
 			if (user->getHP() <= 0)
 			{
-				cout << user->getName() << " has fainted." << endl << endl;
+				displayBar(*user,*opp,user->getName() + " has fainted.",0);
+				SDL_Flip(screen);
+				SDL_Delay(1000);
 				returnVal.first = 0; //returns 0 if the user faints
 				return returnVal;
 			}
@@ -821,8 +912,10 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 			//calculates the move strength and then uses the move
 			if (opp->getHP() <= 0)
 			{
-				cout << opp->getName() << " has fainted." << endl << endl;
-				returnVal.first = 2;	//retuns 2 if the opponent faints
+				displayBar(*user,*opp,opp->getName() + " has fainted.",0);
+				SDL_Flip(screen);
+				SDL_Delay(1000);
+				returnVal.first = 2;	//returns 2 if the opponent faints
 				return returnVal;
 			}
 
@@ -838,7 +931,9 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 
 			if (user->getHP() <= 0)
 			{
-				cout << user->getName() << " has fainted." << endl << endl;
+				displayBar(*user,*opp,user->getName() + " has fainted.",0);
+				SDL_Flip(screen);
+				SDL_Delay(1000);
 				returnVal.first = 0; //returns 0 if the user faints
 				return returnVal;
 			}
@@ -847,6 +942,8 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 	returnVal.first = 5;
 	return returnVal;
 }
+
+
 
 //trainer v trainer, in turn it runs the pokemon v pokemon function for each match up
 void Game::battle(Trainer *user, Trainer *opp)
@@ -860,26 +957,62 @@ void Game::battle(Trainer *user, Trainer *opp)
 	Pokemon userA = user->getPokemon(uA); //gets the user and opponents first pokemon in their parties
 	Pokemon oppA = opp->getPokemon(oA);
 	Pokemon swapper = Pokemon();
-whiteScreen();
-	//displayBattle(*user,*opp,userA,oppA,0);
+
+	whiteScreen();
+	displayBar(*user,*opp,opp->getName()+" would like to battle!",0);
+	SDL_Flip(screen);
+	SDL_Delay(1000);
 	while (user->getNumPokemonAvalible() > 0 && opp->getNumPokemonAvalible() > 0)
 	{
 		pair<int, int> num = battle(&userA, &oppA); //gets the result of the battle from the two pokemon
 		if (num.first == 1) //1 means user wants to swap pokemon
 		{
 			user->swapPokemon(uA, num.second); //stores the HP of the previously active pokemon
-			user->printPokemon(); //pritns the users pokemon out so that they can see their options
+		//	user->printPokemon(); //pritns the users pokemon out so that they can see their options
+			int i;
+			stringstream party;
+			for (i = 0; i < user->getParty().size(); i++)
+				{
+					party << i << " " <<user->getPokemon(i).getName()<<" ";
+				}
+			string displayParty=party.str();
 			while (1) //loops assure the user is inputing proper input for the sawp and then preferms the switch
 			{
 				while (swap < 0 || swap > user->getParty().size())
 				{
-					cout << "Which Pokemon do you want to swap?" << endl;
-					cin >> swap;
+					displayBar(*user,*opp,"Which Pokemon do you want to swap?",0);
+					SDL_Flip(screen);
+					SDL_Delay(1000);
+					displayBar(*user,*opp,displayParty,0);
+					SDL_Flip(screen);
+					SDL_Delay(1000);
+while (SDL_PollEvent(&event) || swap==-1){
+			//If a key was pressed
+				if (event.type == SDL_KEYDOWN){	
+					switch (event.key.keysym.sym){
+						case SDLK_0:
+							if(user->getParty().size()>=1) swap=0;
+							break;
+						case SDLK_1:
+							if(user->getParty().size()>=2) swap=1;
+							break;
+						case SDLK_2:
+							if(user->getParty().size()>=3) swap=2;
+							break;
+						case SDLK_3:
+							if(user->getParty().size()>=4) swap=3;
+							break;
+						}
+					}	
+				}
 				}
 				swapper = user->getPokemon(swap);
 				if (swapper.getHP() == 0)
 				{
-					cout << "That Pokemon has fainted, try again" << endl;
+					displayBar(*user,*opp,"That Pokemon has fainted, try again",0);
+					SDL_Flip(screen);
+					SDL_Delay(1000);
+				
 					swap = -1;
 					continue;
 				}
@@ -891,6 +1024,14 @@ whiteScreen();
 		}
 		else if (num.first == 0) // 0 means user fainted
 		{
+			
+			int i;
+			stringstream party;
+			for (i = 0; i < user->getParty().size(); i++)
+				{
+					party << i << " " <<user->getPokemon(i).getName()<<" ";
+				}
+			string displayParty=party.str();
 			user->swapPokemon(uA, 0); // sets the pokemons helth to 0
 			if (user->getNumPokemonAvalible() == 0) //if this was the user's last pokemon, it breaks the loop
 				break;
@@ -899,13 +1040,39 @@ whiteScreen();
 			{
 				while (swap < 0 || swap > user->getParty().size())
 				{
-					cout << "Which Pokemon do you want to swap?" << endl;
-					cin >> swap;
+					displayBar(*user,*opp,"Which Pokemon do you want to swap?",0);
+					SDL_Flip(screen);
+					SDL_Delay(1000);
+					displayBar(*user,*opp,displayParty,0);
+					SDL_Flip(screen);
+					SDL_Delay(1000);
+while (SDL_PollEvent(&event) || swap==-1){
+			//If a key was pressed
+				if (event.type == SDL_KEYDOWN){	
+					switch (event.key.keysym.sym){
+						case SDLK_0:
+							if(user->getParty().size()>=1) swap=0;
+							break;
+						case SDLK_1:
+							if(user->getParty().size()>=2) swap=1;
+							break;
+						case SDLK_2:
+							if(user->getParty().size()>=3) swap=2;
+							break;
+						case SDLK_3:
+							if(user->getParty().size()>=4) swap=3;
+							break;
+						}
+					}	
+				}
 				}
 				swapper = user->getPokemon(swap);
 				if (swapper.getHP() == 0)
 				{
-					cout << "That Pokemon has fainted, try again" << endl;
+					displayBar(*user,*opp,"That Pokemon has fainted, try again",0);
+					SDL_Flip(screen);
+					SDL_Delay(1000);
+				
 					swap = -1;
 					continue;
 				}
@@ -916,12 +1083,15 @@ whiteScreen();
 				break;
 			}
 		}
-		else if (num.first == 2)//2 means opponent fainted
+		else if (num.first == 2)	//2 means opponent fainted
 		{
 			int XP = userA.getXP() + oppA.battleEXP(); //gives the user pokemon the XP for defeating a pokemon
+			displayBar(userA,oppA,userA.getName()+" has gained experience!",0);
+			SDL_Flip(screen);
+			SDL_Delay(1000);
 			user->updateXP(uA, XP);
 			opp->swapPokemon(oA, 0);
-			if (opp->getNumPokemonAvalible() == 0) //checks to see if the opponent has any more pokemon avalible
+			if (opp->getNumPokemonAvalible() <= 1) //checks to see if the opponent has any more pokemon avalible
 				break;
 			while (1) //randomly selects a valid pokemon from the user's party
 			{
@@ -945,28 +1115,63 @@ whiteScreen();
 		}
 		else if (num.first == 4) //user wants to use a potion
 		{
-			user->printPotions(); //prints avalible potions
+			int i;
+			stringstream party;
+			for (i = 0; i < user->getParty().size(); i++)
+				{
+					party << i << " " <<user->getPokemon(i).getName()<<" ";
+				}
+			string displayParty=party.str();
+			user->swapPokemon(uA, 0); // sets the pokemons helth to 0
+			//user->printPotions(); //prints avalible potions
 			while (item < 0 || item > user->getPotions().size()) //confirms proper input
 			{
-				cout << "What item do you want to use?" << endl;
-				cin >> item;
+				item=0;
 			}
-			user->printPokemon(); //prints pokemon to use potion on
+			//user->printPokemon(); //prints pokemon to use potion on
 			while (swap < 0 || swap > user->getParty().size()) //confirms proper input
 			{
-				cout << "Which Pokemon do you want to use this on?" << endl;
-				cin >> swap;
+				displayBar(*user,*opp,"Which Pokemon do you want to use it on?",0);
+					SDL_Flip(screen);
+					SDL_Delay(1000);
+					displayBar(*user,*opp,displayParty,0);
+					SDL_Flip(screen);
+					SDL_Delay(1000);
+while (SDL_PollEvent(&event) || swap==-1){
+			//If a key was pressed
+				if (event.type == SDL_KEYDOWN){	
+					switch (event.key.keysym.sym){
+						case SDLK_0:
+							if(user->getParty().size()>=1) swap=0;
+							break;
+						case SDLK_1:
+							if(user->getParty().size()>=2) swap=1;
+							break;
+						case SDLK_2:
+							if(user->getParty().size()>=3) swap=2;
+							break;
+						case SDLK_3:
+							if(user->getParty().size()>=4) swap=3;
+							break;
+						}
+					}	
+				}
 			}
 			user->usePotion(item, user->getPokemon(swap)); //uses potion
 			num.first = -1;
-			swap = -1;
+			swap = 0;
 		}
-		cout << endl;
 	}	
-	if (user->getNumPokemonAvalible() == 0) //check to see which trainer ran out of pokemon when the battle ended.
-		cout << "You lost all your Pokemon, you blacked out." << endl;
-	else
-		cout << "Congratulations, you beat " << opp->getName() << endl;
+	if (user->getNumPokemonAvalible() == 0){ //check to see which trainer ran out of pokemon when the battle ended.
+		displayBar(*user,*opp,"You're out of Pokemon!",0);
+		SDL_Flip(screen);
+		SDL_Delay(1000);
+		}
+	else{
+		displayBar(*user,*opp,"You beat "+opp->getName()+"!",0);
+		SDL_Flip(screen);
+		SDL_Delay(1000);
+		}
 	return;
 }
 
@@ -1006,7 +1211,7 @@ void Game::displayBar(Trainer user,Trainer opp, string text, int gap){
 	user.getSprite().display(40,screen_height-40-user.getSprite().getHeight(),screen);
 	opp.getSprite().display(screen_width-40-opp.getSprite().getWidth(),30,screen);
 	getSprite("BattleText").display(0,screen_height-getSprite("BattleText").getHeight(),screen);
-	getSprite("BattleOptions").display(battleTextWidth,screen_height-getSprite("BattleOptions").getHeight(),screen);
+//	getSprite("BattleOptions").display(battleTextWidth,screen_height-getSprite("BattleOptions").getHeight(),screen);
 	textToSDL(text,battleTextWidth,10,screen_height-getSprite("BattleText").getHeight()+10,gap);
 }
 
@@ -1019,23 +1224,56 @@ void Game::displayBar(Pokemon userPoke,Pokemon oppPoke, string text,int gap){
 //		SDL_Flip(screen);
 
 	int battleTextWidth=screen_width-getSprite("BattleOptions").getWidth();	//available space to work with battle text
-
+	Sprite oppHPSprite;
+	Sprite userHPSprite;
 	whiteScreen();
 
+//so we don't have to use getsprite each time (which is inefficient)
+	Sprite upb=getSprite("UserPokemonBar");	
+	Sprite opb=getSprite("OppPokemonBar");
+	Sprite bt=getSprite("BattleText");
+	Sprite bo=getSprite("BattleOptions");
 //goes last
 	userPoke.getUserSprite().display(40,screen_height-30-userPoke.getUserSprite().getHeight(),screen);
 	oppPoke.getOppSprite().display(screen_width-40-oppPoke.getOppSprite().getWidth(),30,screen);
-	getSprite("UserPokemonBar").display(screen_width-10-getSprite("UserPokemonBar").getWidth(),screen_height-50-getSprite("UserPokemonBar").getHeight(),screen);
-	getSprite("OppPokemonBar").display(10,15,screen);
-	getSprite("BattleText").display(0,screen_height-getSprite("BattleText").getHeight(),screen);
-	getSprite("BattleOptions").display(battleTextWidth,screen_height-getSprite("BattleOptions").getHeight(),screen);
-	textToSDL(text,battleTextWidth,10,screen_height-getSprite("BattleText").getHeight()+10,0);
+	upb.display(screen_width-10-upb.getWidth(),screen_height-50-upb.getHeight(),screen);
+	opb.display(10,15,screen);
+	bt.display(0,screen_height-bt.getHeight(),screen);
+//	bo.display(battleTextWidth,screen_height-bo.getHeight(),screen);
+	textToSDL(text,battleTextWidth,10,screen_height-bt.getHeight()+10,0);
+
+	//hp bars and xp bars find sprite to use based on health
+		if((double)(oppPoke.getHP()/oppPoke.getMaxHP())<(1/3.0)) oppHPSprite=getSprite("BattleYellowHP");
+		else if((double)(oppPoke.getHP()/oppPoke.getMaxHP())<(1/10.0)) userHPSprite=getSprite("BattleRedHP");
+		else oppHPSprite=getSprite("BattleGreenHP");
+
+if((double)(userPoke.getHP()/userPoke.getMaxHP())<(1/3.0)) userHPSprite=getSprite("BattleYellowHP");
+		else if((double)(userPoke.getHP()/userPoke.getMaxHP())<(1/10.0)) userHPSprite=getSprite("BattleRedHP");
+		else userHPSprite=getSprite("BattleGreenHP");
+		
+//fill bars for hp and xp
+	for(int ohp=0;ohp<(oppPoke.getHP()/oppPoke.getMaxHP())*48;ohp++){
+		oppHPSprite.display(10+40+ohp,15+18,screen);
+	}
+//cout<<userPoke.getHP()<<userPoke.getMaxHP();
+	for(int uhp=0;uhp<(userPoke.getHP()/userPoke.getMaxHP())*48;uhp++){
+		userHPSprite.display(screen_width-10-upb.getWidth()+49+uhp,screen_height-50-upb.getHeight()+18,screen);
+	}
+	for(int xp=0;xp<(userPoke.getXP()/userPoke.getNextLevelXP())*64;xp++){
+		getSprite("BattleXP").display(screen_width-10-upb.getWidth()+33+xp,screen_height-50-upb.getHeight()+33,screen);
+	}
+
+//add pokemon info
+	textToSDL(userPoke.getName()/*+to_string(userPoke.getLevel())*/,85,screen_width-10-upb.getWidth()+16,screen_height-50-upb.getHeight()+5,0);
+	textToSDL(oppPoke.getName()/*+to_string(oppPoke.getLevel())*/,85,10+6,15+5,0);
 }
 
+/*
 void Game::displayBattle(Trainer user,Trainer opp,Pokemon userPoke,Pokemon oppPoke,int scenario){
 	switch(scenario){
 		case 0:	//trainers face beginning of battle
 			displayBar(user,opp,opp.getName()+" would like to battle!",0);
+			SDL_Flip(screen);
 			break;
 		case 1:
 			break;
@@ -1044,7 +1282,7 @@ void Game::displayBattle(Trainer user,Trainer opp,Pokemon userPoke,Pokemon oppPo
 
 	}
 }
-
+*/
 
 void Game::displayMap(){
 	my_map[0][0].getSprite().display(15,15,map);
@@ -1122,19 +1360,19 @@ void Game::checkTrainerSight(Location user)
 		SpriteName = my_trainers[i].getBoardPiece().getSprite().getName();
 		tX = my_trainers[i].getBoardPiece().getLocation().getX();
 		tY = my_trainers[i].getBoardPiece().getLocation().getY();
-		if(SpriteName == "TrainerUP" && (tY-userY) > 0 && (tY-userY) <= 6 && tX == userX)
+		if(SpriteName == "TrainerUP" && (tY-userY) > 0 && (tY-userY) <= 3 && tX == userX)
 		{
 			moveTrainer(my_trainers[i], user);
 		}
-		else if(SpriteName == "TrainerDOWN" && (tY-userY) < 0 && (tY-userY) >= -6 && tX == userX)
+		else if(SpriteName == "TrainerDOWN" && (tY-userY) < 0 && (tY-userY) >= -3 && tX == userX)
 		{
 			moveTrainer(my_trainers[i], user);
 		}
-		else if(SpriteName == "TrainerLEFT" && (tX-userX) > 0 && (tX-userX) <= 6 && tY == userY)
+		else if(SpriteName == "TrainerLEFT" && (tX-userX) > 0 && (tX-userX) <= 3 && tY == userY)
 		{
 			moveTrainer(my_trainers[i], user);
 		}
-		else if(SpriteName == "TrainerRIGHT" && (tX-userX) < 0 && (tX-userX) >= -6 && tY == userY)
+		else if(SpriteName == "TrainerRIGHT" && (tX-userX) < 0 && (tX-userX) >= -3 && tY == userY)
 		{
 			moveTrainer(my_trainers[i], user);
 		}
@@ -1143,9 +1381,11 @@ void Game::checkTrainerSight(Location user)
 }
 
 //function that will move the trainers to attack the user
-void Game::moveTrainer(Trainer, Location)
+void Game::moveTrainer(Trainer opp, Location loc)
 {
-	cout << "Trainer attack!" <<endl;
+	battle(&my_trainers[0],&opp);
+
+	//cout << "Trainer attack!" <<endl;
 	//IPLEMENT
 	//MOVEMENT
 	//AND
@@ -1160,14 +1400,11 @@ void Game::play(){
 
 	int quit=0;
 
-//	whiteScreen();
-//	displayMap();
-//	displayTrainers();
+	whiteScreen();
+	displayMap();
+	displayTrainers();
+	SDL_Flip(screen);
 
-
-	Trainer user = my_trainers[0];
-	Trainer opp = my_trainers[2];
-	battle(&user, &opp);
 
 	int trainerX;	//trainer's x position
 	int trainerY;	//trainer's y position	
@@ -1194,8 +1431,8 @@ void Game::play(){
 					nextStep = getMapPiece(trainerX, trainerY-1);
 					if (!nextStep.canWalk())
 					{
-						cout << "You cannot walk there. UP " << my_trainers[0].getBoardPiece().getLocation().getY();
-						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
+	//					cout << "You cannot walk there. UP " << my_trainers[0].getBoardPiece().getLocation().getY();
+		//				cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					
@@ -1205,15 +1442,15 @@ void Game::play(){
 						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
 						break;
 					}
-					cout<<"y up change"<<my_trainers[0].getBoardPiece().getLocation().getY();
+			//		cout<<"y up change"<<my_trainers[0].getBoardPiece().getLocation().getY();
 					break;
 				case SDLK_DOWN:
 					my_trainers[0].getBoardPiece().setSprite(getSprite("PlayerDOWN"));
 					nextStep = getMapPiece(trainerX, trainerY+1);
 					if (!nextStep.canWalk())
 					{
-						cout << "You cannot walk there. DOWN" << my_trainers[0].getBoardPiece().getLocation().getY();
-						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
+		//				cout << "You cannot walk there. DOWN" << my_trainers[0].getBoardPiece().getLocation().getY();
+		//				cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					
@@ -1223,15 +1460,15 @@ void Game::play(){
 						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
 						break;
 					}
-					cout<<"y down change"<<my_trainers[0].getBoardPiece().getLocation().getY();
+		//			cout<<"y down change"<<my_trainers[0].getBoardPiece().getLocation().getY();
 					break;
 				case SDLK_LEFT:
 					my_trainers[0].getBoardPiece().setSprite(getSprite("PlayerLEFT"));
 					nextStep = getMapPiece(trainerX-1, trainerY);
 					if (!nextStep.canWalk())
 					{
-						cout << "You cannot walk there. LEFT" << my_trainers[0].getBoardPiece().getLocation().getX();
-						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
+		//				cout << "You cannot walk there. LEFT" << my_trainers[0].getBoardPiece().getLocation().getX();
+		//				cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					
@@ -1241,15 +1478,15 @@ void Game::play(){
 						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
 						break;
 					}
-					cout<<"x left change"<<my_trainers[0].getBoardPiece().getLocation().getX();
+		//			cout<<"x left change"<<my_trainers[0].getBoardPiece().getLocation().getX();
 					break;
 				case SDLK_RIGHT:
 					my_trainers[0].getBoardPiece().setSprite(getSprite("PlayerRIGHT"));
 					nextStep = getMapPiece(trainerX+1, trainerY);
 					if (!nextStep.canWalk())
 					{
-						cout << "You cannot walk there. RIGHT" << my_trainers[0].getBoardPiece().getLocation().getX();
-						cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
+		//				cout << "You cannot walk there. RIGHT" << my_trainers[0].getBoardPiece().getLocation().getX();
+		//				cout << "NextStep is : " << nextStep.getSprite().getName() << " at " << nextStep.getLocation().getX() << " " << nextStep.getLocation().getY() <<endl;
 						break;
 					}
 					
@@ -1259,16 +1496,17 @@ void Game::play(){
 						interact(my_trainers[0].getBoardPiece().getLocation(), nextStep.getSprite());
 						break;
 					}
-					cout<<"x right change"<<my_trainers[0].getBoardPiece().getLocation().getX();
+		//			cout<<"x right change"<<my_trainers[0].getBoardPiece().getLocation().getX();
 					break;
 				}
 				if(trainerX != my_trainers[0].getBoardPiece().getLocation().getX() || trainerY != my_trainers[0].getBoardPiece().getLocation().getY())
 				{
 					checkTrainerSight(my_trainers[0].getBoardPiece().getLocation());
 				}
-//				whiteScreen();
-//				displayMap();
-//				displayTrainers();
+				whiteScreen();
+				displayMap();
+				displayTrainers();
+				SDL_Flip(screen);
 			}
 			//If the user has Xed out the window
 			else if (event.type == SDL_QUIT)
@@ -1327,11 +1565,10 @@ void Game::wildPokemon()
 	int b = rand()%8;
 	if (b >= 1)
 	{
-		cout << "no wild Pokemon" <<endl;
+		//cout << "no wild Pokemon" <<endl;
 		return;
 	}
-	cout << "Wild Pokemon" << endl;
-	return;
+	//cout << "Wild Pokemon" << endl;
 	Trainer t = Trainer();
 	Pokemon p = Pokemon();
 	int r = rand() % 100;
@@ -1343,7 +1580,7 @@ void Game::wildPokemon()
 		else if(a >2)
 			p = getPokemon("Charmander");
 		else
-			p = getPokemon("Squirtle");
+			p = getPokemon("Blastoise");
 	}
 	else if(r >=70)
 	{
@@ -1355,14 +1592,14 @@ void Game::wildPokemon()
 		else if(a >3)
 			p = getPokemon("Diglett");
 		else if(a >2)
-			p = getPokemon("Kangaskhan");
+			p = getPokemon("Geodude");
 		else if(a >1)
 			p = getPokemon("Scyther");
 		else if(a >2)
-			p = getPokemon("Tauros");
+			p = getPokemon("Poliwhirl");
 	}
 	else
-	{
+	{	p=getPokemon("Nidorino");
 		int a = rand() %12;
 		if(a >11)
 			p = getPokemon("Caterpie");

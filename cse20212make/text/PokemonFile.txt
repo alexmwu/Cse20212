@@ -130,3 +130,117 @@ Wild: 1
 EvolveLvl: 0
 UserSprite: UserCharizard
 OppSprite: OppCharizard
+
++++++
+006)
+Name: Blastoise
+Type1: Fire
+Type2: Flying
+Attack: 8
+Defense: 8
+SpAtk: 10
+SpDef: 8
+HP: 8
+Speed: 10
+Level: 5
+XP: 0
+NextLevelXP: 45
+Wild: 1
+EvolveLvl: 0
+UserSprite: UserBlastoise
+OppSprite: OppBlastoise
+
++++++
+006)
+Name: Pikachu
+Type1: Fire
+Type2: Flying
+Attack: 8
+Defense: 8
+SpAtk: 10
+SpDef: 8
+HP: 8
+Speed: 10
+Level: 5
+XP: 0
+NextLevelXP: 45
+Wild: 1
+EvolveLvl: 0
+UserSprite: UserPikachu
+OppSprite: OppPikachu
+
++++++
+006)
+Name: Nidorino
+Type1: Fire
+Type2: Flying
+Attack: 8
+Defense: 8
+SpAtk: 10
+SpDef: 8
+HP: 8
+Speed: 10
+Level: 5
+XP: 0
+NextLevelXP: 45
+Wild: 1
+EvolveLvl: 0
+UserSprite: UserNidorino
+OppSprite: OppNidorino
+
++++++
+006)
+Name: Poliwhirl
+Type1: Fire
+Type2: Flying
+Attack: 8
+Defense: 8
+SpAtk: 10
+SpDef: 8
+HP: 8
+Speed: 10
+Level: 5
+XP: 0
+NextLevelXP: 45
+Wild: 1
+EvolveLvl: 0
+UserSprite: UserPoliwhirl
+OppSprite: OppPoliwhirl
+
++++++
+006)
+Name: Geodude
+Type1: Fire
+Type2: Flying
+Attack: 8
+Defense: 8
+SpAtk: 10
+SpDef: 8
+HP: 8
+Speed: 10
+Level: 5
+XP: 0
+NextLevelXP: 45
+Wild: 1
+EvolveLvl: 0
+UserSprite: UserGeodude
+OppSprite: OppGeodude
+
++++++
+006)
+Name: Diglett
+Type1: Fire
+Type2: Flying
+Attack: 8
+Defense: 8
+SpAtk: 10
+SpDef: 8
+HP: 8
+Speed: 10
+Level: 5
+XP: 0
+NextLevelXP: 45
+Wild: 1
+EvolveLvl: 0
+UserSprite: UserDiglett
+OppSprite: OppDiglett

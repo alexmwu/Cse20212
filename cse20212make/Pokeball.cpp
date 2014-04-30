@@ -36,8 +36,8 @@ int Pokeball::canCatch(Pokemon p)
 {
 	if (!p.isWild())
 	{
-		cout << "Cannot capture other trainer's Pokemon!" << endl;
-		return 0;
+		//cout << "Cannot capture other trainer's Pokemon!" << endl;
+		return -1;
 	}
 	double f[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 	f[0] = 100 - p.getLevel();
@@ -47,9 +47,9 @@ int Pokeball::canCatch(Pokemon p)
 	double prob = f[0] + f[1] + f[2];
 	if (prob >= 250)
 	{
-		cout << p.getName() << " was successfully caught!" << endl;
+	//	cout << p.getName() << " was successfully caught!" << endl;
 		return 1;
 	}
-	cout << "Oh no, it broke free!" << endl;
+	//cout << "Oh no, it broke free!" << endl;
 	return 0;
 }
