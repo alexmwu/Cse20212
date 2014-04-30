@@ -5042,7 +5042,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppMoltres 0 0
+Name: OppMoltres 0 0
 X: 1290
 Y: 853
 Height: 64
@@ -5051,7 +5051,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userMoltres 0 0
+Name: UserMoltres 0 0
 X: 1349
 Y: 853
 Height: 64
@@ -5060,7 +5060,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppDragonite 0 0
+Name: OppDragonite 0 0
 X: 1147
 Y: 853
 Height: 64
@@ -5069,7 +5069,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userDragonite 0 0
+Name: UserDragonite 0 0
 X: 1513
 Y: 853
 Height: 64
@@ -5078,7 +5078,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppAbra 0 0
+Name: OppAbra 0 0
 X: 1
 Y: 926
 Height: 64
@@ -5087,7 +5087,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userAbra 0 0
+Name: UserAbra 0 0
 X: 67
 Y: 926
 Height: 64
@@ -5096,7 +5096,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppMachoke 0 0
+Name: OppMachoke 0 0
 X: 162
 Y: 926
 Height: 64
@@ -5105,7 +5105,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userMachoke 0 0
+Name: UserMachoke 0 0
 X: 224
 Y: 926
 Height: 64
@@ -5114,7 +5114,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppBellsprout 0 0
+Name: OppBellsprout 0 0
 X: 319
 Y: 926
 Height: 64
@@ -5123,7 +5123,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userBellsprout 0 0
+Name: UserBellsprout 0 0
 X: 387
 Y: 926
 Height: 64
@@ -5132,7 +5132,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppTentacool 0 0
+Name: OppTentacool 0 0
 X: 485
 Y: 926
 Height: 64
@@ -5141,7 +5141,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userTentacool 0 0
+Name: UserTentacool 0 0
 X: 546
 Y: 926
 Height: 64
@@ -5150,7 +5150,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppGraveler 0 0
+Name: OppGraveler 0 0
 X: 644
 Y: 926
 Height: 64
@@ -5159,7 +5159,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userGraveler 0 0
+Name: UserGraveler 0 0
 X: 706
 Y: 926
 Height: 64
@@ -5168,7 +5168,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppOmanyte 0 0
+Name: OppOmanyte 0 0
 X: 802
 Y: 926
 Height: 64
@@ -5177,7 +5177,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userOmanyte 0 0
+Name: UserOmanyte 0 0
 X: 868
 Y: 926
 Height: 64
@@ -5186,7 +5186,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppKabutops 0 0
+Name: OppKabutops 0 0
 X: 967
 Y: 926
 Height: 64
@@ -5195,7 +5195,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userKabutops 0 0
+Name: UserKabutops 0 0
 X: 1026
 Y: 926
 Height: 64
@@ -5204,7 +5204,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppAtricuno 0 0
+Name: OppAtricuno 0 0
 X: 1124
 Y: 926
 Height: 64
@@ -5213,7 +5213,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userAtricuno 0 0
+Name: UserAtricuno 0 0
 X: 1194
 Y: 926
 Height: 64
@@ -5222,7 +5222,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppDratini 0 0
+Name: OppDratini 0 0
 X: 1290
 Y: 926
 Height: 64
@@ -5231,7 +5231,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userDratini 0 0
+Name: UserDratini 0 0
 X: 1349
 Y: 926
 Height: 64
@@ -5240,7 +5240,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: oppMewtwo 0 0
+Name: OppMewtwo 0 0
 X: 1147
 Y: 926
 Height: 64
@@ -5249,7 +5249,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: userMewtwo 0 0
+Name: UserMewtwo 0 0
 X: 1513
 Y: 926
 Height: 64
