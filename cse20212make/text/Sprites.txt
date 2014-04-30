@@ -2649,8 +2649,8 @@ Width: 64
 013)
 Sheet: 9
 Name: UserSquirtle 0 0
-X: 0
-Y: 0
+X: 387
+Y: 1
 Height: 64
 Width: 64
 
@@ -2658,8 +2658,8 @@ Width: 64
 014)
 Sheet: 9
 Name: OppSquirtle 0 0
-X: 0
-Y: 0
+X: 323
+Y: 1
 Height: 64
 Width: 64
 
@@ -2667,8 +2667,8 @@ Width: 64
 014)
 Sheet: 9
 Name: UserWartortle 0 0
-X: 0
-Y: 0
+X: 387
+Y: 66
 Height: 64
 Width: 64
 
@@ -2676,8 +2676,8 @@ Width: 64
 012)
 Sheet: 9
 Name: OppWartortle 0 0
-X: 0
-Y: 0
+X: 323
+Y: 66
 Height: 64
 Width: 64
 
@@ -2685,8 +2685,8 @@ Width: 64
 012)
 Sheet: 9
 Name: UserBlastoise 0 0
-X: 0
-Y: 0
+X: 387
+Y: 131
 Height: 64
 Width: 64
 
@@ -2694,8 +2694,134 @@ Width: 64
 012)
 Sheet: 9
 Name: OppBlastoise 0 0
-X: 0
-Y: 0
+X: 323
+Y: 131
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserCaterpie 0 0
+X: 548
+Y: 1
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppCaterpie 0 0
+X: 484
+Y: 1
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppMetapod 0 0
+X: 484
+Y: 66
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserMetapod 0 0
+X: 548
+Y: 66
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppButterfree 0 0
+X: 484
+Y: 131
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserButterfree 0 0
+X: 548
+Y: 131
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppWeedle 0 0
+X: 645
+Y: 1
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserWeedle 0 0
+X: 709
+Y: 1
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppKakuna 0 0
+X: 645
+Y: 66
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserKakuna 0 0
+X: 709
+Y: 66
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppBeedrill 0 0
+X: 645
+Y: 131
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserBeedrill 0 0
+X: 709
+Y: 131
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: OppBeedrill 0 0
+X: 645
+Y: 131
+Height: 64
+Width: 64
+
++++++
+012)
+Sheet: 9
+Name: UserBeedrill 0 0
+X: 709
+Y: 131
 Height: 64
 Width: 64
 
