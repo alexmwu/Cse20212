@@ -15,8 +15,6 @@ XP: 0
 NextLevelXP: 0
 Wild: 0
 EvolveLvl: 0
-UserSprite: UserName
-OppSprite: OppName
 UserSprite: XXX
 OppSprite: XXX
 
@@ -38,8 +36,6 @@ XP: 0
 NextLevelXP: 64
 Wild: 1
 EvolveLvl: 16
-UserSprite: UserBulbasaur
-OppSprite: OppBulbasaur
 
 +++++
 002)
@@ -58,8 +54,6 @@ XP: 0
 NextLevelXP: 141
 Wild: 1
 EvolveLvl: 32
-UserSprite: UserIvysaur
-OppSprite: OppIvysaur
 
 +++++
 003)
@@ -78,8 +72,6 @@ XP: 0
 NextLevelXP: 208
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserVenusaur
-OppSprite: OppVenusaur
 
 +++++
 004)
@@ -98,8 +90,6 @@ XP: 0
 NextLevelXP: 65
 Wild: 1
 EvolveLvl: 16
-UserSprite: UserCharmander
-OppSprite: OppCharmander
 
 +++++
 005)
@@ -118,8 +108,6 @@ XP: 0
 NextLevelXP: 142
 Wild: 1
 EvolveLvl: 36
-UserSprite: UserCharmeleon
-OppSprite: OppCharmeleon
 
 +++++
 006)
@@ -138,8 +126,6 @@ XP: 0
 NextLevelXP: 209
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserCharizard
-OppSprite: OppCharizard
 
 +++++
 007)
@@ -158,8 +144,6 @@ XP: 0
 NextLevelXP: 66
 Wild: 1
 EvolveLvl: 16
-UserSprite: UserSquirtle
-OppSprite: OppSquirtle
 
 +++++
 008)
@@ -178,8 +162,6 @@ XP: 0
 NextLevelXP: 143
 Wild: 1
 EvolveLvl: 36
-UserSprite: UserWartortle
-OppSprite: OppWartortle
 
 +++++
 009)
@@ -198,8 +180,6 @@ XP: 0
 NextLevelXP: 210
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserBlastoise
-OppSprite: OppBlastoise
 
 +++++
 010)
@@ -218,8 +198,6 @@ XP: 0
 NextLevelXP: 53
 Wild: 1
 EvolveLvl: 7
-UserSprite: UserCaterpie
-OppSprite: OppCaterpie
 
 +++++
 011)
@@ -238,8 +216,6 @@ XP: 0
 NextLevelXP: 72
 Wild: 1
 EvolveLvl: 10
-UserSprite: UserMetapod
-OppSprite: OppMetapod
 
 +++++
 012)
@@ -258,8 +234,6 @@ XP: 0
 NextLevelXP: 160
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserButterfree
-OppSprite: OppButterfree
 
 +++++
 013)
@@ -278,8 +252,6 @@ XP: 0
 NextLevelXP: 52
 Wild: 1
 EvolveLvl: 7
-UserSprite: UserWeedle
-OppSprite: OppWeedle
 
 +++++
 014)
@@ -298,8 +270,6 @@ XP: 0
 NextLevelXP: 71
 Wild: 1
 EvolveLvl: 10
-UserSprite: UserKakuna
-OppSprite: OppKakuna
 
 +++++
 015)
@@ -318,8 +288,6 @@ XP: 0
 NextLevelXP: 159
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserBeedrill
-OppSprite: OppBeedrill
 
 +++++
 016)
@@ -338,8 +306,6 @@ XP: 0
 NextLevelXP: 55
 Wild: 1
 EvolveLvl: 18
-UserSprite: UserPidgey
-OppSprite: OppPidgey
 
 +++++
 017)
@@ -358,8 +324,6 @@ XP: 0
 NextLevelXP: 113
 Wild: 1
 EvolveLvl: 36
-UserSprite: UserPidgeotto
-OppSprite: OppPidgeotto
 
 +++++
 018)
@@ -378,8 +342,6 @@ XP: 0
 NextLevelXP: 172
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserPidgeot
-OppSprite: OppPidgeot
 
 +++++
 019)
@@ -398,8 +360,6 @@ XP: 0
 NextLevelXP: 57
 Wild: 1
 EvolveLvl: 20
-UserSprite: UserRattata
-OppSprite: OppRattata
 
 +++++
 020)
@@ -418,8 +378,6 @@ XP: 0
 NextLevelXP: 116
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserRaticate
-OppSprite: OppRaticate
 
 +++++
 021)
@@ -438,8 +396,6 @@ XP: 0
 NextLevelXP: 58
 Wild: 1
 EvolveLvl: 20
-UserSprite: UserSpearow
-OppSprite: OppSpearow
 
 +++++
 022)
@@ -458,8 +414,6 @@ XP: 0
 NextLevelXP: 162
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserFearow
-OppSprite: OppFearow
 
 +++++
 023)
@@ -478,8 +432,6 @@ XP: 0
 NextLevelXP: 62
 Wild: 1
 EvolveLvl: 22
-UserSprite: UserEkans
-OppSprite: OppEkans
 
 +++++
 024)
@@ -498,8 +450,6 @@ XP: 0
 NextLevelXP: 147
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserArbok
-OppSprite: OppArbok
 
 +++++
 025)
@@ -518,8 +468,6 @@ XP: 0
 NextLevelXP: 82
 Wild: 1
 EvolveLvl: 30
-UserSprite: UserPikachu
-OppSprite: OppPikachu
 
 +++++
 026)
@@ -538,8 +486,6 @@ XP: 0
 NextLevelXP: 122
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserRaichu
-OppSprite: OppRaichu
 
 +++++
 027)
@@ -558,8 +504,6 @@ XP: 0
 NextLevelXP: 93
 Wild: 1
 EvolveLvl: 22
-UserSprite: UserSandshrew
-OppSprite: OppSandshrew
 
 +++++
 028)
@@ -578,8 +522,6 @@ XP: 0
 NextLevelXP: 163
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserSandslash
-OppSprite: OppSandslash
 
 +++++
 029)
@@ -598,8 +540,6 @@ XP: 0
 NextLevelXP: 59
 Wild: 1
 EvolveLvl: 16
-UserSprite: UserNidoran(F)
-OppSprite: OppNidoran(F)
 
 +++++
 030)
@@ -618,8 +558,6 @@ XP: 0
 NextLevelXP: 117
 Wild: 1
 EvolveLvl: 34
-UserSprite: UserNidorina
-OppSprite: OppNidorina
 
 +++++
 031)
@@ -638,8 +576,6 @@ XP: 0
 NextLevelXP: 194
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserNidoqueen
-OppSprite: OppNidoqueen
 
 +++++
 032)
@@ -658,8 +594,6 @@ XP: 0
 NextLevelXP: 60
 Wild: 1
 EvolveLvl: 16
-UserSprite: UserNidoran(M)
-OppSprite: OppNidoran(M)
 
 +++++
 033)
@@ -678,8 +612,6 @@ XP: 0
 NextLevelXP: 118
 Wild: 1
 EvolveLvl: 36
-UserSprite: UserNidorino
-OppSprite: OppNidorino
 
 +++++
 034)
@@ -698,8 +630,6 @@ XP: 0
 NextLevelXP: 195
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserNidoking
-OppSprite: OppNidoking
 
 +++++
 035)
@@ -718,8 +648,6 @@ XP: 0
 NextLevelXP: 68
 Wild: 1
 EvolveLvl: 30
-UserSprite: UserClefairy
-OppSprite: OppClefairy
 
 +++++
 036)
@@ -738,8 +666,6 @@ XP: 0
 NextLevelXP: 129
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserClefable
-OppSprite: OppClefable
 
 +++++
 037)
@@ -758,8 +684,6 @@ XP: 0
 NextLevelXP: 63
 Wild: 1
 EvolveLvl: 33
-UserSprite: UserVulpix
-OppSprite: OppVulpix
 
 +++++
 038)
@@ -778,8 +702,6 @@ XP: 0
 NextLevelXP: 178
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserNinetales
-OppSprite: OppNinetales
 
 +++++
 039)
@@ -798,8 +720,6 @@ XP: 0
 NextLevelXP: 76
 Wild: 1
 EvolveLvl: 28
-UserSprite: UserJigglypuff
-OppSprite: OppJigglypuff
 
 +++++
 040)
@@ -818,8 +738,6 @@ XP: 0
 NextLevelXP: 109
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserWigglytuff
-OppSprite: OppWigglytuff
 
 +++++
 041)
@@ -838,8 +756,6 @@ XP: 0
 NextLevelXP: 54
 Wild: 1
 EvolveLvl: 22
-UserSprite: UserZubat
-OppSprite: OppZubat
 
 +++++
 042)
@@ -858,8 +774,6 @@ XP: 0
 NextLevelXP: 171
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserGolbat
-OppSprite: OppGolbat
 
 +++++
 043)
@@ -878,8 +792,6 @@ XP: 0
 NextLevelXP: 78
 Wild: 1
 EvolveLvl: 21
-UserSprite: UserOddish
-OppSprite: OppOddish
 
 +++++
 044)
@@ -898,8 +810,6 @@ XP: 0
 NextLevelXP: 132
 Wild: 1
 EvolveLvl: 39
-UserSprite: UserGloom
-OppSprite: OppGloom
 
 +++++
 045)
@@ -918,8 +828,6 @@ XP: 0
 NextLevelXP: 184
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserVileplume
-OppSprite: OppVileplume
 
 +++++
 046)
@@ -938,8 +846,6 @@ XP: 0
 NextLevelXP: 70
 Wild: 1
 EvolveLvl: 24
-UserSprite: UserParas
-OppSprite: OppParas
 
 +++++
 047)
@@ -958,8 +864,6 @@ XP: 0
 NextLevelXP: 128
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserParasect
-OppSprite: OppParasect
 
 +++++
 048)
@@ -978,8 +882,6 @@ XP: 0
 NextLevelXP: 75
 Wild: 1
 EvolveLvl: 31
-UserSprite: UserVenonat
-OppSprite: OppVenonat
 
 +++++
 049)
@@ -998,8 +900,6 @@ XP: 0
 NextLevelXP: 138
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserVenomoth
-OppSprite: OppVenomoth
 
 +++++
 050)
@@ -1018,8 +918,6 @@ XP: 0
 NextLevelXP: 81
 Wild: 1
 EvolveLvl: 26
-UserSprite: UserDiglett
-OppSprite: OppDiglett
 
 +++++
 051)
@@ -1038,8 +936,6 @@ XP: 0
 NextLevelXP: 153
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserDugtrio
-OppSprite: OppDugtrio
 
 +++++
 052)
@@ -1058,8 +954,6 @@ XP: 0
 NextLevelXP: 69
 Wild: 1
 EvolveLvl: 28
-UserSprite: UserMeowth
-OppSprite: OppMeowth
 
 +++++
 053)
@@ -1078,8 +972,6 @@ XP: 0
 NextLevelXP: 148
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserPersian
-OppSprite: OppPersian
 
 +++++
 054)
@@ -1098,8 +990,6 @@ XP: 0
 NextLevelXP: 80
 Wild: 1
 EvolveLvl: 33
-UserSprite: UserPsyduck
-OppSprite: OppPsyduck
 
 +++++
 055)
@@ -1118,8 +1008,6 @@ XP: 0
 NextLevelXP: 174
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserGolduck
-OppSprite: OppGolduck
 
 +++++
 056)
@@ -1138,8 +1026,6 @@ XP: 0
 NextLevelXP: 74
 Wild: 1
 EvolveLvl: 28
-UserSprite: UserMankey
-OppSprite: OppMankey
 
 
 +++++
@@ -1159,8 +1045,6 @@ XP: 0
 NextLevelXP: 149
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserPrimeape
-OppSprite: OppPrimeape
 
 +++++
 058)
@@ -1179,8 +1063,6 @@ XP: 0
 NextLevelXP: 91
 Wild: 1
 EvolveLvl: 34
-UserSprite: UserGrowlithe
-OppSprite: OppGrowlithe
 
 +++++
 059)
@@ -1199,8 +1081,6 @@ XP: 0
 NextLevelXP: 213
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserArcanine
-OppSprite: OppArcanine
 
 +++++
 060)
@@ -1219,8 +1099,6 @@ XP: 0
 NextLevelXP: 77
 Wild: 1
 EvolveLvl: 25
-UserSprite: UserPoliwag
-OppSprite: OppPoliwag
 
 +++++
 061)
@@ -1239,8 +1117,6 @@ XP: 0
 NextLevelXP: 131
 Wild: 1
 EvolveLvl: 39
-UserSprite: UserPoliwhirl
-OppSprite: OppPoliwhirl
 
 +++++
 062)
@@ -1259,8 +1135,6 @@ XP: 0
 NextLevelXP: 185
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserPoliwrath
-OppSprite: OppPoliwrath
 
 +++++
 063)
@@ -1279,8 +1153,6 @@ XP: 0
 NextLevelXP: 75
 Wild: 1
 EvolveLvl: 16
-UserSprite: UserAbra
-OppSprite: OppAbra
 
 +++++
 064)
@@ -1299,8 +1171,6 @@ XP: 0
 NextLevelXP: 145
 Wild: 1
 EvolveLvl: 38
-UserSprite: UserKadabra
-OppSprite: OppKadabra
 
 +++++
 065)
@@ -1319,8 +1189,6 @@ XP: 0
 NextLevelXP: 186
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserAlakazam
-OppSprite: OppAlakazam
 
 +++++
 066)
@@ -1339,8 +1207,6 @@ XP: 0
 NextLevelXP: 75
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMachop
-OppSprite: OppMachop
 
 +++++
 067)
@@ -1359,8 +1225,6 @@ XP: 0
 NextLevelXP: 146
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMachoke
-OppSprite: OppMachoke
 
 +++++
 068)
@@ -1379,8 +1243,6 @@ XP: 0
 NextLevelXP: 193
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMachamp
-OppSprite: OppMachamp
 
 +++++
 069)
@@ -1399,8 +1261,6 @@ XP: 0
 NextLevelXP: 84
 Wild: 1
 EvolveLvl: 21
-UserSprite: UserBellsprout
-OppSprite: OppBellsprout
 
 +++++
 070)
@@ -1419,8 +1279,6 @@ XP: 0
 NextLevelXP: 151
 Wild: 1
 EvolveLvl: 34
-UserSprite: UserWeepinbell
-OppSprite: OppWeepinbell
 
 +++++
 071)
@@ -1439,8 +1297,6 @@ XP: 0
 NextLevelXP: 191
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserVictreebel
-OppSprite: OppVictreebel
 
 +++++
 072)
@@ -1459,8 +1315,6 @@ XP: 0
 NextLevelXP: 105
 Wild: 1
 EvolveLvl: 30
-UserSprite: UserTentacool
-OppSprite: OppTentacool
 
 +++++
 073)
@@ -1479,8 +1333,6 @@ XP: 0
 NextLevelXP: 205
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserTentacruel
-OppSprite: OppTentacruel
 
 +++++
 074)
@@ -1499,8 +1351,6 @@ XP: 0
 NextLevelXP: 73
 Wild: 1
 EvolveLvl: 25
-UserSprite: UserGeodude
-OppSprite: OppGeodude
 
 +++++
 075)
@@ -1519,8 +1369,6 @@ XP: 0
 NextLevelXP: 134
 Wild: 1
 EvolveLvl: 38
-UserSprite: UserGraveler
-OppSprite: OppGraveler
 
 +++++
 076)
@@ -1539,8 +1387,6 @@ XP: 0
 NextLevelXP: 177
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserGolem
-OppSprite: OppGolem
 
 +++++
 077)
@@ -1559,8 +1405,6 @@ XP: 0
 NextLevelXP: 152
 Wild: 1
 EvolveLvl: 40
-UserSprite: UserPonyta
-OppSprite: OppPonyta
 
 +++++
 078)
@@ -1579,8 +1423,6 @@ XP: 0
 NextLevelXP: 192
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserRapidash
-OppSprite: OppRapidash
 
 +++++
 079)
@@ -1599,8 +1441,6 @@ XP: 0
 NextLevelXP: 99
 Wild: 1
 EvolveLvl: 37
-UserSprite: UserSlowpoke
-OppSprite: OppSlowpoke
 
 +++++
 080)
@@ -1619,8 +1459,6 @@ XP: 0
 NextLevelXP: 164
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserSlowbro
-OppSprite: OppSlowbro
 
 +++++
 081)
@@ -1639,8 +1477,6 @@ XP: 0
 NextLevelXP: 89
 Wild: 1
 EvolveLvl: 30
-UserSprite: UserManemite
-OppSprite: OppManemite
 
 +++++
 082)
@@ -1659,8 +1495,6 @@ XP: 0
 NextLevelXP: 161
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMagneton
-OppSprite: OppMagneton
 
 +++++
 083)
@@ -1679,8 +1513,6 @@ XP: 0
 NextLevelXP: 94
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserFarfetch'd
-OppSprite: OppFarfetch'd
 
 +++++
 084)
@@ -1699,8 +1531,6 @@ XP: 0
 NextLevelXP: 96
 Wild: 1
 EvolveLvl: 31
-UserSprite: UserDoduo
-OppSprite: OppDoduo
 
 +++++
 085)
@@ -1719,8 +1549,6 @@ XP: 0
 NextLevelXP: 158
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserDotrio
-OppSprite: OppDotrio
 
 +++++
 086)
@@ -1739,8 +1567,6 @@ XP: 0
 NextLevelXP: 100
 Wild: 1
 EvolveLvl: 34
-UserSprite: UserSeel
-OppSprite: OppSeel
 
 +++++
 087)
@@ -1759,8 +1585,6 @@ XP: 0
 NextLevelXP: 176
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserDewgong
-OppSprite: OppDewgong
 
 +++++
 088)
@@ -1779,8 +1603,6 @@ XP: 0
 NextLevelXP: 90
 Wild: 1
 EvolveLvl: 38
-UserSprite: UserGrimer
-OppSprite: OppGrimer
 
 +++++
 089)
@@ -1799,8 +1621,6 @@ XP: 0
 NextLevelXP: 157
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMuk
-OppSprite: OppMuk
 
 +++++
 090)
@@ -1819,8 +1639,6 @@ XP: 0
 NextLevelXP: 97
 Wild: 1
 EvolveLvl: 32
-UserSprite: UserShellder
-OppSprite: OppShellder
 
 +++++
 091)
@@ -1839,8 +1657,6 @@ XP: 0
 NextLevelXP: 203
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserCloyster
-OppSprite: OppCloyster
 
 +++++
 092)
@@ -1859,8 +1675,6 @@ XP: 0
 NextLevelXP: 95
 Wild: 1
 EvolveLvl: 25
-UserSprite: UserGastly
-OppSprite: OppGastly
 
 +++++
 093)
@@ -1879,8 +1693,6 @@ XP: 0
 NextLevelXP: 126
 Wild: 1
 EvolveLvl: 40
-UserSprite: UserHaunter
-OppSprite: OppHaunter
 
 +++++
 094)
@@ -1899,8 +1711,6 @@ XP: 0
 NextLevelXP: 70
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserGengar
-OppSprite: OppGengar
 
 +++++
 095)
@@ -1919,8 +1729,6 @@ XP: 0
 NextLevelXP: 108
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserOnix
-OppSprite: OppOnix
 
 +++++
 096)
@@ -1939,8 +1747,6 @@ XP: 0
 NextLevelXP: 102
 Wild: 1
 EvolveLvl: 26
-UserSprite: UserDrowzee
-OppSprite: OppDrowzee
 
 +++++
 097)
@@ -1959,8 +1765,6 @@ XP: 0
 NextLevelXP: 165
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserHypno
-OppSprite: OppHypno
 
 +++++
 098)
@@ -1979,8 +1783,6 @@ XP: 0
 NextLevelXP: 115
 Wild: 1
 EvolveLvl: 28
-UserSprite: UserKrabby
-OppSprite: OppKrabby
 
 +++++
 099)
@@ -1999,8 +1801,6 @@ XP: 0
 NextLevelXP: 206
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserKingler
-OppSprite: OppKingler
 
 +++++
 100)
@@ -2019,8 +1819,6 @@ XP: 0
 NextLevelXP: 103
 Wild: 1
 EvolveLvl: 30
-UserSprite: UserVoltorb
-OppSprite: OppVoltorb
 
 +++++
 101)
@@ -2039,8 +1837,6 @@ XP: 0
 NextLevelXP: 150
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserElectrode
-OppSprite: OppElectrode
 
 +++++
 102)
@@ -2059,8 +1855,6 @@ XP: 0
 NextLevelXP: 98
 Wild: 1
 EvolveLvl: 22
-UserSprite: UserExeggcute
-OppSprite: OppExeggcute
 
 +++++
 103)
@@ -2079,8 +1873,6 @@ XP: 0
 NextLevelXP: 212
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserExeggutor
-OppSprite: OppExeggutor
 
 +++++
 104)
@@ -2099,8 +1891,6 @@ XP: 0
 NextLevelXP: 87
 Wild: 1
 EvolveLvl: 28
-UserSprite: UserCubone
-OppSprite: OppCubone
 
 +++++
 105)
@@ -2119,8 +1909,6 @@ XP: 0
 NextLevelXP: 117
 Wild: 124
 EvolveLvl: 0
-UserSprite: UserMarowak
-OppSprite: OppMarowak
 
 +++++
 106)
@@ -2139,8 +1927,6 @@ XP: 0
 NextLevelXP: 139
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserHitmonlee
-OppSprite: OppHitmonlee
 
 +++++
 107)
@@ -2159,8 +1945,6 @@ XP: 0
 NextLevelXP: 140
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserHitmonchan
-OppSprite: OppHitmonchan
 
 +++++
 108)
@@ -2179,8 +1963,6 @@ XP: 0
 NextLevelXP: 127
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserLickitung
-OppSprite: OppLickitung
 
 +++++
 109)
@@ -2199,8 +1981,6 @@ XP: 0
 NextLevelXP: 114
 Wild: 1
 EvolveLvl: 35
-UserSprite: UserKoffing
-OppSprite: OppKoffing
 
 +++++
 110)
@@ -2219,8 +1999,6 @@ XP: 0
 NextLevelXP: 173
 Wild: 1
 EvolveLvl: 30
-UserSprite: UserWeezing
-OppSprite: OppWeezing
 
 +++++
 111)
@@ -2239,8 +2017,6 @@ XP: 0
 NextLevelXP: 135
 Wild: 1
 EvolveLvl: 42
-UserSprite: UserRhyhorn
-OppSprite: OppRhyhorn
 
 +++++
 112)
@@ -2259,8 +2035,6 @@ XP: 0
 NextLevelXP: 204
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserRhydon
-OppSprite: OppRhydon
 
 +++++
 113)
@@ -2279,8 +2053,6 @@ XP: 0
 NextLevelXP: 255
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserChansey
-OppSprite: OppChansey
 
 +++++
 114)
@@ -2299,8 +2071,6 @@ XP: 0
 NextLevelXP: 166
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserTangela
-OppSprite: OppTangela
 
 +++++
 115)
@@ -2319,8 +2089,6 @@ XP: 0
 NextLevelXP: 175
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserKangaskhan
-OppSprite: OppKangaskhan
 
 +++++
 116)
@@ -2339,8 +2107,6 @@ XP: 0
 NextLevelXP: 83
 Wild: 1
 EvolveLvl: 32
-UserSprite: UserHorsea
-OppSprite: OppHorsea
 
 +++++
 117)
@@ -2359,8 +2125,6 @@ XP: 0
 NextLevelXP: 155
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserSeadra
-OppSprite: OppSeadra
 
 +++++
 118)
@@ -2379,8 +2143,6 @@ XP: 0
 NextLevelXP: 111
 Wild: 1
 EvolveLvl: 33
-UserSprite: UserGoldeen
-OppSprite: OppGoldeen
 
 +++++
 119)
@@ -2399,8 +2161,6 @@ XP: 0
 NextLevelXP: 170
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserSeaking
-OppSprite: OppSeaking
 
 +++++
 120)
@@ -2419,8 +2179,6 @@ XP: 0
 NextLevelXP: 106
 Wild: 1
 EvolveLvl: 33
-UserSprite: UserStaryu
-OppSprite: OppStaryu
 
 +++++
 121)
@@ -2439,8 +2197,6 @@ XP: 0
 NextLevelXP: 207
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserStarmie
-OppSprite: OppStarmie
 
 +++++
 122)
@@ -2459,8 +2215,6 @@ XP: 0
 NextLevelXP: 136
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMr.Mime
-OppSprite: OppMr.Mime
 
 +++++
 123)
@@ -2479,8 +2233,6 @@ XP: 0
 NextLevelXP: 187
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserScyther
-OppSprite: OppScyther
 
 +++++
 124)
@@ -2499,8 +2251,6 @@ XP: 0
 NextLevelXP: 137
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserJynx
-OppSprite: OppJynx
 
 +++++
 125)
@@ -2519,8 +2269,6 @@ XP: 0
 NextLevelXP: 156
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserElectabuzz
-OppSprite: OppElectabuzz
 
 +++++
 126)
@@ -2539,8 +2287,6 @@ XP: 0
 NextLevelXP: 167
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMagmar
-OppSprite: OppMagmar
 
 +++++
 127)
@@ -2559,8 +2305,6 @@ XP: 0
 NextLevelXP: 200
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserPinsir
-OppSprite: OppPinsir
 
 +++++
 128)
@@ -2579,8 +2323,6 @@ XP: 0
 NextLevelXP: 211
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserTauros
-OppSprite: OppTauros
 
 +++++
 129)
@@ -2599,8 +2341,6 @@ XP: 0
 NextLevelXP: 20
 Wild: 1
 EvolveLvl: 20
-UserSprite: UserMagikarp
-OppSprite: OppMagikarp
 
 +++++
 130)
@@ -2619,8 +2359,6 @@ XP: 0
 NextLevelXP: 214
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserGyarados
-OppSprite: OppGyarados
 
 +++++
 131)
@@ -2639,8 +2377,6 @@ XP: 0
 NextLevelXP: 219
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserLapras
-OppSprite: OppLapras
 
 
 +++++
@@ -2660,8 +2396,6 @@ XP: 0
 NextLevelXP: 61
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserDitto
-OppSprite: OppDitto
 
 +++++
 133)
@@ -2680,8 +2414,6 @@ XP: 0
 NextLevelXP: 92
 Wild: 1
 EvolveLvl: 30
-UserSprite: UserEevee
-OppSprite: OppEevee
 
 +++++
 134)
@@ -2700,8 +2432,6 @@ XP: 0
 NextLevelXP: 196
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserVapereon
-OppSprite: OppVapereon
 
 +++++
 135)
@@ -2720,8 +2450,6 @@ XP: 0
 NextLevelXP: 197
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserJolteon
-OppSprite: OppJolteon
 
 +++++
 136)
@@ -2740,8 +2468,6 @@ XP: 0
 NextLevelXP: 198
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserFlareon
-OppSprite: OppFlareon
 
 +++++
 137)
@@ -2760,8 +2486,6 @@ XP: 0
 NextLevelXP: 130
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserPorygon
-OppSprite: OppPorygon
 
 +++++
 138)
@@ -2780,8 +2504,6 @@ XP: 0
 NextLevelXP: 99
 Wild: 1
 EvolveLvl: 40
-UserSprite: UserOmanyte
-OppSprite: OppOmanyte
 
 +++++
 139)
@@ -2800,8 +2522,6 @@ XP: 0
 NextLevelXP: 199
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserOmastar
-OppSprite: OppOmastar
 
 +++++
 140)
@@ -2820,8 +2540,6 @@ XP: 0
 NextLevelXP: 99
 Wild: 1
 EvolveLvl: 40
-UserSprite: UserKabuto
-OppSprite: OppKabuto
 
 +++++
 141)
@@ -2840,8 +2558,6 @@ XP: 0
 NextLevelXP: 199
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserKabutops
-OppSprite: OppKabutops
 
 +++++
 142)
@@ -2860,8 +2576,6 @@ XP: 0
 NextLevelXP: 202
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserAerodactyl
-OppSprite: OppAerodactyl
 
 +++++
 143)
@@ -2880,8 +2594,6 @@ XP: 0
 NextLevelXP: 154
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserSnorlax
-OppSprite: OppSnorlax
 
 +++++
 144)
@@ -2900,8 +2612,6 @@ XP: 0
 NextLevelXP: 215
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserAtricuno
-OppSprite: OppAtricuno
 
 +++++
 145)
@@ -2920,8 +2630,6 @@ XP: 0
 NextLevelXP: 216
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserZapdos
-OppSprite: OppZapdos
 
 +++++
 146)
@@ -2940,8 +2648,6 @@ XP: 0
 NextLevelXP: 217
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMoltres
-OppSprite: OppMoltres
 
 +++++
 147)
@@ -2960,8 +2666,6 @@ XP: 0
 NextLevelXP: 67
 Wild: 1
 EvolveLvl: 30
-UserSprite: UserDratini
-OppSprite: OppDratini
 
 +++++
 148)
@@ -2980,8 +2684,6 @@ XP: 0
 NextLevelXP: 144
 Wild: 1
 EvolveLvl: 55
-UserSprite: UserDragonair
-OppSprite: OppDragonair
 
 +++++
 149)
@@ -3000,8 +2702,6 @@ XP: 0
 NextLevelXP: 218
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserDragonite
-OppSprite: OppDragonite
 
 +++++
 150)
@@ -3020,8 +2720,6 @@ XP: 0
 NextLevelXP: 220
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMewtwo
-OppSprite: OppMewtwo
 
 +++++
 151)
@@ -3040,5 +2738,3 @@ XP: 0
 NextLevelXP: 64
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserMew
-OppSprite: OppMew

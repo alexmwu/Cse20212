@@ -1,7 +1,7 @@
+right format below
 +++++
 000)
 Name: Name
-Image: Name
 Type1: Type
 Type2: Type
 Attack: 0
@@ -15,6 +15,9 @@ XP: 0
 NextLevelXP: 0
 Wild: 0
 EvolveLvl: 0
+UserSprite: XXX
+OppSprite: XXX
+
 
 +++++
 001)

@@ -2538,101 +2538,101 @@ Height: 2
 Width: 1
 
 +++++
-016)
+001)
 Sheet: 9
 Name: UserBulbasaur 0 0
-X: 0
-Y: 0
+X: 65
+Y: 1
 Height: 64
 Width: 64
 
 +++++
-017)
+002)
 Sheet: 9
 Name: OppBulbasaur 0 0
-X: 0
-Y: 0
+X: 1
+Y: 1
 Height: 64
 Width: 64
 
 +++++
-018)
+003)
 Sheet: 9
 Name: UserIvysaur 0 0
-X: 0
-Y: 0
+X: 65
+Y: 66
 Height: 64
 Width: 64
 
 +++++
-019)
+004)
 Sheet: 9
 Name: OppIvysaur 0 0
-X: 0
-Y: 0
+X: 1
+Y: 66
 Height: 64
 Width: 64
 
 +++++
-020)
+005)
 Sheet: 9
 Name: UserVenusaur 0 0
-X: 0
-Y: 0
+X: 65
+Y: 131
 Height: 64
 Width: 64
 
 +++++
-021)
+006)
 Sheet: 9
 Name: OppVenusaur 0 0
-X: 0
-Y: 0
+X: 1
+Y: 131
 Height: 64
 Width: 64
 
 +++++
-022)
+007)
 Sheet: 9
 Name: UserCharmander 0 0
-X: 0
-Y: 0
+X: 226
+Y: 1
 Height: 64
 Width: 64
 
 +++++
-023)
+008)
 Sheet: 9
 Name: OppCharmander 0 0
-X: 0
-Y: 0
+X: 162
+Y: 1
 Height: 64
 Width: 64
 
 +++++
-012)
+009)
 Sheet: 9
 Name: UserCharmeleon 0 0
-X: 0
-Y: 0
+X: 226
+Y: 66
 Height: 64
 Width: 64
 
 +++++
-012)
+010)
 Sheet: 9
 Name: OppCharmeleon 0 0
-X: 0
-Y: 0
+X: 162
+Y: 66
 Height: 64
 Width: 64
 
 +++++
-012)
+011)
 Sheet: 9
 Name: UserCharizard 0 0
-X: 0
-Y: 0
+X: 226
+Y: 131
 Height: 64
 Width: 64
 
@@ -2640,6 +2640,33 @@ Width: 64
 012)
 Sheet: 9
 Name: OppCharizard 0 0
+X: 162
+Y: 131
+Height: 64
+Width: 64
+
++++++
+013)
+Sheet: 9
+Name: UserSquirtle 0 0
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+014)
+Sheet: 9
+Name: OppSquirtle 0 0
+X: 0
+Y: 0
+Height: 64
+Width: 64
+
++++++
+014)
+Sheet: 9
+Name: UserWartortle 0 0
 X: 0
 Y: 0
 Height: 64
@@ -2648,16 +2675,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: OppGeodude 0 0
-X: 0
-Y: 0
-Height: 64
-Width: 64
-
-+++++
-012)
-Sheet: 9
-Name: OppDiglet 0 0
+Name: OppWartortle 0 0
 X: 0
 Y: 0
 Height: 64
@@ -2675,25 +2693,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: UserPikachu 0 0
-X: 0
-Y: 0
-Height: 64
-Width: 64
-
-+++++
-012)
-Sheet: 9
-Name: UserNidorino 0 0
-X: 0
-Y: 0
-Height: 64
-Width: 64
-
-+++++
-012)
-Sheet: 9
-Name: UserPoliwhirl 0 0
+Name: OppBlastoise 0 0
 X: 0
 Y: 0
 Height: 64
