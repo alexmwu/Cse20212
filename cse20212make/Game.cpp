@@ -951,7 +951,7 @@ void Game::battle(Trainer *user, Trainer *opp)
 	//cout << user->getName() << " VS " << opp->getName() << endl;
 	int swap = -1;
 	int item = -1;
-	int uA = 0;
+	int uA = user->getFirstAvailablePokemon();
 	int oA = 0;
 	Item potion = Item();
 	Pokemon userA = user->getPokemon(uA); //gets the user and opponents first pokemon in their parties
@@ -964,7 +964,7 @@ void Game::battle(Trainer *user, Trainer *opp)
 	SDL_Delay(1000);
 	while (user->getNumPokemonAvalible() > 0 && opp->getNumPokemonAvalible() > 0)
 	{
-		cout << "Trainer: " << opp->getNumPokemonAvalible() << " User: " << user->getNumPokemonAvalible() << endl;
+		//cout << "Trainer: " << opp->getNumPokemonAvalible() << " User: " << user->getNumPokemonAvalible() << endl;
 		pair<int, int> num = battle(&userA, &oppA); //gets the result of the battle from the two pokemon
 		if (num.first == 1) //1 means user wants to swap pokemon
 		{
@@ -1029,9 +1029,9 @@ while (SDL_PollEvent(&event) || swap==-1){
 			int i;
 			stringstream party;
 			for (i = 0; i < user->getParty().size(); i++)
-				{
-					party << i << " " <<user->getPokemon(i).getName()<<" ";
-				}
+			{
+				//party << i << " " <<user->getPokemon(i).getName()<<" ";
+			}
 			string displayParty=party.str();
 			user->swapPokemon(uA, 0); // sets the pokemons helth to 0
 			if (user->getNumPokemonAvalible() == 0) //if this was the user's last pokemon, it breaks the loop
@@ -1092,7 +1092,7 @@ while (SDL_PollEvent(&event) || swap==-1){
 			SDL_Delay(1000);
 			user->updateXP(uA, XP);
 			opp->swapPokemon(oA, 0);
-			cout << opp->getPokemon(uA).getHP() << " fainted" << endl;
+			//cout << opp->getPokemon(uA).getHP() << " fainted" << endl;
 			if (opp->getNumPokemonAvalible() < 1) //checks to see if the opponent has any more pokemon avalible
 				break;
 			while (1) //randomly selects a valid pokemon from the user's party
@@ -1172,10 +1172,23 @@ while (SDL_PollEvent(&event) || swap==-1){
 		}
 	else{
 		displayBar(*user,*opp,"You beat "+opp->getName()+"!",0);
+		removeTrainer(opp->getName());
 		SDL_Flip(screen);
 		SDL_Delay(1000);
 		}
 	return;
+}
+
+void Game::removeTrainer(string name)
+{
+	for(int i = 1; i < my_trainers.size(); i++)
+	{
+		if(my_trainers[i].getName() == name)
+		{
+			my_trainers.erase(my_trainers.begin() + i);
+			i--;
+		}
+	}
 }
 
 //returns the pokemon whose name is the same as the string
@@ -1199,7 +1212,7 @@ void Game::printPokemon()
 {
 	for (int i = 0; i < my_pokemon.size(); i++)
 	{
-		cout << i << ") " << my_pokemon[i].getName() << " " << my_pokemon[i].getType()[0].getName() << " " << my_pokemon[i].getType()[1].getName() << endl;
+		//cout << i << ") " << my_pokemon[i].getName() << " " << my_pokemon[i].getType()[0].getName() << " " << my_pokemon[i].getType()[1].getName() << endl;
 	}
 }
 
@@ -1291,7 +1304,7 @@ void Game::displayMap(){
 	my_map[0][0].getSprite().display(15,15,map);
 	int userX=my_trainers[0].getBoardPiece().getLocation().getX();
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
-	cout << userX << " " << userY << endl;
+	//cout << userX << " " << userY << endl;
 
 	int sx = userY - 10;
 	int sy = userX - 13;
@@ -1320,7 +1333,7 @@ void Game::displayTrainers()
 	int userY=my_trainers[0].getBoardPiece().getLocation().getY();
 	
 
-	my_trainers[0].getBoardPiece().getSprite().display(200, 150, screen);
+	my_trainers[0].getBoardPiece().getSprite().display(196, 150, screen);
 
 	int sx = userY - 10;
 	int sy = userX - 13;
@@ -1425,7 +1438,7 @@ void Game::play(){
 			{
 				trainerX=my_trainers[0].getBoardPiece().getLocation().getX();
 				trainerY=my_trainers[0].getBoardPiece().getLocation().getY();
-				cout<<trainerX<<","<<trainerY<<endl;
+				//cout<<trainerX<<","<<trainerY<<endl;
 				//Set the proper message surface
 				switch (event.key.keysym.sym)
 				{

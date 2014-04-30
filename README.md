@@ -38,9 +38,22 @@ The following are known bugs as well as improvements to the program that we woul
 
 -Battle animations
 
--Exiting doors, cannot go toward the door or on either side, but only away
-
--can still walk in the blackspace around buildings
+-When you are standing on a door, you cannot walk through the walls - this is intentional
 
 -can walk through trainers
+
+*FIXED:Trainers will continuously battle you upon each step. 
+-Trainers diaspear when they are defeated: they are removed from game
+
+-Unable to close window during battle scene
+
+-Unable to change move selection once you choce one
+
+-Moves are not displayed in the window
+
+-Pokemon HP of avalible pokemon not displayed in the window
+
+-HP bar doesn't display HP properly
+
+-Battle Dialog is not working
 

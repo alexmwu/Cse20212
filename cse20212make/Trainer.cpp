@@ -170,6 +170,17 @@ void Trainer::updateXP(int num, int XP)
 	my_party[num].setXP(XP);
 }
 
-Sprite Trainer::getSprite(){
+//returns the sprite
+Sprite Trainer::getSprite()
+{
 	return my_sprite;
+}
+
+int Trainer::getFirstAvailablePokemon()
+{
+	for(int i = 0; i < my_party.size(); i++)
+	{
+		if(my_party[i].getHP() > 0)
+			return i;
+	}
 }

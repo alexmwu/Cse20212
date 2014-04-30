@@ -317,7 +317,7 @@ void Pokemon::useMove(Pokemon *opp, int move, double strength)
 	int random = rand()%100;
 	if(random < getMove(move).getAccuracy())
 	{
-		cout << "The attack missed" <<endl;
+		//cout << "The attack missed" <<endl;
 		return;
 	}
 	double calc;
@@ -335,7 +335,7 @@ void Pokemon::useMove(Pokemon *opp, int move, double strength)
 	calc = (1.0 * f[1] * f[2] * f[5] * f[0]) / ((f[4])*f[3]) * (f[6] / 464.0);
 	HPLoss = calc / 1;
 	opp->setHP(opp->getHP() - HPLoss);
-	cout << getName() << " used " << getMove(move).getName() << endl;
+	//cout << getName() << " used " << getMove(move).getName() << endl;
 
 }
 

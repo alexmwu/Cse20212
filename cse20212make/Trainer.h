@@ -46,7 +46,8 @@ public:
 	void setBoardPiece(BoardPiece);			//sets the boardPiece of the trainer to the passed in value
 	BoardPiece& getBoardPiece();			// returns the boardpiece of the traienr
 	void updateXP(int, int);			//updates the xp of the pokeon at the first int index to the second in
-	Sprite getSprite();
+	Sprite getSprite();				//returns the sprite
+	int getFirstAvailablePokemon();			//gets the index of the first pokemon avalible
 private:
 	vector<Pokemon> my_party;			//vector of pokemon in party
 	vector<Pokemon*> my_pokemon;			//vector of pokemon in pc
