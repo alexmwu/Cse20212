@@ -964,6 +964,7 @@ void Game::battle(Trainer *user, Trainer *opp)
 	SDL_Delay(1000);
 	while (user->getNumPokemonAvalible() > 0 && opp->getNumPokemonAvalible() > 0)
 	{
+		cout << "Trainer: " << opp->getNumPokemonAvalible() << " User: " << user->getNumPokemonAvalible() << endl;
 		pair<int, int> num = battle(&userA, &oppA); //gets the result of the battle from the two pokemon
 		if (num.first == 1) //1 means user wants to swap pokemon
 		{
@@ -1091,7 +1092,8 @@ while (SDL_PollEvent(&event) || swap==-1){
 			SDL_Delay(1000);
 			user->updateXP(uA, XP);
 			opp->swapPokemon(oA, 0);
-			if (opp->getNumPokemonAvalible() <= 1) //checks to see if the opponent has any more pokemon avalible
+			cout << opp->getPokemon(uA).getHP() << " fainted" << endl;
+			if (opp->getNumPokemonAvalible() < 1) //checks to see if the opponent has any more pokemon avalible
 				break;
 			while (1) //randomly selects a valid pokemon from the user's party
 			{
@@ -1104,6 +1106,7 @@ while (SDL_PollEvent(&event) || swap==-1){
 				}
 				oppA = opp->getPokemon(swap);
 				num.first = -1;
+				oA = swap;
 				swap = -1;
 				break;
 			}

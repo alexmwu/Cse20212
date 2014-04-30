@@ -2495,9 +2495,9 @@ Width: 35
 +++++
 206)
 Sheet: 5
-Name: UserRedFemaleTrainer 0 0
-X: 19
-Y: 399
+Name: UserBlueMaleTrainer 0 0
+X: 494
+Y: 263
 Height: 50
 Width: 36
 
