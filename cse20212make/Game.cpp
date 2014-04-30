@@ -1037,7 +1037,7 @@ while (SDL_PollEvent(&event) || swap==-1){
 			user->swapPokemon(uA, 0); // sets the pokemons helth to 0
 			if (user->getNumPokemonAvalible() == 0) //if this was the user's last pokemon, it breaks the loop
 				break;
-			user->printPokemon(); //prints pokemon in party
+			//user->printPokemon(); //prints pokemon in party
 			while (1) //loops assure the user inputs proper input for the switch, then switches the pokemon
 			{
 				while (swap < 0 || swap > user->getParty().size())

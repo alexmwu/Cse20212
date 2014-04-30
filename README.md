@@ -57,3 +57,5 @@ The following are known bugs as well as improvements to the program that we woul
 
 -Battle Dialog is not working
 
+-Pokemon healed in between battles
+
