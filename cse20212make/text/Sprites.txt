@@ -5204,7 +5204,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: OppAtricuno 0 0
+Name: OppArticuno 0 0
 X: 1124
 Y: 926
 Height: 64
@@ -5213,7 +5213,7 @@ Width: 64
 +++++
 012)
 Sheet: 9
-Name: UserAtricuno 0 0
+Name: UserArticuno 0 0
 X: 1194
 Y: 926
 Height: 64
