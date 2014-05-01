@@ -1176,7 +1176,7 @@ while (SDL_PollEvent(&event) || swap==-1){
 		}
 	}	
 	if (user->getNumPokemonAvalible() == 0){ //check to see which trainer ran out of pokemon when the battle ended.
-		displayBar(*user,*opp,"You're out of Pokemon!",0);
+		displayBar(*user,*opp,"You are out of Pokemon!",0);
 		SDL_Flip(screen);
 		SDL_Delay(1000);
 		}

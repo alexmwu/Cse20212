@@ -2883,7 +2883,7 @@ OppSprite: OppSnorlax
 
 +++++
 144)
-Name: Atricuno
+Name: Articuno
 
 Type1: Ice
 Type2: Flying
@@ -2898,8 +2898,8 @@ XP: 0
 NextLevelXP: 215
 Wild: 1
 EvolveLvl: 0
-UserSprite: UserAtricuno
-OppSprite: OppAtricuno
+UserSprite: UserArticuno
+OppSprite: OppArticuno
 
 +++++
 145)

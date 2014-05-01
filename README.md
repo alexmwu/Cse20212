@@ -56,10 +56,10 @@ The following are known bugs as well as improvements to the program that we woul
 
 -FIXED: HP bar doesn't display HP properly
 
--Battle Dialog is not working
+-FIXED: Battle Dialog is not working
 
 -Pokemon healed in between battles
 
--seg faults if all pokemon faint and for wild pokemon battles
+-FIXED: seg faults if all pokemon faint and for wild pokemon battles
 
 -seg fault when Blastoise uses surf on 2nd gym trainer
