@@ -184,3 +184,9 @@ int Trainer::getFirstAvailablePokemon()
 			return i;
 	}
 }
+
+//sets the name of the trainer
+void Trainer::setName(string name)
+{
+	my_name = name;
+}
