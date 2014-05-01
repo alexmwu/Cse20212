@@ -61,3 +61,5 @@ The following are known bugs as well as improvements to the program that we woul
 -Pokemon healed in between battles
 
 -seg faults if all pokemon faint and for wild pokemon battles
+
+-seg fault when Blastoise uses surf on 2nd gym trainer
