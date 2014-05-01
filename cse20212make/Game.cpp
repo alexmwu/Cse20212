@@ -1596,42 +1596,69 @@ void Game::wildPokemon()
 	{
 		int a = rand() %3;
 		if(a >2)
+		{
 			p = getPokemon("Bulbasaur");
+			p.addMove(getMove("VineWhip"));
+		}
 		else if(a >2)
+		{
 			p = getPokemon("Charmander");
+			p.addMove(getMove("Ember"));
+		}
 		else
-			p = getPokemon("Blastoise");
+		{
+			p = getPokemon("Squirtle");
+			p.addMove(getMove("WaterGun"));
+		}
 	}
 	else if(r >=70)
 	{
 		int a = rand() %6;
 		if(a >5)
+		{
 			p = getPokemon("Pikachu");
+			p.addMove(getMove("ThunderShock"));
+		}
 		else if(a >4)
+		{
 			p = getPokemon("Vulpix");
-		else if(a >3)
+			p.addMove(getMove("Ember"));
+		}
+		else if(a >3)	
+		{
 			p = getPokemon("Diglett");
+			p.addMove(getMove("Dig"));
+		}
 		else if(a >2)
+		{
 			p = getPokemon("Geodude");
+			p.addMove(getMove("Rollout"));
+		}
 		else if(a >1)
+		{
 			p = getPokemon("Scyther");
+			p.addMove(getMove("QuickAttack"));
+		}
 		else if(a >2)
+		{
 			p = getPokemon("Poliwhirl");
+			p.addMove(getMove("WaterGun"));
+		}
 	}
 	else
 	{	p=getPokemon("Nidorino");
-		int a = rand() %12;
-		if(a >11)
+		int a = rand() %13;
+		if(a >12)
 			p = getPokemon("Caterpie");
-		else if(a >10)
+		else if(a >11)
 			p = getPokemon("Weedle");
-		else if(a >9)
+		else if(a >10)
 			p = getPokemon("Pidgey");
-		else if(a >8)
+		else if(a >9)
 			p = getPokemon("Rattata");
-		else if(a >7)
+		else if(a >8)
 			p = getPokemon("Spearow");
-		else if(a >2)
+		else if(a >7)
 			p = getPokemon("Zubat");
 		else if(a >6)
 			p = getPokemon("Oddish");
@@ -1646,9 +1673,11 @@ void Game::wildPokemon()
 		else 
 			p = getPokemon("Magikarp");
 	}
+	p.addMove(getMove("Tackle"));
 	p.setLevel(my_trainers[0].getBoardPiece().getLocation().getY()/5);
 	//add p moves
 	t.addToParty(p);
+	t.setName("Wild " + p.getName());
 	battle(&my_trainers[0], &t);
 }
 

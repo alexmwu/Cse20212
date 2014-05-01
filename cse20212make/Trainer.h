@@ -48,6 +48,7 @@ public:
 	void updateXP(int, int);			//updates the xp of the pokeon at the first int index to the second in
 	Sprite getSprite();				//returns the sprite
 	int getFirstAvailablePokemon();			//gets the index of the first pokemon avalible
+	void setName(string);				//sets the name of the trainer
 private:
 	vector<Pokemon> my_party;			//vector of pokemon in party
 	vector<Pokemon*> my_pokemon;			//vector of pokemon in pc
