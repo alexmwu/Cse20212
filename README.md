@@ -43,19 +43,21 @@ The following are known bugs as well as improvements to the program that we woul
 -can walk through trainers
 
 *FIXED:Trainers will continuously battle you upon each step. 
--Trainers diaspear when they are defeated: they are removed from game
+
+-Trainers disappear when they are defeated: they are removed from game
 
 -Unable to close window during battle scene
 
--Unable to change move selection once you choce one
+-FIXED: Unable to change move selection once you choce one
 
--Moves are not displayed in the window
+-FIXED: Moves are not displayed in the window
 
 -Pokemon HP of avalible pokemon not displayed in the window
 
--HP bar doesn't display HP properly
+-FIXED: HP bar doesn't display HP properly
 
 -Battle Dialog is not working
 
 -Pokemon healed in between battles
 
+-seg faults if all pokemon faint
