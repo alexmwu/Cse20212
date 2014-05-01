@@ -858,7 +858,10 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 			if (opp->getType()[1].getName() != "")
 				strength *= getTypeStrength(user->getMove(move).getType(), opp->getType()[1]);
 			user->useMove(opp, move, strength);
-			
+			displayBar(*user,*opp,user->getName()+" used "+user->getMove(move).getName()+".",0);
+			SDL_Flip(screen);
+			SDL_Delay(1000);
+
 			//checks to see if the opponent has fainted from the attack
 			if (opp->getHP() <= 0)
 			{
@@ -874,9 +877,12 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 			if (user->getType()[1].getName() != "")
 				strength *= getTypeStrength(opp->getMove(oppMove).getType(), user->getType()[1]);
 			opp->useMove(user, oppMove, strength);
+			displayBar(*user,*opp,opp->getName()+" used "+opp->getMove(oppMove).getName()+".",0);
+			SDL_Flip(screen);
+			SDL_Delay(1000);
 
 			//checks if the user has fainted from the attack
-			if (user->getHP() <= 0)
+			if (user->getHP() <= 0) 
 			{
 				displayBar(*user,*opp,user->getName() + " has fainted.",0);
 				SDL_Flip(screen);
@@ -892,6 +898,9 @@ pair<int, int> Game::battle(Pokemon* user, Pokemon* opp)
 			if (user->getType()[1].getName() != "")
 				strength *= getTypeStrength(opp->getMove(oppMove).getType(), user->getType()[1]);
 			opp->useMove(user, oppMove, strength);
+			displayBar(*user,*opp,opp->getName()+" used "+opp->getMove(oppMove).getName()+".",0);
+			SDL_Flip(screen);
+			SDL_Delay(1000);
 
 			//checks if the user has fainted from the attack
 			if (user->getHP() <= 0)
@@ -1031,7 +1040,7 @@ while (SDL_PollEvent(&event) || swap==-1){
 			stringstream party;
 			for (i = 0; i < user->getParty().size(); i++)
 			{
-				//party << i << " " <<user->getPokemon(i).getName()<<" ";
+				party << i << " " <<user->getPokemon(i).getName()<<" ";
 			}
 			string displayParty=party.str();
 			user->swapPokemon(uA, 0); // sets the pokemons helth to 0
@@ -1269,8 +1278,7 @@ void Game::displayBar(Pokemon userPoke,Pokemon oppPoke, string text,int gap){
 
 		if(userPercentHP<(1/3.0)) userHPSprite=getSprite("BattleYellowHP");
 		else if(userPercentHP<(1/10.0)) userHPSprite=getSprite("BattleRedHP");
-		else userHPSprite=getSprite("BattleGreenHP");
-cout<<oppPercentHP<<"op"<<endl<<userPercentHP<<"user"<<endl;		
+		else userHPSprite=getSprite("BattleGreenHP");		
 //fill bars for hp and xp
 	for(int ohp=0;ohp<oppPercentHP*48;ohp++){
 		oppHPSprite.display(10+40+ohp,15+18,screen);
