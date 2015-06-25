@@ -24,11 +24,7 @@ When a Pokemon is defeated, the winning Pokemon will be allocated some experienc
 DOCUMENTATION:
 In the repository home directory there is a folder named "Documentation." In that folder you will find the UML Diagrams for each of the major classes used, as well as two interaction diagrams. The simple interaction diagram shows how the objects interact on a basic level, while the complex diagram shows which objects use any other object in all occurrences. 
 
-within the "cse2012make" directory there are two folders (in addition to all the c++ code files). One file (images) contains all the sprite sheets and images the program will reference. In the "text" file, you will find all the text files that the program will read off of to create all the Pokemon, Move, Type, and Trainer objects, along with all other objects in the game. You will also see the files that create things like the map and the location pairs for changing between places on the map (ie. environment to buildings). 
-
-A time log of all the contributions, meetings, and changes to the repository can be found at the following link. A history of commits can be found in the repository site.
-Time Log: https://docs.google.com/a/nd.edu/spreadsheet/ccc?key=0AtXGpydKztOtdEx4TnJFRGxjalE1ZVlNclhmTG94QkE&usp=drive_web#gid=0
-
+within the "cse2012make" directory there are two folders (in addition to all the c++ code files). One file (images) contains all the sprite sheets and images the program will reference. In the "text" file, you will find all the text files that the program will read off of to create all the Pokemon, Move, Type, and Trainer objects, along with all other objects in the game. You will also see the files that create things like the map and the location pairs for changing between places on the map (ie. environment to buildings).
 
 
 BUGS:
